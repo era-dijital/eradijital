@@ -1,0 +1,29 @@
+﻿RewriteEngine On
+RewriteBase /
+Options -Indexes
+ServerSignature Off
+
+<FilesMatch "\.(env|sql|md|gitignore|json)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Panel routes
+RewriteRule ^panel/admin/(.*)$ panel/admin/$1 [L]
+RewriteRule ^panel/api/(.*)$ panel/api/$1 [L]
+RewriteRule ^panel/core/(.*)$ panel/core/$1 [L]
+RewriteRule ^panel/database/(.*)$ - [F,L]
+RewriteRule ^panel/?$ panel/admin/login.php [L,R=302]
+
+# Direct existing files or directories
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_URI} !^/index\.html$
+RewriteRule ^ - [L]
+
+# Dist files (assets, images, api)
+RewriteCond %{DOCUMENT_ROOT}/dist%{REQUEST_URI} -f
+RewriteRule ^(.*)$ dist/$1 [L]
+
+# Dist fallback for SPA routing
+RewriteRule ^ dist/index.html [L]
