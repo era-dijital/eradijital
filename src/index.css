@@ -1,44 +1,59 @@
-﻿/* Hallmark • macrostructure: Workbench/Precision • theme: Cobalt-Dark */
-/* Hallmark • pre-emit critique: P5 H5 E5 S5 R5 V5 */
-
-@tailwind base;
+﻿@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --color-paper: #0a0d14;
-    --color-surface: #111622;
-    --color-surface-elevated: #171e2e;
-    --color-ink: #f1f5f9;
-    --color-muted: #94a3b8;
-    --color-faint: #64748b;
-    --color-rule: rgba(255, 255, 255, 0.08);
-    --color-cobalt: #2563eb;
-    --color-cobalt-hover: #1d4ed8;
-    --color-cobalt-light: rgba(37, 99, 235, 0.12);
+    /* Dijital10.com inspired Light Mode with Turkuaz Mavisi */
+    --color-paper: #f8f6f0;
+    --color-surface: #ffffff;
+    --color-surface-elevated: #f0ece3;
+    --color-surface-hover: #ebe5d9;
+    --color-ink: #111827;
+    --color-muted: #4b5563;
+    --color-faint: #6b7280;
+    --color-rule: rgba(17, 24, 39, 0.08);
+    --color-turquoise: #0891b2;
+    --color-turquoise-hover: #0e7490;
+    --color-turquoise-light: rgba(8, 145, 178, 0.12);
     --font-display: "Space Grotesk", sans-serif;
     --font-body: "Inter", sans-serif;
     --font-mono: "JetBrains Mono", monospace;
   }
 
+  .dark {
+    /* Growth Agency Midnight Dark Mode */
+    --color-paper: #0a0d14;
+    --color-surface: #111622;
+    --color-surface-elevated: #171e2e;
+    --color-surface-hover: #1c2436;
+    --color-ink: #f1f5f9;
+    --color-muted: #94a3b8;
+    --color-faint: #64748b;
+    --color-rule: rgba(255, 255, 255, 0.08);
+    --color-turquoise: #06b6d4;
+    --color-turquoise-hover: #22d3ee;
+    --color-turquoise-light: rgba(6, 182, 212, 0.15);
+  }
+
   html, body {
-    overflow-x: clip; /* Gate 34: no horizontal scroll on 320-1920px */
+    overflow-x: clip;
     background-color: var(--color-paper);
     color: var(--color-ink);
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.25s ease, color 0.25s ease;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    font-style: normal; /* Gate 38a: No italic headers */
+    font-style: normal;
     letter-spacing: -0.025em;
   }
 
   ::selection {
-    background-color: var(--color-cobalt);
+    background-color: var(--color-turquoise);
     color: #ffffff;
   }
 }
@@ -60,182 +75,34 @@
   border: 1px solid var(--color-rule);
 }
 
-/* Technical Panel Surface */
-.tech-panel {
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-rule);
-  border-radius: 8px;
+/* Dijital10 Style Highlight Pill */
+.hl {
+  position: relative;
+  display: inline-block;
+  color: var(--color-turquoise);
+}
+.hl::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background-color: var(--color-turquoise-light);
+  border-radius: 4px;
+  z-index: -1;
 }
 
-.tech-panel-interactive {
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-rule);
-  border-radius: 8px;
-  transition: border-color 0.15s ease, background-color 0.15s ease;
-}
-
-.tech-panel-interactive:hover {
-  border-color: rgba(255, 255, 255, 0.16);
-  background-color: var(--color-surface-elevated);
-}
-
-/* Hallmark 8-State Buttons */
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  background-color: var(--color-cobalt);
+/* Turkuaz CTA Button */
+.btn-turquoise {
+  background-color: #06b6d4;
   color: #ffffff;
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 0.875rem;
-  line-height: 1;
-  padding: 0.75rem 1.25rem;
-  border-radius: 6px;
-  border: 1px solid transparent;
-  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
-  cursor: pointer;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.btn-primary:hover {
-  background-color: var(--color-cobalt-hover);
-}
-
-.btn-primary:active {
-  transform: translateY(1px);
-}
-
-.btn-primary:focus-visible {
-  outline: 2px solid #3b82f6;
-  outline-offset: 2px;
-}
-
-.btn-primary:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  transform: none;
-}
-
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  background-color: rgba(255, 255, 255, 0.04);
-  color: var(--color-ink);
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 0.875rem;
-  line-height: 1;
-  padding: 0.75rem 1.25rem;
-  border-radius: 6px;
-  border: 1px solid var(--color-rule);
-  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
-  cursor: pointer;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.18);
-}
-
-.btn-secondary:active {
-  transform: translateY(1px);
-}
-
-.btn-secondary:focus-visible {
-  outline: 2px solid #3b82f6;
-  outline-offset: 2px;
-}
-
-/* System Mono Badge - Hallmark discipline */
-.mono-tag {
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--color-muted);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.375rem;
-  padding: 0.25rem 0.5rem;
-  background-color: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--color-rule);
-  border-radius: 4px;
-}
-
-.mono-tag-active {
-  color: #60a5fa;
-  background-color: rgba(37, 99, 235, 0.1);
-  border-color: rgba(37, 99, 235, 0.35);
-}
-
-/* Prose Typography */
-.prose {
-  color: var(--color-muted);
-  max-width: 68ch; /* Gate 25: 45-75ch measure */
-  font-size: 1.0625rem;
-  line-height: 1.75;
-}
-
-.prose h1, .prose h2, .prose h3 {
-  color: var(--color-ink);
-  font-family: var(--font-display);
-}
-
-.prose h1 {
-  font-size: 2.25rem;
   font-weight: 700;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px 0 rgba(6, 182, 212, 0.3);
 }
-
-.prose h2 {
-  font-size: 1.625rem;
-  font-weight: 600;
-  margin-top: 2rem;
-  margin-bottom: 0.75rem;
-  border-bottom: 1px solid var(--color-rule);
-  padding-bottom: 0.5rem;
-}
-
-.prose h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.prose p {
-  margin-bottom: 1.25rem;
-}
-
-.prose a {
-  color: #60a5fa;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.prose code {
-  font-family: var(--font-mono);
-  font-size: 0.875em;
-  background: rgba(255, 255, 255, 0.06);
-  padding: 0.15em 0.35em;
-  border-radius: 4px;
-  border: 1px solid var(--color-rule);
-}
-
-/* Reduced Motion Safety (Gate 27) */
-@media (prefers-reduced-motion: reduce) {
-  *, ::before, ::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+.btn-turquoise:hover {
+  background-color: #0891b2;
+  box-shadow: 0 6px 20px 0 rgba(6, 182, 212, 0.4);
+  transform: translateY(-1px);
 }

@@ -56,7 +56,7 @@ export default function QuoteWizardModal() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={closeWizard}
-          className="fixed inset-0 bg-[#06080e]/85 backdrop-blur-md transition-opacity"
+          className="fixed inset-0 bg-[#06080e]/80 backdrop-blur-md transition-opacity"
         />
 
         {/* Modal Dialog */}
@@ -65,26 +65,26 @@ export default function QuoteWizardModal() {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.96, y: 16 }}
           transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-          className="relative w-full max-w-2xl bg-[#0e131f] border border-white/10 rounded-2xl p-6 sm:p-8 text-white shadow-2xl overflow-hidden z-10 my-8"
+          className="relative w-full max-w-2xl bg-white dark:bg-[#0e131f] border border-black/10 dark:border-white/10 rounded-2xl p-6 sm:p-8 text-zinc-900 dark:text-white shadow-2xl overflow-hidden z-10 my-8 transition-colors duration-250"
         >
           {/* Subtle Ambient Glow */}
-          <div className="absolute -top-24 -right-24 w-72 h-72 bg-blue-600/15 rounded-full blur-[100px] pointer-events-none" />
-          <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-indigo-600/15 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute -top-24 -right-24 w-72 h-72 bg-cyan-500/10 dark:bg-cyan-500/15 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-blue-500/10 dark:bg-blue-600/15 rounded-full blur-[100px] pointer-events-none" />
 
           {/* Top Bar: Step count & Close */}
-          <div className="flex items-center justify-between pb-4 mb-6 border-b border-white/5">
+          <div className="flex items-center justify-between pb-4 mb-6 border-b border-black/5 dark:border-white/5">
             <div className="flex items-center gap-2">
-              <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-xs font-mono font-bold">
+              <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-cyan-500/15 text-cyan-600 dark:text-cyan-400 text-xs font-mono font-bold">
                 {step <= 5 ? step : 5}
               </span>
-              <span className="text-xs uppercase tracking-wider text-zinc-400 font-mono">
+              <span className="text-xs uppercase tracking-wider text-zinc-500 dark:text-zinc-400 font-mono">
                 {step === 6 ? 'TAMAMLANDI' : `ADIM ${step} / 5 // BÜYÜME ANALİZİ`}
               </span>
             </div>
 
             <button
               onClick={closeWizard}
-              className="p-1.5 rounded-lg text-zinc-400 hover:text-white hover:bg-white/5 transition-colors focus:outline-none"
+              className="p-1.5 rounded-lg text-zinc-400 hover:text-zinc-700 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 transition-colors focus:outline-none"
               aria-label="Kapat"
             >
               <X className="w-5 h-5" />
@@ -93,9 +93,9 @@ export default function QuoteWizardModal() {
 
           {/* Progress Bar */}
           {step <= 5 && (
-            <div className="w-full bg-white/5 h-1.5 rounded-full mb-8 overflow-hidden">
+            <div className="w-full bg-black/5 dark:bg-white/5 h-1.5 rounded-full mb-8 overflow-hidden">
               <motion.div
-                className="bg-gradient-to-r from-blue-500 to-indigo-500 h-full rounded-full"
+                className="bg-gradient-to-r from-cyan-500 to-blue-500 h-full rounded-full"
                 initial={false}
                 animate={{ width: `${(step / 5) * 100}%` }}
                 transition={{ duration: 0.3 }}
@@ -107,10 +107,10 @@ export default function QuoteWizardModal() {
           {step === 1 && (
             <div className="space-y-6">
               <div>
-                <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white mb-2">
+                <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 dark:text-white mb-2">
                   İşletmenizin öncelikli büyüme hedefi nedir?
                 </h3>
-                <p className="text-sm text-zinc-400">
+                <p className="text-sm text-zinc-600 dark:text-zinc-400">
                   Size özel büyüme stratejisi ve dijital röntgen kapsamını belirlemek için seçin.
                 </p>
               </div>
@@ -143,16 +143,16 @@ export default function QuoteWizardModal() {
                     <button
                       key={item.title}
                       onClick={() => handleGoalSelect(item.title)}
-                      className="group flex items-start gap-4 p-4 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-blue-600/10 hover:border-blue-500/40 text-left transition-all hover:scale-[1.01]"
+                      className="group flex items-start gap-4 p-4 rounded-xl border border-black/5 dark:border-white/5 bg-[#f8f6f0] dark:bg-white/[0.02] hover:bg-cyan-500/10 hover:border-cyan-500/40 text-left transition-all hover:scale-[1.01]"
                     >
-                      <div className="p-2.5 rounded-lg bg-white/5 text-blue-400 group-hover:bg-blue-500/20 transition-colors shrink-0">
+                      <div className="p-2.5 rounded-lg bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 group-hover:bg-cyan-500/20 transition-colors shrink-0">
                         <Icon className="w-5 h-5" />
                       </div>
                       <div>
-                        <div className="font-semibold text-white group-hover:text-blue-300 transition-colors">
+                        <div className="font-semibold text-zinc-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors">
                           {item.title}
                         </div>
-                        <div className="text-xs text-zinc-400 mt-0.5 leading-relaxed">
+                        <div className="text-xs text-zinc-600 dark:text-zinc-400 mt-0.5 leading-relaxed">
                           {item.desc}
                         </div>
                       </div>
@@ -167,10 +167,10 @@ export default function QuoteWizardModal() {
           {step === 2 && (
             <div className="space-y-6">
               <div>
-                <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white mb-2">
+                <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 dark:text-white mb-2">
                   Hedef kitleniz ve müşteri profiliniz kimler?
                 </h3>
-                <p className="text-sm text-zinc-400">
+                <p className="text-sm text-zinc-600 dark:text-zinc-400">
                   Pazarlama kanalı karmasını (Meta, Google, LinkedIn veya B2B doğrudan temas) belirler.
                 </p>
               </div>
@@ -196,12 +196,12 @@ export default function QuoteWizardModal() {
                   <button
                     key={item.title}
                     onClick={() => handleBusinessSelect(item.type)}
-                    className="p-5 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-blue-600/10 hover:border-blue-500/40 text-left transition-all hover:scale-[1.01]"
+                    className="p-5 rounded-xl border border-black/5 dark:border-white/5 bg-[#f8f6f0] dark:bg-white/[0.02] hover:bg-cyan-500/10 hover:border-cyan-500/40 text-left transition-all hover:scale-[1.01]"
                   >
-                    <div className="font-semibold text-white text-base">
+                    <div className="font-semibold text-zinc-900 dark:text-white text-base">
                       {item.title}
                     </div>
-                    <div className="text-xs text-zinc-400 mt-1">
+                    <div className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">
                       {item.desc}
                     </div>
                   </button>
@@ -210,7 +210,7 @@ export default function QuoteWizardModal() {
 
               <button
                 onClick={() => setStep(1)}
-                className="inline-flex items-center gap-1.5 text-xs text-zinc-400 hover:text-white transition-colors pt-2"
+                className="inline-flex items-center gap-1.5 text-xs text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors pt-2"
               >
                 <ArrowLeft className="w-4 h-4" /> Önceki Adım
               </button>
@@ -221,10 +221,10 @@ export default function QuoteWizardModal() {
           {step === 3 && (
             <div className="space-y-6">
               <div>
-                <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white mb-2">
+                <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 dark:text-white mb-2">
                   Hangi büyüme araçlarına ihtiyaç duyuyorsunuz?
                 </h3>
-                <p className="text-sm text-zinc-400">
+                <p className="text-sm text-zinc-600 dark:text-zinc-400">
                   Birden fazla seçim yapabilirsiniz. İhtiyacınıza göre entegre bir büyüme paketi tasarlanır.
                 </p>
               </div>
@@ -246,13 +246,13 @@ export default function QuoteWizardModal() {
                       onClick={() => toggleService(service)}
                       className={`p-4 rounded-xl border text-left transition-all flex items-center justify-between ${
                         selected 
-                          ? 'border-blue-500 bg-blue-600/15 text-white' 
-                          : 'border-white/5 bg-white/[0.02] text-zinc-300 hover:border-white/20'
+                          ? 'border-cyan-500 bg-cyan-500/15 text-cyan-900 dark:text-cyan-100 font-semibold' 
+                          : 'border-black/5 dark:border-white/5 bg-[#f8f6f0] dark:bg-white/[0.02] text-zinc-700 dark:text-zinc-300 hover:border-black/20 dark:hover:border-white/20'
                       }`}
                     >
-                      <span className="text-sm font-medium pr-2">{service}</span>
+                      <span className="text-sm pr-2">{service}</span>
                       <span className={`w-5 h-5 rounded flex items-center justify-center text-xs shrink-0 ${
-                        selected ? 'bg-blue-500 text-white' : 'border border-white/20'
+                        selected ? 'bg-cyan-500 text-white' : 'border border-black/20 dark:border-white/20'
                       }`}>
                         {selected ? '✓' : ''}
                       </span>
@@ -261,17 +261,17 @@ export default function QuoteWizardModal() {
                 })}
               </div>
 
-              <div className="flex items-center justify-between pt-4 border-t border-white/5">
+              <div className="flex items-center justify-between pt-4 border-t border-black/5 dark:border-white/5">
                 <button
                   onClick={() => setStep(2)}
-                  className="inline-flex items-center gap-1.5 text-xs text-zinc-400 hover:text-white transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors"
                 >
                   <ArrowLeft className="w-4 h-4" /> Önceki Adım
                 </button>
 
                 <button
                   onClick={handleServicesContinue}
-                  className="px-6 py-2.5 bg-blue-600 hover:bg-blue-500 rounded-xl font-semibold text-sm transition-colors"
+                  className="px-6 py-2.5 bg-cyan-500 hover:bg-cyan-600 text-white rounded-xl font-semibold text-sm transition-colors shadow-md shadow-cyan-500/20"
                 >
                   Devam Et →
                 </button>
@@ -283,10 +283,10 @@ export default function QuoteWizardModal() {
           {step === 4 && (
             <div className="space-y-6">
               <div>
-                <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white mb-2">
+                <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 dark:text-white mb-2">
                   Aylık reklam / büyüme yatırımı bütçeniz ne kadardır?
                 </h3>
-                <p className="text-sm text-zinc-400">
+                <p className="text-sm text-zinc-600 dark:text-zinc-400">
                   Gerçekçi pazar testleri ve orantılı yatırım getirisi (ROI) planlayabilmemiz için ölçeğinizi belirtin.
                 </p>
               </div>
@@ -317,27 +317,27 @@ export default function QuoteWizardModal() {
                   <button
                     key={item.range}
                     onClick={() => handleBudgetSelect(item.range)}
-                    className="p-4 sm:p-5 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-blue-600/10 hover:border-blue-500/40 text-left transition-all hover:scale-[1.01] flex items-center justify-between"
+                    className="p-4 sm:p-5 rounded-xl border border-black/5 dark:border-white/5 bg-[#f8f6f0] dark:bg-white/[0.02] hover:bg-cyan-500/10 hover:border-cyan-500/40 text-left transition-all hover:scale-[1.01] flex items-center justify-between"
                   >
                     <div>
-                      <div className="font-bold text-white text-base flex items-center gap-2">
+                      <div className="font-bold text-zinc-900 dark:text-white text-base flex items-center gap-2">
                         {item.range}
-                        <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                        <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-700 dark:text-cyan-400 border border-cyan-500/20">
                           {item.label}
                         </span>
                       </div>
-                      <div className="text-xs text-zinc-400 mt-1">
+                      <div className="text-xs text-zinc-600 dark:text-zinc-400 mt-1">
                         {item.desc}
                       </div>
                     </div>
-                    <span className="text-blue-400 font-bold ml-2">→</span>
+                    <span className="text-cyan-600 dark:text-cyan-400 font-bold ml-2">→</span>
                   </button>
                 ))}
               </div>
 
               <button
                 onClick={() => setStep(3)}
-                className="inline-flex items-center gap-1.5 text-xs text-zinc-400 hover:text-white transition-colors pt-2"
+                className="inline-flex items-center gap-1.5 text-xs text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors pt-2"
               >
                 <ArrowLeft className="w-4 h-4" /> Önceki Adım
               </button>
@@ -348,23 +348,23 @@ export default function QuoteWizardModal() {
           {step === 5 && (
             <form onSubmit={handleFormSubmit} className="space-y-4">
               <div>
-                <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white mb-2">
+                <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 dark:text-white mb-2">
                   Ücretsiz Dijital Röntgeninizi Gönderelim
                 </h3>
-                <p className="text-sm text-zinc-400">
+                <p className="text-sm text-zinc-600 dark:text-zinc-400">
                   Web sitenizi ve sektörünüzü 24 saat içinde ücretsiz inceleyip tıkanıklıkları ve büyüme yol haritanızı iletiyoruz.
                 </p>
               </div>
 
               {error && (
-                <div className="p-3 bg-red-500/10 border border-red-500/20 text-red-400 text-xs rounded-lg">
+                <div className="p-3 bg-red-500/10 border border-red-500/20 text-red-500 text-xs rounded-lg">
                   {error}
                 </div>
               )}
 
               <div className="space-y-3">
                 <div>
-                  <label className="block text-xs font-mono uppercase tracking-wider text-zinc-400 mb-1">
+                  <label className="block text-xs font-mono uppercase tracking-wider text-zinc-600 dark:text-zinc-400 mb-1">
                     Web Siteniz (veya Instagram Hesabınız) *
                   </label>
                   <input
@@ -373,16 +373,16 @@ export default function QuoteWizardModal() {
                     placeholder="ornek-sirket.com veya @markahesabi"
                     value={formData.website}
                     onChange={(e) => updateFormData('website', e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder:text-zinc-600 text-sm focus:border-blue-500 focus:outline-none transition-colors"
+                    className="w-full px-4 py-3 rounded-xl bg-black/5 dark:bg-white/[0.04] border border-black/10 dark:border-white/10 text-zinc-900 dark:text-white placeholder:text-zinc-400 text-sm focus:border-cyan-500 focus:outline-none transition-colors"
                   />
-                  <span className="text-[11px] text-blue-400/80 mt-1 block">
+                  <span className="text-[11px] text-cyan-600 dark:text-cyan-400 mt-1 block">
                     ⚡ Dijital röntgen taraması bu adres üzerinden gerçekleştirilecektir.
                   </span>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-xs font-mono uppercase tracking-wider text-zinc-400 mb-1">
+                    <label className="block text-xs font-mono uppercase tracking-wider text-zinc-600 dark:text-zinc-400 mb-1">
                       Şirket / Marka Adı
                     </label>
                     <input
@@ -390,12 +390,12 @@ export default function QuoteWizardModal() {
                       placeholder="Şirketiniz"
                       value={formData.companyName}
                       onChange={(e) => updateFormData('companyName', e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder:text-zinc-600 text-sm focus:border-blue-500 focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-black/5 dark:bg-white/[0.04] border border-black/10 dark:border-white/10 text-zinc-900 dark:text-white placeholder:text-zinc-400 text-sm focus:border-cyan-500 focus:outline-none transition-colors"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono uppercase tracking-wider text-zinc-400 mb-1">
+                    <label className="block text-xs font-mono uppercase tracking-wider text-zinc-600 dark:text-zinc-400 mb-1">
                       Adınız Soyadınız *
                     </label>
                     <input
@@ -404,14 +404,14 @@ export default function QuoteWizardModal() {
                       placeholder="Ad Soyad"
                       value={formData.fullName}
                       onChange={(e) => updateFormData('fullName', e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder:text-zinc-600 text-sm focus:border-blue-500 focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-black/5 dark:bg-white/[0.04] border border-black/10 dark:border-white/10 text-zinc-900 dark:text-white placeholder:text-zinc-400 text-sm focus:border-cyan-500 focus:outline-none transition-colors"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-xs font-mono uppercase tracking-wider text-zinc-400 mb-1">
+                    <label className="block text-xs font-mono uppercase tracking-wider text-zinc-600 dark:text-zinc-400 mb-1">
                       Telefon Numaranız *
                     </label>
                     <input
@@ -420,12 +420,12 @@ export default function QuoteWizardModal() {
                       placeholder="05XX XXX XX XX"
                       value={formData.phone}
                       onChange={(e) => updateFormData('phone', e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder:text-zinc-600 text-sm focus:border-blue-500 focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-black/5 dark:bg-white/[0.04] border border-black/10 dark:border-white/10 text-zinc-900 dark:text-white placeholder:text-zinc-400 text-sm focus:border-cyan-500 focus:outline-none transition-colors"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono uppercase tracking-wider text-zinc-400 mb-1">
+                    <label className="block text-xs font-mono uppercase tracking-wider text-zinc-600 dark:text-zinc-400 mb-1">
                       E-posta Adresiniz
                     </label>
                     <input
@@ -433,7 +433,7 @@ export default function QuoteWizardModal() {
                       placeholder="info@sirket.com"
                       value={formData.email}
                       onChange={(e) => updateFormData('email', e.target.value)}
-                      className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder:text-zinc-600 text-sm focus:border-blue-500 focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-black/5 dark:bg-white/[0.04] border border-black/10 dark:border-white/10 text-zinc-900 dark:text-white placeholder:text-zinc-400 text-sm focus:border-cyan-500 focus:outline-none transition-colors"
                     />
                   </div>
                 </div>
@@ -443,7 +443,7 @@ export default function QuoteWizardModal() {
                 <button
                   type="button"
                   onClick={() => setStep(4)}
-                  className="inline-flex items-center gap-1.5 text-xs text-zinc-400 hover:text-white transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs text-zinc-500 hover:text-zinc-900 dark:hover:text-white transition-colors"
                 >
                   <ArrowLeft className="w-4 h-4" /> Önceki Adım
                 </button>
@@ -451,7 +451,7 @@ export default function QuoteWizardModal() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="px-8 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold rounded-xl shadow-lg shadow-blue-500/25 transition-all disabled:opacity-50 text-sm"
+                  className="px-8 py-3.5 bg-cyan-500 hover:bg-cyan-600 text-white font-bold rounded-xl shadow-lg shadow-cyan-500/25 transition-all disabled:opacity-50 text-sm"
                 >
                   {loading ? 'İnceleniyor...' : 'Büyüme Analizini Başlat ➔'}
                 </button>
@@ -462,23 +462,23 @@ export default function QuoteWizardModal() {
           {/* Step 6: Success */}
           {step === 6 && (
             <div className="text-center py-6 sm:py-8 space-y-4">
-              <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-2">
+              <div className="w-16 h-16 rounded-full bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mx-auto mb-2">
                 <CheckCircle2 className="w-9 h-9" />
               </div>
 
-              <h3 className="text-2xl sm:text-3xl font-bold text-white">
+              <h3 className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-white">
                 Röntgen Talebiniz Alındı!
               </h3>
 
-              <p className="text-zinc-300 text-sm max-w-md mx-auto leading-relaxed">
-                Uzman ekibimiz <span className="text-blue-400 font-mono font-semibold">{formData.website || 'web sitenizi'}</span> ve sektörünüzdeki rakipleri taramaya başladı.
+              <p className="text-zinc-600 dark:text-zinc-300 text-sm max-w-md mx-auto leading-relaxed">
+                Uzman ekibimiz <span className="text-cyan-600 dark:text-cyan-400 font-mono font-semibold">{formData.website || 'web sitenizi'}</span> ve sektörünüzdeki rakipleri taramaya başladı.
               </p>
 
-              <div className="p-4 bg-white/[0.03] border border-white/10 rounded-xl text-left text-xs space-y-2 max-w-md mx-auto">
-                <div className="font-semibold text-white flex items-center gap-1.5">
-                  <Sparkles className="w-4 h-4 text-yellow-400" /> Sırada Ne Var?
+              <div className="p-4 bg-black/[0.02] dark:bg-white/[0.03] border border-black/5 dark:border-white/10 rounded-xl text-left text-xs space-y-2 max-w-md mx-auto">
+                <div className="font-semibold text-zinc-900 dark:text-white flex items-center gap-1.5">
+                  <Sparkles className="w-4 h-4 text-cyan-500" /> Sırada Ne Var?
                 </div>
-                <ul className="space-y-1.5 text-zinc-400 list-disc list-inside">
+                <ul className="space-y-1.5 text-zinc-600 dark:text-zinc-400 list-disc list-inside">
                   <li>24 saat içinde dijital varlıklarınızın röntgen raporu çıkarılır.</li>
                   <li>Tıkanıklıklar, eksikler ve ciro artırıcı büyüme kanalları belirlenir.</li>
                   <li>Doğrudan sizinle iletişime geçilerek somut yol haritası sunulur.</li>
@@ -490,7 +490,7 @@ export default function QuoteWizardModal() {
                   resetWizard();
                   closeWizard();
                 }}
-                className="mt-4 px-8 py-3 bg-white/10 hover:bg-white/20 rounded-xl font-medium text-sm transition-colors"
+                className="mt-4 px-8 py-3 bg-black/5 hover:bg-black/10 dark:bg-white/10 dark:hover:bg-white/20 rounded-xl font-medium text-sm transition-colors text-zinc-800 dark:text-white"
               >
                 Pencereyi Kapat
               </button>
