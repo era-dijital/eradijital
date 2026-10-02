@@ -3,15 +3,8 @@ import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import { 
   Check, 
-  Target, 
-  Monitor, 
-  Box, 
-  Zap, 
   ArrowRight, 
-  Sparkles,
-  ShieldCheck,
-  TrendingUp,
-  Activity
+  Sparkles
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -80,7 +73,7 @@ export default function HizmetlerPage() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#0a0d14] text-slate-100 selection:bg-blue-600 selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#f8f6f0] dark:bg-[#0a0d14] text-zinc-900 dark:text-slate-100 selection:bg-orange-600 selection:text-white transition-colors duration-250">
       <SEO 
         title="Büyüme Hizmetlerimiz & Sütunlarımız | Era Dijital"
         description="Performans reklamları, dönüşüm odaklı web siteleri, 3D pazar testleri ve yapay zekâ süreç otomasyonu ile işletmenizi büyütüyoruz."
@@ -90,21 +83,21 @@ export default function HizmetlerPage() {
 
       <main className="flex-1">
         {/* Page Header */}
-        <section className="py-16 sm:py-24 border-b border-white/5 bg-[#0b0e17] relative overflow-hidden">
-          <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
+        <section className="py-16 sm:py-24 border-b border-black/5 dark:border-white/5 bg-[#f1ede4] dark:bg-[#0b0e17] relative overflow-hidden transition-colors duration-250">
+          <div className="absolute top-0 right-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-[120px] pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-3xl space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-mono text-xs font-semibold">
-                <Sparkles className="w-3.5 h-3.5 text-blue-300" />
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/25 text-orange-700 dark:text-orange-400 font-mono text-xs font-semibold">
+                <Sparkles className="w-3.5 h-3.5 text-orange-500" />
                 <span>360° BÜYÜME MİMARİSİ</span>
               </div>
 
-              <h1 className="text-3xl sm:text-5xl font-display font-bold tracking-tight text-white leading-tight">
-                Ölçülebilir Büyüme Sağlayan Hizmet Sütunlarımız
+              <h1 className="text-3xl sm:text-5xl font-display font-bold tracking-tight text-zinc-900 dark:text-white leading-tight">
+                Ölçülebilir Büyüme Sağlayan <span className="hl">Hizmet Sütunlarımız</span>
               </h1>
 
-              <p className="text-base sm:text-lg text-zinc-400 leading-relaxed">
+              <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
                 Parça pinçik servisler yerine; reklamdan web sitesine, 3D pazar testinden yapay zekâ otomasyonuna kadar satış kanallarınızı açan entegre bir büyüme ortaklığı sunuyoruz.
               </p>
             </div>
@@ -124,30 +117,30 @@ export default function HizmetlerPage() {
                 {/* Content Side */}
                 <div className={`lg:col-span-7 space-y-6 ${idx % 2 === 1 ? 'lg:order-2' : ''}`}>
                   <div className="flex items-center gap-3">
-                    <span className="font-mono text-xs text-blue-400 font-bold bg-blue-500/10 px-2.5 py-1 rounded-md border border-blue-500/20">
+                    <span className="font-mono text-xs text-orange-700 dark:text-orange-400 font-bold bg-orange-500/10 px-2.5 py-1 rounded-md border border-orange-500/20">
                       {m.code}
                     </span>
-                    <span className="font-mono text-xs text-zinc-400 tracking-wider uppercase">
+                    <span className="font-mono text-xs text-zinc-500 dark:text-zinc-400 tracking-wider uppercase">
                       {m.tag}
                     </span>
                   </div>
 
-                  <h2 className="text-2xl sm:text-4xl font-display font-bold text-white tracking-tight">
+                  <h2 className="text-2xl sm:text-4xl font-display font-bold text-zinc-900 dark:text-white tracking-tight">
                     {m.title}
                   </h2>
 
-                  <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
+                  <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
                     {m.desc}
                   </p>
 
                   <div className="space-y-3 pt-2">
-                    <span className="text-xs font-mono uppercase tracking-wider text-zinc-300 font-semibold block">
+                    <span className="text-xs font-mono uppercase tracking-wider text-zinc-700 dark:text-zinc-300 font-semibold block">
                       [KAPSAM & KAZANIMLAR]
                     </span>
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {m.features.map((f) => (
-                        <li key={f} className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-300">
-                          <Check className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
+                        <li key={f} className="flex items-start gap-2.5 text-xs sm:text-sm text-zinc-700 dark:text-zinc-300">
+                          <Check className="w-4 h-4 text-orange-600 dark:text-orange-400 shrink-0 mt-0.5" />
                           <span>{f}</span>
                         </li>
                       ))}
@@ -157,7 +150,7 @@ export default function HizmetlerPage() {
                   <div className="pt-4">
                     <button
                       onClick={() => openWizard()}
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-xs font-bold text-white bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-500/20 transition-all hover:scale-[1.02]"
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-xs font-bold text-white bg-orange-600 hover:bg-orange-700 shadow-lg shadow-orange-600/20 transition-all hover:scale-[1.02] cursor-pointer"
                     >
                       <Sparkles className="w-3.5 h-3.5" />
                       <span>Bu Alanda Ücretsiz Analiz İsteyin</span>
@@ -168,13 +161,13 @@ export default function HizmetlerPage() {
 
                 {/* Visual / Image Side */}
                 <div className={`lg:col-span-5 ${idx % 2 === 1 ? 'lg:order-1' : ''}`}>
-                  <div className="relative rounded-2xl overflow-hidden border border-white/10 bg-white/[0.02] p-2 shadow-2xl group">
+                  <div className="relative rounded-2xl overflow-hidden border border-black/10 dark:border-white/10 bg-white dark:bg-white/[0.02] p-2 shadow-xl dark:shadow-none group">
                     <img 
                       src={m.img} 
                       alt={m.alt}
-                      className="w-full h-auto object-cover rounded-xl grayscale-[20%] group-hover:grayscale-0 transition-all duration-500"
+                      className="w-full h-auto object-cover rounded-xl grayscale-[15%] group-hover:grayscale-0 transition-all duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0d14]/80 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none rounded-xl" />
                   </div>
                 </div>
               </div>
@@ -183,28 +176,28 @@ export default function HizmetlerPage() {
         </section>
 
         {/* CTA BANNER */}
-        <section className="py-20 border-t border-white/5 bg-[#0b0e17]">
+        <section className="py-20 border-t border-black/5 dark:border-white/5 bg-[#f1ede4] dark:bg-[#0b0e17] transition-colors duration-250">
           <div className="max-w-4xl mx-auto px-4 text-center space-y-6">
-            <span className="font-mono text-xs text-blue-400 font-bold uppercase tracking-wider block">
+            <span className="font-mono text-xs text-orange-700 dark:text-orange-400 font-bold uppercase tracking-wider block">
               [ TERZİ USULÜ YATIRIM // STANDART PAKETLER YOKTUR ]
             </span>
-            <h2 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-display font-bold text-zinc-900 dark:text-white tracking-tight">
               İşletmenizin Hangi Büyüme Sütununa İhtiyacı Var?
             </h2>
-            <p className="text-sm sm:text-base text-zinc-400 max-w-xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 max-w-xl mx-auto leading-relaxed">
               Her firmanın dinamikleri, kitle alışkanlıkları ve darboğazları farklıdır. 30 saniyelik testimizi çözün, 24 saat içinde işletmenize özel büyüme reçetenizi çıkaralım.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
               <button
                 onClick={() => openWizard()}
-                className="w-full sm:w-auto px-8 py-4 rounded-xl text-sm font-bold text-white bg-blue-600 hover:bg-blue-500 shadow-xl shadow-blue-500/25 transition-all hover:scale-[1.02]"
+                className="w-full sm:w-auto px-8 py-4 rounded-xl text-sm font-bold text-white bg-orange-600 hover:bg-orange-700 shadow-xl shadow-orange-600/25 transition-all hover:scale-[1.02] cursor-pointer"
               >
-                30 Saniyede Büyüme Analizini Başlat ➔
+                30 Saniyede Büyüme Analizini Başlat →
               </button>
               <Link
                 to="/on-analiz"
-                className="w-full sm:w-auto px-6 py-4 rounded-xl text-sm font-semibold text-zinc-300 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
+                className="w-full sm:w-auto px-6 py-4 rounded-xl text-sm font-semibold text-zinc-800 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 border border-black/10 dark:border-white/10 transition-colors"
               >
                 Detaylı Röntgen Formu
               </Link>

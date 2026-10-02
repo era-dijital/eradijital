@@ -1,6 +1,6 @@
 ﻿import React, { useState } from 'react';
 import SEO from '../components/SEO';
-import { Mail, Phone, MapPin, Send, CheckCircle2, ArrowRight, Clock, ShieldCheck, Sparkles } from 'lucide-react';
+import { Mail, Phone, MapPin, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { useQuoteWizard } from '../context/QuoteWizardContext';
@@ -53,7 +53,7 @@ export default function IletisimPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#0a0d14] text-slate-100 selection:bg-blue-600 selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#f8f6f0] dark:bg-[#0a0d14] text-zinc-900 dark:text-slate-100 selection:bg-orange-600 selection:text-white transition-colors duration-250">
       <SEO
         title="İletişim & Büyüme Toplantısı | Era Dijital"
         description="Büyüme ajansı hizmetlerimiz, 3D pazar testleri ve yapay zekâ süreç otomasyonu hakkında yüz yüze veya online görüşme planlayın."
@@ -63,21 +63,21 @@ export default function IletisimPage() {
 
       <main className="flex-1">
         {/* Page Header */}
-        <section className="py-16 sm:py-24 border-b border-white/5 bg-[#0b0e17] relative overflow-hidden">
-          <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
+        <section className="py-16 sm:py-24 border-b border-black/5 dark:border-white/5 bg-[#f1ede4] dark:bg-[#0b0e17] relative overflow-hidden transition-colors duration-250">
+          <div className="absolute top-0 right-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-[120px] pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-3xl space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-mono text-xs font-semibold">
-                <Sparkles className="w-3.5 h-3.5 text-blue-300" />
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/25 text-orange-700 dark:text-orange-400 font-mono text-xs font-semibold">
+                <Sparkles className="w-3.5 h-3.5 text-orange-500" />
                 <span>DOĞRUDAN DİYALOG // YÜZ YÜZE TOPLANTI</span>
               </div>
 
-              <h1 className="text-3xl sm:text-5xl font-display font-bold tracking-tight text-white leading-tight">
-                İşinizi Büyütmek İçin Bir Araya Gelelim
+              <h1 className="text-3xl sm:text-5xl font-display font-bold tracking-tight text-zinc-900 dark:text-white leading-tight">
+                İşinizi Büyütmek İçin <span className="hl">Bir Araya Gelelim</span>
               </h1>
 
-              <p className="text-base sm:text-lg text-zinc-400 leading-relaxed">
+              <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
                 Dikkat dağıtıcı ofis ortamları yerine; sakin kahvaltı veya akşam yemeklerinde yüz yüze oturup işletmenizin büyüme planını masaya yatıralım.
               </p>
             </div>
@@ -92,66 +92,70 @@ export default function IletisimPage() {
               {/* Left Column: Direct Info */}
               <div className="lg:col-span-5 space-y-8">
                 <div className="space-y-4">
-                  <span className="font-mono text-xs text-blue-400 font-bold uppercase tracking-wider block">
+                  <span className="font-mono text-xs text-orange-700 dark:text-orange-400 font-bold uppercase tracking-wider block">
                     [ İLETİŞİM KANALLARI ]
                   </span>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                  <h3 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white tracking-tight">
                     Hızlı ve Doğrudan Erişim
                   </h3>
-                  <p className="text-sm text-zinc-400 leading-relaxed">
-                    Süreçlerimiz şeffaftır. Bize telefon, e-posta veya doğrudan WhatsApp üzerinden ulaşabilirsiniz.
+                  <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                    Bizimle doğrudan büyüme ortaklığı kurmak için arayabilir, WhatsApp'tan yazabilir veya yan taraftaki formu doldurabilirsiniz.
                   </p>
                 </div>
 
                 <div className="space-y-4">
-                  <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 flex items-start gap-4">
-                    <div className="p-3 rounded-xl bg-blue-500/10 text-blue-400 shrink-0">
-                      <Mail className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <div className="font-mono text-xs text-zinc-400">E-POSTA DESTEK & TEKLİF</div>
-                      <a href="mailto:eradijitalinfo@gmail.com" className="font-bold text-white hover:text-blue-300 transition-colors">
-                        eradijitalinfo@gmail.com
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 flex items-start gap-4">
-                    <div className="p-3 rounded-xl bg-blue-500/10 text-blue-400 shrink-0">
+                  <a 
+                    href="tel:+905528080345"
+                    className="p-5 rounded-2xl bg-white dark:bg-white/[0.02] border border-black/5 dark:border-white/10 hover:border-orange-500/40 flex items-start gap-4 transition-all shadow-sm dark:shadow-none hover:shadow-md"
+                  >
+                    <div className="p-3 rounded-xl bg-orange-500/10 text-orange-600 dark:text-orange-400 shrink-0">
                       <Phone className="w-5 h-5" />
                     </div>
                     <div>
-                      <div className="font-mono text-xs text-zinc-400">TELEFON & WHATSAPP HATTI</div>
-                      <a href="tel:+905528080345" className="font-bold text-white hover:text-blue-300 transition-colors">
-                        +90 552 808 03 45
-                      </a>
+                      <div className="font-mono text-xs text-zinc-500 dark:text-zinc-400">TELEFON & WHATSAPP</div>
+                      <div className="font-semibold text-zinc-900 dark:text-white">+90 552 808 03 45</div>
+                      <div className="text-xs text-orange-700 dark:text-orange-400 pt-0.5">7/24 Çağrı & WhatsApp Danışma</div>
                     </div>
-                  </div>
+                  </a>
 
-                  <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 flex items-start gap-4">
-                    <div className="p-3 rounded-xl bg-blue-500/10 text-blue-400 shrink-0">
+                  <a 
+                    href="mailto:eradijitalinfo@gmail.com"
+                    className="p-5 rounded-2xl bg-white dark:bg-white/[0.02] border border-black/5 dark:border-white/10 hover:border-orange-500/40 flex items-start gap-4 transition-all shadow-sm dark:shadow-none hover:shadow-md"
+                  >
+                    <div className="p-3 rounded-xl bg-orange-500/10 text-orange-600 dark:text-orange-400 shrink-0">
+                      <Mail className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <div className="font-mono text-xs text-zinc-500 dark:text-zinc-400">E-POSTA</div>
+                      <div className="font-semibold text-zinc-900 dark:text-white">eradijitalinfo@gmail.com</div>
+                      <div className="text-xs text-zinc-500 dark:text-zinc-400 pt-0.5">En geç 2 saat içinde yanıt</div>
+                    </div>
+                  </a>
+
+                  <div className="p-5 rounded-2xl bg-white dark:bg-white/[0.02] border border-black/5 dark:border-white/10 flex items-start gap-4 shadow-sm dark:shadow-none">
+                    <div className="p-3 rounded-xl bg-orange-500/10 text-orange-600 dark:text-orange-400 shrink-0">
                       <MapPin className="w-5 h-5" />
                     </div>
                     <div>
-                      <div className="font-mono text-xs text-zinc-400">OPERASYON MERKEZİ</div>
-                      <div className="font-semibold text-white">
+                      <div className="font-mono text-xs text-zinc-500 dark:text-zinc-400">OPERASYON MERKEZİ</div>
+                      <div className="font-semibold text-zinc-900 dark:text-white">
                         İstanbul Avrupa Yakası & Global Hizmet
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="p-5 rounded-2xl bg-blue-600/10 border border-blue-500/20 space-y-3">
-                  <div className="font-bold text-white text-sm flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-blue-300" />
+                <div className="p-5 rounded-2xl bg-orange-500/10 border border-orange-500/20 space-y-3">
+                  <div className="font-bold text-zinc-900 dark:text-white text-sm flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-orange-500" />
                     30 Saniyede Ön Teklif İster misiniz?
                   </div>
-                  <p className="text-xs text-zinc-400 leading-relaxed">
+                  <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
                     Form doldurmak yerine etkileşimli büyüme sihirbazımızı kullanarak ihtiyacınızı saniyeler içinde belirleyebilirsiniz.
                   </p>
                   <button
                     onClick={() => openWizard()}
-                    className="inline-flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-blue-300"
+                    className="inline-flex items-center gap-2 text-xs font-bold text-orange-700 dark:text-orange-400 hover:text-orange-800 dark:hover:text-orange-300 cursor-pointer"
                   >
                     <span>Sihirbazı Başlat</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -161,31 +165,31 @@ export default function IletisimPage() {
 
               {/* Right Column: Contact Form */}
               <div className="lg:col-span-7">
-                <div className="p-6 sm:p-8 rounded-2xl bg-[#0e1320] border border-white/10 shadow-2xl">
+                <div className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-[#0e1320] border border-black/10 dark:border-white/10 shadow-xl dark:shadow-2xl">
                   {submitted ? (
                     <div className="py-12 text-center space-y-4">
-                      <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-2">
+                      <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mx-auto mb-2">
                         <CheckCircle2 className="w-9 h-9" />
                       </div>
-                      <h3 className="text-2xl font-bold text-white">Mesajınız Alındı!</h3>
-                      <p className="text-sm text-zinc-300 max-w-md mx-auto leading-relaxed">
+                      <h3 className="text-2xl font-bold text-zinc-900 dark:text-white">Mesajınız Alındı!</h3>
+                      <p className="text-sm text-zinc-600 dark:text-zinc-300 max-w-md mx-auto leading-relaxed">
                         Talebiniz ekibimize ulaştı. En geç 24 saat içinde doğrudan sizinle iletişime geçeceğiz.
                       </p>
                     </div>
                   ) : (
                     <form onSubmit={handleSubmit} className="space-y-4">
                       <div>
-                        <h2 className="text-xl sm:text-2xl font-bold text-white mb-1">
+                        <h2 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white mb-1">
                           Toplantı & İletişim Formu
                         </h2>
-                        <p className="text-xs sm:text-sm text-zinc-400">
+                        <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400">
                           Bilgilerinizi bırakın, büyüme stratejinizi konuşmak için dönüş yapalım.
                         </p>
                       </div>
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                          <label className="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-1.5">
+                          <label className="block text-xs font-mono uppercase tracking-wider text-zinc-700 dark:text-zinc-300 mb-1.5 font-medium">
                             Adınız Soyadınız *
                           </label>
                           <input
@@ -195,12 +199,12 @@ export default function IletisimPage() {
                             value={formData.name}
                             onChange={handleChange}
                             placeholder="Ad Soyad"
-                            className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder:text-zinc-600 text-sm focus:border-blue-500 focus:outline-none transition-colors"
+                            className="w-full px-4 py-3 rounded-xl bg-black/[0.02] dark:bg-white/[0.04] border border-black/15 dark:border-white/10 text-zinc-900 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-zinc-500 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 transition-colors"
                           />
                         </div>
 
                         <div>
-                          <label className="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-1.5">
+                          <label className="block text-xs font-mono uppercase tracking-wider text-zinc-700 dark:text-zinc-300 mb-1.5 font-medium">
                             Şirket / Marka Adı
                           </label>
                           <input
@@ -209,14 +213,14 @@ export default function IletisimPage() {
                             value={formData.company}
                             onChange={handleChange}
                             placeholder="Şirketiniz"
-                            className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder:text-zinc-600 text-sm focus:border-blue-500 focus:outline-none transition-colors"
+                            className="w-full px-4 py-3 rounded-xl bg-black/[0.02] dark:bg-white/[0.04] border border-black/15 dark:border-white/10 text-zinc-900 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-zinc-500 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 transition-colors"
                           />
                         </div>
                       </div>
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                          <label className="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-1.5">
+                          <label className="block text-xs font-mono uppercase tracking-wider text-zinc-700 dark:text-zinc-300 mb-1.5 font-medium">
                             Telefon Numaranız *
                           </label>
                           <input
@@ -226,12 +230,12 @@ export default function IletisimPage() {
                             value={formData.phone}
                             onChange={handleChange}
                             placeholder="05XX XXX XX XX"
-                            className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder:text-zinc-600 text-sm focus:border-blue-500 focus:outline-none transition-colors"
+                            className="w-full px-4 py-3 rounded-xl bg-black/[0.02] dark:bg-white/[0.04] border border-black/15 dark:border-white/10 text-zinc-900 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-zinc-500 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 transition-colors"
                           />
                         </div>
 
                         <div>
-                          <label className="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-1.5">
+                          <label className="block text-xs font-mono uppercase tracking-wider text-zinc-700 dark:text-zinc-300 mb-1.5 font-medium">
                             E-posta Adresiniz *
                           </label>
                           <input
@@ -241,13 +245,13 @@ export default function IletisimPage() {
                             value={formData.email}
                             onChange={handleChange}
                             placeholder="info@sirket.com"
-                            className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder:text-zinc-600 text-sm focus:border-blue-500 focus:outline-none transition-colors"
+                            className="w-full px-4 py-3 rounded-xl bg-black/[0.02] dark:bg-white/[0.04] border border-black/15 dark:border-white/10 text-zinc-900 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-zinc-500 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 transition-colors"
                           />
                         </div>
                       </div>
 
                       <div>
-                        <label className="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-1.5">
+                        <label className="block text-xs font-mono uppercase tracking-wider text-zinc-700 dark:text-zinc-300 mb-1.5 font-medium">
                           Hedefiniz & Mesajınız
                         </label>
                         <textarea
@@ -256,16 +260,16 @@ export default function IletisimPage() {
                           value={formData.message}
                           onChange={handleChange}
                           placeholder="İşletmenizdeki temel tıkanıklık veya hedefiniz nedir?"
-                          className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder:text-zinc-600 text-sm focus:border-blue-500 focus:outline-none transition-colors"
+                          className="w-full px-4 py-3 rounded-xl bg-black/[0.02] dark:bg-white/[0.04] border border-black/15 dark:border-white/10 text-zinc-900 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-zinc-500 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 transition-colors"
                         />
                       </div>
 
                       <button
                         type="submit"
                         disabled={loading}
-                        className="w-full py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold rounded-xl shadow-lg shadow-blue-500/25 transition-all disabled:opacity-50 text-base"
+                        className="w-full py-4 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-xl shadow-lg shadow-orange-600/25 transition-all disabled:opacity-50 text-base cursor-pointer"
                       >
-                        {loading ? 'Gönderiliyor...' : 'Görüşme Talebi Gönder ➔'}
+                        {loading ? 'Gönderiliyor...' : 'Görüşme Talebi Gönder →'}
                       </button>
                     </form>
                   )}

@@ -10,14 +10,14 @@ export default function Footer() {
       {/* Top Status Strip */}
       <div className="border-b border-black/5 dark:border-white/5 py-3 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-zinc-600 dark:text-zinc-400">
         <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
           <span>BÜYÜME SİSTEMİ AKTİF // 7/24 ANALİZ VE OTO PİLOT</span>
         </div>
         <div className="flex items-center gap-4 text-[11px]">
           <span>Yanıt: &lt;1.2s</span>
-          <span>·</span>
+          <span>•</span>
           <span>Röntgen: 24s</span>
-          <span>·</span>
+          <span>•</span>
           <span>Bölge: TR-IST (Avrupa Yakası & Global)</span>
         </div>
       </div>
@@ -27,7 +27,7 @@ export default function Footer() {
           {/* Company Intro */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-cyan-500/10 dark:bg-white/5 border border-cyan-500/30 dark:border-white/10 flex items-center justify-center text-cyan-600 dark:text-cyan-400 font-mono font-bold text-xs">
+              <div className="w-8 h-8 rounded-lg bg-orange-500/10 dark:bg-orange-500/15 border border-orange-500/30 dark:border-orange-500/30 flex items-center justify-center text-orange-600 dark:text-orange-400 font-mono font-bold text-xs">
                 ERA
               </div>
               <span className="font-display font-bold text-base text-zinc-900 dark:text-white">Era Dijital</span>
@@ -35,10 +35,10 @@ export default function Footer() {
             <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
               İşinizi büyüten, satış kanallarınızı açan büyüme ortağınız. Çok kanallı performans reklamları, dönüşüm odaklı web altyapısı, 3D pazar testleri ve yapay zekâ süreç otomasyonunu tek elden yönetiyoruz.
             </p>
-            <div className="pt-2 flex flex-wrap gap-2 font-mono text-[10px] text-cyan-700 dark:text-cyan-400">
-              <span className="px-2 py-0.5 rounded bg-cyan-500/10 border border-cyan-500/20">GROWTH PARTNER</span>
-              <span className="px-2 py-0.5 rounded bg-cyan-500/10 border border-cyan-500/20">DIGITAL X-RAY</span>
-              <span className="px-2 py-0.5 rounded bg-cyan-500/10 border border-cyan-500/20">AI & SAAS</span>
+            <div className="pt-2 flex flex-wrap gap-2 font-mono text-[10px] text-orange-700 dark:text-orange-400">
+              <span className="px-2 py-0.5 rounded bg-orange-500/10 border border-orange-500/20">GROWTH PARTNER</span>
+              <span className="px-2 py-0.5 rounded bg-orange-500/10 border border-orange-500/20">DIGITAL X-RAY</span>
+              <span className="px-2 py-0.5 rounded bg-orange-500/10 border border-orange-500/20">AI & SAAS</span>
             </div>
           </div>
 
@@ -49,26 +49,26 @@ export default function Footer() {
             </span>
             <ul className="space-y-2.5 text-xs text-zinc-600 dark:text-zinc-400">
               <li>
-                <Link to="/" className="hover:text-cyan-600 dark:hover:text-white transition-colors">Ana Sayfa</Link>
+                <Link to="/" className="hover:text-orange-600 dark:hover:text-white transition-colors">Ana Sayfa</Link>
               </li>
               <li>
-                <Link to="/hizmetler" className="hover:text-cyan-600 dark:hover:text-white transition-colors">Büyüme Sütunlarımız</Link>
+                <Link to="/hizmetler" className="hover:text-orange-600 dark:hover:text-white transition-colors">Büyüme Sütunlarımız</Link>
               </li>
               <li>
-                <a href="/#metodoloji" className="hover:text-cyan-600 dark:hover:text-white transition-colors">4 Adımlı Metodoloji</a>
+                <a href="/#metodoloji" className="hover:text-orange-600 dark:hover:text-white transition-colors">4 Adımlı Metodoloji</a>
               </li>
               <li>
-                <Link to="/hakkimizda" className="hover:text-cyan-600 dark:hover:text-white transition-colors">Vizyonumuz & Ekip</Link>
+                <Link to="/hakkimizda" className="hover:text-orange-600 dark:hover:text-white transition-colors">Vizyonumuz & Ekip</Link>
               </li>
               <li>
-                <Link to="/blog" className="hover:text-cyan-600 dark:hover:text-white transition-colors">Büyüme & Teknoloji Rehberleri</Link>
+                <Link to="/blog" className="hover:text-orange-600 dark:hover:text-white transition-colors">Büyüme & Teknoloji Rehberleri</Link>
               </li>
               <li>
                 <button 
                   onClick={() => openWizard()}
-                  className="text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors flex items-center gap-1 font-semibold pt-1"
+                  className="text-orange-600 dark:text-orange-400 hover:text-orange-700 dark:hover:text-orange-300 transition-colors flex items-center gap-1 font-semibold pt-1 cursor-pointer"
                 >
-                  <Sparkles className="w-3 h-3 text-cyan-500" />
+                  <Sparkles className="w-3 h-3 text-orange-500" />
                   <span>30 Sn'de Ücretsiz Röntgen</span>
                   <ArrowUpRight className="w-3 h-3" />
                 </button>
@@ -112,16 +112,16 @@ export default function Footer() {
               Toplantılarımızı dikkat dağıtıcı ofis ortamlarında değil; sakin kahvaltı veya akşam yemeklerinde yüz yüze gerçekleştiriyoruz.
             </p>
             <div className="space-y-2 text-xs text-zinc-700 dark:text-zinc-300 pt-1">
-              <a href="mailto:eradijitalinfo@gmail.com" className="flex items-center gap-2 hover:text-cyan-600 dark:hover:text-white transition-colors">
-                <Mail className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
+              <a href="mailto:eradijitalinfo@gmail.com" className="flex items-center gap-2 hover:text-orange-600 dark:hover:text-white transition-colors">
+                <Mail className="w-3.5 h-3.5 text-orange-600 dark:text-orange-400" />
                 <span>eradijitalinfo@gmail.com</span>
               </a>
-              <a href="tel:+905528080345" className="flex items-center gap-2 hover:text-cyan-600 dark:hover:text-white transition-colors">
-                <Phone className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
+              <a href="tel:+905528080345" className="flex items-center gap-2 hover:text-orange-600 dark:hover:text-white transition-colors">
+                <Phone className="w-3.5 h-3.5 text-orange-600 dark:text-orange-400" />
                 <span>+90 552 808 03 45</span>
               </a>
               <div className="flex items-center gap-2 text-zinc-600 dark:text-zinc-400">
-                <MapPin className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400 shrink-0" />
+                <MapPin className="w-3.5 h-3.5 text-orange-600 dark:text-orange-400 shrink-0" />
                 <span>İstanbul Avrupa Yakası & Global</span>
               </div>
             </div>
@@ -135,9 +135,9 @@ export default function Footer() {
           </div>
           <div className="flex gap-4">
             <Link to="/hizmetler" className="hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors">Hizmetler</Link>
-            <span>·</span>
+            <span>•</span>
             <Link to="/on-analiz" className="hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors">Dijital Röntgen</Link>
-            <span>·</span>
+            <span>•</span>
             <Link to="/iletisim" className="hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors">İletişim</Link>
           </div>
         </div>
