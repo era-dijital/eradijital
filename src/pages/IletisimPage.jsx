@@ -1,28 +1,48 @@
-﻿import { useState } from 'react';
+﻿import React, { useState } from 'react';
 import SEO from '../components/SEO';
-import { Mail, Phone, MapPin, Send, CheckCircle2, ArrowRight, Clock, ShieldCheck } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, ArrowRight, Clock, ShieldCheck, Sparkles } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { useQuoteWizard } from '../context/QuoteWizardContext';
 
 export default function IletisimPage() {
+  const { openWizard } = useQuoteWizard();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    subject: '',
+    company: '',
     message: ''
   });
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+    try {
+      await fetch('/api/growth-lead.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fullName: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          companyName: formData.company,
+          website: formData.company || 'Doğrudan İletişim',
+          goal: 'Toplantı & İletişim Talebi',
+          budgetRange: 'Görüşmede Belirlenecek',
+          services: formData.message
+        })
+      });
       setSubmitted(true);
-    }, 800);
+    } catch (err) {
+      setSubmitted(true);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -33,199 +53,225 @@ export default function IletisimPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-background text-ink selection:bg-primary selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#0a0d14] text-slate-100 selection:bg-blue-600 selection:text-white">
       <SEO
-        title="İletişim & Danışma | Era Dijital"
-        description="Yapay zekâ otomasyon ve dijital dönüşüm süreçlerimiz hakkında soru sormak veya teknik toplantı planlamak için bizimle iletişime geçin."
+        title="İletişim & Büyüme Toplantısı | Era Dijital"
+        description="Büyüme ajansı hizmetlerimiz, 3D pazar testleri ve yapay zekâ süreç otomasyonu hakkında yüz yüze veya online görüşme planlayın."
       />
 
       <Header />
 
       <main className="flex-1">
         {/* Page Header */}
-        <section className="py-16 sm:py-20 hairline-b bg-surface/30">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-16 sm:py-24 border-b border-white/5 bg-[#0b0e17] relative overflow-hidden">
+          <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
+
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-3xl space-y-4">
-              <span className="mono-tag">[DİREKT İLETİŞİM // DESTEK HATTI]</span>
-              <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-ink">
-                Bizimle İletişime Geçin
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-mono text-xs font-semibold">
+                <Sparkles className="w-3.5 h-3.5 text-blue-300" />
+                <span>DOĞRUDAN DİYALOG // YÜZ YÜZE TOPLANTI</span>
+              </div>
+
+              <h1 className="text-3xl sm:text-5xl font-display font-bold tracking-tight text-white leading-tight">
+                İşinizi Büyütmek İçin Bir Araya Gelelim
               </h1>
-              <p className="text-sm sm:text-base text-ink-muted leading-relaxed">
-                Yapay zekâ asistanı, süreç otomasyonları veya özel entegrasyon taleplerinizle ilgili teknik ekibimiz 24 saat içinde yanıt vermektedir.
+
+              <p className="text-base sm:text-lg text-zinc-400 leading-relaxed">
+                Dikkat dağıtıcı ofis ortamları yerine; sakin kahvaltı veya akşam yemeklerinde yüz yüze oturup işletmenizin büyüme planını masaya yatıralım.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Contact Form & Information */}
-        <section className="py-16">
+        {/* Content & Form */}
+        <section className="py-16 sm:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-              {/* Contact Channels Left */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+              
+              {/* Left Column: Direct Info */}
               <div className="lg:col-span-5 space-y-8">
-                <div className="space-y-3">
-                  <span className="font-mono text-xs text-primary font-semibold block">[KANALLAR]</span>
-                  <h2 className="text-xl sm:text-2xl font-bold text-ink">
-                    Merkez Ofis ve Doğrudan Erişim
-                  </h2>
-                  <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                    İster doğrudan telefonla arayın, ister formu doldurun. Talebiniz anında CRM havuzumuza düşer.
+                <div className="space-y-4">
+                  <span className="font-mono text-xs text-blue-400 font-bold uppercase tracking-wider block">
+                    [ İLETİŞİM KANALLARI ]
+                  </span>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                    Hızlı ve Doğrudan Erişim
+                  </h3>
+                  <p className="text-sm text-zinc-400 leading-relaxed">
+                    Süreçlerimiz şeffaftır. Bize telefon, e-posta veya doğrudan WhatsApp üzerinden ulaşabilirsiniz.
                   </p>
                 </div>
 
                 <div className="space-y-4">
-                  <div className="tech-panel p-4 flex items-start gap-3.5">
-                    <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                    <div className="space-y-1 text-xs sm:text-sm">
-                      <span className="font-mono text-[11px] text-ink-faint uppercase block">Adres</span>
-                      <p className="text-slate-200">
-                        Esenkent Mah. Cemalpaşa Cad. No:30/C Bahçeşehir / İstanbul
-                      </p>
+                  <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 flex items-start gap-4">
+                    <div className="p-3 rounded-xl bg-blue-500/10 text-blue-400 shrink-0">
+                      <Mail className="w-5 h-5" />
                     </div>
-                  </div>
-
-                  <div className="tech-panel p-4 flex items-start gap-3.5">
-                    <Phone className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                    <div className="space-y-1 text-xs sm:text-sm">
-                      <span className="font-mono text-[11px] text-ink-faint uppercase block">Telefon & WhatsApp</span>
-                      <a href="tel:+905433619239" className="text-slate-200 hover:text-primary transition-colors font-mono">
-                        +90 543 361 92 39
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="tech-panel p-4 flex items-start gap-3.5">
-                    <Mail className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                    <div className="space-y-1 text-xs sm:text-sm">
-                      <span className="font-mono text-[11px] text-ink-faint uppercase block">E-Posta</span>
-                      <a href="mailto:eradijitalinfo@gmail.com" className="text-slate-200 hover:text-primary transition-colors font-mono">
+                    <div>
+                      <div className="font-mono text-xs text-zinc-400">E-POSTA DESTEK & TEKLİF</div>
+                      <a href="mailto:eradijitalinfo@gmail.com" className="font-bold text-white hover:text-blue-300 transition-colors">
                         eradijitalinfo@gmail.com
                       </a>
                     </div>
                   </div>
 
-                  <div className="tech-panel p-4 flex items-start gap-3.5">
-                    <Clock className="w-5 h-5 text-signal-emerald shrink-0 mt-0.5" />
-                    <div className="space-y-1 text-xs sm:text-sm">
-                      <span className="font-mono text-[11px] text-ink-faint uppercase block">Çalışma Saatleri</span>
-                      <p className="text-slate-200">
-                        Pazartesi – Cuma: 09:00 – 18:00 (Yapay zekâ sistemleri 7/24 aktiftir)
-                      </p>
+                  <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 flex items-start gap-4">
+                    <div className="p-3 rounded-xl bg-blue-500/10 text-blue-400 shrink-0">
+                      <Phone className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <div className="font-mono text-xs text-zinc-400">TELEFON & WHATSAPP HATTI</div>
+                      <a href="tel:+905528080345" className="font-bold text-white hover:text-blue-300 transition-colors">
+                        +90 552 808 03 45
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 flex items-start gap-4">
+                    <div className="p-3 rounded-xl bg-blue-500/10 text-blue-400 shrink-0">
+                      <MapPin className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <div className="font-mono text-xs text-zinc-400">OPERASYON MERKEZİ</div>
+                      <div className="font-semibold text-white">
+                        İstanbul Avrupa Yakası & Global Hizmet
+                      </div>
                     </div>
                   </div>
                 </div>
+
+                <div className="p-5 rounded-2xl bg-blue-600/10 border border-blue-500/20 space-y-3">
+                  <div className="font-bold text-white text-sm flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-blue-300" />
+                    30 Saniyede Ön Teklif İster misiniz?
+                  </div>
+                  <p className="text-xs text-zinc-400 leading-relaxed">
+                    Form doldurmak yerine etkileşimli büyüme sihirbazımızı kullanarak ihtiyacınızı saniyeler içinde belirleyebilirsiniz.
+                  </p>
+                  <button
+                    onClick={() => openWizard()}
+                    className="inline-flex items-center gap-2 text-xs font-bold text-blue-400 hover:text-blue-300"
+                  >
+                    <span>Sihirbazı Başlat</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
               </div>
 
-              {/* Form Right */}
+              {/* Right Column: Contact Form */}
               <div className="lg:col-span-7">
-                <div className="tech-panel p-6 sm:p-8">
+                <div className="p-6 sm:p-8 rounded-2xl bg-[#0e1320] border border-white/10 shadow-2xl">
                   {submitted ? (
                     <div className="py-12 text-center space-y-4">
-                      <div className="w-12 h-12 rounded-full bg-signal-emerald/10 border border-signal-emerald/30 text-signal-emerald mx-auto flex items-center justify-center">
-                        <CheckCircle2 className="w-6 h-6" />
+                      <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-2">
+                        <CheckCircle2 className="w-9 h-9" />
                       </div>
-                      <h3 className="text-xl font-bold text-ink">Mesajınız Alındı</h3>
-                      <p className="text-xs sm:text-sm text-ink-muted max-w-md mx-auto">
-                        Mesajınız CRM sistemimize kaydedildi. Müşteri temsilcimiz mesai saatleri içinde sizinle doğrudan iletişime geçecektir.
+                      <h3 className="text-2xl font-bold text-white">Mesajınız Alındı!</h3>
+                      <p className="text-sm text-zinc-300 max-w-md mx-auto leading-relaxed">
+                        Talebiniz ekibimize ulaştı. En geç 24 saat içinde doğrudan sizinle iletişime geçeceğiz.
                       </p>
-                      <div className="pt-2 font-mono text-xs text-ink-faint">
-                        Takip Kodu: #ERA-{Math.floor(100000 + Math.random() * 900000)}
-                      </div>
                     </div>
                   ) : (
                     <form onSubmit={handleSubmit} className="space-y-4">
-                      <div className="border-b border-border pb-3 mb-4">
-                        <span className="font-mono text-xs text-primary font-semibold">[FORM // MESAJ GÖNDER]</span>
-                        <h3 className="text-lg font-bold text-ink mt-1">İletişim Talebi Oluşturun</h3>
+                      <div>
+                        <h2 className="text-xl sm:text-2xl font-bold text-white mb-1">
+                          Toplantı & İletişim Formu
+                        </h2>
+                        <p className="text-xs sm:text-sm text-zinc-400">
+                          Bilgilerinizi bırakın, büyüme stratejinizi konuşmak için dönüş yapalım.
+                        </p>
                       </div>
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div className="space-y-1">
-                          <label className="font-mono text-xs text-ink-muted">Ad Soyad *</label>
+                        <div>
+                          <label className="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-1.5">
+                            Adınız Soyadınız *
+                          </label>
                           <input
                             type="text"
-                            name="name"
                             required
+                            name="name"
                             value={formData.name}
                             onChange={handleChange}
-                            placeholder="Örn. Ahmet Yılmaz"
-                            className="w-full px-3 py-2.5 rounded bg-[#0d121c] border border-border text-xs sm:text-sm text-ink focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+                            placeholder="Ad Soyad"
+                            className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder:text-zinc-600 text-sm focus:border-blue-500 focus:outline-none transition-colors"
                           />
                         </div>
-                        <div className="space-y-1">
-                          <label className="font-mono text-xs text-ink-muted">Telefon *</label>
+
+                        <div>
+                          <label className="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-1.5">
+                            Şirket / Marka Adı
+                          </label>
+                          <input
+                            type="text"
+                            name="company"
+                            value={formData.company}
+                            onChange={handleChange}
+                            placeholder="Şirketiniz"
+                            className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder:text-zinc-600 text-sm focus:border-blue-500 focus:outline-none transition-colors"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-1.5">
+                            Telefon Numaranız *
+                          </label>
                           <input
                             type="tel"
-                            name="phone"
                             required
+                            name="phone"
                             value={formData.phone}
                             onChange={handleChange}
                             placeholder="05XX XXX XX XX"
-                            className="w-full px-3 py-2.5 rounded bg-[#0d121c] border border-border text-xs sm:text-sm text-ink focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+                            className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder:text-zinc-600 text-sm focus:border-blue-500 focus:outline-none transition-colors"
                           />
                         </div>
-                      </div>
 
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div className="space-y-1">
-                          <label className="font-mono text-xs text-ink-muted">E-Posta *</label>
+                        <div>
+                          <label className="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-1.5">
+                            E-posta Adresiniz *
+                          </label>
                           <input
                             type="email"
-                            name="email"
                             required
+                            name="email"
                             value={formData.email}
                             onChange={handleChange}
-                            placeholder="ahmet@sirketiniz.com"
-                            className="w-full px-3 py-2.5 rounded bg-[#0d121c] border border-border text-xs sm:text-sm text-ink focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+                            placeholder="info@sirket.com"
+                            className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder:text-zinc-600 text-sm focus:border-blue-500 focus:outline-none transition-colors"
                           />
-                        </div>
-                        <div className="space-y-1">
-                          <label className="font-mono text-xs text-ink-muted">İlgilenilen Hizmet</label>
-                          <select
-                            name="subject"
-                            value={formData.subject}
-                            onChange={handleChange}
-                            className="w-full px-3 py-2.5 rounded bg-[#0d121c] border border-border text-xs sm:text-sm text-ink focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
-                          >
-                            <option value="">Seçiniz</option>
-                            <option value="ai-asistan">WhatsApp & IG AI Asistanı</option>
-                            <option value="donusum">Dijital Dönüşüm Danışmanlığı</option>
-                            <option value="pazarlama">Performans Pazarlama & Reklam</option>
-                            <option value="diger">Diğer Entegrasyonlar</option>
-                          </select>
                         </div>
                       </div>
 
-                      <div className="space-y-1">
-                        <label className="font-mono text-xs text-ink-muted">Mesajınız *</label>
+                      <div>
+                        <label className="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-1.5">
+                          Hedefiniz & Mesajınız
+                        </label>
                         <textarea
-                          name="message"
-                          required
                           rows={4}
+                          name="message"
                           value={formData.message}
                           onChange={handleChange}
-                          placeholder="Mevcut iş akışınız veya öğrenmek istediğiniz detayları kısaca açıklayınız..."
-                          className="w-full px-3 py-2.5 rounded bg-[#0d121c] border border-border text-xs sm:text-sm text-ink focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+                          placeholder="İşletmenizdeki temel tıkanıklık veya hedefiniz nedir?"
+                          className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder:text-zinc-600 text-sm focus:border-blue-500 focus:outline-none transition-colors"
                         />
                       </div>
 
-                      <div className="pt-2">
-                        <button
-                          type="submit"
-                          disabled={loading}
-                          className="btn-primary w-full py-3 text-xs sm:text-sm justify-center"
-                        >
-                          {loading ? 'İşleniyor...' : 'Talebi İlet'}
-                        </button>
-                      </div>
-
-                      <p className="text-[11px] font-mono text-ink-faint text-center pt-2">
-                        KVKK kapsamında verileriniz 3. şahıslarla paylaşılmaz.
-                      </p>
+                      <button
+                        type="submit"
+                        disabled={loading}
+                        className="w-full py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold rounded-xl shadow-lg shadow-blue-500/25 transition-all disabled:opacity-50 text-base"
+                      >
+                        {loading ? 'Gönderiliyor...' : 'Görüşme Talebi Gönder ➔'}
+                      </button>
                     </form>
                   )}
                 </div>
               </div>
+
             </div>
           </div>
         </section>
