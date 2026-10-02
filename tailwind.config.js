@@ -1,5 +1,6 @@
 ﻿/** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -7,32 +8,28 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#0a0d14",      // Hallmark Precision Dark Ground (never pure #000)
+        background: "var(--color-paper)",
         surface: {
-          DEFAULT: "#111622",      // Primary surface
-          elevated: "#171e2e",     // Elevated card / module
-          hover: "#1c2436",        // Hover state
+          DEFAULT: "var(--color-surface)",
+          elevated: "var(--color-surface-elevated)",
         },
-        primary: {
-          DEFAULT: "#2563eb",      // Electric Cobalt signal
-          hover: "#1d4ed8",
-          active: "#1e40af",
-          subtle: "rgba(37, 99, 235, 0.12)",
-        },
-        signal: {
-          blue: "#3b82f6",
-          emerald: "#10b981",      // Operational status
-          amber: "#f59e0b",
+        turquoise: {
+          DEFAULT: "#06b6d4",
+          50: "#ecfeff",
+          100: "#cffafe",
+          200: "#a5f3fc",
+          300: "#67e8f9",
+          400: "#22d3ee",
+          500: "#06b6d4",
+          600: "#0891b2",
+          700: "#0e7490",
+          800: "#155e75",
+          900: "#164e63",
         },
         ink: {
-          DEFAULT: "#f1f5f9",      // Primary text
-          muted: "#94a3b8",        // Secondary body text
-          faint: "#64748b",        // Tertiary labels / metadata
-        },
-        border: {
-          DEFAULT: "rgba(255, 255, 255, 0.08)",  // Hairline rule
-          strong: "rgba(255, 255, 255, 0.16)",
-          cobalt: "rgba(37, 99, 235, 0.4)",
+          DEFAULT: "var(--color-ink)",
+          muted: "var(--color-muted)",
+          faint: "var(--color-faint)",
         },
       },
       fontFamily: {
@@ -41,16 +38,12 @@ export default {
         mono: ["'JetBrains Mono'", "monospace"],
       },
       borderRadius: {
-        sm: "4px",
-        DEFAULT: "6px",
-        md: "8px",
-        lg: "10px",
-        xl: "14px",
-      },
-      boxShadow: {
-        hairline: "inset 0 0 0 1px rgba(255, 255, 255, 0.08)",
-        card: "0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.4)",
-        elevated: "0 8px 24px -4px rgba(0, 0, 0, 0.6)",
+        sm: "6px",
+        DEFAULT: "8px",
+        md: "10px",
+        lg: "12px",
+        xl: "16px",
+        '2xl': "20px",
       },
     },
   },
