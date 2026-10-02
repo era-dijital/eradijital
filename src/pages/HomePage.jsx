@@ -3,30 +3,20 @@ import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import { 
   ArrowRight, 
-  ArrowUpRight,
-  CheckCircle2, 
-  Layers, 
-  BarChart3, 
-  Cpu, 
-  Clock, 
-  ShieldCheck,
-  TrendingUp,
-  Rocket,
-  Monitor,
-  Building2,
   Sparkles,
-  Zap,
-  Target,
+  Rocket,
   Megaphone,
-  Box,
-  Eye,
-  Check,
+  Cpu,
   Activity
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import LiveAutomationFlow from '../components/LiveAutomationFlow';
 import { useQuoteWizard } from '../context/QuoteWizardContext';
+import TrustStrip from '../components/home/TrustStrip';
+import VisualGrowthLab from '../components/home/VisualGrowthLab';
+import ComparisonMatrix from '../components/home/ComparisonMatrix';
+import TargetIndustries from '../components/home/TargetIndustries';
 
 export default function HomePage() {
   const { openWizard } = useQuoteWizard();
@@ -62,97 +52,28 @@ export default function HomePage() {
     }
   ];
 
-  const growthServices = [
-    {
-      badge: "Kanal Açma & Satış",
-      title: "Performans & Çok Kanallı Reklam",
-      desc: "Meta (Instagram & Facebook), Google Ads, YouTube ve Açık Hava (Billboard/Fuar) entegrasyonuyla bütçenizi zekat gibi değil, katlanan bir büyüme yatırımı olarak yönetiyoruz.",
-      features: [
-        "ROI & ROAS odaklı harcama optimizasyonu",
-        "Remarketing ve terzi usulü kitle segmentasyonu",
-        "Açık hava & dijital medya çaprazlama"
-      ],
-      icon: Target
-    },
-    {
-      badge: "Satış Dönüştürme",
-      title: "Dönüşüm Odaklı Web & Landing Page",
-      desc: "Ziyaretçinin bakıp çıktığı sıradan vitrin siteleri yapmıyoruz; ziyaretçiyi saniyeler içinde teklife, randevuya ve siparişe yönlendiren yüksek hızlı mimariler kuruyoruz.",
-      features: [
-        "Modern Vite + React & Tailwind altyapısı",
-        "Etkileşimli teklif hesaplama ve lead motorları",
-        "Mobil-öncelikli 0.8s altı yükleme performansı"
-      ],
-      icon: Monitor
-    },
-    {
-      badge: "Talep Testi & Prestij",
-      title: "Görsel Güç, 3D & Ürün Lansmanı",
-      desc: "Daha üretilmemiş bir fikri dahi fotogerçekçi 3D modelleme ve AI videolarla varmış gibi test reklamlarına çıkarıyor, pazardan gerçek alıcı talebi topluyoruz.",
-      features: [
-        "Fiziksel ürün üretim öncesi talep doğrulaması",
-        "Fuar ekranları & LCD tanıtım prodüksiyonu",
-        "Viral sosyal medya video kreatifleri"
-      ],
-      icon: Box
-    },
-    {
-      badge: "Akıllı Operasyon",
-      title: "Yapay Zeka, Otomasyon & SaaS",
-      desc: "Müşteri sorularını 7/24 yanıtlayan WhatsApp AI asistanları, CRM hatları ve firmanızın operasyonunu hızlandırıp lisansla gelir üretebileceği SaaS yazılımları geliştiriyoruz.",
-      features: [
-        "7/24 Otonom WhatsApp & Instagram AI temsilcisi",
-        "CRM, takvim ve sipariş entegrasyon köprüleri",
-        "Sektöre özel lisanslanabilir SaaS platformları"
-      ],
-      icon: Zap
-    }
-  ];
-
-  const caseStudies = [
-    {
-      category: "PAZAR TESTİ & DOĞRULAMA",
-      title: "Üretime Girmeden 5 Günde 240+ Ön Talep",
-      desc: "Henüz fabrikada üretilmemiş yenilikçi bir ev ürünü için 3D modelleme ve AI reklam kreatifleriyle pilot kampanya çıkıldı; yüksek talep doğrulanarak risk sıfırlandı.",
-      metric: "240+ Talep",
-      metricLabel: "5 Günde Sıfır Stokla Doğrulama"
-    },
-    {
-      category: "DÖNÜŞÜM & PERFORMANS",
-      title: "Durgun Pazarda Reklam Optimizasyonuyla 2.8x Ciro",
-      desc: "Geleneksel mobilya ve dekorasyon üreticisinin eski vitrin sitesi dönüşüm odaklı kurgulanıp bölgesel Meta reklamlarıyla desteklendi; satış kanalları yeniden açıldı.",
-      metric: "2.8×",
-      metricLabel: "Aylık Net Satış Büyümesi"
-    },
-    {
-      category: "OTOMASYON & LEAD YÖNETİMİ",
-      title: "Kaçan Müşteri Oranında %70 Düşüş",
-      desc: "Mesai saatleri dışında gelen mesajların satışa dönmesini sağlayan 7/24 WhatsApp AI asistanı ve CRM köprüsüyle randevu kapasitesi zirveye taşındı.",
-      metric: "-%70",
-      metricLabel: "Cevapsız Müşteri Kaybı"
-    }
-  ];
-
   return (
-    <div className="min-h-screen flex flex-col bg-[#f8f6f0] dark:bg-[#0a0d14] text-zinc-900 dark:text-slate-100 selection:bg-orange-500 selection:text-white transition-colors duration-250">
+    <div className="min-h-screen flex flex-col bg-[#f8f6f0] dark:bg-[#0a0d14] text-zinc-900 dark:text-slate-100 selection:bg-orange-600 selection:text-white transition-colors duration-250">
       <SEO 
-        title="İşinizi Büyüten, Satış Kanallarınızı Açan Büyüme Ortağınız | Era Dijital"
-        description="Yalnızca reklam çıkmıyor veya site yapmıyoruz; işletmenizin röntgenini çekiyor, eksiklerini tespit ediyor ve ölçülebilir büyüme sağlıyoruz."
+        title="Era Dijital | İşinizi Büyüten, Satış Kanallarınızı Açan Büyüme Ortağınız"
+        description="Klasik ajans kalıplarından uzak; 24 saatte ücretsiz dijital röntgen, 3D pazar testleri, çok kanallı performans reklamları ve yapay zekâ süreç otomasyonu ile işletmenizi büyütüyoruz."
       />
 
       <Header />
 
       <main className="flex-1">
         {/* HERO SECTION */}
-        <section className="relative overflow-hidden pt-12 pb-20 md:pt-20 md:pb-32 border-b border-black/5 dark:border-white/5">
-          {/* Subtle Ambient Glow */}
+        <section className="relative pt-12 sm:pt-20 pb-16 sm:pb-24 overflow-hidden hairline-b">
+          {/* Subtle Warm Amber / Orange Backing Gradient */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[550px] bg-gradient-to-b from-orange-500/10 via-amber-500/5 to-transparent blur-[140px] pointer-events-none" />
-          
+
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
               
               {/* Left Column: Strategic Value Proposition */}
               <div className="lg:col-span-7 space-y-6">
+                
+                {/* Growth Agency Badge */}
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/25 text-orange-700 dark:text-orange-400 font-mono text-[11px] font-semibold tracking-wider uppercase">
                   <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
                   BÜYÜME AJANSI // GROWTH AGENCY
@@ -163,16 +84,16 @@ export default function HomePage() {
                 </h1>
 
                 <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed">
-                  Yalnızca reklam çıkmıyor veya site yapmıyoruz; işletmenizin röntgenini çekiyor, eksiklerini tespit ediyor ve ölçülebilir büyüme sağlıyoruz.
+                  Yalnızca reklam çıkmıyor veya site yapmıyoruz; işletmenizin röntgenini çekiyor, eksiklerini tespit ediyor, pazar talebini sınıyor ve ölçülebilir büyüme sağlıyoruz.
                 </p>
 
                 {/* Primary & Secondary Action */}
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
                   <button
                     onClick={() => openWizard()}
-                    className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl text-sm font-bold text-white bg-orange-600 hover:bg-orange-700 text-white shadow-xl shadow-orange-500/25 transition-all hover:scale-[1.02]"
+                    className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl text-sm font-bold text-white bg-orange-600 hover:bg-orange-700 shadow-xl shadow-orange-600/25 transition-all hover:scale-[1.02] cursor-pointer"
                   >
-                    <Sparkles className="w-4 h-4 text-orange-100" />
+                    <Sparkles className="w-4 h-4 text-orange-200" />
                     <span>30 Saniyede Büyüme Planını Başlat</span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
@@ -189,7 +110,7 @@ export default function HomePage() {
                 {/* Trust Badges */}
                 <div className="flex flex-wrap items-center gap-y-2 gap-x-6 pt-4 text-xs text-zinc-600 dark:text-zinc-400 font-mono">
                   <div className="flex items-center gap-1.5">
-                    <span className="text-orange-600 dark:text-yellow-400 font-bold">★</span>
+                    <span className="text-orange-600 dark:text-orange-400 font-bold">★</span>
                     <span className="text-zinc-900 dark:text-zinc-300 font-semibold">140+ Marka & Girişim</span>
                   </div>
                   <div className="flex items-center gap-1.5">
@@ -203,7 +124,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Right Column: Dijital10 Style Live Growth Panel Card */}
+              {/* Right Column: Hallmark Live Growth & Telemetry Panel */}
               <div className="lg:col-span-5">
                 <div className="relative rounded-2xl bg-white dark:bg-[#0e1320] border border-black/10 dark:border-white/10 p-6 sm:p-7 shadow-xl dark:shadow-2xl overflow-hidden group transition-colors duration-250">
                   {/* Subtle inner card glow */}
@@ -214,11 +135,11 @@ export default function HomePage() {
                     <div className="flex items-center gap-2">
                       <span className="w-2.5 h-2.5 rounded-full bg-orange-500" />
                       <span className="font-mono text-xs uppercase tracking-wider text-zinc-700 dark:text-zinc-300 font-semibold">
-                        Büyüme İndeksi · Son 6 Ay
+                        Büyüme İndeksi • Son 6 Ay
                       </span>
                     </div>
                     <span className="px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border border-emerald-500/25 text-xs font-mono font-bold">
-                      ↑ %42.8
+                      +%42.8
                     </span>
                   </div>
 
@@ -243,7 +164,7 @@ export default function HomePage() {
                         strokeWidth="3"
                         strokeLinecap="round"
                       />
-                      <circle cx="400" cy="10" r="5" fill="#22d3ee" className="animate-ping opacity-75" />
+                      <circle cx="400" cy="10" r="5" fill="#f97316" className="animate-ping opacity-75" />
                       <circle cx="400" cy="10" r="4" fill="#ea580c" />
                     </svg>
                   </div>
@@ -255,8 +176,8 @@ export default function HomePage() {
                       <div className="font-mono text-[10px] text-zinc-500 dark:text-zinc-400 mt-0.5">Nitelikli Lead</div>
                     </div>
                     <div className="p-2.5 rounded-xl bg-black/[0.03] dark:bg-white/[0.02]">
-                      <div className="font-display font-bold text-lg sm:text-xl text-orange-600 dark:text-orange-400">3.4×</div>
-                      <div className="font-mono text-[10px] text-zinc-500 dark:text-zinc-400 mt-0.5">ROAS Çarpanı</div>
+                      <div className="font-display font-bold text-lg sm:text-xl text-orange-600 dark:text-orange-400">4.9x</div>
+                      <div className="font-mono text-[10px] text-zinc-500 dark:text-zinc-400 mt-0.5">Aktif ROAS</div>
                     </div>
                     <div className="p-2.5 rounded-xl bg-black/[0.03] dark:bg-white/[0.02]">
                       <div className="font-display font-bold text-lg sm:text-xl text-emerald-600 dark:text-emerald-400">7/24</div>
@@ -268,7 +189,7 @@ export default function HomePage() {
                   <div className="mt-4 flex items-center gap-2.5 p-3 rounded-xl bg-orange-500/10 border border-orange-500/20 text-xs text-orange-800 dark:text-orange-300">
                     <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
                     <span className="truncate">
-                      <b>Canlı:</b> Yeni 3D pazar testi tamamlandı (240+ ön talep)
+                      <b>Canlı:</b> Yeni 3D pazar testi doğrulandı (240+ talep alındı)
                     </span>
                   </div>
                 </div>
@@ -278,30 +199,35 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* PROBLEM DEFINITION (PAIN POINTS) */}
-        <section className="py-20 border-b border-black/5 dark:border-white/5 bg-[#f1ede4] dark:bg-[#0b0e17] transition-colors duration-250">
+        {/* ENTERPRISE TRUST & ACCREDITATION STRIP */}
+        <TrustStrip />
+
+        {/* CORE PROBLEMS: WHY CLASSIC AGENCIES BURN CAPITAL */}
+        <section className="py-20 border-b border-black/5 dark:border-white/5 bg-[#f1ede4]/40 dark:bg-[#070a10]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mb-12">
               <span className="text-orange-700 dark:text-orange-400 font-mono text-xs font-semibold uppercase tracking-wider block mb-2">
-                [ PAZAR GERÇEKLERİ // PROBLEM TEŞHİSİ ]
+                [ PAZARDAKİ YANILGILAR // BÜYÜME ENGELİ ]
               </span>
               <h2 className="text-2xl sm:text-4xl font-display font-bold text-zinc-900 dark:text-white tracking-tight">
-                Piyasa durgun, geleneksel ajanslar yetersiz. <br className="hidden sm:inline" />
-                <span className="text-zinc-500 dark:text-zinc-400">Bu tıkanıklıklar size tanıdık geliyor mu?</span>
+                Klasik Ajans Yaklaşımı Neden Para Yaktırır?
               </h2>
+              <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 mt-2">
+                Tek bir araca hapsolmuş reklamcılar veya site yapıp kaybolan şirketler işinizi büyütemez.
+              </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 {
                   no: "01",
-                  title: "Trafik Var, Satış Yok",
-                  desc: "Sosyal medyadan veya reklamdan sitenize ziyaretçi yağıyor; ancak dönüşüm odaklı kurgulanmamış eski bir vitrin yüzünden müşteriler satın almadan çıkıyor."
+                  title: "Ezbere Reklam Çıkmak",
+                  desc: "Web sitenizdeki kaçakları veya pazar talebini analiz etmeden doğrudan reklama para basmak, delik kovaya su doldurmaya benzer."
                 },
                 {
                   no: "02",
-                  title: "Pazar Talebi Doğrulanmamış Ürün",
-                  desc: "Yeni bir fikir veya ürün üretmek için yüz binlerce lira kalıp ve stok riski alıyorsunuz; ancak pazarda gerçek bir satın alma iştahı olup olmadığını önceden test etmediniz."
+                  title: "Pazar Testi Yapmadan Üretmek",
+                  desc: "Yeni bir ürün veya fikir için doğrudan yüksek kalıp ve stok maliyetlerine girmek büyük sermaye riskidir. Önce talep ölçülmelidir."
                 },
                 {
                   no: "03",
@@ -327,6 +253,12 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* VISUAL DELIVERABLES: CORPORATE GROWTH LAB & TANGIBLE PROOF */}
+        <VisualGrowthLab />
+
+        {/* ARCHITECTURAL COMPARISON MATRIX */}
+        <ComparisonMatrix />
+
         {/* METHODOLOGY: 4-STEP GROWTH CYCLE */}
         <section id="metodoloji" className="py-24 border-b border-black/5 dark:border-white/5 scroll-mt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -345,9 +277,9 @@ export default function HomePage() {
 
               <button
                 onClick={() => openWizard()}
-                className="self-start md:self-auto px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-orange-500 hover:bg-orange-600 shadow-md shadow-orange-500/20 transition-all shrink-0"
+                className="self-start md:self-auto px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-orange-600 hover:bg-orange-700 shadow-md shadow-orange-600/20 transition-all shrink-0 cursor-pointer"
               >
-                Röntgeninizi Başlatın ➔
+                Röntgeninizi Başlatın →
               </button>
             </div>
 
@@ -386,120 +318,11 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* 4 CORE GROWTH SERVICES */}
-        <section className="py-24 border-b border-black/5 dark:border-white/5 bg-[#f1ede4] dark:bg-[#0b0e17] transition-colors duration-250">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-orange-700 dark:text-orange-400 font-mono text-xs font-semibold uppercase tracking-wider block mb-2">
-                [ BÜYÜME SÜTUNLARI // TEK EKİP, 360° GÜÇ ]
-              </span>
-              <h2 className="text-3xl sm:text-5xl font-display font-bold text-zinc-900 dark:text-white tracking-tight">
-                İşinizi Büyütmek İçin Gereken Her Şey
-              </h2>
-              <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 mt-3">
-                Parça pinçik servisler değil; web'den reklamına, 3D'den yapay zekâya tek bir büyüme beyniyle koordine edilen bütünleşik çözümler.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-              {growthServices.map((service) => {
-                const Icon = service.icon;
-                return (
-                  <div
-                    key={service.title}
-                    className="p-7 sm:p-8 rounded-2xl bg-white dark:bg-white/[0.02] border border-black/5 dark:border-white/10 hover:border-orange-500/30 transition-all flex flex-col justify-between shadow-md dark:shadow-none group"
-                  >
-                    <div>
-                      <div className="flex items-center justify-between mb-5">
-                        <div className="p-3.5 rounded-xl bg-orange-500/10 text-orange-600 dark:text-orange-400 group-hover:bg-orange-500/20 transition-colors">
-                          <Icon className="w-6 h-6" />
-                        </div>
-                        <span className="text-[11px] font-mono text-orange-700 dark:text-orange-400 px-2.5 py-1 rounded-full bg-orange-500/10 border border-orange-500/20">
-                          {service.badge}
-                        </span>
-                      </div>
-
-                      <h3 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white mb-3 group-hover:text-orange-600 dark:group-hover:text-orange-300 transition-colors">
-                        {service.title}
-                      </h3>
-
-                      <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
-                        {service.desc}
-                      </p>
-
-                      <ul className="space-y-2 mb-6">
-                        {service.features.map((feat) => (
-                          <li key={feat} className="flex items-center gap-2 text-xs sm:text-sm text-zinc-700 dark:text-zinc-300">
-                            <Check className="w-4 h-4 text-orange-600 dark:text-orange-400 shrink-0" />
-                            <span>{feat}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <button
-                      onClick={() => openWizard()}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-orange-600 dark:text-orange-400 hover:text-orange-700 dark:hover:text-orange-300 transition-colors pt-4 border-t border-black/5 dark:border-white/5"
-                    >
-                      <span>Bu Alanda Analiz İsteyin</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* CASE STUDIES (BÜYÜME HİKAYELERİ) */}
-        <section className="py-24 border-b border-black/5 dark:border-white/5">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mb-16">
-              <span className="text-orange-700 dark:text-orange-400 font-mono text-xs font-semibold uppercase tracking-wider block mb-2">
-                [ SOMUT BAŞARI METRİKLERİ // VAKA ANALİZLERİ ]
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-display font-bold text-zinc-900 dark:text-white tracking-tight">
-                Ezber Bozan Büyüme Hikayeleri
-              </h2>
-              <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 mt-2">
-                Hattatlık değil; doğrudan ciroya, pazar doğrulamasına ve müşteri sayısına etki eden gerçek işler.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {caseStudies.map((item) => (
-                <div
-                  key={item.title}
-                  className="p-7 rounded-2xl bg-white dark:bg-white/[0.02] border border-black/5 dark:border-white/10 hover:border-black/15 dark:hover:border-white/20 transition-all flex flex-col justify-between shadow-sm dark:shadow-none"
-                >
-                  <div>
-                    <span className="font-mono text-[10px] text-orange-600 dark:text-orange-400 font-bold uppercase tracking-wider block mb-3">
-                      {item.category}
-                    </span>
-                    <h3 className="text-lg font-bold text-zinc-900 dark:text-white mb-2.5">
-                      {item.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
-                      {item.desc}
-                    </p>
-                  </div>
-
-                  <div className="pt-4 border-t border-black/5 dark:border-white/5">
-                    <div className="font-display text-3xl font-extrabold text-zinc-900 dark:text-white">
-                      {item.metric}
-                    </div>
-                    <div className="font-mono text-[11px] text-zinc-500 dark:text-zinc-400 mt-0.5">
-                      {item.metricLabel}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* TARGET INDUSTRIES & CORPORATE VERTICALS */}
+        <TargetIndustries />
 
         {/* LIVE AUTOMATION PREVIEW */}
-        <section className="py-20 border-b border-black/5 dark:border-white/5 bg-[#f1ede4] dark:bg-[#0b0e17] transition-colors duration-250">
+        <section className="py-20 border-b border-black/5 dark:border-white/5 bg-white dark:bg-[#0b0e17] transition-colors duration-250">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto mb-12">
               <span className="text-orange-700 dark:text-orange-400 font-mono text-xs font-semibold uppercase tracking-wider block mb-2">
@@ -536,7 +359,7 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <button
                 onClick={() => openWizard()}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-bold text-white bg-orange-500 hover:bg-orange-600 shadow-xl shadow-orange-500/25 transition-all hover:scale-[1.02]"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-bold text-white bg-orange-600 hover:bg-orange-700 shadow-xl shadow-orange-600/25 transition-all hover:scale-[1.02] cursor-pointer"
               >
                 <span>30 Saniyede Büyüme Planını Başlat</span>
                 <ArrowRight className="w-5 h-5" />
