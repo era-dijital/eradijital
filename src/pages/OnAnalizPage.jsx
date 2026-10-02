@@ -7,10 +7,8 @@ import {
   Activity, 
   Sparkles, 
   Target, 
-  Rocket, 
   Clock, 
-  Check,
-  TrendingUp
+  Check
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -27,7 +25,7 @@ export default function OnAnalizPage() {
     email: '',
     goal: 'Satışları ve Ciroyu Katlamak',
     businessType: 'B2B',
-    budgetRange: '50.000 TL – 150.000 TL',
+    budgetRange: '50.000 TL - 150.000 TL',
     notes: ''
   });
 
@@ -67,7 +65,7 @@ export default function OnAnalizPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#0a0d14] text-slate-100 selection:bg-blue-600 selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[#f8f6f0] dark:bg-[#0a0d14] text-zinc-900 dark:text-slate-100 selection:bg-orange-600 selection:text-white transition-colors duration-250">
       <SEO
         title="Ücretsiz Dijital Röntgen & Büyüme Analizi | Era Dijital"
         description="Web sitenizi, rakiplerinizi ve reklam kanallarınızı 24 saatte ücretsiz inceliyor; cironuzu artıracak somut büyüme planını çıkarıyoruz."
@@ -77,121 +75,138 @@ export default function OnAnalizPage() {
 
       <main className="flex-1">
         {/* Page Hero */}
-        <section className="py-16 sm:py-24 border-b border-white/5 bg-[#0b0e17] relative overflow-hidden">
-          <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
+        <section className="py-16 sm:py-24 border-b border-black/5 dark:border-white/5 bg-[#f1ede4] dark:bg-[#0b0e17] relative overflow-hidden transition-colors duration-250">
+          <div className="absolute top-0 right-1/4 w-96 h-96 bg-orange-500/10 rounded-full blur-[120px] pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-3xl space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-mono text-xs font-semibold">
-                <Sparkles className="w-3.5 h-3.5 text-blue-300" />
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/25 text-orange-700 dark:text-orange-400 font-mono text-xs font-semibold">
+                <Sparkles className="w-3.5 h-3.5 text-orange-500" />
                 <span>SIFIR MALİYET // DİJİTAL CHECK-UP</span>
               </div>
 
-              <h1 className="text-3xl sm:text-5xl font-display font-bold tracking-tight text-white leading-tight">
-                Ücretsiz Dijital Röntgen & Büyüme Analizi
+              <h1 className="text-3xl sm:text-5xl font-display font-bold tracking-tight text-zinc-900 dark:text-white leading-tight">
+                Ücretsiz Dijital Röntgen & <span className="hl">Büyüme Analizi</span>
               </h1>
 
-              <p className="text-base sm:text-lg text-zinc-400 leading-relaxed">
+              <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
                 İşletmenizin web sitesini, reklam geçmişini ve rakiplerini derinlemesine tarıyoruz. Nerede ciro kaçtığını, hangi kanallarla büyüyebileceğinizi 24 saat içinde ücretsiz raporluyoruz.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Content & Form Grid */}
+        {/* Content Section */}
         <section className="py-16 sm:py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
               
-              {/* Left Column: Scope & Benefits */}
+              {/* Left Column: What to expect */}
               <div className="lg:col-span-5 space-y-8">
                 <div className="space-y-4">
-                  <span className="font-mono text-xs text-blue-400 font-bold uppercase tracking-wider block">
-                    [ RÖNTGEN NELERİ KAPSIYOR? ]
+                  <span className="font-mono text-xs text-orange-700 dark:text-orange-400 font-bold uppercase tracking-wider block">
+                    [ TEŞHİS PROTOKOLÜ ]
                   </span>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-                    Ezbere Değil, Veriye Dayalı Teşhis
-                  </h3>
-                  <p className="text-sm text-zinc-400 leading-relaxed">
-                    Standart bir otomatik SEO raporu sunmuyoruz; bizzat uzman büyüme ekibimiz dijital varlıklarınızı tek tek masaya yatırıyor.
+                  <h2 className="text-2xl sm:text-3xl font-display font-bold text-zinc-900 dark:text-white tracking-tight">
+                    24 Saatte Masanıza Gelecek Raporun İçeriği
+                  </h2>
+                  <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                    Standart otomatik bot raporları değil; büyüme uzmanlarımızın bizzat incelediği, doğrudan eyleme dönüştürülebilir stratejik bir analiz sunuyoruz.
                   </p>
                 </div>
 
                 <div className="space-y-4">
-                  {[
-                    {
-                      title: "1. Web & Dönüşüm Tıkanıklıkları",
-                      desc: "Ziyaretçiler neden satın almadan çıkıyor? Sayfa hızı, mobil deneyim ve CTA butonlarının kayıp analizi."
-                    },
-                    {
-                      title: "2. Reklam & Pazar Boşlukları",
-                      desc: "Meta ve Google reklamlarında bütçeniz nereye yanıyor? Rakiplerinizin kullandığı ancak sizin kaçırdığınız kitleler."
-                    },
-                    {
-                      title: "3. Süreç & Otomasyon Fırsatları",
-                      desc: "Müşteri soruları ne kadar sürede yanıtlanıyor? WhatsApp ve CRM'de manuel yükü sıfırlayacak AI otomasyonları."
-                    },
-                    {
-                      title: "4. Ön Pazar Testi Yol Haritası",
-                      desc: "Yeni bir ürün veya fikir varsa, üretime girmeden 3D/AI ile talebi nasıl doğrulayabileceğinizin stratejisi."
-                    }
-                  ].map((item) => (
-                    <div key={item.title} className="p-4 rounded-xl bg-white/[0.02] border border-white/5">
-                      <div className="font-semibold text-white text-sm mb-1">{item.title}</div>
-                      <div className="text-xs text-zinc-400 leading-relaxed">{item.desc}</div>
+                  <div className="p-5 rounded-2xl bg-white dark:bg-white/[0.02] border border-black/5 dark:border-white/10 shadow-sm dark:shadow-none space-y-2">
+                    <div className="flex items-center gap-2.5 font-bold text-zinc-900 dark:text-white text-sm">
+                      <Target className="w-4 h-4 text-orange-600 dark:text-orange-400" />
+                      <span>1. Dönüşüm Hunisi (Funnel) Taraması</span>
                     </div>
-                  ))}
+                    <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed pl-6">
+                      Sitenize gelen ziyaretçilerin nerede takıldığını, formları neden doldurmadığını ve mobildeki hız kayıplarını tespit ederiz.
+                    </p>
+                  </div>
+
+                  <div className="p-5 rounded-2xl bg-white dark:bg-white/[0.02] border border-black/5 dark:border-white/10 shadow-sm dark:shadow-none space-y-2">
+                    <div className="flex items-center gap-2.5 font-bold text-zinc-900 dark:text-white text-sm">
+                      <Activity className="w-4 h-4 text-orange-600 dark:text-orange-400" />
+                      <span>2. Rakip ve Reklam Haritası</span>
+                    </div>
+                    <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed pl-6">
+                      Sektörünüzdeki ana rakiplerinizin Meta ve Google'da hangi açılarla reklam çıktığını, pazar paylarını ve eksik bıraktıkları alanları çıkarırız.
+                    </p>
+                  </div>
+
+                  <div className="p-5 rounded-2xl bg-white dark:bg-white/[0.02] border border-black/5 dark:border-white/10 shadow-sm dark:shadow-none space-y-2">
+                    <div className="flex items-center gap-2.5 font-bold text-zinc-900 dark:text-white text-sm">
+                      <ShieldCheck className="w-4 h-4 text-orange-600 dark:text-orange-400" />
+                      <span>3. Süreç & Otomasyon Potansiyeli</span>
+                    </div>
+                    <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed pl-6">
+                      WhatsApp, CRM ve müşteri yanıtlama süreçlerinizin yapay zekâ ile nasıl otomatikleştirilebileceğini formüle ederiz.
+                    </p>
+                  </div>
                 </div>
 
-                <div className="p-5 rounded-2xl bg-blue-600/10 border border-blue-500/20 text-xs text-zinc-300 space-y-2">
-                  <div className="font-bold text-white flex items-center gap-2">
-                    <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                    Gizlilik & Güven Taahhüdü
+                <div className="p-5 rounded-2xl bg-orange-500/10 border border-orange-500/20 text-xs text-zinc-800 dark:text-zinc-300 space-y-2">
+                  <div className="flex items-center gap-2 font-bold text-orange-700 dark:text-orange-400 font-mono uppercase">
+                    <Clock className="w-4 h-4" />
+                    <span>HIZLI SEÇENEK: 30 SANİYELİK TEST</span>
                   </div>
-                  <p className="text-zinc-400 leading-relaxed">
-                    Verdiğiniz tüm veriler sadece işletmenize özel rapor üretmek amacıyla kullanılır. Asla üçüncü taraflarla paylaşılmaz.
+                  <p className="leading-relaxed">
+                    Formu doldurmak yerine etkileşimli adımlarla hızlıca bütçe ve büyüme rotası hesaplamak isterseniz sihirbazımızı kullanabilirsiniz.
                   </p>
+                  <button
+                    onClick={() => openWizard()}
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-orange-700 dark:text-orange-400 hover:text-orange-800 dark:hover:text-orange-300 pt-1 cursor-pointer"
+                  >
+                    <span>30 Saniyelik Teklif Sihirbazını Aç</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
                 </div>
               </div>
 
               {/* Right Column: Form */}
               <div className="lg:col-span-7">
-                <div className="p-6 sm:p-8 rounded-2xl bg-[#0e1320] border border-white/10 shadow-2xl relative">
+                <div className="p-6 sm:p-10 rounded-3xl bg-white dark:bg-[#111622] border border-black/10 dark:border-white/10 shadow-xl dark:shadow-2xl">
                   
                   {submitted ? (
-                    <div className="py-12 text-center space-y-4">
-                      <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-2">
-                        <CheckCircle2 className="w-9 h-9" />
+                    <div className="text-center py-12 space-y-4">
+                      <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400 mx-auto">
+                        <CheckCircle2 className="w-8 h-8" />
                       </div>
-                      <h3 className="text-2xl font-bold text-white">Röntgen Talebiniz Alındı!</h3>
-                      <p className="text-sm text-zinc-300 max-w-md mx-auto leading-relaxed">
-                        Ekibimiz <span className="text-blue-400 font-mono font-semibold">{formData.website}</span> adresini ve sektörünüzdeki rakipleri incelemeye başladı.
+                      <h3 className="text-2xl font-bold text-zinc-900 dark:text-white font-display">
+                        Dijital Röntgen Taraması Başlatıldı!
+                      </h3>
+                      <p className="text-sm text-zinc-600 dark:text-zinc-400 max-w-md mx-auto leading-relaxed">
+                        Bilgileriniz büyüme analiz ekibimize ulaştı. 24 saat içinde web siteniz ve rakipleriniz taranarak hazırlanan özel rapor telefon ve e-posta yoluyla iletilecektir.
                       </p>
-                      <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 text-xs text-zinc-400 max-w-md mx-auto text-left">
-                        <b>24 Saat İçinde:</b> Uzmanımız sizinle iletişime geçerek detaylı dijital röntgen raporunu ve büyüme eylem planını paylaşacaktır.
+                      <div className="pt-4">
+                        <button
+                          onClick={() => setSubmitted(false)}
+                          className="text-xs font-mono text-orange-600 dark:text-orange-400 hover:underline cursor-pointer"
+                        >
+                          ← Yeni bir analiz talebi gönder
+                        </button>
                       </div>
                     </div>
                   ) : (
-                    <form onSubmit={handleSubmit} className="space-y-5">
-                      <div>
-                        <h2 className="text-xl sm:text-2xl font-bold text-white mb-1">
-                          Röntgen Talebi Oluşturun
-                        </h2>
-                        <p className="text-xs sm:text-sm text-zinc-400">
-                          Formu doldurun, 24 saat içinde işletmenizin büyüme röntgenini çıkaralım.
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                      <div className="space-y-2">
+                        <span className="font-mono text-xs text-orange-700 dark:text-orange-400 font-bold uppercase tracking-wider block">
+                          [ ANALİZ TALEBİ ]
+                        </span>
+                        <h3 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white">
+                          İşletmenizin Röntgenini Çekelim
+                        </h3>
+                        <p className="text-xs text-zinc-600 dark:text-zinc-400">
+                          Yıldız (*) işaretli alanlar zorunludur. Tüm verileriniz gizlilik sözleşmesi kapsamında korunur.
                         </p>
                       </div>
 
-                      {error && (
-                        <div className="p-3 bg-red-500/10 border border-red-500/20 text-red-400 text-xs rounded-xl">
-                          {error}
-                        </div>
-                      )}
-
                       <div className="space-y-4">
                         <div>
-                          <label className="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-1.5">
-                            Web Siteniz (veya Sosyal Medya Hesabınız) *
+                          <label className="block text-xs font-mono uppercase tracking-wider text-zinc-700 dark:text-zinc-300 mb-1.5 font-medium">
+                            Web Siteniz veya Sosyal Medya Hesabınız *
                           </label>
                           <input
                             type="text"
@@ -199,17 +214,17 @@ export default function OnAnalizPage() {
                             name="website"
                             value={formData.website}
                             onChange={handleChange}
-                            placeholder="sirketiniz.com veya @markahesabi"
-                            className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder:text-zinc-600 text-sm focus:border-blue-500 focus:outline-none transition-colors"
+                            placeholder="ornekfirma.com veya @instagramhesabi"
+                            className="w-full px-4 py-3 rounded-xl bg-black/[0.02] dark:bg-white/[0.04] border border-black/15 dark:border-white/10 text-zinc-900 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-zinc-500 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 transition-colors"
                           />
-                          <span className="text-[11px] text-blue-400/80 mt-1 block">
+                          <span className="text-[11px] text-orange-700 dark:text-orange-400 mt-1 block">
                             Dijital röntgen taraması doğrudan bu adres üzerinden yapılacaktır.
                           </span>
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div>
-                            <label className="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-1.5">
+                            <label className="block text-xs font-mono uppercase tracking-wider text-zinc-700 dark:text-zinc-300 mb-1.5 font-medium">
                               Şirket / Marka Adı
                             </label>
                             <input
@@ -218,12 +233,12 @@ export default function OnAnalizPage() {
                               value={formData.companyName}
                               onChange={handleChange}
                               placeholder="Şirket Adı"
-                              className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder:text-zinc-600 text-sm focus:border-blue-500 focus:outline-none transition-colors"
+                              className="w-full px-4 py-3 rounded-xl bg-black/[0.02] dark:bg-white/[0.04] border border-black/15 dark:border-white/10 text-zinc-900 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-zinc-500 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 transition-colors"
                             />
                           </div>
 
                           <div>
-                            <label className="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-1.5">
+                            <label className="block text-xs font-mono uppercase tracking-wider text-zinc-700 dark:text-zinc-300 mb-1.5 font-medium">
                               Adınız Soyadınız *
                             </label>
                             <input
@@ -233,14 +248,14 @@ export default function OnAnalizPage() {
                               value={formData.fullName}
                               onChange={handleChange}
                               placeholder="Ad Soyad"
-                              className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder:text-zinc-600 text-sm focus:border-blue-500 focus:outline-none transition-colors"
+                              className="w-full px-4 py-3 rounded-xl bg-black/[0.02] dark:bg-white/[0.04] border border-black/15 dark:border-white/10 text-zinc-900 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-zinc-500 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 transition-colors"
                             />
                           </div>
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div>
-                            <label className="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-1.5">
+                            <label className="block text-xs font-mono uppercase tracking-wider text-zinc-700 dark:text-zinc-300 mb-1.5 font-medium">
                               Telefon Numaranız *
                             </label>
                             <input
@@ -250,12 +265,12 @@ export default function OnAnalizPage() {
                               value={formData.phone}
                               onChange={handleChange}
                               placeholder="05XX XXX XX XX"
-                              className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder:text-zinc-600 text-sm focus:border-blue-500 focus:outline-none transition-colors"
+                              className="w-full px-4 py-3 rounded-xl bg-black/[0.02] dark:bg-white/[0.04] border border-black/15 dark:border-white/10 text-zinc-900 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-zinc-500 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 transition-colors"
                             />
                           </div>
 
                           <div>
-                            <label className="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-1.5">
+                            <label className="block text-xs font-mono uppercase tracking-wider text-zinc-700 dark:text-zinc-300 mb-1.5 font-medium">
                               E-posta Adresiniz
                             </label>
                             <input
@@ -264,21 +279,21 @@ export default function OnAnalizPage() {
                               value={formData.email}
                               onChange={handleChange}
                               placeholder="info@sirket.com"
-                              className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder:text-zinc-600 text-sm focus:border-blue-500 focus:outline-none transition-colors"
+                              className="w-full px-4 py-3 rounded-xl bg-black/[0.02] dark:bg-white/[0.04] border border-black/15 dark:border-white/10 text-zinc-900 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-zinc-500 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 transition-colors"
                             />
                           </div>
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div>
-                            <label className="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-1.5">
+                            <label className="block text-xs font-mono uppercase tracking-wider text-zinc-700 dark:text-zinc-300 mb-1.5 font-medium">
                               Öncelikli Büyüme Hedefiniz
                             </label>
                             <select
                               name="goal"
                               value={formData.goal}
                               onChange={handleChange}
-                              className="w-full px-4 py-3 rounded-xl bg-[#090d16] border border-white/10 text-white text-sm focus:border-blue-500 focus:outline-none transition-colors"
+                              className="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#090d16] border border-black/15 dark:border-white/10 text-zinc-900 dark:text-white text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 transition-colors"
                             >
                               <option value="Satışları ve Ciroyu Katlamak">Satışları ve Ciroyu Katlamak</option>
                               <option value="Yeni Bir Ürünü / Fikri Pazarda Test Etmek">Yeni Ürünü 3D/AI ile Pazar Testine Çıkarmak</option>
@@ -288,25 +303,25 @@ export default function OnAnalizPage() {
                           </div>
 
                           <div>
-                            <label className="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-1.5">
+                            <label className="block text-xs font-mono uppercase tracking-wider text-zinc-700 dark:text-zinc-300 mb-1.5 font-medium">
                               Tahmini Büyüme Bütçesi
                             </label>
                             <select
                               name="budgetRange"
                               value={formData.budgetRange}
                               onChange={handleChange}
-                              className="w-full px-4 py-3 rounded-xl bg-[#090d16] border border-white/10 text-white text-sm focus:border-blue-500 focus:outline-none transition-colors"
+                              className="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#090d16] border border-black/15 dark:border-white/10 text-zinc-900 dark:text-white text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 transition-colors"
                             >
                               <option value="20.000 TL altı">20.000 TL altı (Pilot)</option>
-                              <option value="20.000 TL – 50.000 TL">20.000 TL – 50.000 TL (Test & Giriş)</option>
-                              <option value="50.000 TL – 150.000 TL">50.000 TL – 150.000 TL (Ölçekleme)</option>
+                              <option value="20.000 TL - 50.000 TL">20.000 TL - 50.000 TL (Test & Giriş)</option>
+                              <option value="50.000 TL - 150.000 TL">50.000 TL - 150.000 TL (Ölçekleme)</option>
                               <option value="150.000 TL ve üzeri">150.000 TL ve üzeri (Partnerlik)</option>
                             </select>
                           </div>
                         </div>
 
                         <div>
-                          <label className="block text-xs font-mono uppercase tracking-wider text-zinc-300 mb-1.5">
+                          <label className="block text-xs font-mono uppercase tracking-wider text-zinc-700 dark:text-zinc-300 mb-1.5 font-medium">
                             İşletmeniz Hakkında Ek Notlar
                           </label>
                           <textarea
@@ -315,7 +330,7 @@ export default function OnAnalizPage() {
                             value={formData.notes}
                             onChange={handleChange}
                             placeholder="Mevcut en büyük tıkanıklığınız veya hedefleriniz nelerdir?"
-                            className="w-full px-4 py-3 rounded-xl bg-white/[0.04] border border-white/10 text-white placeholder:text-zinc-600 text-sm focus:border-blue-500 focus:outline-none transition-colors"
+                            className="w-full px-4 py-3 rounded-xl bg-black/[0.02] dark:bg-white/[0.04] border border-black/15 dark:border-white/10 text-zinc-900 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-zinc-500 text-sm focus:border-orange-500 focus:outline-none focus:ring-1 focus:ring-orange-500 transition-colors"
                           />
                         </div>
                       </div>
@@ -323,9 +338,9 @@ export default function OnAnalizPage() {
                       <button
                         type="submit"
                         disabled={loading}
-                        className="w-full py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold rounded-xl shadow-lg shadow-blue-500/25 transition-all disabled:opacity-50 text-base"
+                        className="w-full py-4 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-xl shadow-lg shadow-orange-600/25 transition-all disabled:opacity-50 text-base cursor-pointer"
                       >
-                        {loading ? 'Röntgen Taraması Başlatılıyor...' : '🚀 Ücretsiz Dijital Röntgenimi Başlat'}
+                        {loading ? 'Röntgen Taraması Başlatılıyor...' : '→ Ücretsiz Dijital Röntgenimi Başlat'}
                       </button>
                     </form>
                   )}

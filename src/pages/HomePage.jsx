@@ -134,7 +134,7 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#f8f6f0] dark:bg-[#0a0d14] text-zinc-900 dark:text-slate-100 selection:bg-cyan-500 selection:text-white transition-colors duration-250">
+    <div className="min-h-screen flex flex-col bg-[#f8f6f0] dark:bg-[#0a0d14] text-zinc-900 dark:text-slate-100 selection:bg-orange-500 selection:text-white transition-colors duration-250">
       <SEO 
         title="İşinizi Büyüten, Satış Kanallarınızı Açan Büyüme Ortağınız | Era Dijital"
         description="Yalnızca reklam çıkmıyor veya site yapmıyoruz; işletmenizin röntgenini çekiyor, eksiklerini tespit ediyor ve ölçülebilir büyüme sağlıyoruz."
@@ -146,20 +146,20 @@ export default function HomePage() {
         {/* HERO SECTION */}
         <section className="relative overflow-hidden pt-12 pb-20 md:pt-20 md:pb-32 border-b border-black/5 dark:border-white/5">
           {/* Subtle Ambient Glow */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[550px] bg-gradient-to-b from-cyan-500/10 via-blue-500/5 to-transparent blur-[140px] pointer-events-none" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[550px] bg-gradient-to-b from-orange-500/10 via-amber-500/5 to-transparent blur-[140px] pointer-events-none" />
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
               
               {/* Left Column: Strategic Value Proposition */}
               <div className="lg:col-span-7 space-y-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/25 text-cyan-700 dark:text-cyan-400 font-mono text-[11px] font-semibold tracking-wider uppercase">
-                  <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/25 text-orange-700 dark:text-orange-400 font-mono text-[11px] font-semibold tracking-wider uppercase">
+                  <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
                   BÜYÜME AJANSI // GROWTH AGENCY
                 </div>
 
                 <h1 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold tracking-tight text-zinc-900 dark:text-white leading-[1.12]">
-                  İşinizi Büyüten, Satış Kanallarınızı Açan <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 dark:from-cyan-400 dark:via-blue-400 dark:to-white">Büyüme Ortağınız.</span>
+                  İşinizi Büyüten, Satış Kanallarınızı Açan <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-amber-600 to-zinc-900 dark:from-orange-400 dark:via-amber-400 dark:to-white">Büyüme Ortağınız.</span>
                 </h1>
 
                 <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed">
@@ -170,9 +170,9 @@ export default function HomePage() {
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
                   <button
                     onClick={() => openWizard()}
-                    className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl text-sm font-bold text-white bg-cyan-500 hover:bg-cyan-600 dark:bg-cyan-500 dark:hover:bg-cyan-400 shadow-xl shadow-cyan-500/25 transition-all hover:scale-[1.02]"
+                    className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl text-sm font-bold text-white bg-orange-600 hover:bg-orange-700 text-white shadow-xl shadow-orange-500/25 transition-all hover:scale-[1.02]"
                   >
-                    <Sparkles className="w-4 h-4 text-cyan-100" />
+                    <Sparkles className="w-4 h-4 text-orange-100" />
                     <span>30 Saniyede Büyüme Planını Başlat</span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
@@ -189,7 +189,7 @@ export default function HomePage() {
                 {/* Trust Badges */}
                 <div className="flex flex-wrap items-center gap-y-2 gap-x-6 pt-4 text-xs text-zinc-600 dark:text-zinc-400 font-mono">
                   <div className="flex items-center gap-1.5">
-                    <span className="text-cyan-600 dark:text-yellow-400 font-bold">★</span>
+                    <span className="text-orange-600 dark:text-yellow-400 font-bold">★</span>
                     <span className="text-zinc-900 dark:text-zinc-300 font-semibold">140+ Marka & Girişim</span>
                   </div>
                   <div className="flex items-center gap-1.5">
@@ -197,7 +197,7 @@ export default function HomePage() {
                     <span>24 Saat İçinde Ücretsiz Röntgen</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-500" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
                     <span>İstanbul & Global Operasyon</span>
                   </div>
                 </div>
@@ -207,12 +207,12 @@ export default function HomePage() {
               <div className="lg:col-span-5">
                 <div className="relative rounded-2xl bg-white dark:bg-[#0e1320] border border-black/10 dark:border-white/10 p-6 sm:p-7 shadow-xl dark:shadow-2xl overflow-hidden group transition-colors duration-250">
                   {/* Subtle inner card glow */}
-                  <div className="absolute top-0 right-0 w-52 h-52 bg-cyan-500/10 dark:bg-cyan-500/15 rounded-full blur-[80px] pointer-events-none" />
+                  <div className="absolute top-0 right-0 w-52 h-52 bg-orange-500/10 dark:bg-orange-500/15 rounded-full blur-[80px] pointer-events-none" />
                   
                   {/* Card Header */}
                   <div className="flex items-center justify-between pb-4 mb-5 border-b border-black/5 dark:border-white/5">
                     <div className="flex items-center gap-2">
-                      <span className="w-2.5 h-2.5 rounded-full bg-cyan-500" />
+                      <span className="w-2.5 h-2.5 rounded-full bg-orange-500" />
                       <span className="font-mono text-xs uppercase tracking-wider text-zinc-700 dark:text-zinc-300 font-semibold">
                         Büyüme İndeksi · Son 6 Ay
                       </span>
@@ -227,8 +227,8 @@ export default function HomePage() {
                     <svg className="w-full h-full" viewBox="0 0 400 130" preserveAspectRatio="none">
                       <defs>
                         <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stopColor="#06b6d4" stopOpacity="0.35" />
-                          <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.0" />
+                          <stop offset="0%" stopColor="#ea580c" stopOpacity="0.35" />
+                          <stop offset="100%" stopColor="#ea580c" stopOpacity="0.0" />
                         </linearGradient>
                       </defs>
                       <path
@@ -238,13 +238,13 @@ export default function HomePage() {
                       <path
                         d="M0,110 Q40,95 80,100 T160,75 T240,60 T320,35 T400,10"
                         fill="none"
-                        stroke="#0891b2"
-                        className="dark:stroke-cyan-400"
+                        stroke="#ea580c"
+                        className="stroke-orange-500 dark:stroke-orange-400"
                         strokeWidth="3"
                         strokeLinecap="round"
                       />
                       <circle cx="400" cy="10" r="5" fill="#22d3ee" className="animate-ping opacity-75" />
-                      <circle cx="400" cy="10" r="4" fill="#06b6d4" />
+                      <circle cx="400" cy="10" r="4" fill="#ea580c" />
                     </svg>
                   </div>
 
@@ -255,7 +255,7 @@ export default function HomePage() {
                       <div className="font-mono text-[10px] text-zinc-500 dark:text-zinc-400 mt-0.5">Nitelikli Lead</div>
                     </div>
                     <div className="p-2.5 rounded-xl bg-black/[0.03] dark:bg-white/[0.02]">
-                      <div className="font-display font-bold text-lg sm:text-xl text-cyan-600 dark:text-cyan-400">3.4×</div>
+                      <div className="font-display font-bold text-lg sm:text-xl text-orange-600 dark:text-orange-400">3.4×</div>
                       <div className="font-mono text-[10px] text-zinc-500 dark:text-zinc-400 mt-0.5">ROAS Çarpanı</div>
                     </div>
                     <div className="p-2.5 rounded-xl bg-black/[0.03] dark:bg-white/[0.02]">
@@ -265,8 +265,8 @@ export default function HomePage() {
                   </div>
 
                   {/* Live Activity Toast */}
-                  <div className="mt-4 flex items-center gap-2.5 p-3 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-xs text-cyan-800 dark:text-cyan-300">
-                    <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
+                  <div className="mt-4 flex items-center gap-2.5 p-3 rounded-xl bg-orange-500/10 border border-orange-500/20 text-xs text-orange-800 dark:text-orange-300">
+                    <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
                     <span className="truncate">
                       <b>Canlı:</b> Yeni 3D pazar testi tamamlandı (240+ ön talep)
                     </span>
@@ -282,7 +282,7 @@ export default function HomePage() {
         <section className="py-20 border-b border-black/5 dark:border-white/5 bg-[#f1ede4] dark:bg-[#0b0e17] transition-colors duration-250">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mb-12">
-              <span className="text-cyan-700 dark:text-cyan-400 font-mono text-xs font-semibold uppercase tracking-wider block mb-2">
+              <span className="text-orange-700 dark:text-orange-400 font-mono text-xs font-semibold uppercase tracking-wider block mb-2">
                 [ PAZAR GERÇEKLERİ // PROBLEM TEŞHİSİ ]
               </span>
               <h2 className="text-2xl sm:text-4xl font-display font-bold text-zinc-900 dark:text-white tracking-tight">
@@ -316,9 +316,9 @@ export default function HomePage() {
               ].map((item) => (
                 <div 
                   key={item.no}
-                  className="p-6 rounded-2xl bg-white dark:bg-white/[0.02] border border-black/5 dark:border-white/5 hover:border-cyan-500/40 transition-all shadow-sm dark:shadow-none hover:shadow-md"
+                  className="p-6 rounded-2xl bg-white dark:bg-white/[0.02] border border-black/5 dark:border-white/5 hover:border-orange-500/40 transition-all shadow-sm dark:shadow-none hover:shadow-md"
                 >
-                  <div className="font-mono text-xs font-bold text-cyan-600 dark:text-cyan-400 mb-3">{item.no} // PROBLEM</div>
+                  <div className="font-mono text-xs font-bold text-orange-600 dark:text-orange-400 mb-3">{item.no} // PROBLEM</div>
                   <h3 className="text-base font-bold text-zinc-900 dark:text-white mb-2">{item.title}</h3>
                   <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">{item.desc}</p>
                 </div>
@@ -332,7 +332,7 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
               <div className="max-w-2xl">
-                <span className="text-cyan-700 dark:text-cyan-400 font-mono text-xs font-semibold uppercase tracking-wider block mb-2">
+                <span className="text-orange-700 dark:text-orange-400 font-mono text-xs font-semibold uppercase tracking-wider block mb-2">
                   [ 4 ADIMLI BÜYÜME DÖNGÜSÜ // STRATEJİK YAKLAŞIM ]
                 </span>
                 <h2 className="text-2xl sm:text-4xl font-display font-bold text-zinc-900 dark:text-white tracking-tight">
@@ -345,7 +345,7 @@ export default function HomePage() {
 
               <button
                 onClick={() => openWizard()}
-                className="self-start md:self-auto px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-cyan-500 hover:bg-cyan-600 shadow-md shadow-cyan-500/20 transition-all shrink-0"
+                className="self-start md:self-auto px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-orange-500 hover:bg-orange-600 shadow-md shadow-orange-500/20 transition-all shrink-0"
               >
                 Röntgeninizi Başlatın ➔
               </button>
@@ -357,10 +357,10 @@ export default function HomePage() {
                 return (
                   <div 
                     key={step.step}
-                    className="relative p-6 sm:p-7 rounded-2xl bg-white dark:bg-white/[0.02] border border-black/5 dark:border-white/10 hover:border-cyan-500/40 hover:bg-cyan-50/50 dark:hover:bg-cyan-950/20 transition-all shadow-sm dark:shadow-none group"
+                    className="relative p-6 sm:p-7 rounded-2xl bg-white dark:bg-white/[0.02] border border-black/5 dark:border-white/10 hover:border-orange-500/40 hover:bg-orange-50/50 dark:hover:bg-orange-950/20 transition-all shadow-sm dark:shadow-none group"
                   >
                     <div className="flex items-center justify-between mb-4">
-                      <div className="p-3 rounded-xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 group-hover:bg-cyan-500/20 transition-colors">
+                      <div className="p-3 rounded-xl bg-orange-500/10 text-orange-600 dark:text-orange-400 group-hover:bg-orange-500/20 transition-colors">
                         <Icon className="w-5 h-5" />
                       </div>
                       <span className="font-mono text-[10px] text-zinc-500 dark:text-zinc-400 px-2 py-0.5 rounded bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5">
@@ -368,11 +368,11 @@ export default function HomePage() {
                       </span>
                     </div>
 
-                    <div className="font-mono text-xs text-cyan-600 dark:text-cyan-400 font-semibold mb-1">
+                    <div className="font-mono text-xs text-orange-600 dark:text-orange-400 font-semibold mb-1">
                       {step.step}
                     </div>
 
-                    <h3 className="text-lg font-bold text-zinc-900 dark:text-white mb-2.5 group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors">
+                    <h3 className="text-lg font-bold text-zinc-900 dark:text-white mb-2.5 group-hover:text-orange-600 dark:group-hover:text-orange-300 transition-colors">
                       {step.title}
                     </h3>
 
@@ -390,7 +390,7 @@ export default function HomePage() {
         <section className="py-24 border-b border-black/5 dark:border-white/5 bg-[#f1ede4] dark:bg-[#0b0e17] transition-colors duration-250">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-cyan-700 dark:text-cyan-400 font-mono text-xs font-semibold uppercase tracking-wider block mb-2">
+              <span className="text-orange-700 dark:text-orange-400 font-mono text-xs font-semibold uppercase tracking-wider block mb-2">
                 [ BÜYÜME SÜTUNLARI // TEK EKİP, 360° GÜÇ ]
               </span>
               <h2 className="text-3xl sm:text-5xl font-display font-bold text-zinc-900 dark:text-white tracking-tight">
@@ -407,19 +407,19 @@ export default function HomePage() {
                 return (
                   <div
                     key={service.title}
-                    className="p-7 sm:p-8 rounded-2xl bg-white dark:bg-white/[0.02] border border-black/5 dark:border-white/10 hover:border-cyan-500/30 transition-all flex flex-col justify-between shadow-md dark:shadow-none group"
+                    className="p-7 sm:p-8 rounded-2xl bg-white dark:bg-white/[0.02] border border-black/5 dark:border-white/10 hover:border-orange-500/30 transition-all flex flex-col justify-between shadow-md dark:shadow-none group"
                   >
                     <div>
                       <div className="flex items-center justify-between mb-5">
-                        <div className="p-3.5 rounded-xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 group-hover:bg-cyan-500/20 transition-colors">
+                        <div className="p-3.5 rounded-xl bg-orange-500/10 text-orange-600 dark:text-orange-400 group-hover:bg-orange-500/20 transition-colors">
                           <Icon className="w-6 h-6" />
                         </div>
-                        <span className="text-[11px] font-mono text-cyan-700 dark:text-cyan-400 px-2.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20">
+                        <span className="text-[11px] font-mono text-orange-700 dark:text-orange-400 px-2.5 py-1 rounded-full bg-orange-500/10 border border-orange-500/20">
                           {service.badge}
                         </span>
                       </div>
 
-                      <h3 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white mb-3 group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors">
+                      <h3 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white mb-3 group-hover:text-orange-600 dark:group-hover:text-orange-300 transition-colors">
                         {service.title}
                       </h3>
 
@@ -430,7 +430,7 @@ export default function HomePage() {
                       <ul className="space-y-2 mb-6">
                         {service.features.map((feat) => (
                           <li key={feat} className="flex items-center gap-2 text-xs sm:text-sm text-zinc-700 dark:text-zinc-300">
-                            <Check className="w-4 h-4 text-cyan-600 dark:text-cyan-400 shrink-0" />
+                            <Check className="w-4 h-4 text-orange-600 dark:text-orange-400 shrink-0" />
                             <span>{feat}</span>
                           </li>
                         ))}
@@ -439,7 +439,7 @@ export default function HomePage() {
 
                     <button
                       onClick={() => openWizard()}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors pt-4 border-t border-black/5 dark:border-white/5"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-orange-600 dark:text-orange-400 hover:text-orange-700 dark:hover:text-orange-300 transition-colors pt-4 border-t border-black/5 dark:border-white/5"
                     >
                       <span>Bu Alanda Analiz İsteyin</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -455,7 +455,7 @@ export default function HomePage() {
         <section className="py-24 border-b border-black/5 dark:border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mb-16">
-              <span className="text-cyan-700 dark:text-cyan-400 font-mono text-xs font-semibold uppercase tracking-wider block mb-2">
+              <span className="text-orange-700 dark:text-orange-400 font-mono text-xs font-semibold uppercase tracking-wider block mb-2">
                 [ SOMUT BAŞARI METRİKLERİ // VAKA ANALİZLERİ ]
               </span>
               <h2 className="text-3xl sm:text-4xl font-display font-bold text-zinc-900 dark:text-white tracking-tight">
@@ -473,7 +473,7 @@ export default function HomePage() {
                   className="p-7 rounded-2xl bg-white dark:bg-white/[0.02] border border-black/5 dark:border-white/10 hover:border-black/15 dark:hover:border-white/20 transition-all flex flex-col justify-between shadow-sm dark:shadow-none"
                 >
                   <div>
-                    <span className="font-mono text-[10px] text-cyan-600 dark:text-cyan-400 font-bold uppercase tracking-wider block mb-3">
+                    <span className="font-mono text-[10px] text-orange-600 dark:text-orange-400 font-bold uppercase tracking-wider block mb-3">
                       {item.category}
                     </span>
                     <h3 className="text-lg font-bold text-zinc-900 dark:text-white mb-2.5">
@@ -502,7 +502,7 @@ export default function HomePage() {
         <section className="py-20 border-b border-black/5 dark:border-white/5 bg-[#f1ede4] dark:bg-[#0b0e17] transition-colors duration-250">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto mb-12">
-              <span className="text-cyan-700 dark:text-cyan-400 font-mono text-xs font-semibold uppercase tracking-wider block mb-2">
+              <span className="text-orange-700 dark:text-orange-400 font-mono text-xs font-semibold uppercase tracking-wider block mb-2">
                 [ OTONOM BÜYÜME MOTORU ]
               </span>
               <h2 className="text-2xl sm:text-3xl font-display font-bold text-zinc-900 dark:text-white tracking-tight">
@@ -520,7 +520,7 @@ export default function HomePage() {
         {/* FINAL BIG CTA BANNER */}
         <section className="py-24 relative overflow-hidden bg-gradient-to-b from-[#f8f6f0] to-[#eae5d8] dark:from-[#0a0d14] dark:to-[#0e1726] transition-colors duration-250">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-700 dark:text-cyan-400 font-mono text-xs font-semibold mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-700 dark:text-orange-400 font-mono text-xs font-semibold mb-6">
               <Sparkles className="w-3.5 h-3.5" />
               SIFIR MALİYET, SIFIR RİSK
             </div>
@@ -536,7 +536,7 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <button
                 onClick={() => openWizard()}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-bold text-white bg-cyan-500 hover:bg-cyan-600 shadow-xl shadow-cyan-500/25 transition-all hover:scale-[1.02]"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-bold text-white bg-orange-500 hover:bg-orange-600 shadow-xl shadow-orange-500/25 transition-all hover:scale-[1.02]"
               >
                 <span>30 Saniyede Büyüme Planını Başlat</span>
                 <ArrowRight className="w-5 h-5" />

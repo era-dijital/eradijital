@@ -9,7 +9,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const { openWizard } = useQuoteWizard();
-  const { theme, toggleTheme, isDark } = useTheme();
+  const { toggleTheme, isDark } = useTheme();
 
   const navItems = [
     { name: 'Ana Sayfa', path: '/' },
@@ -24,17 +24,17 @@ export default function Header() {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-[#f8f6f0]/90 dark:bg-[#0a0d14]/90 backdrop-blur-md border-b border-black/5 dark:border-white/5 transition-colors duration-250">
+    <header className="sticky top-0 z-40 w-full bg-[#f8f6f0]/95 dark:bg-[#0a0d14]/95 backdrop-blur-md border-b border-black/5 dark:border-white/5 transition-colors duration-250">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           
           {/* Brand Mark */}
           <Link to="/" className="flex items-center gap-3 group focus-visible:outline-none">
-            <div className="w-9 h-9 rounded-lg bg-cyan-500/10 dark:bg-white/[0.03] border border-cyan-500/30 dark:border-white/10 flex items-center justify-center text-cyan-600 dark:text-cyan-400 font-mono font-bold text-sm tracking-tighter group-hover:border-cyan-500 transition-colors">
+            <div className="w-9 h-9 rounded-lg bg-orange-500/10 dark:bg-orange-500/15 border border-orange-500/30 dark:border-orange-500/30 flex items-center justify-center text-orange-600 dark:text-orange-400 font-mono font-bold text-sm tracking-tighter group-hover:border-orange-500 transition-colors">
               ERA
             </div>
             <div className="flex flex-col">
-              <span className="font-display font-bold text-base tracking-tight text-zinc-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
+              <span className="font-display font-bold text-base tracking-tight text-zinc-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">
                 Era Dijital
               </span>
               <span className="font-mono text-[9px] uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
@@ -80,21 +80,21 @@ export default function Header() {
               onClick={toggleTheme}
               aria-label={isDark ? "Açık Moda Geç (dijital10 stili)" : "Koyu Moda Geç"}
               title={isDark ? "Açık Moda Geç" : "Koyu Moda Geç"}
-              className="p-2.5 rounded-xl text-zinc-600 dark:text-zinc-400 hover:text-cyan-600 dark:hover:text-cyan-400 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 border border-black/5 dark:border-white/10 transition-all hover:scale-105"
+              className="p-2.5 rounded-xl text-zinc-600 dark:text-zinc-400 hover:text-orange-600 dark:hover:text-orange-400 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 border border-black/5 dark:border-white/10 transition-all hover:scale-105"
             >
               {isDark ? (
-                <Sun className="w-4 h-4 text-cyan-400 animate-spin-slow" />
+                <Sun className="w-4 h-4 text-orange-400" />
               ) : (
                 <Moon className="w-4 h-4 text-zinc-700" />
               )}
             </button>
 
-            {/* Turkuaz Mavisi CTA */}
+            {/* Hallmark Warm Orange CTA */}
             <button
               onClick={() => openWizard()}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold text-white bg-cyan-500 hover:bg-cyan-600 dark:bg-cyan-500 dark:hover:bg-cyan-400 shadow-md shadow-cyan-500/25 transition-all hover:scale-[1.02]"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold text-white bg-orange-600 hover:bg-orange-700 shadow-md shadow-orange-600/25 transition-all hover:scale-[1.02] cursor-pointer"
             >
-              <Sparkles className="w-3.5 h-3.5 text-cyan-100" />
+              <Sparkles className="w-3.5 h-3.5 text-orange-200" />
               <span>30 Sn'de Teklif Al</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </button>
@@ -107,12 +107,12 @@ export default function Header() {
               aria-label="Tema Değiştir"
               className="p-2 rounded-lg text-zinc-600 dark:text-zinc-300 bg-black/5 dark:bg-white/5"
             >
-              {isDark ? <Sun className="w-4 h-4 text-cyan-400" /> : <Moon className="w-4 h-4 text-zinc-700" />}
+              {isDark ? <Sun className="w-4 h-4 text-orange-400" /> : <Moon className="w-4 h-4 text-zinc-700" />}
             </button>
 
             <button
               onClick={() => openWizard()}
-              className="px-3 py-1.5 text-xs font-bold text-white bg-cyan-500 rounded-lg shadow-sm"
+              className="px-3 py-1.5 text-xs font-bold text-white bg-orange-600 rounded-lg shadow-sm"
             >
               Teklif Al
             </button>
@@ -160,7 +160,7 @@ export default function Header() {
                   setIsOpen(false);
                   openWizard();
                 }}
-                className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-bold text-white bg-cyan-500 hover:bg-cyan-600 shadow-lg shadow-cyan-500/20"
+                className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-bold text-white bg-orange-600 hover:bg-orange-700 shadow-lg shadow-orange-600/20"
               >
                 <Sparkles className="w-4 h-4" />
                 <span>30 Sn'de Ücretsiz Büyüme Analizi</span>
