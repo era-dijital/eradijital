@@ -4,35 +4,35 @@
 
 @layer base {
   :root {
-    /* Dijital10.com Sarı-Beyaz Kurumsal Tonu */
-    --color-paper: #F7F7F5;
+    /* Dengeli & Zarif Sarı-Beyaz Kurumsal Tonu */
+    --color-paper: #F8F9FA;
     --color-surface: #FFFFFF;
-    --color-surface-elevated: #F1F1EF;
-    --color-surface-hover: #EFEDE7;
-    --color-rule: #E7E3DA;
-    --color-ink: #111827;
-    --color-muted: #4B5563;
-    --color-faint: #8A847A;
+    --color-surface-elevated: #F1F5F9;
+    --color-surface-hover: #E2E8F0;
+    --color-rule: #E2E8F0;
+    --color-ink: #0F172A;
+    --color-muted: #64748B;
+    --color-faint: #94A3B8;
     --color-yellow: #FFD23F;
-    --color-yellow-deep: #EAB308;
-    --color-yellow-light: rgba(255, 210, 63, 0.18);
+    --color-yellow-deep: #F59E0B;
+    --color-yellow-light: rgba(255, 210, 63, 0.12);
     --font-display: "Outfit", "Space Grotesk", sans-serif;
     --font-body: "Inter", "DM Sans", sans-serif;
     --font-mono: "JetBrains Mono", monospace;
   }
 
   .dark {
-    /* Dijital10.com Dark Mode */
-    --color-paper: #0B0F17;
-    --color-surface: #111827;
-    --color-surface-elevated: #161F2E;
-    --color-surface-hover: #1E293B;
-    --color-rule: rgba(255, 255, 255, 0.1);
-    --color-ink: #F9FAFB;
-    --color-muted: #9CA3AF;
-    --color-faint: #6B7280;
+    /* Sofistike Koyu Mod */
+    --color-paper: #090D14;
+    --color-surface: #0F172A;
+    --color-surface-elevated: #1E293B;
+    --color-surface-hover: #334155;
+    --color-rule: rgba(255, 255, 255, 0.08);
+    --color-ink: #F8FAFC;
+    --color-muted: #94A3B8;
+    --color-faint: #64748B;
     --color-yellow: #FFD23F;
-    --color-yellow-deep: #FACC15;
+    --color-yellow-deep: #F59E0B;
     --color-yellow-light: rgba(255, 210, 63, 0.15);
   }
 
@@ -45,7 +45,7 @@
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    transition: background-color 0.25s ease, color 0.25s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -56,7 +56,7 @@
 
   ::selection {
     background-color: var(--color-yellow);
-    color: #111827;
+    color: #0F172A;
   }
 }
 
@@ -67,97 +67,99 @@
 .hairline-l { border-left: 1px solid var(--color-rule); }
 .hairline-all { border: 1px solid var(--color-rule); }
 
-/* Yellow Highlighter Effect */
+/* Zarif Sarı Vurgu (Aşırı Sarı Olmayan İnce İşaretleyici) */
 .hl-yellow {
-  background: linear-gradient(transparent 58%, rgba(255, 210, 63, 0.45) 58%);
+  background: linear-gradient(transparent 68%, rgba(255, 210, 63, 0.5) 68%);
   display: inline;
 }
 
 /* =========================================================
-   DIJITAL10 BUTTON STYLES (Always Visible, Bold, High-Contrast)
+   ZARİF & DİNAMİK BUTONLAR
    ========================================================= */
 .btn-yellow, .ah-button, .ah-btn {
   font-family: var(--font-display);
   background-color: #FFD23F;
-  color: #111827 !important;
+  color: #0F172A !important;
   border: 1px solid #FFD23F;
-  padding: 0.65rem 1.45rem;
+  padding: 0.7rem 1.55rem;
   border-radius: 9999px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.45rem;
+  gap: 0.5rem;
   font-size: 0.875rem;
   font-weight: 700;
   line-height: 1.25rem;
   cursor: pointer;
   text-decoration: none;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 14px rgba(255, 210, 63, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 18px -2px rgba(255, 210, 63, 0.4);
 }
 
 .btn-yellow:hover, .ah-button:hover, .ah-btn:hover {
-  background-color: #EAB308;
-  border-color: #EAB308;
-  box-shadow: 0 6px 20px rgba(234, 179, 8, 0.45);
-  transform: translateY(-1px);
+  background-color: #F59E0B;
+  border-color: #F59E0B;
+  box-shadow: 0 8px 24px -2px rgba(245, 158, 11, 0.5);
+  transform: translateY(-2px);
 }
 
-/* Secondary Button - Ghost Outline */
+/* İkincil Buton - Zarif Çerçeve */
 .btn-ghost, .ah-button.button-outline, .ah-btn-secondary {
   background-color: transparent;
   border: 1px solid var(--color-rule);
   color: var(--color-ink) !important;
-  padding: 0.65rem 1.45rem;
+  padding: 0.7rem 1.55rem;
   border-radius: 9999px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.45rem;
+  gap: 0.5rem;
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.25rem;
   cursor: pointer;
   box-shadow: none;
-  transition: all 0.25s ease;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-ghost:hover, .ah-button.button-outline:hover, .ah-btn-secondary:hover {
   background-color: var(--color-surface);
-  border-color: #FFD23F;
+  border-color: rgba(15, 23, 42, 0.2);
   color: var(--color-ink) !important;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
 }
 
-/* Secondary Button - Ink Black with Yellow Accent */
+/* Koyu Buton */
 .btn-ink {
-  background-color: #111827;
+  background-color: #0F172A;
   color: #FFFFFF !important;
-  border: 1px solid #111827;
-  padding: 0.65rem 1.45rem;
+  border: 1px solid #0F172A;
+  padding: 0.7rem 1.55rem;
   border-radius: 9999px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.45rem;
+  gap: 0.5rem;
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.25rem;
   cursor: pointer;
-  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.25);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-ink:hover {
-  background-color: #1F2937;
-  border-color: #1F2937;
-  transform: translateY(-1px);
+  background-color: #1E293B;
+  border-color: #334155;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.35);
+  transform: translateY(-2px);
 }
 
-/* Button White Border (for dark cards) */
+/* Koyu Kartlar İçin Beyaz Buton */
 .ah-button.button-white {
-  background-color: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: #FFFFFF !important;
   padding: 0.65rem 1.45rem;
   border-radius: 9999px;
@@ -169,59 +171,66 @@
   font-weight: 600;
   line-height: 1.25rem;
   cursor: pointer;
-  box-shadow: none;
   transition: all 0.25s ease;
 }
 
 .ah-button.button-white:hover {
-  background-color: rgba(255, 255, 255, 0.18);
+  background-color: rgba(255, 255, 255, 0.15);
   border-color: #FFD23F;
   color: #FFD23F !important;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 /* =========================================================
-   CARDS & CONTAINERS
+   CANLI ANİMASYONLAR & MİKRO ETKİLEŞİMLER
    ========================================================= */
-.d10-card {
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-rule);
-  border-radius: 1.5rem;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+/* Canlı Işık Süzülmesi */
+@keyframes signalFlow {
+  0% { stroke-dashoffset: 200; }
+  100% { stroke-dashoffset: 0; }
 }
 
-.d10-card:hover {
-  border-color: rgba(255, 210, 63, 0.6);
-  box-shadow: 0 14px 34px -10px rgba(0, 0, 0, 0.08);
-  transform: translateY(-3px);
+.animate-signal-flow {
+  stroke-dasharray: 12, 16;
+  animation: signalFlow 3s linear infinite;
 }
 
-.d10-card-dark {
-  background-color: #111827;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 1.5rem;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+/* Yumuşak Yüzme (Floating) */
+@keyframes smoothFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-7px) rotate(0.4deg); }
 }
 
-.d10-card-dark:hover {
-  border-color: #FFD23F;
-  box-shadow: 0 16px 40px -10px rgba(255, 210, 63, 0.2);
-  transform: translateY(-3px);
+.animate-smooth-float {
+  animation: smoothFloat 5s ease-in-out infinite;
 }
 
-/* Ambient Radial Glow */
-.ah-glow-bg {
+/* Radar & Pulse Dalgası */
+@keyframes radarWave {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.4); opacity: 0.2; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+.radar-beacon {
+  position: relative;
+}
+.radar-beacon::after {
+  content: '';
   position: absolute;
-  pointer-events: none;
-  filter: blur(120px);
-  opacity: 0.4;
+  inset: -4px;
+  border-radius: 9999px;
+  background-color: #FFD23F;
+  animation: radarWave 2.4s ease-out infinite;
   z-index: 0;
+  pointer-events: none;
 }
 
-/* Continuous Marquee */
+/* Sonsuz Marquee */
 .carousel-container {
-  mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -230,7 +239,7 @@
 .carousel-track {
   display: flex;
   width: max-content;
-  animation: ahMarquee 32s linear infinite;
+  animation: ahMarquee 28s linear infinite;
 }
 
 .carousel-track:hover {
@@ -242,7 +251,7 @@
   100% { transform: translateX(-50%); }
 }
 
-/* Particles */
+/* Parçacıklar */
 .particles-container {
   position: absolute;
   inset: 0;
@@ -254,26 +263,11 @@
 .particle {
   pointer-events: none;
   position: absolute;
-  background: #FFD23F;
   border-radius: 50%;
-  opacity: 0.3;
   animation: moveParticle linear infinite;
 }
 
 @keyframes moveParticle {
-  0% { transform: translate(0, 0) scale(1); opacity: 0.35; }
-  100% { transform: translate(var(--x), var(--y)) scale(0.3); opacity: 0.05; }
-}
-
-.section-button {
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  cursor: pointer;
-}
-
-.section-button.active {
-  background-color: #FFD23F;
-  color: #111827;
-  border-color: #FFD23F;
-  box-shadow: 0 4px 14px rgba(255, 210, 63, 0.35);
-  font-weight: 700;
+  0% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+  100% { transform: translate(var(--x), var(--y)) scale(0.2); opacity: 0; }
 }
