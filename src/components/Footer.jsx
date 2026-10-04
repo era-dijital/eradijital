@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, ArrowUpRight, Sparkles } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowUpRight, ArrowRight, Sparkles } from 'lucide-react';
 import { useQuoteWizard } from '../context/QuoteWizardContext';
 
 export default function Footer() {
@@ -31,7 +31,7 @@ export default function Footer() {
               </div>
               <span className="font-display font-bold text-lg text-navy-900 dark:text-white">ERA Dijital</span>
             </Link>
-            <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-md">
+            <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-md font-light">
               İşletmenizin dijital gelişim önceliklerini belirliyor; görünürlük, müşteri kazanımı ve iş süreçleri için gerekli çözümleri hayata geçiriyoruz.
             </p>
             <div className="pt-2 flex flex-wrap gap-2 font-mono text-[11px] text-petrol-800 dark:text-petrol-300">
@@ -47,21 +47,21 @@ export default function Footer() {
             <span className="font-mono text-xs text-navy-900 dark:text-white font-bold uppercase tracking-wider block mb-4">
               Gelişim Alanları
             </span>
-            <ul className="space-y-2.5 text-xs text-zinc-600 dark:text-zinc-400">
+            <ul className="space-y-2.5 text-xs text-zinc-600 dark:text-zinc-400 font-light">
               <li>
-                <a href="#ihtiyaclar" className="hover:text-petrol-700 dark:hover:text-white transition-colors">İhtiyaç Tespiti</a>
+                <a href="/#ihtiyaclar" className="hover:text-petrol-700 dark:hover:text-white transition-colors">İhtiyaç Tespiti</a>
               </li>
               <li>
-                <a href="#gelisim-alanlari" className="hover:text-petrol-700 dark:hover:text-white transition-colors">Çözüm Yaklaşımı</a>
+                <a href="/#gelisim-alanlari" className="hover:text-petrol-700 dark:hover:text-white transition-colors">Çözüm Yaklaşımı</a>
               </li>
               <li>
-                <a href="#yetkinlik" className="hover:text-petrol-700 dark:hover:text-white transition-colors">Uygulama Örnekleri</a>
+                <a href="/#yetkinlik" className="hover:text-petrol-700 dark:hover:text-white transition-colors">Uygulama Örnekleri</a>
               </li>
               <li>
-                <a href="#surec" className="hover:text-petrol-700 dark:hover:text-white transition-colors">Çalışma Süreci</a>
+                <a href="/#surec" className="hover:text-petrol-700 dark:hover:text-white transition-colors">Çalışma Süreci</a>
               </li>
               <li>
-                <a href="#sorular" className="hover:text-petrol-700 dark:hover:text-white transition-colors">Karar Öncesi Sorular</a>
+                <a href="/#sorular" className="hover:text-petrol-700 dark:hover:text-white transition-colors">Karar Öncesi Sorular</a>
               </li>
               <li>
                 <Link to="/hakkimizda" className="hover:text-petrol-700 dark:hover:text-white transition-colors">Hakkımızda</Link>
@@ -74,20 +74,23 @@ export default function Footer() {
             <span className="font-mono text-xs text-navy-900 dark:text-white font-bold uppercase tracking-wider block mb-4">
               Ön Değerlendirme
             </span>
-            <p className="text-xs text-zinc-600 dark:text-zinc-400">
+            <p className="text-xs text-zinc-600 dark:text-zinc-400 font-light">
               İşletmenizin mevcut dijital varlıklarını 24 saat içinde inceliyor, öncelikli yol haritanızı paylaşıyoruz.
             </p>
             <button
               onClick={() => openWizard()}
-              className="ah-btn text-xs py-2.5 px-4 cursor-pointer w-full justify-center"
+              className="ah-button text-xs py-2.5 px-4 w-full justify-center"
             >
-              <span className="ah-btn-text">
-                <span>30 Saniyelik Analizi Başlat</span>
-                <span>Ücretsiz Ön Değerlendirme</span>
+              <span>
+                <span className="text-primary">
+                  30 Saniyelik Analizi Başlat <ArrowUpRight className="w-3.5 h-3.5 ml-1" />
+                </span>
+                <span className="text-secondary">
+                  Ön Değerlendirme Al <ArrowRight className="w-3.5 h-3.5 ml-1" />
+                </span>
               </span>
-              <Sparkles className="w-3.5 h-3.5" />
             </button>
-            <div className="pt-2 text-xs text-zinc-500 dark:text-zinc-400 space-y-1">
+            <div className="pt-2 text-xs text-zinc-500 dark:text-zinc-400 space-y-1 font-light">
               <p>E-posta: iletisim@eradijital.com</p>
               <p>Konum: İstanbul / Türkiye</p>
             </div>
@@ -98,7 +101,7 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-black/5 dark:border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500 dark:text-zinc-400">
           <p>© {new Date().getFullYear()} ERA Dijital. Tüm hakları saklıdır.</p>
           <div className="flex items-center gap-6">
-            <a href="#iletisim" className="hover:text-petrol-700 dark:hover:text-white transition-colors">İletişim Formu</a>
+            <a href="/#iletisim" className="hover:text-petrol-700 dark:hover:text-white transition-colors">İletişim Formu</a>
             <button onClick={() => openWizard()} className="hover:text-petrol-700 dark:hover:text-white transition-colors cursor-pointer">Ön Değerlendirme</button>
           </div>
         </div>
