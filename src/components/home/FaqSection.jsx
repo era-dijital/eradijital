@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, Minus, HelpCircle } from 'lucide-react';
+import { Plus, Minus, HelpCircle, ArrowUpRight, ArrowRight } from 'lucide-react';
+import { useQuoteWizard } from '../../context/QuoteWizardContext';
 
 export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState(0);
+  const { openWizard } = useQuoteWizard();
 
   const faqs = [
     {
@@ -25,32 +27,35 @@ export default function FaqSection() {
   ];
 
   return (
-    <section id="sorular" className="py-24 sm:py-32 bg-[#f6f7f4] dark:bg-[#060a0f] border-t border-black/[0.06] dark:border-white/[0.08] relative">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="sorular" className="py-24 sm:py-32 bg-[#f6f7f4] dark:bg-[#060a0f] border-t border-black/[0.06] dark:border-white/[0.08] relative overflow-hidden">
+      {/* Ambient background glow */}
+      <div className="ah-glow-bg top-1/2 right-1/4 w-80 h-80 bg-petrol-500/10 dark:bg-petrol-400/10 blur-[130px]" />
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header with Scroll Reveal */}
+        {/* Section Header with Staggered Scroll Reveal */}
         <motion.div 
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-2xl mx-auto mb-14"
+          className="text-center max-w-2xl mx-auto mb-14 sm:mb-18"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-petrol-500/10 dark:bg-petrol-400/10 border border-petrol-700/20 dark:border-petrol-400/25 text-petrol-700 dark:text-petrol-300 font-mono text-[11px] font-semibold tracking-wider uppercase mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-petrol-500/10 dark:bg-petrol-400/10 border border-petrol-700/20 dark:border-petrol-400/25 text-petrol-700 dark:text-petrol-300 font-mono text-[11px] font-semibold tracking-wider uppercase mb-4 shadow-sm">
             <HelpCircle className="w-3.5 h-3.5" />
             <span>Bölüm 6 — Karar Öncesi Sorular</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-navy-900 dark:text-white">
-            Başlamadan önce.
+            Başlamadan <span className="text-petrol-700 dark:text-petrol-400">önce.</span>
           </h2>
 
-          <p className="mt-3 text-base text-zinc-600 dark:text-zinc-400 font-light">
+          <p className="mt-3.5 text-base sm:text-lg text-zinc-600 dark:text-zinc-400 font-light">
             Süreç, kapsam ve iş birliği modelimiz hakkında en çok merak edilen noktalar.
           </p>
         </motion.div>
 
-        {/* Accordion List with Smooth Expand/Collapse */}
+        {/* Accordion List with Smooth Expand/Collapse & Active Glow */}
         <div className="space-y-4">
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
@@ -61,18 +66,25 @@ export default function FaqSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: idx * 0.08 }}
-                className="rounded-2xl bg-white dark:bg-[#0d1522] border border-black/[0.06] dark:border-white/[0.08] hover:border-petrol-600/30 overflow-hidden transition-all duration-200"
+                className={`rounded-3xl bg-white dark:bg-[#0d1522] border transition-all duration-300 overflow-hidden shadow-sm ${
+                  isOpen 
+                    ? 'border-petrol-600/50 dark:border-petrol-400/50 shadow-lg' 
+                    : 'border-black/[0.06] dark:border-white/[0.08] hover:border-petrol-600/30'
+                }`}
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? -1 : idx)}
-                  className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 cursor-pointer hover:bg-black/[0.01] dark:hover:bg-white/[0.01]"
+                  className="w-full px-7 py-5 sm:py-6 text-left flex items-center justify-between gap-4 cursor-pointer hover:bg-black/[0.01] dark:hover:bg-white/[0.01]"
                 >
-                  <span className="font-display font-semibold text-base sm:text-lg text-navy-900 dark:text-white">
+                  <span className={`font-display font-semibold text-base sm:text-lg transition-colors ${
+                    isOpen ? 'text-petrol-700 dark:text-petrol-300' : 'text-navy-900 dark:text-white'
+                  }`}>
                     {faq.q}
                   </span>
+                  
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${
                     isOpen 
-                      ? 'bg-petrol-700 text-white rotate-180' 
+                      ? 'bg-petrol-700 text-white rotate-180 shadow-sm' 
                       : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300'
                   }`}>
                     {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
@@ -93,7 +105,7 @@ export default function FaqSection() {
                       transition={{ duration: 0.35, ease: [0.04, 0.62, 0.23, 0.98] }}
                       className="overflow-hidden"
                     >
-                      <div className="px-6 pb-6 pt-1 text-sm sm:text-base text-zinc-600 dark:text-zinc-300 border-t border-black/[0.04] dark:border-white/[0.04] leading-relaxed font-light">
+                      <div className="px-7 pb-6 pt-1 text-sm sm:text-base text-zinc-600 dark:text-zinc-300 border-t border-black/[0.04] dark:border-white/[0.04] leading-relaxed font-light">
                         {faq.a}
                       </div>
                     </motion.div>
@@ -102,6 +114,26 @@ export default function FaqSection() {
               </motion.div>
             );
           })}
+        </div>
+
+        {/* Quick Helper CTA */}
+        <div className="mt-12 text-center">
+          <p className="text-xs text-zinc-500 dark:text-zinc-400 mb-3 font-light">
+            Farklı bir sorunuz mu var veya özel kapsam mı konuşmak istiyorsunuz?
+          </p>
+          <button
+            onClick={() => openWizard()}
+            className="ah-button button-outline text-xs py-2 px-4"
+          >
+            <span>
+              <span className="text-primary">
+                Ön İnceleme Talep Edin <ArrowUpRight className="w-3 h-3 ml-1" />
+              </span>
+              <span className="text-secondary">
+                Hızlı Soru Sorun <ArrowRight className="w-3 h-3 ml-1" />
+              </span>
+            </span>
+          </button>
         </div>
 
       </div>
