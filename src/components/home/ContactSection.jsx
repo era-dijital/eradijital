@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, ArrowUpRight, Send, CheckCircle2, Sparkles, Building2, User, Mail, Globe, MessageSquare } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Send, CheckCircle2, Sparkles, Building2, User, Mail, Globe, MessageSquare, ShieldCheck, Zap } from 'lucide-react';
 import { useQuoteWizard } from '../../context/QuoteWizardContext';
 
 export default function ContactSection() {
@@ -26,10 +26,11 @@ export default function ContactSection() {
   return (
     <section id="iletisim" className="py-24 sm:py-32 bg-[#fbfcfb] dark:bg-[#070b10] border-t border-black/[0.06] dark:border-white/[0.08] relative overflow-hidden">
       {/* AnalyticaHouse style ambient glow */}
-      <div className="ah-glow-bg bottom-0 right-1/4 w-[450px] h-[450px] bg-petrol-500/15 dark:bg-petrol-400/10 blur-[140px]" />
+      <div className="ah-glow-bg bottom-0 right-1/4 w-[500px] h-[500px] bg-petrol-500/15 dark:bg-petrol-400/15 blur-[150px]" />
+      <div className="ah-glow-bg top-0 left-0 w-80 h-80 bg-teal-500/10 blur-[130px]" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
           
           {/* Left Column: Context & Direct Wizard Callout */}
           <motion.div 
@@ -39,12 +40,14 @@ export default function ContactSection() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-5 space-y-6"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-petrol-500/10 dark:bg-petrol-400/10 border border-petrol-700/20 dark:border-petrol-400/25 text-petrol-700 dark:text-petrol-300 font-mono text-[11px] font-semibold tracking-wider uppercase">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-petrol-500/10 dark:bg-petrol-400/10 border border-petrol-700/20 dark:border-petrol-400/25 text-petrol-700 dark:text-petrol-300 font-mono text-[11px] font-semibold tracking-wider uppercase shadow-sm">
+              <Zap className="w-3.5 h-3.5" />
               <span>Bölüm 7 — Sonuç ve İletişim</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-navy-900 dark:text-white leading-[1.12]">
-              Dijitalde bir sonraki adımınız netleşsin.
+              Dijitalde bir sonraki <br />
+              <span className="text-petrol-700 dark:text-petrol-400">adımınız netleşsin.</span>
             </h2>
 
             <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 leading-relaxed font-light">
@@ -52,20 +55,24 @@ export default function ContactSection() {
             </p>
 
             {/* Quick 30-Sec Analysis Callout Card */}
-            <div className="p-6 rounded-3xl bg-white dark:bg-[#0d1522] border border-black/[0.06] dark:border-white/[0.08] space-y-4 shadow-sm hover:shadow-md transition-shadow">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-petrol-50 dark:bg-petrol-900/30 text-petrol-700 dark:text-petrol-300 flex items-center justify-center">
-                  <Sparkles className="w-5 h-5" />
+            <div className="p-7 rounded-3xl bg-gradient-to-br from-petrol-50 to-teal-50/50 dark:from-[#0D1522] dark:to-petrol-950/30 border border-petrol-600/20 dark:border-petrol-400/25 space-y-4 shadow-sm hover:shadow-xl transition-all duration-300">
+              <div className="flex items-center gap-3.5">
+                <div className="w-12 h-12 rounded-2xl bg-petrol-600 text-white flex items-center justify-center shadow-md">
+                  <Sparkles className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-display font-bold text-navy-900 dark:text-white">
-                    Hızlı Dijital Analiz
+                  <span className="font-mono text-[10px] font-bold text-petrol-700 dark:text-petrol-300 uppercase tracking-wider">
+                    ÖN DEĞERLENDİRME SİSTEMİ
+                  </span>
+                  <h4 className="text-base font-display font-bold text-navy-900 dark:text-white">
+                    Hızlı 30 Sn Dijital Analiz
                   </h4>
-                  <p className="text-xs text-zinc-500 dark:text-zinc-400 font-light">
-                    Form doldurmak yerine doğrudan 30 saniyede ihtiyaçlarınızı seçin.
-                  </p>
                 </div>
               </div>
+
+              <p className="text-xs text-zinc-600 dark:text-zinc-300 font-light leading-relaxed">
+                Uzun form doldurmak yerine doğrudan etkileşimli adımlarla gelişim alanlarınızı ve öncelikli yol haritanızı belirleyin.
+              </p>
               
               <button
                 onClick={() => openWizard()}
@@ -82,9 +89,15 @@ export default function ContactSection() {
               </button>
             </div>
 
-            <div className="text-xs text-zinc-500 dark:text-zinc-400 space-y-1.5 pt-2 font-light">
-              <p>• Başvuru için web sitesi sahibi olmak şart değildir.</p>
-              <p>• Kısa bir ihtiyaç görüşmesi ve mevcut dijital varlıkların ön incelemesiyle başlar.</p>
+            <div className="text-xs text-zinc-500 dark:text-zinc-400 space-y-2 pt-2 font-light">
+              <p className="flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-petrol-600 dark:text-petrol-400 shrink-0" />
+                <span>Başvuru için web sitesi sahibi olmak şart değildir.</span>
+              </p>
+              <p className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-petrol-600 dark:text-petrol-400 shrink-0" />
+                <span>Kısa bir ihtiyaç görüşmesi ve mevcut dijital varlıkların ön incelemesiyle başlar.</span>
+              </p>
             </div>
           </motion.div>
 
@@ -96,10 +109,13 @@ export default function ContactSection() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="lg:col-span-7"
           >
-            <div className="p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#0d1522] border border-black/[0.08] dark:border-white/[0.08] shadow-2xl">
+            <div className="p-8 sm:p-11 rounded-3xl bg-white dark:bg-[#0d1522] border border-black/[0.08] dark:border-white/[0.08] shadow-2xl relative overflow-hidden">
+              {/* Subtle top indicator beam */}
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-petrol-600 via-teal-400 to-transparent" />
+
               {submitted ? (
-                <div className="py-12 text-center space-y-4">
-                  <div className="w-16 h-16 rounded-full bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mx-auto border border-emerald-500/20">
+                <div className="py-14 text-center space-y-4">
+                  <div className="w-16 h-16 rounded-full bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mx-auto border border-emerald-500/20 shadow-md">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
                   <h3 className="text-2xl font-display font-bold text-navy-900 dark:text-white">
@@ -116,10 +132,15 @@ export default function ContactSection() {
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <h3 className="text-lg font-display font-bold text-navy-900 dark:text-white mb-2">
-                    Ücretsiz Ön Değerlendirme Formu
-                  </h3>
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+                  <div>
+                    <h3 className="text-xl font-display font-bold text-navy-900 dark:text-white">
+                      Ücretsiz Ön Değerlendirme Formu
+                    </h3>
+                    <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1 font-light">
+                      Ekibimiz varlıklarınızı inceleyip 24 saat içinde gelişim önerilerini iletecektir.
+                    </p>
+                  </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
@@ -134,7 +155,7 @@ export default function ContactSection() {
                           value={formData.fullName}
                           onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                           placeholder="Adınız Soyadınız"
-                          className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-petrol-600 dark:focus:border-petrol-400 transition-colors"
+                          className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-petrol-600 dark:focus:border-petrol-400 focus:ring-2 focus:ring-petrol-500/20 transition-all"
                         />
                       </div>
                     </div>
@@ -151,7 +172,7 @@ export default function ContactSection() {
                           value={formData.companyName}
                           onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
                           placeholder="Şirket / Marka Adı"
-                          className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-petrol-600 dark:focus:border-petrol-400 transition-colors"
+                          className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-petrol-600 dark:focus:border-petrol-400 focus:ring-2 focus:ring-petrol-500/20 transition-all"
                         />
                       </div>
                     </div>
@@ -170,7 +191,7 @@ export default function ContactSection() {
                           value={formData.contactInfo}
                           onChange={(e) => setFormData({ ...formData, contactInfo: e.target.value })}
                           placeholder="ornek@sirket.com veya 05xx"
-                          className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-petrol-600 dark:focus:border-petrol-400 transition-colors"
+                          className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-petrol-600 dark:focus:border-petrol-400 focus:ring-2 focus:ring-petrol-500/20 transition-all"
                         />
                       </div>
                     </div>
@@ -186,7 +207,7 @@ export default function ContactSection() {
                           value={formData.websiteOrSocial}
                           onChange={(e) => setFormData({ ...formData, websiteOrSocial: e.target.value })}
                           placeholder="www.sirketiniz.com ya da @instagram"
-                          className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-petrol-600 dark:focus:border-petrol-400 transition-colors"
+                          className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-petrol-600 dark:focus:border-petrol-400 focus:ring-2 focus:ring-petrol-500/20 transition-all"
                         />
                       </div>
                     </div>
@@ -203,7 +224,7 @@ export default function ContactSection() {
                         value={formData.priorityNeed}
                         onChange={(e) => setFormData({ ...formData, priorityNeed: e.target.value })}
                         placeholder="Örn: Web sitemizi yenilemek, aramalarda bulunmak veya müşteri taleplerini düzenli takip etmek istiyoruz..."
-                        className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-petrol-600 dark:focus:border-petrol-400 resize-none transition-colors"
+                        className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-petrol-600 dark:focus:border-petrol-400 focus:ring-2 focus:ring-petrol-500/20 resize-none transition-all"
                       />
                     </div>
                   </div>
@@ -211,14 +232,14 @@ export default function ContactSection() {
                   <div className="pt-2">
                     <button
                       type="submit"
-                      className="w-full ah-button py-3.5 px-6 justify-center text-sm shadow-md"
+                      className="w-full ah-button py-4 px-6 justify-center text-sm shadow-xl"
                     >
                       <span>
                         <span className="text-primary">
                           Ücretsiz Ön Değerlendirme İste <Send className="w-4 h-4 ml-1" />
                         </span>
                         <span className="text-secondary">
-                          Başvuruyu İlet <ArrowRight className="w-4 h-4 ml-1" />
+                          Başvuruyu Hemen İlet <ArrowRight className="w-4 h-4 ml-1" />
                         </span>
                       </span>
                     </button>

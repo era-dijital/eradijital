@@ -129,7 +129,7 @@
   transform: translateY(-18px);
 }
 
-/* Secondary Button - White border */
+/* Secondary Button - White border for dark cards */
 .ah-button.button-white {
   background-color: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -158,7 +158,7 @@
   box-shadow: 0 4px 14px rgba(0, 107, 99, 0.15);
 }
 
-/* Backwards compatibility for .ah-btn */
+/* Backwards compatibility */
 .ah-btn {
   @apply ah-button;
 }
@@ -167,7 +167,7 @@
 }
 
 /* =========================================================
-   ANALYTICAHOUSE HERO PARTICLES & AMBIENT BEAM
+   ANALYTICAHOUSE HERO & SECTION PARTICLES & BEAMS
    ========================================================= */
 .particles-container {
   position: absolute;
@@ -211,7 +211,11 @@
   z-index: 0;
 }
 
-/* Ambient Radial Glow */
+/* AnalyticaHouse Radial Dark Showcase Section Background */
+.ah-dark-radial {
+  background: radial-gradient(75% 50% at 50% 44.9%, rgba(0, 107, 99, 0.5) 0%, #070B10 100%);
+}
+
 .ah-glow-bg {
   position: absolute;
   pointer-events: none;
@@ -221,7 +225,7 @@
 }
 
 /* =========================================================
-   ANALYTICAHOUSE CONTINUOUS MARQUEE / CAROUSEL TRACK
+   CONTINUOUS MARQUEE / CAROUSEL TRACK
    ========================================================= */
 .carousel-container {
   mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
@@ -247,7 +251,7 @@
 }
 
 /* =========================================================
-   CARDS & SECTION SWITCHER (AnalyticaHouse Style)
+   CARDS & HOVER ANIMATIONS
    ========================================================= */
 .ah-card {
   background-color: var(--color-surface);
@@ -258,8 +262,22 @@
 
 .ah-card:hover {
   border-color: rgba(0, 107, 99, 0.4);
-  box-shadow: 0 12px 32px -8px rgba(0, 107, 99, 0.15);
-  transform: translateY(-3px);
+  box-shadow: 0 12px 32px -8px rgba(0, 107, 99, 0.18);
+  transform: translateY(-4px);
+}
+
+.ah-card-dark {
+  background-color: rgba(13, 21, 34, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.5rem;
+  backdrop-filter: blur(16px);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ah-card-dark:hover {
+  border-color: rgba(0, 180, 160, 0.5);
+  box-shadow: 0 16px 40px -10px rgba(0, 180, 160, 0.25);
+  transform: translateY(-4px);
 }
 
 .section-button {
@@ -272,4 +290,14 @@
   color: #ffffff;
   border-color: var(--color-primary);
   box-shadow: 0 4px 14px rgba(0, 107, 99, 0.3);
+}
+
+/* Pulsing badge animation */
+@keyframes subtlePulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.85; }
+}
+
+.animate-subtle-pulse {
+  animation: subtlePulse 3s ease-in-out infinite;
 }
