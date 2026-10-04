@@ -1,4 +1,5 @@
-﻿import { Link } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, ArrowUpRight, Sparkles } from 'lucide-react';
 import { useQuoteWizard } from '../context/QuoteWizardContext';
 
@@ -6,139 +7,99 @@ export default function Footer() {
   const { openWizard } = useQuoteWizard();
 
   return (
-    <footer className="border-t border-black/5 dark:border-white/5 bg-[#ede9df] dark:bg-[#070a10] text-zinc-700 dark:text-zinc-300 transition-colors duration-250">
+    <footer className="border-t border-black/10 dark:border-white/10 bg-[#f0f3f1] dark:bg-[#070b10] text-zinc-700 dark:text-zinc-300 transition-colors duration-250">
       {/* Top Status Strip */}
-      <div className="border-b border-black/5 dark:border-white/5 py-3 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-zinc-600 dark:text-zinc-400">
+      <div className="border-b border-black/5 dark:border-white/5 py-3.5 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-zinc-600 dark:text-zinc-400">
         <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
-          <span>BÜYÜME SİSTEMİ AKTİF // 7/24 ANALİZ VE OTO PİLOT</span>
+          <span className="w-2 h-2 rounded-full bg-petrol-600 dark:bg-petrol-400 animate-pulse"></span>
+          <span className="font-semibold text-navy-900 dark:text-white">ERA DİJİTAL // DİJİTAL GELİŞİM VE DÖNÜŞÜM AJANSI</span>
         </div>
         <div className="flex items-center gap-4 text-[11px]">
-          <span>Yanıt: &lt;1.2s</span>
+          <span>Ön İnceleme: &lt;24 Saat</span>
           <span>•</span>
-          <span>Röntgen: 24s</span>
-          <span>•</span>
-          <span>Bölge: TR-IST (Avrupa Yakası & Global)</span>
+          <span>İstanbul & Global Operasyon</span>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Company Intro */}
-          <div className="space-y-4">
+          <div className="space-y-4 md:col-span-2">
             <Link to="/" className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-orange-500/10 dark:bg-orange-500/15 border border-orange-500/30 dark:border-orange-500/30 flex items-center justify-center text-orange-600 dark:text-orange-400 font-mono font-bold text-xs">
+              <div className="w-8 h-8 rounded-lg bg-petrol-700 text-white flex items-center justify-center font-mono font-bold text-xs">
                 ERA
               </div>
-              <span className="font-display font-bold text-base text-zinc-900 dark:text-white">Era Dijital</span>
+              <span className="font-display font-bold text-lg text-navy-900 dark:text-white">ERA Dijital</span>
             </Link>
-            <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
-              İşinizi büyüten, satış kanallarınızı açan büyüme ortağınız. Çok kanallı performans reklamları, dönüşüm odaklı web altyapısı, 3D pazar testleri ve yapay zekâ süreç otomasyonunu tek elden yönetiyoruz.
+            <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-md">
+              İşletmenizin dijital gelişim önceliklerini belirliyor; görünürlük, müşteri kazanımı ve iş süreçleri için gerekli çözümleri hayata geçiriyoruz.
             </p>
-            <div className="pt-2 flex flex-wrap gap-2 font-mono text-[10px] text-orange-700 dark:text-orange-400">
-              <span className="px-2 py-0.5 rounded bg-orange-500/10 border border-orange-500/20">GROWTH PARTNER</span>
-              <span className="px-2 py-0.5 rounded bg-orange-500/10 border border-orange-500/20">DIGITAL X-RAY</span>
-              <span className="px-2 py-0.5 rounded bg-orange-500/10 border border-orange-500/20">AI & SAAS</span>
+            <div className="pt-2 flex flex-wrap gap-2 font-mono text-[11px] text-petrol-800 dark:text-petrol-300">
+              <span className="px-2.5 py-1 rounded-md bg-petrol-500/10 border border-petrol-600/20">Dijital Varlık</span>
+              <span className="px-2.5 py-1 rounded-md bg-petrol-500/10 border border-petrol-600/20">Müşteri Kazanımı</span>
+              <span className="px-2.5 py-1 rounded-md bg-petrol-500/10 border border-petrol-600/20">Satış & CRM</span>
+              <span className="px-2.5 py-1 rounded-md bg-petrol-500/10 border border-petrol-600/20">Yazılım & Süreç</span>
             </div>
           </div>
 
           {/* Nav Links */}
           <div>
-            <span className="font-mono text-xs text-zinc-500 dark:text-zinc-400 uppercase tracking-wider block mb-4">
-              [NAVİGASYON]
+            <span className="font-mono text-xs text-navy-900 dark:text-white font-bold uppercase tracking-wider block mb-4">
+              Gelişim Alanları
             </span>
             <ul className="space-y-2.5 text-xs text-zinc-600 dark:text-zinc-400">
               <li>
-                <Link to="/" className="hover:text-orange-600 dark:hover:text-white transition-colors">Ana Sayfa</Link>
+                <a href="#ihtiyaclar" className="hover:text-petrol-700 dark:hover:text-white transition-colors">İhtiyaç Tespiti</a>
               </li>
               <li>
-                <Link to="/hizmetler" className="hover:text-orange-600 dark:hover:text-white transition-colors">Büyüme Sütunlarımız</Link>
+                <a href="#gelisim-alanlari" className="hover:text-petrol-700 dark:hover:text-white transition-colors">Çözüm Yaklaşımı</a>
               </li>
               <li>
-                <a href="/#metodoloji" className="hover:text-orange-600 dark:hover:text-white transition-colors">4 Adımlı Metodoloji</a>
+                <a href="#yetkinlik" className="hover:text-petrol-700 dark:hover:text-white transition-colors">Uygulama Örnekleri</a>
               </li>
               <li>
-                <Link to="/hakkimizda" className="hover:text-orange-600 dark:hover:text-white transition-colors">Vizyonumuz & Ekip</Link>
+                <a href="#surec" className="hover:text-petrol-700 dark:hover:text-white transition-colors">Çalışma Süreci</a>
               </li>
               <li>
-                <Link to="/blog" className="hover:text-orange-600 dark:hover:text-white transition-colors">Büyüme & Teknoloji Rehberleri</Link>
+                <a href="#sorular" className="hover:text-petrol-700 dark:hover:text-white transition-colors">Karar Öncesi Sorular</a>
               </li>
               <li>
-                <button 
-                  onClick={() => openWizard()}
-                  className="text-orange-600 dark:text-orange-400 hover:text-orange-700 dark:hover:text-orange-300 transition-colors flex items-center gap-1 font-semibold pt-1 cursor-pointer"
-                >
-                  <Sparkles className="w-3 h-3 text-orange-500" />
-                  <span>30 Sn'de Ücretsiz Röntgen</span>
-                  <ArrowUpRight className="w-3 h-3" />
-                </button>
+                <Link to="/hakkimizda" className="hover:text-petrol-700 dark:hover:text-white transition-colors">Hakkımızda</Link>
               </li>
             </ul>
           </div>
 
-          {/* Solutions */}
-          <div>
-            <span className="font-mono text-xs text-zinc-500 dark:text-zinc-400 uppercase tracking-wider block mb-4">
-              [BÜYÜME ALANLARI]
+          {/* Quick Analysis & Contact */}
+          <div className="space-y-4">
+            <span className="font-mono text-xs text-navy-900 dark:text-white font-bold uppercase tracking-wider block mb-4">
+              Ön Değerlendirme
             </span>
-            <ul className="space-y-2.5 text-xs text-zinc-600 dark:text-zinc-400">
-              <li>
-                <span className="text-zinc-800 dark:text-zinc-200 font-medium">Meta & Google Ads Yönetimi</span>
-              </li>
-              <li>
-                <span className="text-zinc-800 dark:text-zinc-200 font-medium">Dönüşüm Odaklı Web Geliştirme</span>
-              </li>
-              <li>
-                <span className="text-zinc-800 dark:text-zinc-200 font-medium">3D Modelleme & Pazar Doğrulama</span>
-              </li>
-              <li>
-                <span className="text-zinc-800 dark:text-zinc-200 font-medium">7/24 WhatsApp AI Satış Temsilcisi</span>
-              </li>
-              <li>
-                <span className="text-zinc-800 dark:text-zinc-200 font-medium">Açık Hava (Billboard) Reklamları</span>
-              </li>
-              <li>
-                <span className="text-zinc-800 dark:text-zinc-200 font-medium">Sektörel SaaS & Süreç Yazılımları</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Direct Contact */}
-          <div className="space-y-3">
-            <span className="font-mono text-xs text-zinc-500 dark:text-zinc-400 uppercase tracking-wider block mb-4">
-              [İLETİŞİM & LOKASYON]
-            </span>
-            <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
-              Toplantılarımızı dikkat dağıtıcı ofis ortamlarında değil; sakin kahvaltı veya akşam yemeklerinde yüz yüze gerçekleştiriyoruz.
+            <p className="text-xs text-zinc-600 dark:text-zinc-400">
+              İşletmenizin mevcut dijital varlıklarını 24 saat içinde inceliyor, öncelikli yol haritanızı paylaşıyoruz.
             </p>
-            <div className="space-y-2 text-xs text-zinc-700 dark:text-zinc-300 pt-1">
-              <a href="mailto:eradijitalinfo@gmail.com" className="flex items-center gap-2 hover:text-orange-600 dark:hover:text-white transition-colors">
-                <Mail className="w-3.5 h-3.5 text-orange-600 dark:text-orange-400" />
-                <span>eradijitalinfo@gmail.com</span>
-              </a>
-              <a href="tel:+905528080345" className="flex items-center gap-2 hover:text-orange-600 dark:hover:text-white transition-colors">
-                <Phone className="w-3.5 h-3.5 text-orange-600 dark:text-orange-400" />
-                <span>+90 552 808 03 45</span>
-              </a>
-              <div className="flex items-center gap-2 text-zinc-600 dark:text-zinc-400">
-                <MapPin className="w-3.5 h-3.5 text-orange-600 dark:text-orange-400 shrink-0" />
-                <span>İstanbul Avrupa Yakası & Global</span>
-              </div>
+            <button
+              onClick={() => openWizard()}
+              className="ah-btn text-xs py-2.5 px-4 cursor-pointer w-full justify-center"
+            >
+              <span className="ah-btn-text">
+                <span>30 Saniyelik Analizi Başlat</span>
+                <span>Ücretsiz Ön Değerlendirme</span>
+              </span>
+              <Sparkles className="w-3.5 h-3.5" />
+            </button>
+            <div className="pt-2 text-xs text-zinc-500 dark:text-zinc-400 space-y-1">
+              <p>E-posta: iletisim@eradijital.com</p>
+              <p>Konum: İstanbul / Türkiye</p>
             </div>
           </div>
         </div>
 
-        {/* Bottom Legal */}
-        <div className="mt-12 pt-8 border-t border-black/5 dark:border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-500">
-          <div>
-            &copy; {new Date().getFullYear()} Era Dijital. Tüm hakları saklıdır. Büyüme & Teknoloji Ajansı.
-          </div>
-          <div className="flex gap-4">
-            <Link to="/hizmetler" className="hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors">Hizmetler</Link>
-            <span>•</span>
-            <Link to="/on-analiz" className="hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors">Dijital Röntgen</Link>
-            <span>•</span>
-            <Link to="/iletisim" className="hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors">İletişim</Link>
+        {/* Bottom Bar */}
+        <div className="mt-12 pt-8 border-t border-black/5 dark:border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500 dark:text-zinc-400">
+          <p>© {new Date().getFullYear()} ERA Dijital. Tüm hakları saklıdır.</p>
+          <div className="flex items-center gap-6">
+            <a href="#iletisim" className="hover:text-petrol-700 dark:hover:text-white transition-colors">İletişim Formu</a>
+            <button onClick={() => openWizard()} className="hover:text-petrol-700 dark:hover:text-white transition-colors cursor-pointer">Ön Değerlendirme</button>
           </div>
         </div>
       </div>
