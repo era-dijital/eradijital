@@ -41,10 +41,10 @@ export default function BlogPostPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex flex-col justify-between bg-[#f8f6f0] dark:bg-[#0a0d14] text-zinc-900 dark:text-slate-100">
+      <div className="min-h-screen flex flex-col justify-between bg-[#f6f7f4] dark:bg-[#070b10] text-zinc-900 dark:text-slate-100">
         <Header />
         <div className="flex justify-center items-center py-40">
-          <div className="w-8 h-8 border-2 border-orange-500 border-t-transparent rounded-full animate-spin"></div>
+          <div className="w-8 h-8 border-2 border-petrol-500 border-t-transparent rounded-full animate-spin"></div>
         </div>
         <Footer />
       </div>
@@ -53,10 +53,10 @@ export default function BlogPostPage() {
 
   if (!post) {
     return (
-      <div className="min-h-screen flex flex-col justify-between bg-[#f8f6f0] dark:bg-[#0a0d14] text-zinc-900 dark:text-slate-100">
+      <div className="min-h-screen flex flex-col justify-between bg-[#f6f7f4] dark:bg-[#070b10] text-zinc-900 dark:text-slate-100">
         <Header />
         <div className="max-w-xl mx-auto text-center py-40 space-y-4 px-4">
-          <span className="font-mono text-xs px-2.5 py-1 rounded bg-orange-500/10 text-orange-700 dark:text-orange-400 border border-orange-500/20">
+          <span className="font-mono text-xs px-2.5 py-1 rounded bg-petrol-500/10 text-petrol-700 dark:text-petrol-400 border border-petrol-500/20">
             [404 // BULUNAMADI]
           </span>
           <h2 className="text-2xl font-bold text-zinc-900 dark:text-white">Yazı Bulunamadı</h2>
@@ -81,7 +81,7 @@ export default function BlogPostPage() {
   });
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#f8f6f0] dark:bg-[#0a0d14] text-zinc-900 dark:text-slate-100 selection:bg-orange-600 selection:text-white transition-colors duration-250">
+    <div className="min-h-screen flex flex-col bg-[#f6f7f4] dark:bg-[#070b10] text-zinc-900 dark:text-slate-100 selection:bg-petrol-600 selection:text-white transition-colors duration-250">
       <SEO
         title={`${post.seo_title || post.title} | Era Dijital Blog`}
         description={post.seo_description || post.excerpt}
@@ -92,7 +92,7 @@ export default function BlogPostPage() {
       <main className="flex-1 py-12">
         <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           {/* Back Nav */}
-          <Link to="/blog" className="inline-flex items-center gap-1.5 font-mono text-xs text-zinc-600 dark:text-zinc-400 hover:text-orange-600 dark:hover:text-orange-400 transition-colors">
+          <Link to="/blog" className="inline-flex items-center gap-1.5 font-mono text-xs text-zinc-600 dark:text-zinc-400 hover:text-petrol-600 dark:hover:text-petrol-400 transition-colors">
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>[GERİ // BLOG DİZİNİ]</span>
           </Link>
@@ -105,18 +105,18 @@ export default function BlogPostPage() {
 
             <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-zinc-500 dark:text-zinc-400 border-y border-black/10 dark:border-white/10 py-3">
               <div className="flex items-center gap-1.5">
-                <Calendar className="w-3.5 h-3.5 text-orange-600 dark:text-orange-400" />
+                <Calendar className="w-3.5 h-3.5 text-petrol-600 dark:text-petrol-400" />
                 <span>{dateStr}</span>
               </div>
               <span>•</span>
               <div className="flex items-center gap-1.5">
-                <User className="w-3.5 h-3.5 text-orange-600 dark:text-orange-400" />
+                <User className="w-3.5 h-3.5 text-petrol-600 dark:text-petrol-400" />
                 <span>{post.author_name || 'Era Dijital Teknik Ekip'}</span>
               </div>
               {post.category && (
                 <>
                   <span>•</span>
-                  <span className="px-2 py-0.5 rounded bg-orange-500/10 text-orange-700 dark:text-orange-400 border border-orange-500/20 text-[10px] uppercase font-bold">
+                  <span className="px-2 py-0.5 rounded bg-petrol-500/10 text-petrol-700 dark:text-petrol-400 border border-petrol-500/20 text-[10px] uppercase font-bold">
                     {post.category}
                   </span>
                 </>
@@ -148,7 +148,7 @@ export default function BlogPostPage() {
             </div>
             <Link 
               to="/on-analiz" 
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-orange-600 hover:bg-orange-700 shadow-md shadow-orange-600/20 transition-all shrink-0 cursor-pointer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-petrol-600 hover:bg-petrol-700 shadow-md shadow-petrol-600/20 transition-all shrink-0 cursor-pointer"
             >
               <Sparkles className="w-3.5 h-3.5" />
               <span>Ücretsiz Ön Analiz Al</span>

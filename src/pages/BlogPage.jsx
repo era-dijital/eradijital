@@ -49,7 +49,7 @@ export default function BlogPage() {
   );
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#f8f6f0] dark:bg-[#0a0d14] text-zinc-900 dark:text-slate-100 selection:bg-orange-600 selection:text-white transition-colors duration-250">
+    <div className="min-h-screen flex flex-col bg-[#f6f7f4] dark:bg-[#070b10] text-zinc-900 dark:text-slate-100 selection:bg-petrol-600 selection:text-white transition-colors duration-250">
       <SEO
         title="Blog & Büyüme Teknolojileri Rehberi | Era Dijital"
         description="Yapay zekâ otomasyonları, dijital dönüşüm süreçleri, 3D pazar testleri ve performans pazarlaması hakkında teknik makaleler ve rehberler."
@@ -62,8 +62,8 @@ export default function BlogPage() {
         <section className="py-16 sm:py-24 border-b border-black/5 dark:border-white/5 bg-[#f1ede4] dark:bg-[#0b0e17] transition-colors duration-250">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div className="space-y-4 max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/25 text-orange-700 dark:text-orange-400 font-mono text-xs font-semibold">
-                <Sparkles className="w-3.5 h-3.5 text-orange-500" />
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-petrol-500/10 border border-petrol-500/25 text-petrol-700 dark:text-petrol-400 font-mono text-xs font-semibold">
+                <Sparkles className="w-3.5 h-3.5 text-petrol-500" />
                 <span>BİLGİ MERKEZİ // TEKNİK REHBERLER</span>
               </div>
               <h1 className="text-3xl sm:text-5xl font-display font-bold tracking-tight text-zinc-900 dark:text-white">
@@ -81,7 +81,7 @@ export default function BlogPage() {
                 placeholder="Konu veya anahtar kelime ara..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 bg-white dark:bg-white/[0.04] border border-black/15 dark:border-white/10 rounded-xl text-sm text-zinc-900 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-zinc-500 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors shadow-sm"
+                className="w-full pl-10 pr-4 py-3 bg-white dark:bg-white/[0.04] border border-black/15 dark:border-white/10 rounded-xl text-sm text-zinc-900 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-zinc-500 focus:outline-none focus:border-petrol-500 focus:ring-1 focus:ring-petrol-500 transition-colors shadow-sm"
               />
               <Search className="w-4 h-4 text-zinc-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
             </div>
@@ -92,7 +92,7 @@ export default function BlogPage() {
         <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {loading ? (
             <div className="flex justify-center py-20">
-              <div className="w-8 h-8 border-2 border-orange-500 border-t-transparent rounded-full animate-spin"></div>
+              <div className="w-8 h-8 border-2 border-petrol-500 border-t-transparent rounded-full animate-spin"></div>
             </div>
           ) : filteredPosts.length === 0 ? (
             <div className="text-center py-20 text-xs font-mono text-zinc-500 dark:text-zinc-400">
@@ -111,7 +111,7 @@ export default function BlogPage() {
                 return (
                   <article
                     key={post.id}
-                    className="p-5 sm:p-6 rounded-2xl bg-white dark:bg-white/[0.02] border border-black/5 dark:border-white/10 hover:border-orange-500/40 shadow-sm dark:shadow-none hover:shadow-md transition-all flex flex-col justify-between space-y-4 group"
+                    className="p-5 sm:p-6 rounded-2xl bg-white dark:bg-white/[0.02] border border-black/5 dark:border-white/10 hover:border-petrol-500/40 shadow-sm dark:shadow-none hover:shadow-md transition-all flex flex-col justify-between space-y-4 group"
                   >
                     <div className="space-y-3">
                       {imageSrc && (
@@ -124,7 +124,7 @@ export default function BlogPage() {
                         </div>
                       )}
 
-                      <div className="flex items-center gap-2 text-[11px] font-mono text-orange-700 dark:text-orange-400">
+                      <div className="flex items-center gap-2 text-[11px] font-mono text-petrol-700 dark:text-petrol-400">
                         <span className="flex items-center gap-1 text-zinc-500 dark:text-zinc-400">
                           <Calendar className="w-3 h-3" />
                           <span>{dateStr}</span>
@@ -133,7 +133,7 @@ export default function BlogPage() {
                         <span className="font-semibold uppercase tracking-wider">{post.category || 'AI Büyüme'}</span>
                       </div>
 
-                      <h2 className="text-lg font-bold text-zinc-900 dark:text-white leading-snug group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">
+                      <h2 className="text-lg font-bold text-zinc-900 dark:text-white leading-snug group-hover:text-petrol-600 dark:group-hover:text-petrol-400 transition-colors">
                         <Link to={`/blog/${post.slug}`}>
                           {post.title}
                         </Link>
@@ -147,7 +147,7 @@ export default function BlogPage() {
                     <div className="pt-4 border-t border-black/5 dark:border-white/5 flex items-center justify-between text-xs">
                       <Link
                         to={`/blog/${post.slug}`}
-                        className="text-orange-600 dark:text-orange-400 font-bold hover:text-orange-700 dark:hover:text-orange-300 flex items-center gap-1 font-mono text-xs"
+                        className="text-petrol-600 dark:text-petrol-400 font-bold hover:text-petrol-700 dark:hover:text-petrol-300 flex items-center gap-1 font-mono text-xs"
                       >
                         <span>İncele</span>
                         <ArrowRight className="w-3.5 h-3.5" />

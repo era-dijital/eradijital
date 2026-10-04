@@ -203,14 +203,14 @@ export default function ChatBot() {
                 >
                   <div className={`flex items-start gap-2 max-w-[85%] ${msg.sender === 'user' ? 'flex-row-reverse' : 'flex-row'}`}>
                     {msg.sender === 'bot' && (
-                      <div className="w-6 h-6 rounded bg-orange-500/10 border border-orange-500/20 flex items-center justify-center shrink-0 mt-0.5 font-mono text-[10px] text-orange-600 dark:text-orange-400 font-bold">
+                      <div className="w-6 h-6 rounded bg-petrol-/10 border border-petrol-/20 flex items-center justify-center shrink-0 mt-0.5 font-mono text-[10px] text-petrol- dark:text-petrol- font-bold">
                         AI
                       </div>
                     )}
                     <div
                       className={`p-3 rounded-xl text-xs leading-relaxed ${
                         msg.sender === 'user'
-                          ? 'bg-orange-600 text-white font-medium shadow-sm'
+                          ? 'bg-petrol- text-white font-medium shadow-sm'
                           : 'bg-white dark:bg-white/[0.04] border border-black/5 dark:border-white/10 text-zinc-800 dark:text-zinc-200 shadow-sm'
                       }`}
                     >
@@ -227,11 +227,11 @@ export default function ChatBot() {
               {isLoading && (
                 <div className="flex justify-start">
                   <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 rounded bg-orange-500/10 border border-orange-500/20 flex items-center justify-center font-mono text-[10px] text-orange-600 dark:text-orange-400 font-bold">
+                    <div className="w-6 h-6 rounded bg-petrol-/10 border border-petrol-/20 flex items-center justify-center font-mono text-[10px] text-petrol- dark:text-petrol- font-bold">
                       AI
                     </div>
                     <div className="p-2.5 rounded-xl bg-white dark:bg-white/[0.04] border border-black/5 dark:border-white/10 text-[11px] font-mono text-zinc-500 dark:text-zinc-400 flex items-center gap-1.5 shadow-sm">
-                      <span className="w-1.5 h-1.5 bg-orange-500 rounded-full animate-ping" />
+                      <span className="w-1.5 h-1.5 bg-petrol- rounded-full animate-ping" />
                       <span>Yanıt hazırlanıyor...</span>
                     </div>
                   </div>
@@ -250,13 +250,13 @@ export default function ChatBot() {
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}
                 placeholder="Sorunuzu buraya yazın..."
-                className="flex-1 bg-black/[0.03] dark:bg-white/[0.04] border border-black/10 dark:border-white/10 rounded-xl px-3 py-2 text-xs text-zinc-900 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-zinc-500 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors"
+                className="flex-1 bg-black/[0.03] dark:bg-white/[0.04] border border-black/10 dark:border-white/10 rounded-xl px-3 py-2 text-xs text-zinc-900 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-zinc-500 focus:outline-none focus:border-petrol- focus:ring-1 focus:ring-petrol- transition-colors"
                 disabled={isLoading}
               />
               <button
                 type="submit"
                 disabled={isLoading || !inputText.trim()}
-                className="p-2 bg-orange-600 hover:bg-orange-700 text-white rounded-xl shadow-md shadow-orange-600/20 disabled:opacity-40 transition-colors cursor-pointer"
+                className="p-2 bg-petrol- hover:bg-petrol- text-white rounded-xl shadow-md shadow-petrol-/20 disabled:opacity-40 transition-colors cursor-pointer"
               >
                 <Send className="w-3.5 h-3.5" />
               </button>
@@ -268,7 +268,7 @@ export default function ChatBot() {
       {/* Floating Action Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-12 h-12 rounded-xl bg-orange-600 hover:bg-orange-700 text-white flex items-center justify-center shadow-lg shadow-orange-600/30 transition-all hover:scale-105 cursor-pointer"
+        className="w-12 h-12 rounded-xl bg-petrol- hover:bg-petrol- text-white flex items-center justify-center shadow-lg shadow-petrol-/30 transition-all hover:scale-105 cursor-pointer"
         aria-label="Canlı Destek"
         title="Canlı Yapay Zekâ Asistanı"
       >
