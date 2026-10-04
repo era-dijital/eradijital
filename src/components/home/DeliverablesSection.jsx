@@ -1,5 +1,6 @@
-﻿import React from 'react';
-import { ArrowUpRight, CheckCircle2, ArrowRight } from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { ArrowRight, CheckCircle2, Globe, Cpu, Layers, ExternalLink, ArrowUpRight } from 'lucide-react';
 import { useQuoteWizard } from '../../context/QuoteWizardContext';
 
 export default function DeliverablesSection() {
@@ -11,112 +12,143 @@ export default function DeliverablesSection() {
       title: "Hızlı, Güven Veren ve Teklife Yönlendiren Kurumsal Web Altyapısı",
       need: "Ziyaretçiyi kaçıran hantal vitrin siteleri yerine, doğrudan teklif ve randevuya yönlendiren hızlı bir altyapı.",
       work: "Vite + React & Tailwind CSS ile 0.8s altı açılış hızı, Ramses modeli 30 saniyelik etkileşimli teklif hesaplayıcısı.",
-      output: "99/100 hız skoru, sıfır kod yükü ve doğrudan iş talebi üreten çalışan kurumsal web platformu.",
-      img: "/resimler/hizmetler/dijital-donusum-danismanligi-analiz.webp",
-      alt: "Dönüşüm Odaklı Web ve Platform Çalışması"
+      output: "99/100 Core Web Vitals Skoru & Otomatik Lead Yönlendirmesi",
+      badge: "CANLI WEB ÇALIŞMASI",
+      icon: Globe
     },
     {
-      category: "ÜRÜN GÖRSELLEŞTİRMESİ & PRODÜKSİYON",
-      title: "Üretim Öncesi 3D Dijital Prototip ve Pazar Doğrulaması",
-      need: "Yüksek kalıp ve stok masrafına girmeden önce pazarın satın alma iştahını somut olarak test etmek.",
-      work: "Fotogerçekçi 3D modelleme, malzeme simülasyonu ve hedef kitleye yönelik doğrulama içerikleri.",
-      output: "Fiziksel üretim riski alınmadan önce doğrulanmış ön talep ve lansmana hazır görsel materyaller.",
-      img: "/resimler/kurumsal/prototype-market-test.jpg",
-      alt: "3D Modelleme ve Dijital Prototip Doğrulama"
+      category: "PRODÜKSİYON & GÖRSEL İLETİŞİM",
+      title: "Ürün ve Hizmet Yetkinliğini Somutlaştıran Dijital İçerik Seti",
+      need: "Uzmanlığı ve ürün kalitesini potansiyel müşteriye güven verici bir netlikle aktarmak.",
+      work: "Gerçek üretim/saha görselleri, sadeleştirilmiş 3D demonstrasyonlar ve tutarlı kurumsal anlatım dili.",
+      output: "Çok Kanallı Dijital Varlık Kiti & Satış Sunumu Kataloğu",
+      badge: "İÇERİK & GÖRSELLEŞTİRME",
+      icon: Layers
     },
     {
-      category: "SÜREÇ OTOMASYONU & MÜŞTERİ KARŞILAMA",
-      title: "7/24 Kesintisiz WhatsApp AI Müşteri Asistanı & CRM Akışı",
-      need: "Mesai saatleri dışında gelen müşteri mesajlarının gecikmesi veya yanıtsız kalarak kaybolması.",
-      work: "WhatsApp & Instagram üzerinde 7/24 çalışan AI yanıt asistanı, otomatik randevu ve CRM köprüsü.",
-      output: "<1.2s yanıt süresi, hatasız bilgi aktarımı ve doğrudan yetkiliye iletilen nitelikli başvuru akışı.",
-      img: "/resimler/hizmetler/ai-otomasyon-sistemleri-chat.webp",
-      alt: "Yapay Zeka Otomasyon ve Canlı Müşteri Karşılama"
+      category: "İŞ SÜREÇLERİ & OTOMASYON",
+      title: "Gelen Talepleri Otomatik Karşılayan & Kaydeden CRM İş Akışı",
+      need: "Mesajların, tekliflerin ve formların WhatsApp ve Excel arasında kaybolmasını önlemek.",
+      work: "Web formu ve WhatsApp Webhook entegrasyonu, n8n/Make tabanlı anlık bildirim ve müşteri paneli senkronizasyonu.",
+      output: "7/24 Kesintisiz Talep Takip Sistemi & Otomatik Müşteri Bildirimi",
+      badge: "DEMO OTOMASYON UYGULAMASI",
+      icon: Cpu
     }
   ];
 
   return (
-    <section id="uygulamalar" className="py-20 sm:py-24 border-b border-black/5 dark:border-white/5 scroll-mt-20">
+    <section id="yetkinlik" className="py-24 sm:py-32 bg-[#f6f7f4] dark:bg-[#070b10] border-t border-black/[0.06] dark:border-white/[0.08] relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="max-w-3xl mb-12 sm:mb-16">
-          <span className="font-mono text-xs uppercase tracking-wider text-petrol-700 dark:text-petrol-300 font-semibold block mb-2">
-            [ SOMUT İŞ ÇIKTILARI // YETKİNLİK ]
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-display font-bold text-navy-900 dark:text-white tracking-tight">
+        {/* Section Header with Scroll Reveal */}
+        <motion.div 
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl mb-14 sm:mb-20"
+        >
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-petrol-500/10 dark:bg-petrol-400/10 border border-petrol-700/20 dark:border-petrol-400/25 text-petrol-700 dark:text-petrol-300 font-mono text-[11px] font-semibold tracking-wider uppercase mb-4">
+            <span>Bölüm 4 — Yetkinliğin Görünür Olması</span>
+          </div>
+
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-navy-900 dark:text-white leading-[1.15]">
             Yaklaşımın uygulamadaki karşılığı.
           </h2>
-          <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 mt-3 leading-relaxed">
-            Metin vaatleri yerine; gösterilebilir çıktı ve çalışan dijital uygulamalarla işletmenizin ihtiyacına yanıt veriyoruz.
+
+          <p className="mt-4 text-base sm:text-lg text-zinc-600 dark:text-zinc-300 leading-relaxed font-light">
+            İkna gücünü abartılı iddialardan değil, somut işten alıyoruz. Her çalışma aynı net düzeni izler: <br className="hidden sm:inline" />
+            <span className="font-mono text-xs sm:text-sm font-semibold text-petrol-800 dark:text-petrol-300">
+              İhtiyaç → Yapılan Çalışma → Gösterilebilir Çıktı
+            </span>
           </p>
-        </div>
+        </motion.div>
 
-        {/* Deliverables List (İhtiyaç → Yapılan Çalışma → Gösterilebilir Çıktı) */}
-        <div className="space-y-10 sm:space-y-12">
-          {deliverables.map((item, idx) => (
-            <div
-              key={item.category}
-              className="ah-card p-6 sm:p-9 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
-            >
-              {/* Visual Side */}
-              <div className={`lg:col-span-5 ${idx % 2 === 1 ? 'lg:order-2' : ''}`}>
-                <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-black/5 dark:border-white/10 bg-black/5 dark:bg-black/30 shadow-md">
-                  <img
-                    src={item.img}
-                    alt={item.alt}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute top-3 left-3">
-                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-black/80 text-white backdrop-blur-md border border-white/10">
-                      Uygulama 0{idx + 1}
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Content Side: Need -> Work -> Output */}
-              <div className={`lg:col-span-7 space-y-4 ${idx % 2 === 1 ? 'lg:order-1' : ''}`}>
-                <div className="font-mono text-xs font-bold text-petrol-700 dark:text-petrol-400 uppercase tracking-wider">
-                  {item.category}
-                </div>
-
-                <h3 className="text-xl sm:text-2xl font-bold text-navy-900 dark:text-white leading-snug">
-                  {item.title}
-                </h3>
-
-                <div className="space-y-3 pt-2 text-xs sm:text-sm">
-                  <div className="p-3 rounded-xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5">
-                    <span className="font-semibold text-navy-900 dark:text-white block mb-0.5">İhtiyaç:</span>
-                    <span className="text-zinc-600 dark:text-zinc-400">{item.need}</span>
+        {/* Deliverable Cards Grid */}
+        <div className="space-y-8">
+          {deliverables.map((item, idx) => {
+            const Icon = item.icon;
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.55, delay: idx * 0.15 }}
+                className="group relative p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#0d1522] border border-black/[0.06] dark:border-white/[0.08] hover:border-petrol-600/40 dark:hover:border-petrol-400/40 transition-all duration-300 shadow-sm hover:shadow-xl"
+              >
+                <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 pb-6 border-b border-black/5 dark:border-white/5">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-petrol-50 dark:bg-petrol-900/30 text-petrol-700 dark:text-petrol-300 flex items-center justify-center border border-petrol-700/15 group-hover:bg-petrol-600 group-hover:text-white transition-colors">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <span className="font-mono text-xs text-petrol-700 dark:text-petrol-400 font-bold tracking-wider">
+                        {item.category}
+                      </span>
+                      <h3 className="text-xl sm:text-2xl font-display font-semibold text-navy-900 dark:text-white mt-0.5">
+                        {item.title}
+                      </h3>
+                    </div>
                   </div>
 
-                  <div className="p-3 rounded-xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5">
-                    <span className="font-semibold text-navy-900 dark:text-white block mb-0.5">Yapılan Çalışma:</span>
-                    <span className="text-zinc-600 dark:text-zinc-400">{item.work}</span>
-                  </div>
-
-                  <div className="p-3 rounded-xl bg-petrol-500/[0.07] dark:bg-petrol-400/10 border border-petrol-700/20 dark:border-petrol-400/20">
-                    <span className="font-semibold text-petrol-800 dark:text-petrol-300 block mb-0.5 flex items-center gap-1.5">
-                      <CheckCircle2 className="w-3.5 h-3.5" />
-                      <span>Gösterilebilir Çıktı:</span>
-                    </span>
-                    <span className="text-petrol-900 dark:text-petrol-200">{item.output}</span>
-                  </div>
+                  <span className="self-start px-3 py-1 rounded-full bg-petrol-500/10 text-petrol-800 dark:text-petrol-300 border border-petrol-600/20 text-xs font-mono font-medium">
+                    {item.badge}
+                  </span>
                 </div>
 
-                <div className="pt-2">
+                {/* 3 Step Formula */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
+                  
+                  {/* Step 1: Need */}
+                  <div className="space-y-2">
+                    <div className="text-xs font-mono font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-wider flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-zinc-400" />
+                      1. İhtiyaç
+                    </div>
+                    <p className="text-sm text-zinc-700 dark:text-zinc-300 font-light leading-relaxed">
+                      {item.need}
+                    </p>
+                  </div>
+
+                  {/* Step 2: Work Done */}
+                  <div className="space-y-2">
+                    <div className="text-xs font-mono font-bold text-petrol-700 dark:text-petrol-400 uppercase tracking-wider flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-petrol-600" />
+                      2. Yapılan Çalışma
+                    </div>
+                    <p className="text-sm text-zinc-700 dark:text-zinc-300 font-light leading-relaxed">
+                      {item.work}
+                    </p>
+                  </div>
+
+                  {/* Step 3: Tangible Output */}
+                  <div className="space-y-2 p-4 rounded-2xl bg-[#f0f6f4] dark:bg-petrol-950/20 border border-petrol-700/15 dark:border-petrol-400/20">
+                    <div className="text-xs font-mono font-bold text-petrol-800 dark:text-petrol-300 uppercase tracking-wider flex items-center gap-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-petrol-700 dark:text-petrol-400" />
+                      3. Gösterilebilir Çıktı
+                    </div>
+                    <p className="text-sm font-medium text-navy-900 dark:text-white leading-relaxed">
+                      {item.output}
+                    </p>
+                  </div>
+
+                </div>
+
+                {/* Bottom Card Action */}
+                <div className="mt-6 pt-4 border-t border-black/5 dark:border-white/5 flex items-center justify-between text-xs text-zinc-500">
+                  <span>Gerçek uygulama mimarisi</span>
                   <button
                     onClick={() => openWizard()}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-petrol-700 dark:text-petrol-400 hover:text-petrol-800 dark:hover:text-petrol-300 cursor-pointer"
+                    className="text-xs font-semibold text-petrol-700 dark:text-petrol-400 group-hover:underline flex items-center gap-1 cursor-pointer"
                   >
-                    <span>Benzer bir çalışma için ön değerlendirme iste</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <span>Benzer İhtiyaç İçin Ön Değerlendirme İste</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
-              </div>
-            </div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
 
       </div>

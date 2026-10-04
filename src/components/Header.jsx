@@ -1,158 +1,146 @@
-﻿import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ArrowUpRight, ArrowRight, Sun, Moon } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useQuoteWizard } from '../context/QuoteWizardContext';
+import { ArrowUpRight, ArrowRight, Menu, X, Sun, Moon, Sparkles } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
+import { useQuoteWizard } from '../context/QuoteWizardContext';
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const { theme, toggleTheme } = useTheme();
   const { openWizard } = useQuoteWizard();
-  const { toggleTheme, isDark } = useTheme();
+  const location = useLocation();
 
-  const navItems = [
-    { name: 'İhtiyaçlar', path: '/#ihtiyaclar' },
-    { name: 'Gelişim Alanları', path: '/#gelisim-alanlari' },
-    { name: 'Uygulamalar', path: '/#uygulamalar' },
-    { name: 'Süreç', path: '/#surec' },
-    { name: 'Sorular', path: '/#sorular' },
-    { name: 'Hakkımızda', path: '/hakkimizda' },
-    { name: 'İletişim', path: '/iletisim' },
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navLinks = [
+    { name: 'Yaklaşım', href: '/#ihtiyaclar' },
+    { name: 'Çözümler', href: '/#gelisim-alanlari' },
+    { name: 'Yetkinlik', href: '/#yetkinlik' },
+    { name: 'Süreç', href: '/#surec' },
+    { name: 'SSS', href: '/#sorular' },
+    { name: 'Hakkımızda', href: '/hakkimizda' },
   ];
 
-  const isActive = (path) => location.pathname === path;
-
   return (
-    <header className="fixed top-3 sm:top-5 left-0 right-0 z-50 flex justify-center px-3 sm:px-6 pointer-events-none">
-      <div className="w-full max-w-6xl pointer-events-auto flex items-center justify-between border border-black/10 dark:border-white/10 bg-white/90 dark:bg-[#070b10]/90 backdrop-blur-xl rounded-full py-2.5 px-4 sm:px-6 shadow-lg shadow-black/5 dark:shadow-black/40 transition-all duration-300">
+    <header className="fixed top-0 left-0 w-full z-50 px-3 sm:px-6 md:px-10 flex justify-center py-3 sm:py-4 pointer-events-none transition-all duration-300">
+      
+      {/* Floating Pill Container (AnalyticaHouse Architecture) */}
+      <div 
+        className={`pointer-events-auto flex items-center justify-between gap-4 sm:gap-6 py-2 px-3.5 sm:px-5 rounded-full border transition-all duration-300 shadow-lg ${
+          scrolled
+            ? 'bg-[#070b10]/95 border-white/15 backdrop-blur-md shadow-2xl'
+            : 'bg-[#070b10]/85 border-white/10 backdrop-blur-md'
+        }`}
+      >
         
-        {/* Brand Logo & Slogan */}
-        <Link to="/" className="flex items-center gap-2.5 group focus-visible:outline-none">
-          <div className="w-8 h-8 rounded-full bg-petrol-700/10 dark:bg-petrol-400/15 border border-petrol-700/25 dark:border-petrol-400/30 flex items-center justify-center text-petrol-700 dark:text-petrol-300 font-display font-bold text-xs tracking-tighter group-hover:scale-105 transition-transform">
-            ERA
+        {/* Brand Logo & Hashtag */}
+        <Link to="/" className="flex items-center gap-2 relative shrink-0">
+          <div className="w-7 h-7 rounded-lg bg-petrol-600 text-white flex items-center justify-center font-mono font-bold text-xs">
+            E
           </div>
-          <div className="flex flex-col">
-            <span className="font-display font-bold text-sm sm:text-base tracking-tight text-navy-900 dark:text-white">
-              Era Dijital
-            </span>
-            <span className="text-[9px] font-mono uppercase tracking-wider text-petrol-700 dark:text-petrol-400 hidden sm:inline -mt-0.5 font-semibold">
-              #dijitalgelişim
-            </span>
-          </div>
+          <span className="font-display font-bold text-sm tracking-tight text-white">
+            ERA<span className="text-petrol-400">Dijital</span>
+          </span>
+          <span className="hidden lg:inline-block font-mono text-[9px] text-petrol-400 font-semibold pl-1">
+            #dijitalgelişim
+          </span>
         </Link>
 
-        {/* Desktop Nav Links */}
-        <nav className="hidden lg:flex items-center space-x-1">
-          {navItems.map((item) => {
-            if (item.path.startsWith('/#')) {
-              return (
-                <a
-                  key={item.path}
-                  href={item.path}
-                  className="px-3 py-1.5 rounded-full text-xs font-medium text-zinc-600 dark:text-zinc-300 hover:text-petrol-700 dark:hover:text-petrol-300 hover:bg-black/5 dark:hover:bg-white/[0.05] transition-colors"
-                >
-                  {item.name}
-                </a>
-              );
-            }
-            return (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
-                  isActive(item.path)
-                    ? 'text-petrol-700 dark:text-white bg-petrol-50 dark:bg-white/[0.08] font-semibold'
-                    : 'text-zinc-600 dark:text-zinc-300 hover:text-petrol-700 dark:hover:text-petrol-300 hover:bg-black/5 dark:hover:bg-white/[0.05]'
-                }`}
-              >
-                {item.name}
-              </Link>
-            );
-          })}
+        {/* Center Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-1 text-xs">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className="px-2.5 py-1.5 rounded-full text-slate-300 hover:text-white hover:bg-white/10 transition-colors font-light"
+            >
+              {link.name}
+            </a>
+          ))}
         </nav>
 
-        {/* Action Controls: Theme Switcher & AnalyticaHouse Style Button */}
-        <div className="flex items-center gap-2 sm:gap-3">
+        {/* Right Action & Theme Toggle */}
+        <div className="flex items-center gap-2.5">
           
-          {/* Dark / Light Toggle */}
+          {/* Light/Dark Toggle */}
           <button
             onClick={toggleTheme}
-            aria-label={isDark ? "Açık Moda Geç" : "Koyu Moda Geç"}
-            title={isDark ? "Açık Moda Geç" : "Koyu Moda Geç"}
-            className="p-2 sm:p-2.5 rounded-full text-zinc-600 dark:text-zinc-400 hover:text-petrol-700 dark:hover:text-petrol-300 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 transition-colors cursor-pointer"
+            aria-label="Tema Değiştir"
+            className="w-8 h-8 rounded-full flex items-center justify-center text-slate-300 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
           >
-            {isDark ? (
-              <Sun className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-petrol-300 animate-spin-slow" />
-            ) : (
-              <Moon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-zinc-700" />
-            )}
+            {theme === 'dark' ? <Sun className="w-3.5 h-3.5" /> : <Moon className="w-3.5 h-3.5" />}
           </button>
 
-          {/* AnalyticaHouse Signature Button (Sliding Text) */}
+          {/* AnalyticaHouse Signature Button */}
           <button
             onClick={() => openWizard()}
-            className="ah-btn text-xs sm:text-xs py-2 sm:py-2.5 px-3.5 sm:px-5 cursor-pointer"
+            className="ah-button text-xs py-2 px-3.5 sm:px-4 shrink-0"
           >
-            <span className="ah-btn-inner">
-              <span className="ah-btn-text">
-                <span>Ücretsiz Ön Değerlendirme</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
+            <span>
+              <span className="text-primary">
+                Ön Değerlendirme <ArrowUpRight className="w-3.5 h-3.5 ml-1" />
               </span>
-              <span className="ah-btn-text text-white/90">
-                <span>Gelişimi Başlatın</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+              <span className="text-secondary">
+                30 Sn Analiz <ArrowRight className="w-3.5 h-3.5 ml-1" />
               </span>
             </span>
           </button>
 
-          {/* Mobile Menu Toggle Button */}
+          {/* Mobile Menu Hamburger */}
           <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="p-2 rounded-full lg:hidden text-zinc-600 dark:text-zinc-300 hover:bg-black/5 dark:hover:bg-white/10 transition-colors cursor-pointer"
-            aria-label="Menü"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden w-8 h-8 rounded-full flex items-center justify-center text-slate-300 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
           >
-            {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
           </button>
         </div>
+
       </div>
 
-      {/* Mobile Drawer */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20, scale: 0.96 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -20, scale: 0.96 }}
-            className="lg:hidden pointer-events-auto fixed top-20 left-4 right-4 bg-white/98 dark:bg-[#070b10]/98 backdrop-blur-2xl border border-black/10 dark:border-white/10 rounded-2xl p-5 shadow-2xl space-y-4"
-          >
-            <div className="space-y-1">
-              {navItems.map((item) => (
-                <a
-                  key={item.path}
-                  href={item.path}
-                  onClick={() => setIsOpen(false)}
-                  className="block px-3 py-2 rounded-xl text-sm font-medium text-zinc-700 dark:text-zinc-200 hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
-                >
-                  {item.name}
-                </a>
-              ))}
-            </div>
-
-            <div className="pt-2 border-t border-black/5 dark:border-white/5">
-              <button
-                onClick={() => {
-                  setIsOpen(false);
-                  openWizard();
-                }}
-                className="w-full ah-btn text-xs py-3 justify-center"
+      {/* Mobile Drawer Menu (AnalyticaHouse Style) */}
+      {mobileMenuOpen && (
+        <div className="pointer-events-auto md:hidden fixed inset-x-0 top-16 bg-[#070b10]/98 border-b border-white/10 backdrop-blur-2xl p-6 shadow-2xl space-y-4 animate-in fade-in duration-200">
+          <div className="flex flex-col space-y-3">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-base text-slate-200 font-medium py-1.5 px-3 rounded-lg hover:bg-white/5 transition-colors"
               >
-                <span>Ücretsiz Ön Değerlendirme İste</span>
-              </button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+                {link.name}
+              </a>
+            ))}
+          </div>
+
+          <div className="pt-4 border-t border-white/10">
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                openWizard();
+              }}
+              className="w-full ah-button py-3 px-4 justify-center text-xs"
+            >
+              <span>
+                <span className="text-primary">
+                  30 Saniyede Ön Değerlendirme Al <ArrowUpRight className="w-3.5 h-3.5 ml-1" />
+                </span>
+                <span className="text-secondary">
+                  Analizi Başlat <ArrowRight className="w-3.5 h-3.5 ml-1" />
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+      )}
+
     </header>
   );
 }
