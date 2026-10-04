@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle2, Globe, Cpu, Layers, ExternalLink, ArrowUpRight, Gauge, Activity, ShieldCheck, Zap } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Globe, Cpu, Layers, Activity, Sparkles } from 'lucide-react';
 import { useQuoteWizard } from '../../context/QuoteWizardContext';
 
 export default function DeliverablesSection() {
@@ -43,14 +43,14 @@ export default function DeliverablesSection() {
   ];
 
   return (
-    <section id="yetkinlik" className="py-28 sm:py-36 ah-dark-radial text-white relative overflow-hidden">
+    <section id="yetkinlik" className="py-28 sm:py-36 bg-[#111827] text-white relative overflow-hidden transition-colors duration-250">
       
-      {/* Background Radial Glow & Sub-polygon */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-petrol-500/20 blur-[150px] pointer-events-none" />
+      {/* Yellow Radial Glow in Background */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[380px] bg-[#FFD23F]/15 blur-[150px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header with AnalyticaHouse Dramatic Dark Contrast */}
+        {/* Section Header */}
         <motion.div 
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -58,29 +58,29 @@ export default function DeliverablesSection() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16 sm:mb-24"
         >
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-petrol-300 font-mono text-[11px] font-semibold tracking-wider uppercase mb-4 backdrop-blur-md">
-            <Activity className="w-3.5 h-3.5 text-petrol-400" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-[#FFD23F] font-mono text-[11px] font-semibold tracking-wider uppercase mb-4 backdrop-blur-md">
+            <Activity className="w-3.5 h-3.5 text-[#FFD23F]" />
             <span>Bölüm 4 — Yetkinliğin Görünür Olması</span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold tracking-tight text-white leading-[1.12]">
-            Yaklaşımın <span className="text-petrol-300">uygulamadaki karşılığı.</span>
+            Yaklaşımın <span className="text-[#FFD23F]">uygulamadaki karşılığı.</span>
           </h2>
 
-          <p className="mt-5 text-base sm:text-xl text-slate-300 leading-relaxed font-light">
+          <p className="mt-5 text-base sm:text-xl text-zinc-300 leading-relaxed font-light">
             İkna gücünü abartılı iddialardan değil, somut işten alıyoruz. Her çalışma aynı net düzeni izler:
           </p>
 
-          <div className="inline-flex items-center justify-center gap-2 sm:gap-3 mt-4 px-4 py-2 rounded-full bg-white/[0.05] border border-white/10 text-xs sm:text-sm font-mono text-petrol-300">
+          <div className="inline-flex items-center justify-center gap-2 sm:gap-3 mt-4 px-4 py-2 rounded-full bg-white/[0.05] border border-white/10 text-xs sm:text-sm font-mono text-[#FFD23F]">
             <span>İhtiyaç</span>
-            <span className="text-slate-500">→</span>
+            <span className="text-zinc-500">→</span>
             <span>Yapılan Çalışma</span>
-            <span className="text-slate-500">→</span>
+            <span className="text-zinc-500">→</span>
             <span className="text-white font-bold">Gösterilebilir Çıktı</span>
           </div>
         </motion.div>
 
-        {/* 3 Dark Showcase Cards with Glassmorphism & Hover Glow */}
+        {/* 3 Dark Showcase Cards with Yellow Highlights */}
         <div className="space-y-8">
           {deliverables.map((item, idx) => {
             const Icon = item.icon;
@@ -91,19 +91,19 @@ export default function DeliverablesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.55, delay: idx * 0.15 }}
-                whileHover={{ y: -6, transition: { duration: 0.25 } }}
-                className="group relative p-8 sm:p-10 rounded-3xl bg-[#0D1522]/90 border border-white/10 hover:border-petrol-400/50 backdrop-blur-xl shadow-2xl transition-all duration-300 overflow-hidden"
+                whileHover={{ y: -5, transition: { duration: 0.25 } }}
+                className="group relative p-8 sm:p-10 rounded-3xl bg-[#1F2937]/90 border border-white/10 hover:border-[#FFD23F] backdrop-blur-xl shadow-2xl transition-all duration-300 overflow-hidden"
               >
-                {/* Subtle Inner Glow */}
-                <div className="absolute top-0 right-0 w-64 h-64 bg-petrol-500/10 rounded-full blur-[90px] pointer-events-none group-hover:bg-petrol-500/20 transition-all duration-500" />
+                {/* Yellow Top Indicator Strip on Hover */}
+                <div className="absolute top-0 inset-x-0 h-1.5 bg-[#FFD23F] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                 <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 pb-6 border-b border-white/10">
                   <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-2xl bg-petrol-500/20 text-petrol-300 flex items-center justify-center border border-petrol-400/30 group-hover:bg-petrol-500 group-hover:text-white transition-all duration-300 shadow-md">
+                    <div className="w-14 h-14 rounded-2xl bg-[#FFD23F] text-[#111827] flex items-center justify-center font-bold shadow-md group-hover:scale-105 transition-transform">
                       <Icon className="w-6 h-6" />
                     </div>
                     <div>
-                      <span className="font-mono text-xs text-petrol-400 font-bold tracking-wider">
+                      <span className="font-mono text-xs text-[#FFD23F] font-bold tracking-wider">
                         {item.category}
                       </span>
                       <h3 className="text-xl sm:text-2xl font-display font-semibold text-white mt-0.5">
@@ -113,10 +113,10 @@ export default function DeliverablesSection() {
                   </div>
 
                   <div className="flex items-center gap-3 shrink-0">
-                    <div className="px-3.5 py-1 rounded-full bg-white/[0.06] border border-white/15 text-xs font-mono font-medium text-slate-300">
+                    <div className="px-3.5 py-1 rounded-full bg-white/[0.06] border border-white/15 text-xs font-mono font-medium text-zinc-300">
                       {item.badge}
                     </div>
-                    <div className="px-3 py-1 rounded-full bg-petrol-500/20 border border-petrol-400/30 text-xs font-mono font-bold text-petrol-300">
+                    <div className="px-3.5 py-1 rounded-full bg-[#FFD23F]/20 border border-[#FFD23F]/40 text-xs font-mono font-bold text-[#FFD23F]">
                       {item.metricVal}
                     </div>
                   </div>
@@ -126,31 +126,31 @@ export default function DeliverablesSection() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
                   
                   {/* Step 1: Need */}
-                  <div className="space-y-2 p-5 rounded-2xl bg-white/[0.02] border border-white/5">
-                    <div className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-slate-400" />
+                  <div className="space-y-2 p-5 rounded-2xl bg-white/[0.03] border border-white/5">
+                    <div className="text-xs font-mono font-bold text-zinc-400 uppercase tracking-wider flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-zinc-400" />
                       1. İhtiyaç
                     </div>
-                    <p className="text-sm text-slate-300 font-light leading-relaxed">
+                    <p className="text-sm text-zinc-300 font-light leading-relaxed">
                       {item.need}
                     </p>
                   </div>
 
                   {/* Step 2: Work Done */}
-                  <div className="space-y-2 p-5 rounded-2xl bg-white/[0.02] border border-white/5">
-                    <div className="text-xs font-mono font-bold text-petrol-300 uppercase tracking-wider flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-petrol-400" />
+                  <div className="space-y-2 p-5 rounded-2xl bg-white/[0.03] border border-white/5">
+                    <div className="text-xs font-mono font-bold text-[#FFD23F] uppercase tracking-wider flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#FFD23F]" />
                       2. Yapılan Çalışma
                     </div>
-                    <p className="text-sm text-slate-300 font-light leading-relaxed">
+                    <p className="text-sm text-zinc-300 font-light leading-relaxed">
                       {item.work}
                     </p>
                   </div>
 
                   {/* Step 3: Tangible Output */}
-                  <div className="space-y-2 p-5 rounded-2xl bg-petrol-950/40 border border-petrol-400/30 shadow-lg">
-                    <div className="text-xs font-mono font-bold text-petrol-300 uppercase tracking-wider flex items-center gap-1.5">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-petrol-400" />
+                  <div className="space-y-2 p-5 rounded-2xl bg-[#FFD23F]/10 border border-[#FFD23F]/30 shadow-lg">
+                    <div className="text-xs font-mono font-bold text-[#FFD23F] uppercase tracking-wider flex items-center gap-1.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#FFD23F]" />
                       3. Gösterilebilir Çıktı
                     </div>
                     <p className="text-sm font-medium text-white leading-relaxed">
@@ -160,21 +160,15 @@ export default function DeliverablesSection() {
 
                 </div>
 
-                {/* Bottom Card Action with AnalyticaHouse Button */}
-                <div className="mt-6 pt-4 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-slate-400">
+                {/* Bottom Card Action */}
+                <div className="mt-6 pt-4 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-zinc-400">
                   <span className="font-mono">Gerçek üretim ve şeffaf teslim standardı</span>
                   <button
                     onClick={() => openWizard()}
-                    className="ah-button button-white text-xs py-2 px-4 cursor-pointer"
+                    className="btn-yellow text-xs py-2 px-4 cursor-pointer"
                   >
-                    <span>
-                      <span className="text-primary">
-                        Benzer Çözüm İçin Ön Değerlendirme <ArrowUpRight className="w-3 h-3 ml-1" />
-                      </span>
-                      <span className="text-secondary">
-                        30 Sn Analizi Başlat <ArrowRight className="w-3 h-3 ml-1" />
-                      </span>
-                    </span>
+                    <span>Benzer Çözüm İçin Ön Değerlendirme</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
               </motion.div>

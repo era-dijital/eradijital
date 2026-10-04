@@ -14,13 +14,13 @@ import ContactSection from '../components/home/ContactSection';
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#f6f7f4] dark:bg-[#070b10] text-[#172b3a] dark:text-slate-100 selection:bg-petrol-700 selection:text-white transition-colors duration-250">
+    <div className="min-h-screen flex flex-col bg-[#F7F7F5] dark:bg-[#0B0F17] text-[#111827] dark:text-slate-100 selection:bg-[#FFD23F] selection:text-[#111827] transition-colors duration-250">
       <SEO 
         title="ERA Dijital | Dijital Gelişim ve Dönüşüm Ajansı"
         description="ERA Dijital, işletmelerin dijital gelişimini planlıyor; web, içerik, pazarlama ve yazılım çözümlerini ihtiyaçlara göre hayata geçiriyor."
       />
 
-      {/* Floating Pill Nav Bar - AnalyticaHouse Style */}
+      {/* Floating Pill Nav Bar - Dijital10 Style */}
       <Header />
 
       <main className="flex-1">

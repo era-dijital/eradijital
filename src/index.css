@@ -4,41 +4,41 @@
 
 @layer base {
   :root {
-    /* ERA Dijital Kurumsal Palet (PDF Kılavuzu & AnalyticaHouse Estetiği) */
-    --color-paper: #F6F7F4;
+    /* Dijital10.com Sarı-Beyaz Kurumsal Tonu */
+    --color-paper: #F7F7F5;
     --color-surface: #FFFFFF;
-    --color-surface-elevated: #EAECE7;
-    --color-surface-hover: #E1E6DF;
-    --color-ink: #172B3A;
-    --color-muted: #52616A;
-    --color-faint: #88959E;
-    --color-rule: rgba(23, 43, 58, 0.08);
-    --color-primary: #006B63;
-    --color-primary-hover: #00897B;
-    --color-primary-light: rgba(0, 107, 99, 0.08);
-    --color-sage: #E1EEE8;
+    --color-surface-elevated: #F1F1EF;
+    --color-surface-hover: #EFEDE7;
+    --color-rule: #E7E3DA;
+    --color-ink: #111827;
+    --color-muted: #4B5563;
+    --color-faint: #8A847A;
+    --color-yellow: #FFD23F;
+    --color-yellow-deep: #EAB308;
+    --color-yellow-light: rgba(255, 210, 63, 0.18);
     --font-display: "Outfit", "Space Grotesk", sans-serif;
     --font-body: "Inter", "DM Sans", sans-serif;
     --font-mono: "JetBrains Mono", monospace;
   }
 
   .dark {
-    /* AnalyticaHouse Midnight Dark Theme */
-    --color-paper: #070B10;
-    --color-surface: #0D1522;
-    --color-surface-elevated: #131E30;
-    --color-surface-hover: #19273C;
-    --color-ink: #F0F4F8;
-    --color-muted: #94A3B8;
-    --color-faint: #64748B;
-    --color-rule: rgba(255, 255, 255, 0.08);
-    --color-primary: #00B4A0;
-    --color-primary-hover: #00D2B4;
-    --color-primary-light: rgba(0, 180, 160, 0.15);
-    --color-sage: rgba(0, 107, 99, 0.22);
+    /* Dijital10.com Dark Mode */
+    --color-paper: #0B0F17;
+    --color-surface: #111827;
+    --color-surface-elevated: #161F2E;
+    --color-surface-hover: #1E293B;
+    --color-rule: rgba(255, 255, 255, 0.1);
+    --color-ink: #F9FAFB;
+    --color-muted: #9CA3AF;
+    --color-faint: #6B7280;
+    --color-yellow: #FFD23F;
+    --color-yellow-deep: #FACC15;
+    --color-yellow-light: rgba(255, 210, 63, 0.15);
   }
 
   html, body {
+    margin: 0;
+    padding: 0;
     overflow-x: clip;
     background-color: var(--color-paper);
     color: var(--color-ink);
@@ -55,8 +55,8 @@
   }
 
   ::selection {
-    background-color: var(--color-primary);
-    color: #ffffff;
+    background-color: var(--color-yellow);
+    color: #111827;
   }
 }
 
@@ -67,166 +67,158 @@
 .hairline-l { border-left: 1px solid var(--color-rule); }
 .hairline-all { border: 1px solid var(--color-rule); }
 
+/* Yellow Highlighter Effect */
+.hl-yellow {
+  background: linear-gradient(transparent 58%, rgba(255, 210, 63, 0.45) 58%);
+  display: inline;
+}
+
 /* =========================================================
-   ANALYTICAHOUSE SIGNATURE BUTTON (Sliding Text on Hover)
+   DIJITAL10 BUTTON STYLES (Always Visible, Bold, High-Contrast)
    ========================================================= */
-.ah-button {
+.btn-yellow, .ah-button, .ah-btn {
   font-family: var(--font-display);
-  background-color: var(--color-primary);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 10px 18px;
+  background-color: #FFD23F;
+  color: #111827 !important;
+  border: 1px solid #FFD23F;
+  padding: 0.65rem 1.45rem;
   border-radius: 9999px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
-  font-size: 14px;
-  line-height: 18px;
+  gap: 0.45rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.25rem;
   cursor: pointer;
-  font-weight: 500;
   text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 16px rgba(0, 107, 99, 0.25);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(255, 210, 63, 0.35);
 }
 
-.ah-button:hover {
-  border-color: rgba(255, 255, 255, 0.45);
-  box-shadow: 0 8px 24px -4px rgba(0, 107, 99, 0.45);
+.btn-yellow:hover, .ah-button:hover, .ah-btn:hover {
+  background-color: #EAB308;
+  border-color: #EAB308;
+  box-shadow: 0 6px 20px rgba(234, 179, 8, 0.45);
   transform: translateY(-1px);
 }
 
-.ah-button > span {
-  display: block;
-  overflow: hidden;
-  position: relative;
-  height: 18px;
-}
-
-.ah-button > span > span {
-  width: max-content;
-  display: flex;
+/* Secondary Button - Ghost Outline */
+.btn-ghost, .ah-button.button-outline, .ah-btn-secondary {
+  background-color: transparent;
+  border: 1px solid var(--color-rule);
+  color: var(--color-ink) !important;
+  padding: 0.65rem 1.45rem;
+  border-radius: 9999px;
+  display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.ah-button .text-primary {
-  transform: translateY(0);
-}
-
-.ah-button .text-secondary {
-  position: absolute;
-  top: 18px;
-  left: 0;
-  right: 0;
-  transform: translateY(0);
-}
-
-.ah-button:hover .text-primary,
-.ah-button:hover .text-secondary {
-  transform: translateY(-18px);
-}
-
-/* Secondary Button - White border for dark cards */
-.ah-button.button-white {
-  background-color: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  color: #ffffff;
+  justify-content: center;
+  gap: 0.45rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  cursor: pointer;
   box-shadow: none;
+  transition: all 0.25s ease;
+}
+
+.btn-ghost:hover, .ah-button.button-outline:hover, .ah-btn-secondary:hover {
+  background-color: var(--color-surface);
+  border-color: #FFD23F;
+  color: var(--color-ink) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
+}
+
+/* Secondary Button - Ink Black with Yellow Accent */
+.btn-ink {
+  background-color: #111827;
+  color: #FFFFFF !important;
+  border: 1px solid #111827;
+  padding: 0.65rem 1.45rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-ink:hover {
+  background-color: #1F2937;
+  border-color: #1F2937;
+  transform: translateY(-1px);
+}
+
+/* Button White Border (for dark cards) */
+.ah-button.button-white {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #FFFFFF !important;
+  padding: 0.65rem 1.45rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  cursor: pointer;
+  box-shadow: none;
+  transition: all 0.25s ease;
 }
 
 .ah-button.button-white:hover {
-  background-color: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.6);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-}
-
-/* Secondary Button - Outline for light backgrounds */
-.ah-button.button-outline {
-  background-color: transparent;
-  border: 1px solid var(--color-rule);
-  color: var(--color-ink);
-  box-shadow: none;
-}
-
-.ah-button.button-outline:hover {
-  background-color: var(--color-primary-light);
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-  box-shadow: 0 4px 14px rgba(0, 107, 99, 0.15);
-}
-
-/* Backwards compatibility */
-.ah-btn {
-  @apply ah-button;
-}
-.ah-btn-secondary {
-  @apply ah-button button-outline;
+  background-color: rgba(255, 255, 255, 0.18);
+  border-color: #FFD23F;
+  color: #FFD23F !important;
+  transform: translateY(-1px);
 }
 
 /* =========================================================
-   ANALYTICAHOUSE HERO & SECTION PARTICLES & BEAMS
+   CARDS & CONTAINERS
    ========================================================= */
-.particles-container {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 1;
+.d10-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-rule);
+  border-radius: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.particle {
-  pointer-events: none;
-  position: absolute;
-  background: #ffffff;
-  border-radius: 50%;
-  opacity: 0.35;
-  animation: moveParticle linear infinite;
+.d10-card:hover {
+  border-color: rgba(255, 210, 63, 0.6);
+  box-shadow: 0 14px 34px -10px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
 }
 
-@keyframes moveParticle {
-  0% {
-    transform: translate(0, 0) scale(1);
-    opacity: 0.45;
-  }
-  100% {
-    transform: translate(var(--x), var(--y)) scale(0.3);
-    opacity: 0.05;
-  }
+.d10-card-dark {
+  background-color: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.ah-polygon-beam {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 320px;
-  background: linear-gradient(135deg, rgba(0, 107, 99, 0.6), rgba(0, 180, 160, 0.3), transparent);
-  clip-path: polygon(0 100%, 100% 35%, 0 0);
-  filter: blur(90px);
-  opacity: 0.75;
-  pointer-events: none;
-  z-index: 0;
+.d10-card-dark:hover {
+  border-color: #FFD23F;
+  box-shadow: 0 16px 40px -10px rgba(255, 210, 63, 0.2);
+  transform: translateY(-3px);
 }
 
-/* AnalyticaHouse Radial Dark Showcase Section Background */
-.ah-dark-radial {
-  background: radial-gradient(75% 50% at 50% 44.9%, rgba(0, 107, 99, 0.5) 0%, #070B10 100%);
-}
-
+/* Ambient Radial Glow */
 .ah-glow-bg {
   position: absolute;
   pointer-events: none;
   filter: blur(120px);
-  opacity: 0.6;
+  opacity: 0.4;
   z-index: 0;
 }
 
-/* =========================================================
-   CONTINUOUS MARQUEE / CAROUSEL TRACK
-   ========================================================= */
+/* Continuous Marquee */
 .carousel-container {
   mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
@@ -250,54 +242,38 @@
   100% { transform: translateX(-50%); }
 }
 
-/* =========================================================
-   CARDS & HOVER ANIMATIONS
-   ========================================================= */
-.ah-card {
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-rule);
-  border-radius: 1.25rem;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+/* Particles */
+.particles-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
 }
 
-.ah-card:hover {
-  border-color: rgba(0, 107, 99, 0.4);
-  box-shadow: 0 12px 32px -8px rgba(0, 107, 99, 0.18);
-  transform: translateY(-4px);
+.particle {
+  pointer-events: none;
+  position: absolute;
+  background: #FFD23F;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: moveParticle linear infinite;
 }
 
-.ah-card-dark {
-  background-color: rgba(13, 21, 34, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 1.5rem;
-  backdrop-filter: blur(16px);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.ah-card-dark:hover {
-  border-color: rgba(0, 180, 160, 0.5);
-  box-shadow: 0 16px 40px -10px rgba(0, 180, 160, 0.25);
-  transform: translateY(-4px);
+@keyframes moveParticle {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.35; }
+  100% { transform: translate(var(--x), var(--y)) scale(0.3); opacity: 0.05; }
 }
 
 .section-button {
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
 }
 
 .section-button.active {
-  background-color: var(--color-primary);
-  color: #ffffff;
-  border-color: var(--color-primary);
-  box-shadow: 0 4px 14px rgba(0, 107, 99, 0.3);
-}
-
-/* Pulsing badge animation */
-@keyframes subtlePulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.05); opacity: 0.85; }
-}
-
-.animate-subtle-pulse {
-  animation: subtlePulse 3s ease-in-out infinite;
+  background-color: #FFD23F;
+  color: #111827;
+  border-color: #FFD23F;
+  box-shadow: 0 4px 14px rgba(255, 210, 63, 0.35);
+  font-weight: 700;
 }
