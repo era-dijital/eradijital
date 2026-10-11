@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import SEO from '../components/SEO';
 import { Mail, Phone, MapPin, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
 import Header from '../components/Header';
@@ -105,7 +105,7 @@ export default function IletisimPage() {
 
                 <div className="space-y-4">
                   <a 
-                    href="tel:+905528080345"
+                    href="tel:+905433619239"
                     className="p-5 rounded-2xl bg-white dark:bg-white/[0.02] border border-black/5 dark:border-white/10 hover:border-petrol-500/40 flex items-start gap-4 transition-all shadow-sm dark:shadow-none hover:shadow-md"
                   >
                     <div className="p-3 rounded-xl bg-petrol-500/10 text-petrol-600 dark:text-petrol-400 shrink-0">
@@ -113,7 +113,7 @@ export default function IletisimPage() {
                     </div>
                     <div>
                       <div className="font-mono text-xs text-zinc-500 dark:text-zinc-400">TELEFON & WHATSAPP</div>
-                      <div className="font-semibold text-zinc-900 dark:text-white">+90 552 808 03 45</div>
+                      <div className="font-semibold text-zinc-900 dark:text-white">+90 543 361 92 39</div>
                       <div className="text-xs text-petrol-700 dark:text-petrol-400 pt-0.5">7/24 Çağrı & WhatsApp Danışma</div>
                     </div>
                   </a>

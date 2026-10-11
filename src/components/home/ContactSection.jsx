@@ -90,11 +90,11 @@ export default function ContactSection() {
             <div className="space-y-3 pt-2 text-xs text-slate-600 dark:text-slate-300">
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[#0F172A] dark:text-[#FFD23F] shrink-0" />
-                <span>Telefon / WhatsApp: <strong className="font-medium text-[#0F172A] dark:text-white">+90 (212) 909 24 10</strong></span>
+                <span>Telefon / WhatsApp: <a href="tel:+905433619239" className="font-medium text-[#0F172A] dark:text-white hover:underline">+90 543 361 92 39</a></span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-[#0F172A] dark:text-[#FFD23F] shrink-0" />
-                <span>E-posta: <strong className="font-medium text-[#0F172A] dark:text-white">iletisim@eradijital.com</strong></span>
+                <span>E-posta: <a href="mailto:eradijitalinfo@gmail.com" className="font-medium text-[#0F172A] dark:text-white hover:underline">eradijitalinfo@gmail.com</a></span>
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="w-4 h-4 text-[#0F172A] dark:text-[#FFD23F] shrink-0" />
