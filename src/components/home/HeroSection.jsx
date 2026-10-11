@@ -88,7 +88,7 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
               className="text-4xl sm:text-6xl lg:text-[62px] font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.12]"
             >
-              İşinizin <span className="hl-yellow">bir sonraki adımında.</span>
+              İşinizin <span className="hl-yellow">Bir Sonraki Adımında</span>
             </motion.h1>
 
             {/* Spot Text - biz-siz dili */}
