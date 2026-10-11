@@ -83,14 +83,11 @@ export default function NeedsSection() {
                 onClick={() => openWizard()}
               >
                 <div>
-                  <div className="flex items-center justify-between mb-6">
+                  <div className="mb-6">
                     {/* Sophisticated Dark Ink Icon Box with Micro-Motion */}
                     <div className="w-12 h-12 rounded-2xl bg-[#0F172A] dark:bg-white/10 text-white flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 group-hover:bg-[#FFD23F] group-hover:text-[#0F172A] transition-all duration-300 shadow-sm">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="inline-block px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-white/5 text-[11px] font-mono font-medium text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/5">
-                      {item.tag}
-                    </span>
                   </div>
 
                   <h3 className="text-lg font-display font-semibold text-[#0F172A] dark:text-white mb-3 leading-snug group-hover:text-[#0F172A] dark:group-hover:text-white transition-colors">
