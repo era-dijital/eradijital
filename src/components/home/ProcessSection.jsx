@@ -49,11 +49,6 @@ export default function ProcessSection() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-2xl mb-14 sm:mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 text-slate-700 dark:text-slate-300 font-mono text-[11px] font-semibold tracking-wider uppercase mb-4 shadow-xs">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#FFD23F]" />
-            <span>Çalışma Süreci</span>
-          </div>
-
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.15]">
             Önce öncelikler netleşiyor. <br className="hidden sm:inline" />
             <span className="hl-yellow">Sonra uygulama başlıyor.</span>
