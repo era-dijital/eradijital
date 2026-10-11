@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Menu, X, Sun, Moon, Sparkles } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import { useQuoteWizard } from '../context/QuoteWizardContext';
+import EraLogo from './EraLogo';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -41,17 +42,8 @@ export default function Header() {
       >
         
         {/* Brand Logo */}
-        <Link to="/" className="flex items-center gap-2 shrink-0 group">
-          <div className="w-7 h-7 rounded-lg bg-[#0F172A] dark:bg-white text-white dark:text-[#0F172A] flex items-center justify-center font-mono font-bold text-xs shadow-xs group-hover:bg-[#FFD23F] group-hover:text-[#0F172A] transition-colors">
-            E
-          </div>
-          <span className="font-display font-bold text-sm tracking-tight text-[#0F172A] dark:text-white">
-            ERA<span className="text-slate-900 dark:text-slate-200">Dijital</span>
-          </span>
-          <span className="hidden lg:inline-flex items-center gap-1 font-mono text-[9px] text-slate-600 dark:text-slate-300 font-semibold bg-slate-100 dark:bg-white/10 px-2 py-0.5 rounded-full border border-slate-200 dark:border-white/10 ml-1">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#FFD23F]" />
-            #dijitalgelişim
-          </span>
+        <Link to="/" className="shrink-0 flex items-center">
+          <EraLogo size="md" showBadge={true} />
         </Link>
 
         {/* Center Desktop Navigation */}

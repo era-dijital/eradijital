@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, ArrowRight, ShieldCheck } from 'lucide-react';
 import { useQuoteWizard } from '../context/QuoteWizardContext';
+import EraLogo from './EraLogo';
 
 export default function Footer() {
   const { openWizard } = useQuoteWizard();
@@ -26,10 +27,7 @@ export default function Footer() {
           {/* Company Intro */}
           <div className="space-y-4 md:col-span-2">
             <Link to="/" className="flex items-center gap-2.5 group">
-              <div className="w-8 h-8 rounded-lg bg-[#0F172A] dark:bg-white text-white dark:text-[#0F172A] flex items-center justify-center font-mono font-bold text-xs shadow-xs group-hover:bg-[#FFD23F] group-hover:text-[#0F172A] transition-colors">
-                ERA
-              </div>
-              <span className="font-display font-bold text-lg text-[#0F172A] dark:text-white">ERA Dijital</span>
+              <EraLogo size="lg" showBadge={false} />
             </Link>
             <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-md font-light">
               İşletmenizin dijital gelişim önceliklerini birlikte belirliyoruz; görünürlük, müşteri kazanımı ve iş süreçleri için gerekli çözümleri hayata geçiriyoruz.

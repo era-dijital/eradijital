@@ -22,6 +22,10 @@ Kaynak Kod Dalı: `main`
   - `NeedsSection.jsx` (İhtiyaç Analizi) kartlarının sağ üst köşesindeki etiket rozetleri (`Kurumsal Vitrin & Temsil`, `Hedefli Arama & Reklam`, `Satış & Talep Takibi`, `Süreç & Düzen`) kaldırıldı.
 - [x] **Çalışma Süreci Rozeti:**
   - `ProcessSection.jsx` içerisindeki başlık üstü "Çalışma Süreci" rozeti kaldırıldı.
+- [x] **Kurumsal Vektör Logo Tasarımı & Entegrasyonu:**
+  - Yeni `EraLogo.jsx` vektörel SVG logo bileşeni oluşturuldu (geometrik 'E' monogramı, marka altın sarısı büyüme vurgusu, tipografi ve dark/light tema uyumu).
+  - Header ve Footer alanlarına modern marka logosu olarak entegre edildi.
+  - `public/favicon.svg` yeni logo kimliğine uygun olarak güncellendi.
 
 ### Altyapı, Git ve Canlı Dağıtım
 - [x] **Hostinger Git Dağıtım Mimarisi Kuruldu:**
