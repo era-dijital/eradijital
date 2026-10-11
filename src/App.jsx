@@ -1,4 +1,4 @@
-﻿import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import HakkimizdaPage from './pages/HakkimizdaPage';
 import HizmetlerPage from './pages/HizmetlerPage';
@@ -14,7 +14,11 @@ import { ThemeProvider } from './context/ThemeContext';
 import { QuoteWizardProvider } from './context/QuoteWizardContext';
 import QuoteWizardModal from './components/quote-wizard/QuoteWizardModal';
 
+// Era Dijital v1.0.5 - Release Clean Build
 function App() {
+  if (typeof window !== 'undefined') {
+    window.__ERA_RELEASE__ = '1.0.5';
+  }
   return (
     <ThemeProvider>
       <QuoteWizardProvider>
