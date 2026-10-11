@@ -8,36 +8,32 @@ export default function NeedsSection() {
 
   const needs = [
     {
-      num: "01",
       icon: Sparkles,
-      title: "İşletmenin gücünü daha iyi yansıtmak",
-      desc: "Ürünlerin, hizmetlerin ve uzmanlığın daha açık, tutarlı ve güven veren bir anlatımla sunulması.",
+      title: "İşletmenizin gücünü daha iyi yansıtmak",
+      desc: "Ürünlerinizi, hizmetlerinizi ve uzmanlığınızı ziyaretçiye daha açık, tutarlı ve güven veren bir kurumsal vitrinle sunun.",
       tag: "Kurumsal Vitrin & Temsil",
-      metrics: "0.8s Altı Açılış & Güvenilirlik"
+      metrics: "Hızlı ve güven veren kurumsal vitrin"
     },
     {
-      num: "02",
       icon: Search,
       title: "Doğru müşteriler tarafından bulunmak",
-      desc: "İçerik, arama görünürlüğü ve reklam çalışmalarının ilgili hedef kitleye yönelmesi.",
-      tag: "Hedefli SEO-GEO & Reklam",
-      metrics: "Net Kitle & Sıfır Boşa Bütçe"
+      desc: "Arama görünürlüğü ve reklam çalışmalarını genel kitle yerine doğrudan hizmetinizi arayan potansiyel müşterilere yönlendirin.",
+      tag: "Hedefli Arama & Reklam",
+      metrics: "Bütçeyi doğru kitleye yönlendirme"
     },
     {
-      num: "03",
       icon: MessageSquare,
       title: "Gelen ilgiyi daha düzenli yönetmek",
-      desc: "Mesajların, başvuruların ve teklif taleplerinin takip edilebilir bir sürece dahil edilmesi.",
+      desc: "Web sitesinden ve WhatsApp'tan gelen mesajları, teklif taleplerini ve formları tek bir düzenli takip akışına bağlayın.",
       tag: "Satış & Talep Takibi",
-      metrics: "Otomatik Yanıt & Lead Kaybı 0"
+      metrics: "Mesaj ve taleplerin anlık takibi"
     },
     {
-      num: "04",
       icon: RefreshCw,
       title: "Tekrarlanan işleri kolaylaştırmak",
-      desc: "Dağınık bilgi ve manuel işlemlerin uygun dijital araçlarla düzenlenmesi.",
-      tag: "Süreç & Otomasyon",
-      metrics: "Sistem Entegrasyonu & Hız"
+      desc: "Dağınık bilgi ve manuel işlemleri uygun dijital araçlar ve otomasyonlarla düzenleyerek operasyonel hız kazanın.",
+      tag: "Süreç & Düzen",
+      metrics: "Manuel iş yükünü azaltan akış"
     }
   ];
 
@@ -59,7 +55,7 @@ export default function NeedsSection() {
         >
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 text-slate-700 dark:text-slate-300 font-mono text-[11px] font-semibold tracking-wider uppercase mb-4 shadow-xs">
             <span className="w-1.5 h-1.5 rounded-full bg-[#FFD23F]" />
-            <span>Bölüm 2 — İhtiyacı Tanıma</span>
+            <span>İhtiyaç Analizi</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.15]">
@@ -67,7 +63,7 @@ export default function NeedsSection() {
           </h2>
 
           <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-light">
-            Dijital gelişim her işletmede aynı noktadan başlamıyor. ERA Dijital, önceliği mevcut duruma göre belirliyor.
+            Dijital gelişim her işletmede aynı noktadan başlamaz. Önceliği mevcut dijital durumunuza ve hedeflerinize göre birlikte belirliyoruz.
           </p>
         </motion.div>
 
@@ -92,14 +88,10 @@ export default function NeedsSection() {
                     <div className="w-12 h-12 rounded-2xl bg-[#0F172A] dark:bg-white/10 text-white flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 group-hover:bg-[#FFD23F] group-hover:text-[#0F172A] transition-all duration-300 shadow-sm">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="font-mono text-xs font-bold text-slate-400 dark:text-slate-500 tracking-wider">
-                      ADIM {item.num}
+                    <span className="inline-block px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-white/5 text-[11px] font-mono font-medium text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-white/5">
+                      {item.tag}
                     </span>
                   </div>
-
-                  <span className="inline-block px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-white/5 text-[11px] font-mono font-medium text-slate-700 dark:text-slate-300 mb-3 border border-slate-200 dark:border-white/5">
-                    {item.tag}
-                  </span>
 
                   <h3 className="text-lg font-display font-semibold text-[#0F172A] dark:text-white mb-3 leading-snug group-hover:text-[#0F172A] dark:group-hover:text-white transition-colors">
                     {item.title}
@@ -111,7 +103,7 @@ export default function NeedsSection() {
                 </div>
 
                 <div className="pt-6 mt-6 border-t border-[#E2E8F0] dark:border-white/5 flex items-center justify-between">
-                  <span className="text-[11px] font-mono text-slate-400 dark:text-slate-500">
+                  <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400">
                     {item.metrics}
                   </span>
                   

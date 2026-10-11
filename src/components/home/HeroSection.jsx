@@ -4,17 +4,17 @@ import { ArrowRight, Sparkles, Layers, Activity, ShieldCheck, Check, Zap, Globe,
 import { useQuoteWizard } from '../../context/QuoteWizardContext';
 
 // Dynamic Ambient Particle Field
-function ParticleField({ count = 35 }) {
+function ParticleField({ count = 25 }) {
   const particles = useMemo(() => {
     return Array.from({ length: count }, (_, i) => {
-      const size = Math.random() * 3 + 1.2;
+      const size = Math.random() * 2.5 + 1;
       const left = Math.random() * 100;
       const top = Math.random() * 100;
-      const x = (Math.random() - 0.5) * 240;
-      const y = (Math.random() - 0.5) * 240;
-      const duration = 3.5 + Math.random() * 3.5;
+      const x = (Math.random() - 0.5) * 180;
+      const y = (Math.random() - 0.5) * 180;
+      const duration = 4 + Math.random() * 4;
       const delay = Math.random() * 2;
-      const isGold = i % 3 === 0;
+      const isGold = i % 4 === 0;
       return { id: i, size, left, top, x, y, duration, delay, isGold };
     });
   }, [count]);
@@ -30,7 +30,7 @@ function ParticleField({ count = 35 }) {
             height: `${p.size}px`,
             left: `${p.left}%`,
             top: `${p.top}%`,
-            background: p.isGold ? '#FFD23F' : 'rgba(15, 23, 42, 0.25)',
+            background: p.isGold ? '#FFD23F' : 'rgba(15, 23, 42, 0.2)',
             '--x': `${p.x}px`,
             '--y': `${p.y}px`,
             animationDuration: `${p.duration}s`,
@@ -50,19 +50,19 @@ export default function HeroSection() {
     "Hedefli Arama & Reklam Görünürlüğü",
     "Müşteri Talebi & Teklif Süreçleri",
     "İş Süreçleri & Otomasyon",
-    "24 Saatte Ücretsiz Ön İnceleme",
+    "1 İş Gününde Yazılı Ön İnceleme",
     "Ölçülebilir & Şeffaf Yol Haritası",
-    "İstanbul & Global Operasyon"
+    "İstanbul Operasyon & Uzaktan İş Birliği"
   ];
 
   return (
     <section className="relative pt-32 sm:pt-40 pb-16 overflow-hidden bg-[#F8F9FA] dark:bg-[#090D14] text-[#0F172A] dark:text-white transition-colors duration-300">
       
       {/* Subtle Warm Amber Mesh Glow */}
-      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-full max-w-4xl h-80 bg-gradient-to-b from-[#FFD23F]/15 via-[#FFD23F]/5 to-transparent blur-[130px] pointer-events-none z-0" />
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-full max-w-4xl h-80 bg-gradient-to-b from-[#FFD23F]/12 via-[#FFD23F]/4 to-transparent blur-[130px] pointer-events-none z-0" />
       
-      {/* Interactive Particles */}
-      <ParticleField count={35} />
+      {/* Ambient Particle Field */}
+      <ParticleField count={25} />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
@@ -70,7 +70,7 @@ export default function HeroSection() {
           {/* Left Column: Strategic Positioning (PDF Bölüm 1) */}
           <div className="lg:col-span-7 space-y-6">
             
-            {/* Elegant Kicker Badge with Pulsing Beacon */}
+            {/* Elegant Kicker Badge */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -81,7 +81,7 @@ export default function HeroSection() {
               <span className="font-mono text-[#0F172A] dark:text-slate-200">Dijital Gelişim ve Dönüşüm Ajansı</span>
             </motion.div>
 
-            {/* Main Headline with Refined Highlight */}
+            {/* Main Headline */}
             <motion.h1 
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
@@ -91,17 +91,17 @@ export default function HeroSection() {
               İşinizin <span className="hl-yellow">bir sonraki adımında.</span>
             </motion.h1>
 
-            {/* Spot Text */}
+            {/* Spot Text - biz-siz dili */}
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
               className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-xl leading-relaxed font-light"
             >
-              ERA Dijital, işletmenizin dijital gelişim önceliklerini belirliyor; görünürlük, müşteri kazanımı ve iş süreçleri için gerekli çözümleri hayata geçiriyor.
+              İşletmenizin dijital gelişim önceliklerini birlikte belirliyoruz; görünürlük, müşteri kazanımı ve iş süreçleri için gerekli çözümleri hayata geçiriyoruz.
             </motion.p>
 
-            {/* Primary & Secondary Action Buttons with Hover Pop */}
+            {/* Action Buttons */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -130,13 +130,13 @@ export default function HeroSection() {
                 </a>
               </div>
 
-              {/* Sub-button Note */}
+              {/* Sub-button Note - Net Akış Vaadi */}
               <p className="text-xs text-slate-500 dark:text-slate-400 pl-1 font-sans">
-                Kısa bir ihtiyaç görüşmesi ve mevcut dijital varlıkların ön incelemesiyle başlıyor.
+                Kısa bir ön talep formu ile başlıyoruz; 1 iş günü içinde varlıklarınızı inceleyip yazılı özet iletiyoruz.
               </p>
             </motion.div>
 
-            {/* Trust Meta Badges */}
+            {/* Real Trust Proof Badges (Dayanaklı ve Somut Güvenceler) */}
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -144,22 +144,22 @@ export default function HeroSection() {
               className="flex flex-wrap items-center gap-y-2 gap-x-5 pt-3 text-xs text-slate-600 dark:text-slate-400 font-mono"
             >
               <div className="flex items-center gap-1.5">
-                <span className="text-[#F59E0B] font-bold">★</span>
-                <span className="font-semibold text-[#0F172A] dark:text-white">24+ Marka</span>
-                <span>büyüme ortağımız</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                <span className="font-semibold text-[#0F172A] dark:text-white">1 İş Gününde</span>
+                <span>Ön İnceleme</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                <span>24 Saatte Ön İnceleme</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+                <span>Yazılı Özet & Görüşme</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#FFD23F]" />
-                <span>İstanbul & Global</span>
+                <span>Şeffaf Yol Haritası</span>
               </div>
             </motion.div>
           </div>
 
-          {/* Right Column: Interconnected 4-Module Animated System with Flow Beams */}
+          {/* Right Column: Interconnected 4-Module Animated System (İmza Görsel Mimarisi) */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -181,11 +181,11 @@ export default function HeroSection() {
                 </div>
                 <span className="text-[11px] font-mono text-[#0F172A] dark:text-slate-200 font-semibold bg-slate-100 dark:bg-white/10 border border-[#E2E8F0] dark:border-white/10 px-2.5 py-0.5 rounded-full flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#FFD23F]" />
-                  Canlı Sistem
+                  Birlikte Çalışan Yapı
                 </span>
               </div>
 
-              {/* 4 Connected Modules with Subtle Minimalist Badges */}
+              {/* 4 Connected Modules with Clear Business Value Language */}
               <div className="space-y-3 relative">
                 
                 {/* Module 1 */}
@@ -195,8 +195,8 @@ export default function HeroSection() {
                       01
                     </div>
                     <div>
-                      <div className="text-xs font-bold text-[#0F172A] dark:text-white">Dijital Varlık & Kurumsal Anlatım</div>
-                      <div className="text-[11px] text-slate-500 dark:text-slate-400">Web siteleri & güven veren görsel kimlik</div>
+                      <div className="text-xs font-bold text-[#0F172A] dark:text-white">Dijital Varlık & Kurumsal Vitrin</div>
+                      <div className="text-[11px] text-slate-500 dark:text-slate-400">Güven veren web siteleri & ürün anlatımı</div>
                     </div>
                   </div>
                   <span className="w-2 h-2 rounded-full bg-emerald-500 group-hover/card:scale-125 transition-transform" />
@@ -210,7 +210,7 @@ export default function HeroSection() {
                     </div>
                     <div>
                       <div className="text-xs font-bold text-[#0F172A] dark:text-white">Görünürlük & Müşteri Kazanımı</div>
-                      <div className="text-[11px] text-slate-500 dark:text-slate-400">İçerik, arama (SEO-GEO) & reklam</div>
+                      <div className="text-[11px] text-slate-500 dark:text-slate-400">Arama görünürlüğü & hedefli müşteri reklamları</div>
                     </div>
                   </div>
                   <span className="w-2 h-2 rounded-full bg-emerald-500 group-hover/card:scale-125 transition-transform" />
@@ -223,8 +223,8 @@ export default function HeroSection() {
                       03
                     </div>
                     <div>
-                      <div className="text-xs font-bold text-[#0F172A] dark:text-white">Satış & Müşteri İlişkileri</div>
-                      <div className="text-[11px] text-slate-500 dark:text-slate-400">Başvuru, teklif & düzenli talep yönetimi</div>
+                      <div className="text-xs font-bold text-[#0F172A] dark:text-white">Satış & Talep Takibi</div>
+                      <div className="text-[11px] text-slate-500 dark:text-slate-400">Teklif formları, WhatsApp & düzenli kayıt</div>
                     </div>
                   </div>
                   <span className="w-2 h-2 rounded-full bg-emerald-500 group-hover/card:scale-125 transition-transform" />
@@ -237,8 +237,8 @@ export default function HeroSection() {
                       04
                     </div>
                     <div>
-                      <div className="text-xs font-bold text-[#0F172A] dark:text-white">Yazılım & İş Süreçleri</div>
-                      <div className="text-[11px] text-slate-500 dark:text-slate-400">Özel uygulamalar & operasyonel otomasyon</div>
+                      <div className="text-xs font-bold text-[#0F172A] dark:text-white">İş Süreçleri & Otomasyon</div>
+                      <div className="text-[11px] text-slate-500 dark:text-slate-400">Manuel işlemleri azaltan pratik akışlar</div>
                     </div>
                   </div>
                   <span className="w-2 h-2 rounded-full bg-emerald-500 group-hover/card:scale-125 transition-transform" />
@@ -247,10 +247,10 @@ export default function HeroSection() {
 
               {/* Bottom Assurance */}
               <div className="mt-4 pt-3.5 border-t border-[#E2E8F0] dark:border-white/10 flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400">
-                <span>Birbirine bağlı çalışan dijital omurga</span>
+                <span>Tek bir dijital omurga etrafında entegre</span>
                 <span className="text-[#0F172A] dark:text-white font-semibold font-mono flex items-center gap-1.5">
-                  <Activity className="w-3.5 h-3.5 text-[#F59E0B]" />
-                  Birlikte Çalışan Yapı
+                  <Activity className="w-3.5 h-3.5 text-emerald-500" />
+                  Sürekli Destek
                 </span>
               </div>
             </div>

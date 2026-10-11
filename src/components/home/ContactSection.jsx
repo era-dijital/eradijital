@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Send, CheckCircle2, Sparkles, Building2, User, Mail, Globe, MessageSquare, ShieldCheck, Zap } from 'lucide-react';
+import { ArrowRight, Send, CheckCircle2, Sparkles, Building2, User, Mail, Globe, MessageSquare, ShieldCheck, Phone, MapPin, FileText } from 'lucide-react';
 import { useQuoteWizard } from '../../context/QuoteWizardContext';
 
 export default function ContactSection() {
@@ -11,13 +11,19 @@ export default function ContactSection() {
     companyName: '',
     contactInfo: '',
     websiteOrSocial: '',
-    priorityNeed: ''
+    priorityNeed: '',
+    budgetRange: '',
+    kvkkConsent: false
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!formData.fullName || !formData.companyName || !formData.contactInfo) {
       alert('Lütfen zorunlu alanları doldurunuz.');
+      return;
+    }
+    if (!formData.kvkkConsent) {
+      alert('Lütfen KVKK Aydınlatma Metni onayını işaretleyiniz.');
       return;
     }
     setSubmitted(true);
@@ -32,7 +38,7 @@ export default function ContactSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
           
-          {/* Left Column: Context & Direct Wizard Callout */}
+          {/* Left Column: Context, Scope Breakdown & Direct Contact Info */}
           <motion.div 
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -42,7 +48,7 @@ export default function ContactSection() {
           >
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 text-slate-700 dark:text-slate-300 font-mono text-[11px] font-semibold tracking-wider uppercase shadow-xs">
               <span className="w-1.5 h-1.5 rounded-full bg-[#FFD23F]" />
-              <span>Bölüm 7 — Sonuç ve İletişim</span>
+              <span>Ön Değerlendirme & İletişim</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.12]">
@@ -51,50 +57,55 @@ export default function ContactSection() {
             </h2>
 
             <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-light">
-              ERA Dijital, işletmenizin mevcut durumunu ve öncelikli ihtiyacını değerlendirerek uygun başlangıç alanını belirliyor.
+              İşletmenizin mevcut durumunu ve öncelikli hedeflerini inceleyerek sizin için en uygun başlangıç alanını belirliyoruz.
             </p>
 
-            {/* Quick 30-Sec Analysis Callout Card with Hover Pop */}
-            <motion.div 
-              whileHover={{ y: -6, transition: { duration: 0.25 } }}
-              className="p-7 rounded-3xl bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 space-y-4 shadow-md hover:shadow-2xl transition-all duration-300 group cursor-pointer"
-              onClick={() => openWizard()}
-            >
-              <div className="flex items-center gap-3.5">
-                <div className="w-12 h-12 rounded-2xl bg-[#0F172A] text-[#FFD23F] dark:bg-white/10 flex items-center justify-center font-bold shadow-xs group-hover:scale-110 group-hover:rotate-3 transition-transform">
-                  <Sparkles className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="font-mono text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
-                    ÖN DEĞERLENDİRME SİSTEMİ
-                  </span>
-                  <h4 className="text-base font-display font-bold text-[#0F172A] dark:text-white group-hover:text-[#0F172A] dark:group-hover:text-white transition-colors">
-                    Hızlı 30 Sn Dijital Analiz
-                  </h4>
-                </div>
+            {/* Clear Roadmap Flow Box (PDF: Tek Bir Akış) */}
+            <div className="p-6 rounded-3xl bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 space-y-4 shadow-sm">
+              <div className="flex items-center gap-2 text-xs font-mono font-bold text-slate-700 dark:text-slate-200 uppercase tracking-wider">
+                <span className="w-2 h-2 rounded-full bg-[#FFD23F]" />
+                <span>Ön Değerlendirme Sürecimiz</span>
               </div>
 
-              <p className="text-xs text-slate-600 dark:text-slate-300 font-light leading-relaxed">
-                Uzun form doldurmak yerine doğrudan etkileşimli adımlarla gelişim alanlarınızı ve öncelikli yol haritanızı belirleyin.
-              </p>
-              
-              <button
-                type="button"
-                className="w-full btn-yellow text-xs py-3 px-4 justify-center shadow-md cursor-pointer group/btn"
-              >
-                <span>30 Saniyelik Analizi Başlat</span>
-                <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
-              </button>
-            </motion.div>
+              <div className="space-y-3 text-xs text-slate-600 dark:text-slate-300 font-light">
+                <div className="flex items-start gap-2.5">
+                  <span className="font-mono font-bold text-[#0F172A] dark:text-white shrink-0">1.</span>
+                  <p><strong className="font-semibold text-[#0F172A] dark:text-white">Ne inceliyoruz?</strong> Web sitesi, Google arama görünürlüğü ve müşteri taleplerinin karşılanma biçimi.</p>
+                </div>
+                <div className="flex items-start gap-2.5">
+                  <span className="font-mono font-bold text-[#0F172A] dark:text-white shrink-0">2.</span>
+                  <p><strong className="font-semibold text-[#0F172A] dark:text-white">Ne alırsınız?</strong> 1–2 sayfalık yazılı gelişim özeti ve kısa değerlendirme görüşmesi.</p>
+                </div>
+                <div className="flex items-start gap-2.5">
+                  <span className="font-mono font-bold text-[#0F172A] dark:text-white shrink-0">3.</span>
+                  <p><strong className="font-semibold text-[#0F172A] dark:text-white">Ne zaman?</strong> Başvurunuzdan sonra 1 iş günü içinde.</p>
+                </div>
+                <div className="flex items-start gap-2.5 pt-1 border-t border-[#E2E8F0] dark:border-white/5 text-[11px] text-slate-500 dark:text-slate-400">
+                  <p>Ayrıntılı teknik kod denetimi ve kapsamlı uygulama yol haritası ayrıca tekliflendirilir.</p>
+                </div>
+              </div>
+            </div>
 
-            <div className="text-xs text-slate-500 dark:text-slate-400 space-y-2.5 pt-2 font-light">
+            {/* Direct Contact Channels */}
+            <div className="space-y-3 pt-2 text-xs text-slate-600 dark:text-slate-300">
+              <div className="flex items-center gap-3">
+                <Phone className="w-4 h-4 text-[#0F172A] dark:text-[#FFD23F] shrink-0" />
+                <span>Telefon / WhatsApp: <strong className="font-medium text-[#0F172A] dark:text-white">+90 (212) 909 24 10</strong></span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Mail className="w-4 h-4 text-[#0F172A] dark:text-[#FFD23F] shrink-0" />
+                <span>E-posta: <strong className="font-medium text-[#0F172A] dark:text-white">iletisim@eradijital.com</strong></span>
+              </div>
+              <div className="flex items-center gap-3">
+                <MapPin className="w-4 h-4 text-[#0F172A] dark:text-[#FFD23F] shrink-0" />
+                <span>Konum: Maslak / İstanbul, Türkiye</span>
+              </div>
+            </div>
+
+            <div className="text-xs text-slate-500 dark:text-slate-400 space-y-1.5 pt-1 font-light">
               <p className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span>Başvuru için web sitesi sahibi olmak şart değildir.</span>
-              </p>
-              <p className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span>Kısa bir ihtiyaç görüşmesi ve mevcut dijital varlıkların ön incelemesiyle başlar.</span>
+                <span>Başvuru için aktif bir web sitenizin olması şart değildir.</span>
               </p>
             </div>
           </motion.div>
@@ -120,7 +131,7 @@ export default function ContactSection() {
                     Talebiniz Alındı
                   </h3>
                   <p className="text-sm text-slate-600 dark:text-slate-300 max-w-md mx-auto leading-relaxed font-light">
-                    Ön değerlendirme başvurunuz ekibimize ulaştı. Mevcut dijital varlıklarınızı inceledikten sonra en geç 24 saat içinde sizinle iletişime geçeceğiz.
+                    Ön değerlendirme başvurunuz ekibimize ulaştı. Mevcut dijital varlıklarınızı inceledikten sonra en geç 1 iş günü içinde sizinle iletişime geçeceğiz.
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
@@ -136,7 +147,7 @@ export default function ContactSection() {
                       Ücretsiz Ön Değerlendirme Formu
                     </h3>
                     <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 font-light">
-                      Ekibimiz varlıklarınızı inceleyip 24 saat içinde gelişim önerilerini iletecektir.
+                      Ekibimiz varlıklarınızı inceleyip 1 iş günü içinde gelişim önerilerini iletecektir.
                     </p>
                   </div>
 
@@ -225,6 +236,38 @@ export default function ContactSection() {
                         className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#F8F9FA] dark:bg-white/[0.04] border border-[#E2E8F0] dark:border-white/10 text-sm text-[#0F172A] dark:text-white focus:outline-none focus:border-[#0F172A] dark:focus:border-white/40 focus:ring-2 focus:ring-[#0F172A]/10 resize-none transition-all"
                       />
                     </div>
+                  </div>
+
+                  {/* Optional Budget Range (PDF: Bütçe aralığı isteğe bağlı) */}
+                  <div>
+                    <label className="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-1.5">
+                      Tahmini Bütçe Aralığı <span className="text-slate-400 font-normal">(İsteğe bağlı)</span>
+                    </label>
+                    <select
+                      value={formData.budgetRange}
+                      onChange={(e) => setFormData({ ...formData, budgetRange: e.target.value })}
+                      className="w-full px-4 py-2.5 rounded-xl bg-[#F8F9FA] dark:bg-white/[0.04] border border-[#E2E8F0] dark:border-white/10 text-sm text-[#0F172A] dark:text-white focus:outline-none focus:border-[#0F172A] dark:focus:border-white/40 focus:ring-2 focus:ring-[#0F172A]/10 transition-all"
+                    >
+                      <option value="">Belirtmek istemiyorum / Ön değerlendirmede konuşalım</option>
+                      <option value="15k-30k">15.000 TL – 30.000 TL</option>
+                      <option value="30k-60k">30.000 TL – 60.000 TL</option>
+                      <option value="60k+">60.000 TL ve üzeri</option>
+                    </select>
+                  </div>
+
+                  {/* Mandatory KVKK Consent (PDF: KVKK onayı eklenmeli) */}
+                  <div className="flex items-start gap-2.5 pt-1">
+                    <input
+                      type="checkbox"
+                      id="kvkkConsent"
+                      required
+                      checked={formData.kvkkConsent}
+                      onChange={(e) => setFormData({ ...formData, kvkkConsent: e.target.checked })}
+                      className="mt-0.5 rounded border-[#E2E8F0] text-[#0F172A] focus:ring-0 cursor-pointer"
+                    />
+                    <label htmlFor="kvkkConsent" className="text-xs text-slate-500 dark:text-slate-400 font-light cursor-pointer select-none leading-relaxed">
+                      Kişisel verilerimin iletişim ve ön değerlendirme amacıyla işlenmesine ilişkin <span className="underline font-normal text-slate-700 dark:text-slate-300">KVKK Aydınlatma Metni</span>'ni okudum ve onaylıyorum. <span className="text-red-500">*</span>
+                    </label>
                   </div>
 
                   <div className="pt-2">

@@ -20,33 +20,49 @@ export default function SolutionsSection() {
       id: 'varlik',
       icon: Layout,
       title: "Dijital varlık ve kurumsal anlatım",
-      desc: "Web siteleri, ürün içerikleri ve görsel iletişimle işletmenin dijitalde nasıl temsil edildiğini geliştiriyor.",
+      desc: "Web siteniz, ürün içerikleriniz ve kurumsal kimliğinizle işletmenizin dijitalde nasıl temsil edildiğini profesyonel seviyeye taşıyoruz.",
       tag: "Ön Yüz & Temsil",
-      bullets: ["Modern ve dönüşüm odaklı kurumsal web", "3D ve etkileşimli ürün anlatımı", "Tutarlı kurumsal görsel kimlik"]
+      bullets: [
+        "Mobil uyumlu, hızlı ve dönüşüm odaklı kurumsal web sitesi",
+        "Ürün ve hizmetlerinizi anlaşılır kılan görsel içerik seti",
+        "Tüm temas noktalarında tutarlı kurumsal görsel kimlik"
+      ]
     },
     {
       id: 'gorunurluk',
       icon: Globe2,
       title: "Görünürlük ve müşteri kazanımı",
-      desc: "İçerik, sosyal medya, SEO–GEO ve reklam çalışmalarını hedef kitleye ulaşmak için bir araya getiriyor.",
-      tag: "Trafik & Talep",
-      bullets: ["Arama motoru görünürlüğü (SEO & GEO)", "Hedefli performans reklamları (Google/Meta)", "Değer üreten sektörel içerik mimarisi"]
+      desc: "Arama motoru görünürlüğü (SEO), hedefli dijital reklamlar ve sektörel içeriklerle doğrudan ilgili kitleye ulaşmanızı sağlıyoruz.",
+      tag: "Arama & Reklam",
+      bullets: [
+        "Arama motorlarında görünürlük ve yerel harita optimizasyonu",
+        "Doğru kitleye odaklanan bütçe kontrollü reklam yönetimi",
+        "Güven oluşturan sektörel bilgilendirici içerik mimarisi"
+      ]
     },
     {
       id: 'satis',
       icon: Users,
       title: "Satış ve müşteri ilişkileri",
-      desc: "Başvuru, teklif ve müşteri takip sistemleriyle oluşan ilginin daha düzenli yönetilmesini destekliyor.",
-      tag: "Dönüşüm & CRM",
-      bullets: ["Otomatik teklif & form akışları", "Müşteri adayları (Lead) takibi & kayıt", "Hızlı yanıt ve karşılama altyapısı"]
+      desc: "Gelen formların, WhatsApp mesajlarının ve teklif taleplerinin tek merkezde toplanarak hızla yanıtlanmasını destekliyoruz.",
+      tag: "Talep Takibi & CRM",
+      bullets: [
+        "Web sitesi ve WhatsApp formlarının anlık bildirimi",
+        "Müşteri adaylarının (Lead) düzenli kaydı ve durum takibi",
+        "Ekibinizin gecikmeden dönüş yapmasını sağlayan bildirim akışı"
+      ]
     },
     {
       id: 'yazilim',
       icon: Code2,
       title: "Yazılım ve iş süreçleri",
-      desc: "Özel uygulamalar, otomasyonlar ve entegrasyonlarla işletmenin dijital işleyişini geliştiriyor.",
-      tag: "Verimlilik & Kod",
-      bullets: ["İş akışı otomasyonları (Webhook/API)", "Sistem & veri tabanı entegrasyonları", "İşletmeye özel mikro web uygulamaları"]
+      desc: "İşletmenizin tekrarlayan manuel iş yükünü azaltan özel mini web araçları, form entegrasyonları ve otomasyonlar geliştiriyoruz.",
+      tag: "Verimlilik & Süreç",
+      bullets: [
+        "Farklı araçlar ve sistemler arası veri bağlantıları",
+        "Tekrarlanan form ve e-posta bildirimlerinin otomatikleşmesi",
+        "İşletmenize özel pratik teklif ve hesaplama araçları"
+      ]
     }
   ];
 
@@ -72,7 +88,7 @@ export default function SolutionsSection() {
         >
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 text-slate-700 dark:text-slate-300 font-mono text-[11px] font-semibold tracking-wider uppercase mb-4 shadow-xs">
             <span className="w-1.5 h-1.5 rounded-full bg-[#FFD23F]" />
-            <span>Bölüm 3 — Çözüm Yaklaşımı</span>
+            <span>Entegre Çözümler</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.15]">
@@ -81,7 +97,7 @@ export default function SolutionsSection() {
           </h2>
 
           <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-light">
-            ERA Dijital, üretim ve teknoloji imkânlarını işletmenin hedeflerine göre kullanıyor. Her çalışma, belirli bir gelişim ihtiyacına karşılık veriyor.
+            Üretim ve teknoloji imkânlarımızı işletmenizin hedeflerine göre kullanıyoruz. Her çalışma, doğrudan belirli bir gelişim ihtiyacına karşılık verir.
           </p>
         </motion.div>
 
@@ -183,20 +199,20 @@ export default function SolutionsSection() {
           <div className="space-y-1.5 max-w-xl">
             <div className="flex items-center gap-2 text-xs font-mono text-slate-700 dark:text-slate-300 font-bold">
               <span className="w-2 h-2 rounded-full bg-[#FFD23F] animate-pulse" />
-              <span>KUR — ÇEK — DÖNÜŞTÜR — OTOMATİKLEŞTİR İLKESİ</span>
+              <span>KUR — ÇEK — DÖNÜŞTÜR — KOLAYLAŞTIR</span>
             </div>
             <h4 className="text-base sm:text-lg font-display font-bold text-[#0F172A] dark:text-white">
               Her işletme için doğru başlangıç noktasını belirliyoruz.
             </h4>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-light">
-              Tüm hizmetleri aynı anda almak zorunda değilsiniz. ERA Dijital, önceliği en hızlı sonuç verecek gelişim alanına vererek başlar.
+              Tüm hizmetleri aynı anda almak zorunda değilsiniz. ERA Dijital olarak önceliği en hızlı ve net fayda sağlayacak gelişim alanına vererek başlıyoruz.
             </p>
           </div>
           <button
             onClick={() => openWizard()}
             className="btn-yellow text-xs py-3 px-5 shrink-0 cursor-pointer shadow-md group"
           >
-            <span>30 Sn'de Ön Değerlendirme Al</span>
+            <span>Ön Değerlendirme Al</span>
             <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
           </button>
         </motion.div>

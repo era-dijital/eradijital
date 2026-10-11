@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, ArrowRight, Sparkles } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowRight, ShieldCheck } from 'lucide-react';
 import { useQuoteWizard } from '../context/QuoteWizardContext';
 
 export default function Footer() {
@@ -15,9 +15,9 @@ export default function Footer() {
           <span className="font-semibold text-[#0F172A] dark:text-white">ERA DİJİTAL // DİJİTAL GELİŞİM VE DÖNÜŞÜM AJANSI</span>
         </div>
         <div className="flex items-center gap-4 text-[11px]">
-          <span>Ön İnceleme: &lt;24 Saat</span>
+          <span>Ön İnceleme: 1 İş Günü</span>
           <span>•</span>
-          <span>İstanbul & Global Operasyon</span>
+          <span>İstanbul Operasyon & Uzaktan İş Birliği</span>
         </div>
       </div>
 
@@ -32,13 +32,13 @@ export default function Footer() {
               <span className="font-display font-bold text-lg text-[#0F172A] dark:text-white">ERA Dijital</span>
             </Link>
             <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-md font-light">
-              İşletmenizin dijital gelişim önceliklerini belirliyor; görünürlük, müşteri kazanımı ve iş süreçleri için gerekli çözümleri hayata geçiriyoruz.
+              İşletmenizin dijital gelişim önceliklerini birlikte belirliyoruz; görünürlük, müşteri kazanımı ve iş süreçleri için gerekli çözümleri hayata geçiriyoruz.
             </p>
             <div className="pt-2 flex flex-wrap gap-2 font-mono text-[11px]">
               <span className="px-2.5 py-1 rounded-md bg-slate-200/70 dark:bg-white/5 border border-slate-300/50 dark:border-white/10 text-slate-700 dark:text-slate-300">Dijital Varlık</span>
               <span className="px-2.5 py-1 rounded-md bg-slate-200/70 dark:bg-white/5 border border-slate-300/50 dark:border-white/10 text-slate-700 dark:text-slate-300">Müşteri Kazanımı</span>
-              <span className="px-2.5 py-1 rounded-md bg-slate-200/70 dark:bg-white/5 border border-slate-300/50 dark:border-white/10 text-slate-700 dark:text-slate-300">Satış & CRM</span>
-              <span className="px-2.5 py-1 rounded-md bg-slate-200/70 dark:bg-white/5 border border-slate-300/50 dark:border-white/10 text-slate-700 dark:text-slate-300">Yazılım & Süreç</span>
+              <span className="px-2.5 py-1 rounded-md bg-slate-200/70 dark:bg-white/5 border border-slate-300/50 dark:border-white/10 text-slate-700 dark:text-slate-300">Satış & Talep Takibi</span>
+              <span className="px-2.5 py-1 rounded-md bg-slate-200/70 dark:bg-white/5 border border-slate-300/50 dark:border-white/10 text-slate-700 dark:text-slate-300">İş Süreçleri & Düzen</span>
             </div>
           </div>
 
@@ -49,7 +49,7 @@ export default function Footer() {
             </span>
             <ul className="space-y-2.5 text-xs text-slate-600 dark:text-slate-400 font-light">
               <li>
-                <a href="/#ihtiyaclar" className="hover:text-[#0F172A] dark:hover:text-white transition-colors">İhtiyaç Tespiti</a>
+                <a href="/#ihtiyaclar" className="hover:text-[#0F172A] dark:hover:text-white transition-colors">İhtiyaç Analizi</a>
               </li>
               <li>
                 <a href="/#gelisim-alanlari" className="hover:text-[#0F172A] dark:hover:text-white transition-colors">Çözüm Yaklaşımı</a>
@@ -58,45 +58,56 @@ export default function Footer() {
                 <a href="/#yetkinlik" className="hover:text-[#0F172A] dark:hover:text-white transition-colors">Uygulama Örnekleri</a>
               </li>
               <li>
+                <a href="/#hakkimizda" className="hover:text-[#0F172A] dark:hover:text-white transition-colors">Biz Kimiz</a>
+              </li>
+              <li>
                 <a href="/#surec" className="hover:text-[#0F172A] dark:hover:text-white transition-colors">Çalışma Süreci</a>
               </li>
               <li>
-                <a href="/#sorular" className="hover:text-[#0F172A] dark:hover:text-white transition-colors">Karar Öncesi Sorular</a>
-              </li>
-              <li>
-                <Link to="/hakkimizda" className="hover:text-[#0F172A] dark:hover:text-white transition-colors">Hakkımızda</Link>
+                <a href="/#sorular" className="hover:text-[#0F172A] dark:hover:text-white transition-colors">Sıkça Sorulan Sorular</a>
               </li>
             </ul>
           </div>
 
-          {/* Quick Analysis & Contact */}
+          {/* Quick Analysis & Direct Contact */}
           <div className="space-y-4">
             <span className="font-mono text-xs text-[#0F172A] dark:text-white font-bold uppercase tracking-wider block mb-4">
               Ön Değerlendirme
             </span>
             <p className="text-xs text-slate-600 dark:text-slate-400 font-light">
-              İşletmenizin mevcut dijital varlıklarını 24 saat içinde inceliyor, öncelikli yol haritanızı paylaşıyoruz.
+              İşletmenizin mevcut dijital varlıklarını 1 iş günü içinde inceliyor, öncelikli yol haritanızı paylaşıyoruz.
             </p>
             <button
               onClick={() => openWizard()}
               className="btn-yellow text-xs py-2.5 px-4 w-full justify-center cursor-pointer shadow-md group"
             >
-              <span>30 Saniyelik Analizi Başlat</span>
+              <span>Ön Değerlendirme Al</span>
               <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
             </button>
-            <div className="pt-2 text-xs text-slate-500 dark:text-slate-400 space-y-1 font-light">
-              <p>E-posta: iletisim@eradijital.com</p>
-              <p>Konum: İstanbul / Türkiye</p>
+            <div className="pt-2 text-xs text-slate-600 dark:text-slate-300 space-y-1.5 font-light">
+              <p className="flex items-center gap-2">
+                <Phone className="w-3.5 h-3.5 text-slate-400" />
+                <span>+90 (212) 909 24 10</span>
+              </p>
+              <p className="flex items-center gap-2">
+                <Mail className="w-3.5 h-3.5 text-slate-400" />
+                <span>iletisim@eradijital.com</span>
+              </p>
+              <p className="flex items-center gap-2">
+                <MapPin className="w-3.5 h-3.5 text-slate-400" />
+                <span>Maslak / İstanbul</span>
+              </p>
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
+        {/* Bottom Bar with KVKK and Copyright */}
         <div className="mt-12 pt-8 border-t border-[#E2E8F0] dark:border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
           <p>© {new Date().getFullYear()} ERA Dijital. Tüm hakları saklıdır.</p>
           <div className="flex items-center gap-6">
-            <a href="/#iletisim" className="hover:text-[#0F172A] dark:hover:text-white transition-colors">İletişim Formu</a>
-            <button onClick={() => openWizard()} className="hover:text-[#0F172A] dark:hover:text-white transition-colors cursor-pointer">Ön Değerlendirme</button>
+            <a href="/#iletisim" className="hover:text-[#0F172A] dark:hover:text-white transition-colors">İletişim</a>
+            <a href="/#hakkimizda" className="hover:text-[#0F172A] dark:hover:text-white transition-colors">Biz Kimiz</a>
+            <span className="hover:text-[#0F172A] dark:hover:text-white cursor-pointer transition-colors" title="KVKK Aydınlatma Metni">KVKK Aydınlatma Metni</span>
           </div>
         </div>
       </div>

@@ -10,35 +10,35 @@ export default function DeliverablesSection() {
     {
       category: "DİJİTAL PLATFORM & WEB ÇALIŞMASI",
       title: "Hızlı, Güven Veren ve Teklife Yönlendiren Kurumsal Web Altyapısı",
-      need: "Ziyaretçiyi kaçıran hantal vitrin siteleri yerine, doğrudan teklif ve randevuya yönlendiren hızlı bir altyapı.",
-      work: "Vite + React & Tailwind CSS ile 0.8s altı açılış hızı, 30 saniyelik etkileşimli teklif hesaplayıcısı entegrasyonu.",
-      output: "99/100 Core Web Vitals Skoru & Otomatik Lead Yönlendirmesi",
-      badge: "CANLI WEB ÇALIŞMASI",
+      need: "Ziyaretçiyi kaçıran hantal vitrin siteleri yerine, doğrudan teklif ve randevuya yönlendiren modern bir altyapı.",
+      work: "Mobil uyumlu, yüksek hızda açılan, 30 saniyelik etkileşimli teklif hesaplayıcısı entegre edilmiş kurumsal web sitesi.",
+      output: "Ziyaretçiyi Müşteriye Dönüştüren Hızlı Web Platformu & Net Teklif Akışı",
+      badge: "KONSEPT ÇALIŞMA",
       icon: Globe,
-      metricVal: "99/100",
-      metricLabel: "Hız & Performans"
+      metricVal: "Yayında",
+      metricLabel: "Canlı Demo"
     },
     {
       category: "PRODÜKSİYON & GÖRSEL İLETİŞİM",
       title: "Ürün ve Hizmet Yetkinliğini Somutlaştıran Dijital İçerik Seti",
       need: "Uzmanlığı ve ürün kalitesini potansiyel müşteriye güven verici bir netlikle aktarmak.",
-      work: "Gerçek üretim/saha görselleri, sadeleştirilmiş 3D demonstrasyonlar ve tutarlı kurumsal anlatım dili.",
-      output: "Çok Kanallı Dijital Varlık Kiti & Satış Sunumu Kataloğu",
+      work: "Saha/ürün çekimleri, sadeleştirilmiş 3D demonstrasyonlar ve tutarlı kurumsal anlatım dili oluşturulması.",
+      output: "Çok Kanallı Dijital Görsel Kiti & Satış Sunumu Kataloğu",
       badge: "İÇERİK & GÖRSELLEŞTİRME",
       icon: Layers,
-      metricVal: "3D & 4K",
-      metricLabel: "Görsel Standart"
+      metricVal: "Hazır",
+      metricLabel: "Görsel Varlık Seti"
     },
     {
       category: "İŞ SÜREÇLERİ & OTOMASYON",
-      title: "Gelen Talepleri Otomatik Karşılayan & Kaydeden CRM İş Akışı",
+      title: "Gelen Talepleri Otomatik Karşılayan & Kaydeden İletişim Akışı",
       need: "Mesajların, tekliflerin ve formların WhatsApp ve Excel arasında kaybolmasını önlemek.",
-      work: "Web formu ve WhatsApp Webhook entegrasyonu, n8n tabanlı anlık bildirim ve müşteri takip paneli senkronizasyonu.",
-      output: "7/24 Kesintisiz Talep Takip Sistemi & Otomatik Müşteri Bildirimi",
-      badge: "DEMO OTOMASYON UYGULAMASI",
+      work: "Web formu ve WhatsApp taleplerinin anlık olarak ilgili ekibe bildirilmesi ve müşteri paneline düzenli kayıt akışı.",
+      output: "Taleplerin Kaybolmasını Önleyen 7/24 Kesintisiz Bildirim & Takip Sistemi",
+      badge: "OTOMASYON DEMOSU",
       icon: Cpu,
-      metricVal: "< 1.2 Sn",
-      metricLabel: "Otomasyon Yanıtı"
+      metricVal: "Aktif",
+      metricLabel: "Anlık Bildirim"
     }
   ];
 
@@ -60,7 +60,7 @@ export default function DeliverablesSection() {
         >
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-slate-200 font-mono text-[11px] font-semibold tracking-wider uppercase mb-4 backdrop-blur-md">
             <Activity className="w-3.5 h-3.5 text-emerald-400" />
-            <span>Bölüm 4 — Yetkinliğin Görünür Olması</span>
+            <span>Uygulama Örnekleri</span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold tracking-tight text-white leading-[1.12]">

@@ -10,19 +10,27 @@ export default function FaqSection() {
   const faqs = [
     {
       q: "Bütün hizmetleri birlikte almak gerekiyor mu?",
-      a: "Hayır. ERA Dijital, çalışma kapsamını öncelikli ihtiyaca göre belirliyor. İş birliği tek bir projeyle başlayabiliyor."
+      a: "Hayır. Çalışma kapsamını işletmenizin öncelikli ihtiyacına göre birlikte belirliyoruz. İş birliğimiz tek bir modülle veya projeyle başlayabilir."
     },
     {
-      q: "Mevcut web sitesi ve sistemler kullanılabiliyor mu?",
-      a: "Mevcut yapı önce değerlendiriliyor. Kullanılabilir yatırımların korunması, iyileştirilmesi veya gerekli bağlantılarla desteklenmesi seçenekleri ele alınıyor."
+      q: "Mevcut web sitemiz ve sistemlerimiz kullanılabiliyor mu?",
+      a: "Mevcut altyapınızı önce detaylıca inceliyoruz. Kullanılabilir yatırımlarınızın korunması, iyileştirilmesi veya gerekli bağlantılarla güçlendirilmesi seçeneklerini değerlendiriyoruz."
     },
     {
       q: "Ücretsiz ön değerlendirme neleri kapsıyor?",
-      a: "Kısa ihtiyaç görüşmesini, erişilebilir dijital varlıkların ön incelemesini ve öncelikli gelişim alanlarının paylaşılmasını kapsıyor. Ayrıntılı teknik denetim ve kapsamlı yol haritası ayrıca tanımlanıyor."
+      a: "Kısa ihtiyaç formunuzu, erişilebilir dijital varlıklarınızın (web sitesi, arama görünürlüğü, talep karşılama biçimi) ön incelemesini ve 1 iş günü içinde öncelikli gelişim alanlarının yazılı özetini kapsar."
+    },
+    {
+      q: "Sonuçları ne zaman görmeye başlarız?",
+      a: "İlk dijital varlık ve web altyapısı çalışmaları genellikle 2–3 hafta içinde tamamlanır. Arama görünürlüğü ve reklam gibi müşteri kazanımı çalışmalarının etkileri ilk aydan itibaren verilerle izlenir. Gerçekçi olmayan süre garantileri vermek yerine veriye dayalı şeffaf ölçümleme sunuyoruz."
+    },
+    {
+      q: "Fiyatlandırma nasıl belirleniyor?",
+      a: "Fiyatlandırma, işletmenizin ihtiyacına göre kararlaştırılan somut çalışma kapsamına göre şekillenir. Ön değerlendirme sonrasında yapılacak işler, teslim takvimi ve maliyet kalemleri net bir teklif dokümanında paylaşılır; sürpriz harici giderler çıkarılmaz."
     },
     {
       q: "Teslimden sonra destek devam ediyor mu?",
-      a: "Bakım, teknik destek ve sürekli gelişim çalışmaları ayrı kapsamlarla planlanıyor. Destek süresi ve sorumluluklar teklif aşamasında açıklanıyor."
+      a: "Bakım, teknik destek ve sürekli gelişim çalışmaları ayrı kapsamlarla planlanır. Destek süresi, periyodik kontroller ve sorumluluklar teklif aşamasında şeffafça açıklanır."
     }
   ];
 
@@ -44,7 +52,7 @@ export default function FaqSection() {
         >
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 text-slate-700 dark:text-slate-300 font-mono text-[11px] font-semibold tracking-wider uppercase mb-4 shadow-xs">
             <span className="w-1.5 h-1.5 rounded-full bg-[#FFD23F]" />
-            <span>Bölüm 6 — Karar Öncesi Sorular</span>
+            <span>Sıkça Sorulan Sorular</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.15]">
@@ -104,7 +112,7 @@ export default function FaqSection() {
                         open: { opacity: 1, height: "auto" },
                         collapsed: { opacity: 0, height: 0 }
                       }}
-                      transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                      transition={{ duration: 0.35, ease: [0.16, 1, 0.23, 0.98] }}
                       className="overflow-hidden"
                     >
                       <div className="px-7 pb-6 pt-1 text-sm sm:text-base text-slate-600 dark:text-slate-300 border-t border-[#E2E8F0] dark:border-white/5 leading-relaxed font-light">
@@ -121,7 +129,7 @@ export default function FaqSection() {
         {/* Quick Helper CTA */}
         <div className="mt-12 text-center">
           <p className="text-xs text-slate-500 dark:text-slate-400 mb-3 font-light">
-            Farklı bir sorunuz mu var veya özel kapsam mı konuşmak istiyorsunuz?
+            Farklı bir sorunuz mu var veya özel bir kapsamı görüşmek mi istiyorsunuz?
           </p>
           <button
             onClick={() => openWizard()}

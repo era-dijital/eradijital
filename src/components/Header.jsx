@@ -21,10 +21,11 @@ export default function Header() {
   const navLinks = [
     { name: 'Yaklaşım', href: '/#ihtiyaclar' },
     { name: 'Çözümler', href: '/#gelisim-alanlari' },
-    { name: 'Yetkinlik', href: '/#yetkinlik' },
+    { name: 'Örnek İşler', href: '/#yetkinlik' },
+    { name: 'Biz Kimiz', href: '/#hakkimizda' },
     { name: 'Süreç', href: '/#surec' },
     { name: 'SSS', href: '/#sorular' },
-    { name: 'Hakkımızda', href: '/hakkimizda' },
+    { name: 'İletişim', href: '/#iletisim' },
   ];
 
   return (
@@ -39,7 +40,7 @@ export default function Header() {
         }`}
       >
         
-        {/* Brand Logo & Hashtag */}
+        {/* Brand Logo */}
         <Link to="/" className="flex items-center gap-2 shrink-0 group">
           <div className="w-7 h-7 rounded-lg bg-[#0F172A] dark:bg-white text-white dark:text-[#0F172A] flex items-center justify-center font-mono font-bold text-xs shadow-xs group-hover:bg-[#FFD23F] group-hover:text-[#0F172A] transition-colors">
             E
@@ -122,7 +123,7 @@ export default function Header() {
               }}
               className="w-full btn-yellow py-3 px-4 justify-center text-xs group"
             >
-              <span>30 Saniyede Ön Değerlendirme Al</span>
+              <span>Ön Değerlendirme Al</span>
               <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
             </button>
           </div>
