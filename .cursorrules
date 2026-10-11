@@ -1,0 +1,55 @@
+# Era Dijital — AI Agent & Cursor Rules (.cursorrules)
+# Bu kurallar projedeki tüm geliştirme, derleme (build) ve canlıya dağıtım (deployment) süreçlerinde ZORUNLUDUR.
+
+## 1. Branch Mimarisi ve Canlı Dağıtım (Hostinger)
+- **`main` Dalı:** Temiz kaynak kod dalıdır (`src/`, `panel/`, `public/`).
+- **`production` Dalı:** Canlı sunucunun (Hostinger) dinlediği ve doğrudan yayınladığı daldır. **MUTLAKA derlenmiş `dist/` klasörünü ve `src/` kodlarını içermelidir.**
+- ⚠️ **Kritik Kural:** Yapılan değişiklikler sadece `main` dalına pushlanırsa canlı site GÜNCELLENMEZ. Canlıya yansıması için yerelde `npm run build` çalıştırılmalı ve hem `main` hem de `production` branch'ine pushlanmalıdır.
+
+---
+
+## 2. Minified `dist/` Dosyalarında Git Çakışması Engelleme (ÇOK KRİTİK)
+- **ASLA `dist/` klasöründeki minified JS/CSS dosyalarını Git 3-way text merge ile birleştirme!**
+- Git, tek satırlık devasa minified JS dosyalarını satır satır birleştirmeye çalıştığında araya `<<<<<<< HEAD`, `=======`, `>>>>>>>` çakışma etiketleri enjekte eder. Bu durum dosya sözdizimini bozar (`SyntaxError`) ve canlı sitede **BEYAZ EKRAN** hatasına yol açar.
+- **Güvenli Birleştirme Kuralı:**
+  1. `main` dalında derleme alınıp commitlendikten sonra `production` dalına geçildiğinde:
+     - Ya fast-forward merge yapılmalıdır: `git merge main --ff-only`
+     - Ya da çakışma durumunda tamamen `main` sürümü ezilmelidir: `git checkout main -- dist/ src/` veya `git reset --hard main`
+  2. Commit öncesinde mutlaka JS sözdizimi doğrulanmalıdır:
+     ```cmd
+     node --check dist/assets/*.js
+     ```
+
+---
+
+## 3. Hostinger CDN Önbellek Yönetimi (Cache Busting)
+- Hostinger CDN (`hcdn`), `assets/*.js` ve `assets/*.css` dosyalarını **7 gün (`max-age=604800`)** süreyle agresif önbelleğe alır.
+- Eğer dosya hash'i değişmezse sunucu veya tarayıcı eski/hatalı dosyayı getirmeye devam eder.
+- **Kural:** Her önemli dağıtımda `dist` temizlenip (`Remove-Item -Recurse dist`) yeniden `npm run build` çalıştırılmalı ve yeni bir bundle hash'i (örn. `index-O8ga6_Dj.js`) üretildiği teyit edilmelidir.
+
+---
+
+## 4. GitHub Kimlik Doğrulama ve Token Güvenliği
+- GitHub tokenları asla kaynak kodlara veya `.git/config` içerisine kalıcı olarak yazılmamalıdır.
+- Push işlemi geçici URL ile yapıldıktan hemen sonra remote adresi orijinal temiz haline döndürülmelidir:
+  ```powershell
+  $token = "<TOKEN>"
+  git remote set-url origin "https://${token}@github.com/era-dijital/eradijital.git"
+  try {
+      git push origin main
+      git push origin production
+  } finally {
+      git remote set-url origin "https://github.com/era-dijital/eradijital.git"
+      git checkout main
+  }
+  ```
+
+---
+
+## 5. Tasarım, Tipografi ve İçerik Standartları
+- **Başlık Formatı (Title Case):** Sitedeki tüm ana ve kart başlıklarında her kelimenin baş harfi BÜYÜK olmalıdır (örn: "İşinizin Bir Sonraki Adımında", "İhtiyaca Göre Seçilen Çözümler"). Başlık sonlarında nokta (.) kullanılmaz.
+- **İletişim Bilgileri (Tek Gerçek Kaynak):**
+  - **Telefon:** `+90 543 361 92 39` (`href="tel:+905433619239"`, WhatsApp: `905433619239`)
+  - **E-posta:** `eradijitalinfo@gmail.com` (`href="mailto:eradijitalinfo@gmail.com"`)
+  - Başka sahte veya eski e-posta/telefon kullanılmamalıdır.
+- **İhtiyaç Analizi Kartları (`NeedsSection.jsx`):** Kartların sağ üstündeki etiket rozetleri (`Kurumsal Vitrin & Temsil`, `Hedefli Arama & Reklam` vb.) kaldırılmıştır, tekrar eklenmemelidir.
