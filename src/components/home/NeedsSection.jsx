@@ -9,28 +9,28 @@ export default function NeedsSection() {
   const needs = [
     {
       icon: Sparkles,
-      title: "İşletmenizin gücünü daha iyi yansıtmak",
+      title: "İşletmenizin Gücünü Daha İyi Yansıtmak",
       desc: "Ürünlerinizi, hizmetlerinizi ve uzmanlığınızı ziyaretçiye daha açık, tutarlı ve güven veren bir kurumsal vitrinle sunun.",
       tag: "Kurumsal Vitrin & Temsil",
       metrics: "Hızlı ve güven veren kurumsal vitrin"
     },
     {
       icon: Search,
-      title: "Doğru müşteriler tarafından bulunmak",
+      title: "Doğru Müşteriler Tarafından Bulunmak",
       desc: "Arama görünürlüğü ve reklam çalışmalarını genel kitle yerine doğrudan hizmetinizi arayan potansiyel müşterilere yönlendirin.",
       tag: "Hedefli Arama & Reklam",
       metrics: "Bütçeyi doğru kitleye yönlendirme"
     },
     {
       icon: MessageSquare,
-      title: "Gelen ilgiyi daha düzenli yönetmek",
+      title: "Gelen İlgiyi Daha Düzenli Yönetmek",
       desc: "Web sitesinden ve WhatsApp'tan gelen mesajları, teklif taleplerini ve formları tek bir düzenli takip akışına bağlayın.",
       tag: "Satış & Talep Takibi",
       metrics: "Mesaj ve taleplerin anlık takibi"
     },
     {
       icon: RefreshCw,
-      title: "Tekrarlanan işleri kolaylaştırmak",
+      title: "Tekrarlanan İşleri Kolaylaştırmak",
       desc: "Dağınık bilgi ve manuel işlemleri uygun dijital araçlar ve otomasyonlarla düzenleyerek operasyonel hız kazanın.",
       tag: "Süreç & Düzen",
       metrics: "Manuel iş yükünü azaltan akış"
@@ -59,7 +59,7 @@ export default function NeedsSection() {
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.15]">
-            İşletmenizin bugün <span className="hl-yellow">neye ihtiyacı var?</span>
+            İşletmenizin Bugün <span className="hl-yellow">Neye İhtiyacı Var?</span>
           </h2>
 
           <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-light">

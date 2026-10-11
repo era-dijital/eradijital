@@ -52,8 +52,8 @@ export default function ContactSection() {
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.12]">
-              Dijitalde bir sonraki <br />
-              <span className="hl-yellow">adımınız netleşsin.</span>
+              Dijitalde Bir Sonraki <br />
+              <span className="hl-yellow">Adımınız Netleşsin</span>
             </h2>
 
             <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-light">

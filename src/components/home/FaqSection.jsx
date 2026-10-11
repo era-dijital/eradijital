@@ -56,7 +56,7 @@ export default function FaqSection() {
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.15]">
-            Başlamadan <span className="hl-yellow">önce.</span>
+            Başlamadan <span className="hl-yellow">Önce</span>
           </h2>
 
           <p className="mt-3.5 text-base sm:text-lg text-slate-600 dark:text-slate-400 font-light">

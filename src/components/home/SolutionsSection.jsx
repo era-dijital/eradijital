@@ -19,7 +19,7 @@ export default function SolutionsSection() {
     {
       id: 'varlik',
       icon: Layout,
-      title: "Dijital varlık ve kurumsal anlatım",
+      title: "Dijital Varlık ve Kurumsal Anlatım",
       desc: "Web siteniz, ürün içerikleriniz ve kurumsal kimliğinizle işletmenizin dijitalde nasıl temsil edildiğini profesyonel seviyeye taşıyoruz.",
       tag: "Ön Yüz & Temsil",
       bullets: [
@@ -31,7 +31,7 @@ export default function SolutionsSection() {
     {
       id: 'gorunurluk',
       icon: Globe2,
-      title: "Görünürlük ve müşteri kazanımı",
+      title: "Görünürlük ve Müşteri Kazanımı",
       desc: "Arama motoru görünürlüğü (SEO), hedefli dijital reklamlar ve sektörel içeriklerle doğrudan ilgili kitleye ulaşmanızı sağlıyoruz.",
       tag: "Arama & Reklam",
       bullets: [
@@ -43,7 +43,7 @@ export default function SolutionsSection() {
     {
       id: 'satis',
       icon: Users,
-      title: "Satış ve müşteri ilişkileri",
+      title: "Satış ve Müşteri İlişkileri",
       desc: "Gelen formların, WhatsApp mesajlarının ve teklif taleplerinin tek merkezde toplanarak hızla yanıtlanmasını destekliyoruz.",
       tag: "Talep Takibi & CRM",
       bullets: [
@@ -55,7 +55,7 @@ export default function SolutionsSection() {
     {
       id: 'yazilim',
       icon: Code2,
-      title: "Yazılım ve iş süreçleri",
+      title: "Yazılım ve İş Süreçleri",
       desc: "İşletmenizin tekrarlayan manuel iş yükünü azaltan özel mini web araçları, form entegrasyonları ve otomasyonlar geliştiriyoruz.",
       tag: "Verimlilik & Süreç",
       bullets: [
@@ -92,8 +92,8 @@ export default function SolutionsSection() {
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.15]">
-            İhtiyaca göre seçilen çözümler. <br className="hidden sm:inline" />
-            <span className="hl-yellow">Birlikte çalışan bir yapı.</span>
+            İhtiyaca Göre Seçilen Çözümler <br className="hidden sm:inline" />
+            <span className="hl-yellow">Birlikte Çalışan Bir Yapı</span>
           </h2>
 
           <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-light">

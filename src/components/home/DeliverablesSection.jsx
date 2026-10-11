@@ -64,7 +64,7 @@ export default function DeliverablesSection() {
           </div>
 
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold tracking-tight text-white leading-[1.12]">
-            Yaklaşımın <span className="text-slate-200">uygulamadaki karşılığı.</span>
+            Yaklaşımın <span className="text-slate-200">Uygulamadaki Karşılığı</span>
           </h2>
 
           <p className="mt-5 text-base sm:text-xl text-slate-300 leading-relaxed font-light">

@@ -50,8 +50,8 @@ export default function ProcessSection() {
           className="max-w-2xl mb-14 sm:mb-20"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.15]">
-            Önce öncelikler netleşiyor. <br className="hidden sm:inline" />
-            <span className="hl-yellow">Sonra uygulama başlıyor.</span>
+            Önce Öncelikler Netleşiyor <br className="hidden sm:inline" />
+            <span className="hl-yellow">Sonra Uygulama Başlıyor</span>
           </h2>
 
           <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-light">
