@@ -50,6 +50,11 @@ Kaynak Kod Dalı: `main`
   - **Proje Kartı 2 Başlığı:** *"Ürün ve Hizmet Yetkinliğini Somutlaştıran Dijital İçerik Seti"* başlığı *"Ürün ve Hizmetleri Görünür Kılan İçerikler"* olarak güncellendi.
   - **Proje Kartları Rozetleri ve Alt Metin:** 3 proje kartındaki sağ üst rozetler (`KONSEPT ÇALIŞMA`, `İÇERİK & GÖRSELLEŞTİRME`, `OTOMASYON DEMOSU`, durum etiketleri) ve sol alt köşedeki *"Gerçek üretim ve şeffaf teslim standardı"* metinleri kaldırıldı.
   - **Biz Kimiz Kartları:** 3 ilke kartının altındaki *"Çalışma Standardı 01"*, *"Çalışma Standardı 02"* ve *"Çalışma Standardı 03"* ibareleri kaldırıldı.
+- [x] **Süreç ve İletişim Revizyonları:**
+  - **Süreç Başlığı:** *"Önce Öncelikler Netleşiyor Sonra Uygulama Başlıyor"* başlığı *"İhtiyaçlarınızı Netleştiriyor, Uygulamaya Başlıyoruz"* olarak güncellendi.
+  - **Süreç Kartları Aşama Etiketleri:** 4 süreç kartının altındaki *"Aşama 01"*, *"Aşama 02"*, *"Aşama 03"* ve *"Aşama 04"* ibareleri kaldırıldı.
+  - **Süreç Alt Kutusu:** Süreç kartlarının altındaki taahhüt kutusu (kalkan ikonu, açıklama metni ve *"Ön Değerlendirme İsteyin"* butonu) tamamen kaldırıldı.
+  - **İletişim / Ön Değerlendirme Başlığı:** *"Dijitalde Bir Sonraki Adımınız Netleşsin"* başlığı *"Dijitalde Dönüşümdeki Bir Sonraki Adımınızı Netleştirin"* olarak güncellendi.
 
 ### Altyapı, Git ve Canlı Dağıtım
 - [x] **Hostinger Git Dağıtım Mimarisi Kuruldu:**
@@ -112,6 +117,6 @@ try {
 
 ## 4. Aktif Durum
 - Canlı Site Durumu: **ÇALIŞIYOR (HTTP 200)**
-- Sürüm: `v1.1.4`
-- Aktif JS Bundle: `dist/assets/index-Cmy2-NDa.js`
+- Sürüm: `v1.1.5`
+- Aktif JS Bundle: `dist/assets/index-C2UxwEn9.js`
 - Aktif CSS Bundle: `dist/assets/index-B6vd_9W7.css`

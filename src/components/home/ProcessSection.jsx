@@ -1,11 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Search, Compass, Zap, LineChart, ArrowRight, ShieldCheck, Check } from 'lucide-react';
-import { useQuoteWizard } from '../../context/QuoteWizardContext';
+import { Search, Compass, Zap, LineChart } from 'lucide-react';
 
 export default function ProcessSection() {
-  const { openWizard } = useQuoteWizard();
-
   const steps = [
     {
       icon: Search,
@@ -47,11 +44,11 @@ export default function ProcessSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-2xl mb-14 sm:mb-20"
+          className="max-w-3xl mb-14 sm:mb-20"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.15]">
-            Önce Öncelikler Netleşiyor <br className="hidden sm:inline" />
-            <span className="hl-yellow">Sonra Uygulama Başlıyor</span>
+            İhtiyaçlarınızı Netleştiriyor, <br className="hidden sm:inline" />
+            <span className="hl-yellow">Uygulamaya Başlıyoruz</span>
           </h2>
 
           <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-light">
@@ -95,43 +92,11 @@ export default function ProcessSection() {
                       {step.desc}
                     </p>
                   </div>
-
-                  <div className="pt-6 mt-6 border-t border-[#E2E8F0] dark:border-white/5 flex items-center justify-between text-xs text-slate-400">
-                    <span className="flex items-center gap-1.5 text-slate-700 dark:text-slate-300 font-medium">
-                      <Check className="w-3.5 h-3.5 text-emerald-500" />
-                      Aşama 0{idx + 1}
-                    </span>
-                  </div>
                 </motion.div>
               );
             })}
           </div>
         </div>
-
-        {/* Bottom Note & Action Button */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mt-12 p-7 rounded-3xl bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-md"
-        >
-          <div className="flex items-center gap-3.5">
-            <div className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-white/10 text-[#0F172A] dark:text-white flex items-center justify-center shrink-0 shadow-xs">
-              <ShieldCheck className="w-5 h-5 text-emerald-500" />
-            </div>
-            <p className="text-sm text-slate-700 dark:text-slate-200 font-light">
-              Çalışma kapsamı, erişim yetkileri, harici giderler ve destek koşulları başlangıçta netleştirilir; sürpriz ek giderler çıkarılmaz.
-            </p>
-          </div>
-          <button
-            onClick={() => openWizard()}
-            className="btn-yellow text-xs py-3 px-5 shrink-0 cursor-pointer shadow-md group"
-          >
-            <span>Ön Değerlendirme İsteyin</span>
-            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-          </button>
-        </motion.div>
 
       </div>
     </section>
