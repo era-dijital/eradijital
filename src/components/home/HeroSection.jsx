@@ -122,8 +122,11 @@ export default function HeroSection() {
               </div>
 
               {/* Sub-button Note - Net Akış Vaadi */}
-              <p className="text-xs text-slate-500 dark:text-slate-400 pl-1 font-sans">
-                Kısa bir ön talep formu ile başlıyoruz; 1 iş günü içinde varlıklarınızı inceleyip yazılı özet iletiyoruz.
+              <p 
+                onClick={() => openWizard()}
+                className="text-xs text-slate-500 dark:text-slate-400 pl-1 font-sans cursor-pointer hover:text-[#0F172A] dark:hover:text-white transition-colors inline-flex items-center gap-1 font-medium"
+              >
+                24 Saatte Ücretsiz Büyüme Analizinizi Alın →
               </p>
             </motion.div>
 

@@ -14,10 +14,10 @@ import { ThemeProvider } from './context/ThemeContext';
 import { QuoteWizardProvider } from './context/QuoteWizardContext';
 import QuoteWizardModal from './components/quote-wizard/QuoteWizardModal';
 
-// Era Dijital v1.0.9 - Release with New Headline
+// Era Dijital v1.1.0 - Release with Growth Analysis Callout
 function App() {
   if (typeof window !== 'undefined') {
-    window.__ERA_RELEASE__ = '1.0.9';
+    window.__ERA_RELEASE__ = '1.1.0';
   }
   return (
     <ThemeProvider>

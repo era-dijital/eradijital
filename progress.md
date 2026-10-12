@@ -31,6 +31,9 @@ Kaynak Kod Dalı: `main`
   - Header'daki eski logo alanı ve `#dijitalgelişim` rozeti kaldırıldı.
   - Hero bölümünde başlığın hemen üstündeki "Dijital Gelişim ve Dönüşüm Ajansı" kicker rozeti kaldırıldı.
 
+- [x] **Hero CTA Alt Metni Güncellemesi:**
+  - *"Kısa bir ön talep formu ile başlıyoruz; 1 iş günü içinde varlıklarınızı inceleyip yazılı özet iletiyoruz."* yazısı yerine *"24 Saatte Ücretsiz Büyüme Analizinizi Alın →"* metni yerleştirildi ve analiz sihirbazını (QuoteWizard) tetikleyen tıklanabilir bir eylem eklendi.
+
 ### Altyapı, Git ve Canlı Dağıtım
 - [x] **Hostinger Git Dağıtım Mimarisi Kuruldu:**
   - `production` dalı oluşturuldu ve `dist/` klasörü ile kaynak kodlar bu dala bağlandı.
@@ -92,5 +95,6 @@ try {
 
 ## 4. Aktif Durum
 - Canlı Site Durumu: **ÇALIŞIYOR (HTTP 200)**
-- Aktif JS Bundle: `dist/assets/index-DGDPho-1.js`
+- Sürüm: `v1.1.0`
+- Aktif JS Bundle: `dist/assets/index-BDxozI0V.js`
 - Aktif CSS Bundle: `dist/assets/index-D1QWOZSD.css`
