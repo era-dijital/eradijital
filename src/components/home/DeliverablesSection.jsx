@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle2, Globe, Cpu, Layers, Activity, Sparkles, Zap } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Globe, Cpu, Layers, Sparkles, Zap } from 'lucide-react';
 import { useQuoteWizard } from '../../context/QuoteWizardContext';
 
 export default function DeliverablesSection() {
@@ -58,26 +58,13 @@ export default function DeliverablesSection() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-center max-w-3xl mx-auto mb-16 sm:mb-24"
         >
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-slate-200 font-mono text-[11px] font-semibold tracking-wider uppercase mb-4 backdrop-blur-md">
-            <Activity className="w-3.5 h-3.5 text-emerald-400" />
-            <span>Uygulama Örnekleri</span>
-          </div>
-
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-bold tracking-tight text-white leading-[1.12]">
-            Yaklaşımın <span className="text-slate-200">Uygulamadaki Karşılığı</span>
+            İşletmenize Değer Katan Gerçek Projeler
           </h2>
 
           <p className="mt-5 text-base sm:text-xl text-slate-300 leading-relaxed font-light">
-            İkna gücünü abartılı iddialardan değil, somut işten alıyoruz. Her çalışma aynı net düzeni izler:
+            İşletmenizin gerçek potansiyelini ortaya çıkaran ve pazar payınızı büyüten çözümler üretiyoruz.
           </p>
-
-          <div className="inline-flex items-center justify-center gap-2 sm:gap-3 mt-4 px-4 py-2 rounded-full bg-white/[0.05] border border-white/10 text-xs sm:text-sm font-mono text-slate-300">
-            <span>İhtiyaç</span>
-            <span className="text-slate-500">→</span>
-            <span>Yapılan Çalışma</span>
-            <span className="text-slate-500">→</span>
-            <span className="text-emerald-400 font-bold">Gösterilebilir Çıktı</span>
-          </div>
         </motion.div>
 
         {/* 3 Dark Showcase Cards with Spring Hover Physics */}

@@ -92,8 +92,8 @@ export default function SolutionsSection() {
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.15]">
-            İhtiyaca Göre Seçilen Çözümler <br className="hidden sm:inline" />
-            <span className="hl-yellow">Birlikte Çalışan Bir Yapı</span>
+            İhtiyaca Göre Çözümler <br className="hidden sm:inline" />
+            <span className="hl-yellow">Birlikte Çalışan Tek Yapı</span>
           </h2>
 
           <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-light">
@@ -172,8 +172,7 @@ export default function SolutionsSection() {
                     </div>
                   </div>
 
-                  <div className="pt-6 mt-6 border-t border-[#E2E8F0] dark:border-white/5 flex items-center justify-between">
-                    <span className="text-xs text-slate-400 font-mono">Birlikte Çalışan Yapı</span>
+                  <div className="pt-6 mt-6 border-t border-[#E2E8F0] dark:border-white/5 flex items-center justify-end">
                     <button
                       onClick={() => openWizard()}
                       className="btn-ghost text-xs py-2 px-4 cursor-pointer group/btn"

@@ -79,7 +79,7 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
               className="text-4xl sm:text-6xl lg:text-[62px] font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.12]"
             >
-              İşinizi <span className="hl-yellow">Yarının Kurallarına Göre</span> Dönüştürün
+              İşinizi Yarının Kurallarına Göre <span className="hl-yellow">Dönüştürün</span>
             </motion.h1>
 
             {/* Spot Text - biz-siz dili */}
@@ -147,14 +147,10 @@ export default function HeroSection() {
               <div className="flex items-center justify-between pb-3.5 mb-5 border-b border-[#E2E8F0] dark:border-white/10">
                 <div className="flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-                  <span className="font-mono text-xs uppercase tracking-wider text-slate-700 dark:text-slate-300 font-bold">
+                  <span className="font-mono text-xs uppercase tracking-wider text-slate-700 dark:text-slate-300 font-bold whitespace-nowrap">
                     Entegre Gelişim Mimarisi
                   </span>
                 </div>
-                <span className="text-[11px] font-mono text-[#0F172A] dark:text-slate-200 font-semibold bg-slate-100 dark:bg-white/10 border border-[#E2E8F0] dark:border-white/10 px-2.5 py-0.5 rounded-full flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#FFD23F]" />
-                  Birlikte Çalışan Yapı
-                </span>
               </div>
 
               {/* 4 Connected Modules with Clear Business Value Language */}

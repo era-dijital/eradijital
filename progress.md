@@ -37,6 +37,14 @@ Kaynak Kod Dalı: `main`
   - Hero bölümündeki *"1 İş Gününde Ön İnceleme • Yazılı Özet & Görüşme • Şeffaf Yol Haritası"* etiket satırı kaldırıldı.
 - [x] **İhtiyaç Analizi Başlığı Font ve Satır Düzenlemesi:**
   - *"İşletmenizin Bugün Neye İhtiyacı Var?"* başlığı fontu bir miktar küçültüldü (`text-2xl sm:text-3xl lg:text-4xl`) ve masaüstü/tablet ekranlarda bölünmeden tek satır olarak kalması sağlandı.
+- [x] **PDF Revizyonları (Sayfa 1, 2, 3):**
+  - **Hero Sarı Çizgi:** *"İşinizi Yarının Kurallarına Göre Dönüştürün"* başlığında sarı vurgu sadece *"Dönüştürün"* kelimesinin altına alındı.
+  - **Hero Sağ Panel Başlığı:** *"Birlikte Çalışan Yapı"* rozeti kaldırıldı, *"Entegre Gelişim Mimarisi"* yazısı tek satır yapıldı.
+  - **Entegre Çözümler Başlığı:** *"İhtiyaca Göre Seçilen Çözümler Birlikte Çalışan Bir Yapı"* başlığı *"İhtiyaca Göre Çözümler Birlikte Çalışan Tek Yapı"* olarak güncellendi.
+  - **Çözüm Kartları:** 4 çözüm kartının altındaki *"Birlikte Çalışan Yapı"* ibareleri kaldırıldı.
+  - **Uygulama Örnekleri / Projeler Başlığı:** *"Yaklaşımın Uygulamadaki Karşılığı"* başlığı *"İşletmenize Değer Katan Gerçek Projeler"* olarak değiştirildi.
+  - **Proje Açıklama Cümlesi:** *"İkna gücünü abartılı iddialardan değil, somut işten alıyoruz. Her çalışma aynı net düzeni izler:"* yerine *"İşletmenizin gerçek potansiyelini ortaya çıkaran ve pazar payınızı büyüten çözümler üretiyoruz."* metni eklendi.
+  - **Kaldırılan Rozetler:** *"Uygulama Örnekleri"* üst rozeti ve *"İhtiyaç → Yapılan Çalışma → Gösterilebilir Çıktı"* akış hapı kaldırıldı.
 
 ### Altyapı, Git ve Canlı Dağıtım
 - [x] **Hostinger Git Dağıtım Mimarisi Kuruldu:**
@@ -99,6 +107,6 @@ try {
 
 ## 4. Aktif Durum
 - Canlı Site Durumu: **ÇALIŞIYOR (HTTP 200)**
-- Sürüm: `v1.1.2`
-- Aktif JS Bundle: `dist/assets/index-DCYAVwl5.js`
-- Aktif CSS Bundle: `dist/assets/index-BoYHhCUD.css`
+- Sürüm: `v1.1.3`
+- Aktif JS Bundle: `dist/assets/index-EEMVWKSp.js`
+- Aktif CSS Bundle: `dist/assets/index-CCHSTKiw.css`
