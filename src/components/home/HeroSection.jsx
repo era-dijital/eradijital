@@ -280,7 +280,7 @@ export default function HeroSection() {
               {[...capabilities, ...capabilities].map((cap, idx) => (
                 <div
                   key={idx}
-                  className="flex items-center gap-3 text-xs font-mono text-slate-600 dark:text-slate-400 shrink-0 hover:text-[#0F172A] dark:hover:text-white transition-colors"
+                  className="flex items-center gap-3 text-[15px] font-sans font-medium text-slate-700 dark:text-slate-200 shrink-0 hover:text-[#0F172A] dark:hover:text-[#FFD23F] transition-colors"
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-[#FFD23F] shrink-0" />
                   <span>{cap}</span>
