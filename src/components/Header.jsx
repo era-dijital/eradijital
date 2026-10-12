@@ -42,22 +42,22 @@ export default function Header() {
           <EraLogo size="header" />
         </Link>
 
-        {/* Floating Pill Container - Navigation & Action Buttons */}
+        {/* Floating Pill Container - Extended to the left with generous spacing */}
         <div 
-          className={`pointer-events-auto flex items-center gap-3 sm:gap-6 py-2 px-3.5 sm:px-5 rounded-full border transition-all duration-200 ${
+          className={`pointer-events-auto flex items-center justify-between gap-3 sm:gap-6 md:flex-1 md:max-w-4xl py-2 px-3.5 sm:px-5 lg:px-6 rounded-full border transition-all duration-200 ${
             scrolled
               ? 'bg-white/95 dark:bg-[#0F172A]/95 border-[#E2E8F0] dark:border-white/15 backdrop-blur-md shadow-lg'
               : 'bg-white/85 dark:bg-[#0F172A]/85 border-[#E2E8F0] dark:border-white/10 backdrop-blur-md shadow-xs'
           }`}
         >
 
-        {/* Center Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-1 text-xs">
+        {/* Center Desktop Navigation with widened spacing between words */}
+        <nav className="hidden md:flex items-center justify-between flex-1 gap-1.5 sm:gap-2.5 lg:gap-4 text-xs lg:text-[13px] mr-2">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="px-3 py-1.5 rounded-full text-slate-600 dark:text-slate-300 hover:text-[#0F172A] dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10 transition-colors font-medium"
+              className="px-2.5 lg:px-3 py-1.5 rounded-full text-slate-600 dark:text-slate-300 hover:text-[#0F172A] dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10 transition-colors font-medium whitespace-nowrap"
             >
               {link.name}
             </a>
