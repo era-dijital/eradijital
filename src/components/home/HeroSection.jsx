@@ -129,28 +129,6 @@ export default function HeroSection() {
                 24 Saatte Ücretsiz Büyüme Analizinizi Alın →
               </p>
             </motion.div>
-
-            {/* Real Trust Proof Badges (Dayanaklı ve Somut Güvenceler) */}
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.45 }}
-              className="flex flex-wrap items-center gap-y-2 gap-x-5 pt-3 text-xs text-slate-600 dark:text-slate-400 font-mono"
-            >
-              <div className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                <span className="font-semibold text-[#0F172A] dark:text-white">1 İş Gününde</span>
-                <span>Ön İnceleme</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                <span>Yazılı Özet & Görüşme</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#FFD23F]" />
-                <span>Şeffaf Yol Haritası</span>
-              </div>
-            </motion.div>
           </div>
 
           {/* Right Column: Interconnected 4-Module Animated System (İmza Görsel Mimarisi) */}

@@ -33,6 +33,8 @@ Kaynak Kod Dalı: `main`
 
 - [x] **Hero CTA Alt Metni Güncellemesi:**
   - *"Kısa bir ön talep formu ile başlıyoruz; 1 iş günü içinde varlıklarınızı inceleyip yazılı özet iletiyoruz."* yazısı yerine *"24 Saatte Ücretsiz Büyüme Analizinizi Alın →"* metni yerleştirildi ve analiz sihirbazını (QuoteWizard) tetikleyen tıklanabilir bir eylem eklendi.
+- [x] **Hero Güven Rozetlerinin Kaldırılması:**
+  - Hero bölümündeki *"1 İş Gününde Ön İnceleme • Yazılı Özet & Görüşme • Şeffaf Yol Haritası"* etiket satırı kaldırıldı.
 
 ### Altyapı, Git ve Canlı Dağıtım
 - [x] **Hostinger Git Dağıtım Mimarisi Kuruldu:**
@@ -95,6 +97,6 @@ try {
 
 ## 4. Aktif Durum
 - Canlı Site Durumu: **ÇALIŞIYOR (HTTP 200)**
-- Sürüm: `v1.1.0`
-- Aktif JS Bundle: `dist/assets/index-BDxozI0V.js`
-- Aktif CSS Bundle: `dist/assets/index-D1QWOZSD.css`
+- Sürüm: `v1.1.1`
+- Aktif JS Bundle: `dist/assets/index-BgOMCMd9.js`
+- Aktif CSS Bundle: `dist/assets/index-scFPU6bk.css`
