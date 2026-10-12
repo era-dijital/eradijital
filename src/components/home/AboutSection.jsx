@@ -87,33 +87,61 @@ export default function AboutSection() {
           })}
         </div>
 
-        {/* Team & Trust Note Box */}
+        {/* Team & Trust Note Box with Collaboration Visual (Bölüm 5 - Neden ERA Dijital?) */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mt-12 p-8 sm:p-10 rounded-3xl bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-md"
+          className="mt-12 rounded-3xl bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 overflow-hidden shadow-xl"
         >
-          <div className="space-y-1.5 max-w-2xl">
-            <div className="flex items-center gap-2 text-xs font-mono text-slate-700 dark:text-slate-300 font-bold">
-              <Users className="w-3.5 h-3.5 text-[#0F172A] dark:text-white" />
-              <span>GÜVENİLİR VE DOĞRUDAN İŞ ORTAĞINIZ</span>
+          <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
+            
+            {/* Visual Team Collaboration Showcase */}
+            <div className="lg:col-span-5 relative aspect-[16/10] lg:aspect-auto lg:h-full min-h-[260px] overflow-hidden bg-slate-900">
+              <img 
+                src="/resimler/kurumsal/ekip-ve-uzmanlik.jpg" 
+                alt="Era Dijital Uzman Ekip ve Stratejik Tasarım Süreci"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-transparent via-transparent to-black/20 dark:to-[#0F172A]/80 pointer-events-none" />
+              <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#0F172A]/85 backdrop-blur-md border border-white/10 text-[11px] font-mono font-semibold text-white flex items-center gap-1.5 shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-[#FFD23F]" />
+                <span>Çekirdek Çalışma Ekibi</span>
+              </div>
             </div>
-            <h4 className="text-base sm:text-lg font-display font-bold text-[#0F172A] dark:text-white">
-              Teknoloji gösterisi değil; işletmeyi anlayan gerçek bir ekip.
-            </h4>
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-light">
-              İstanbul merkezli çekirdek ekibimizle, işletmenizin ölçeğine ve dijital olgunluğuna uygun adımları birlikte planlıyor; gereksiz maliyet ve zaman kaybını önlüyoruz.
-            </p>
+
+            {/* Content & Action */}
+            <div className="lg:col-span-7 p-8 sm:p-10 flex flex-col justify-between space-y-5">
+              <div className="space-y-2">
+                <div className="flex items-center gap-2 text-xs font-mono text-slate-700 dark:text-slate-300 font-bold">
+                  <Users className="w-3.5 h-3.5 text-[#0F172A] dark:text-white" />
+                  <span>NEDEN ERA DİJİTAL? — GÜVENİLİR VE DOĞRUDAN İŞ ORTAĞINIZ</span>
+                </div>
+                <h4 className="text-xl sm:text-2xl font-display font-bold text-[#0F172A] dark:text-white leading-snug">
+                  Teknoloji gösterisi değil; işletmeyi anlayan gerçek bir ekip.
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+                  İstanbul merkezli çekirdek ekibimizle, işletmenizin ölçeğine ve dijital olgunluğuna uygun adımları birlikte planlıyor; ezbere şablonlar yerine terzi usulü çözümlerle gereksiz maliyet ve zaman kaybını önlüyoruz.
+                </p>
+              </div>
+
+              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 border-t border-[#E2E8F0] dark:border-white/10">
+                <div className="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400 font-mono">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                  <span>Şeffaf Kapsam • Doğrudan İletişim</span>
+                </div>
+                <button
+                  onClick={() => openWizard()}
+                  className="btn-yellow text-xs py-3 px-5 shrink-0 cursor-pointer shadow-md group"
+                >
+                  <span>Ekibimizle Tanışın & Ön Görüşme İsteyin</span>
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                </button>
+              </div>
+            </div>
+
           </div>
-          <button
-            onClick={() => openWizard()}
-            className="btn-yellow text-xs py-3 px-5 shrink-0 cursor-pointer shadow-md group"
-          >
-            <span>Ekibimizle Tanışın & Ön Görüşme İsteyin</span>
-            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-          </button>
         </motion.div>
 
       </div>

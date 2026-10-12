@@ -131,26 +131,51 @@ export default function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Right Column: Interconnected 4-Module Animated System (İmza Görsel Mimarisi) */}
+          {/* Right Column: Interconnected 4-Module Animated System + Executive Visual */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-5"
           >
-            <div className="relative rounded-3xl bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 p-6 sm:p-7 shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-300 animate-smooth-float">
+            <div className="relative rounded-3xl bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 p-5 sm:p-6 shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-300 animate-smooth-float">
               
               {/* Subtle Ambient Radial Lighting */}
               <div className="absolute top-0 right-0 w-44 h-44 bg-[#FFD23F]/10 rounded-full blur-[70px] pointer-events-none" />
 
-              {/* Panel Header */}
-              <div className="flex items-center justify-between pb-3.5 mb-5 border-b border-[#E2E8F0] dark:border-white/10">
-                <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-                  <span className="font-mono text-xs uppercase tracking-wider text-slate-700 dark:text-slate-300 font-bold whitespace-nowrap">
-                    Entegre Gelişim Mimarisi
+              {/* Executive Image Showcase (Bölüm 1 - Hero Görseli) */}
+              <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden mb-5 bg-slate-900 border border-[#E2E8F0] dark:border-white/10 shadow-sm">
+                <img 
+                  src="/resimler/kurumsal/hero-executive.jpg" 
+                  alt="Dijital Gelişim ve Yönetici Vizyonu - Era Dijital"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/85 via-[#0F172A]/20 to-transparent pointer-events-none" />
+                
+                {/* Floating Live Badge */}
+                <div className="absolute top-3 left-3 px-3 py-1.5 rounded-full bg-white/90 dark:bg-[#0F172A]/90 backdrop-blur-md border border-white/20 text-[11px] font-mono font-bold text-[#0F172A] dark:text-white flex items-center gap-1.5 shadow-md">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span>Entegre Gelişim Mimarisi</span>
+                </div>
+
+                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] text-white">
+                  <span className="bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/10 font-mono text-[11px]">
+                    Dijital Veri & Süreç Kontrolü
+                  </span>
+                  <span className="bg-[#FFD23F] text-[#0F172A] font-bold px-2 py-0.5 rounded-md font-mono text-[10px]">
+                    CANLI SİSTEM
                   </span>
                 </div>
+              </div>
+
+              {/* Panel Header */}
+              <div className="flex items-center justify-between pb-3 mb-4 border-b border-[#E2E8F0] dark:border-white/10">
+                <div className="flex items-center gap-2">
+                  <span className="font-mono text-xs uppercase tracking-wider text-slate-700 dark:text-slate-300 font-bold whitespace-nowrap">
+                    4 Temel Gelişim Modülü
+                  </span>
+                </div>
+                <span className="text-[11px] font-mono text-emerald-600 dark:text-emerald-400 font-semibold">Aktif Omurga</span>
               </div>
 
               {/* 4 Connected Modules with Clear Business Value Language */}

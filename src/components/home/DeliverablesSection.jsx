@@ -16,7 +16,8 @@ export default function DeliverablesSection() {
       badge: "KONSEPT ÇALIŞMA",
       icon: Globe,
       metricVal: "Yayında",
-      metricLabel: "Canlı Demo"
+      metricLabel: "Canlı Demo",
+      img: "/resimler/kurumsal/musteri-deneyimi-iletisim.jpg"
     },
     {
       category: "PRODÜKSİYON & GÖRSEL İLETİŞİM",
@@ -27,7 +28,8 @@ export default function DeliverablesSection() {
       badge: "İÇERİK & GÖRSELLEŞTİRME",
       icon: Layers,
       metricVal: "Hazır",
-      metricLabel: "Görsel Varlık Seti"
+      metricLabel: "Görsel Varlık Seti",
+      img: "/resimler/kurumsal/prototype-market-test.jpg"
     },
     {
       category: "İŞ SÜREÇLERİ & OTOMASYON",
@@ -38,7 +40,8 @@ export default function DeliverablesSection() {
       badge: "OTOMASYON DEMOSU",
       icon: Cpu,
       metricVal: "Aktif",
-      metricLabel: "Anlık Bildirim"
+      metricLabel: "Anlık Bildirim",
+      img: "/resimler/kurumsal/is-akisi-yonetimi.jpg"
     }
   ];
 
@@ -96,6 +99,25 @@ export default function DeliverablesSection() {
                     </div>
                   </div>
                 </div>
+
+                {/* Visual Showcase Banner */}
+                {item.img && (
+                  <div className="relative aspect-[21/9] sm:aspect-[16/6] w-full rounded-2xl overflow-hidden mt-6 bg-slate-950 border border-white/10 shadow-lg">
+                    <img 
+                      src={item.img} 
+                      alt={item.title} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/85 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-xs text-white/90 font-mono">
+                      <span className="flex items-center gap-1.5 text-[11px] font-medium">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#FFD23F] animate-pulse" />
+                        {item.output}
+                      </span>
+                      <span className="text-emerald-400 font-semibold text-[11px] hidden sm:inline">{item.metricLabel}: {item.metricVal}</span>
+                    </div>
+                  </div>
+                )}
 
                 {/* 3 Step Formula */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">

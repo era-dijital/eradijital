@@ -60,6 +60,25 @@ export default function ContactSection() {
               İşletmenizin mevcut durumunu ve öncelikli hedeflerini inceleyerek sizin için en uygun başlangıç alanını belirliyoruz.
             </p>
 
+            {/* Consultation & Growth Audit Visual Showcase (Bölüm 7 - Ücretsiz Ön Analiz / Son Çağrı) */}
+            <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden bg-slate-900 border border-[#E2E8F0] dark:border-white/10 shadow-md group">
+              <img 
+                src="/resimler/kurumsal/ucretsiz-on-analiz.jpg" 
+                alt="Ücretsiz Dijital Büyüme ve Varlık Ön Analizi - Era Dijital"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/80 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-[11px] text-white font-mono">
+                <span className="flex items-center gap-1.5 font-medium">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  1 İş Gününde Yazılı Değerlendirme
+                </span>
+                <span className="bg-[#FFD23F] text-[#0F172A] font-bold px-2 py-0.5 rounded text-[10px]">
+                  İLK ADIM
+                </span>
+              </div>
+            </div>
+
             {/* Clear Roadmap Flow Box (PDF: Tek Bir Akış) */}
             <div className="p-6 rounded-3xl bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 space-y-4 shadow-sm">
               <div className="flex items-center gap-2 text-xs font-mono font-bold text-slate-700 dark:text-slate-200 uppercase tracking-wider">

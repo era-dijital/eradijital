@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 // PDF Yol Haritası Bölümleri (Bölüm 1 - 7 + 4b Biz Kimiz)
 import HeroSection from '../components/home/HeroSection';
 import NeedsSection from '../components/home/NeedsSection';
+import IdealForSection from '../components/home/IdealForSection';
 import SolutionsSection from '../components/home/SolutionsSection';
 import DeliverablesSection from '../components/home/DeliverablesSection';
 import AboutSection from '../components/home/AboutSection';
@@ -30,6 +31,9 @@ export default function HomePage() {
 
         {/* Bölüm 2 — Ziyaretçinin kendi ihtiyacını tanıması */}
         <NeedsSection />
+
+        {/* Kimler İçin İdeal? — Farklı ölçeklerde işletmeler */}
+        <IdealForSection />
 
         {/* Bölüm 3 — Çözüm yaklaşımı */}
         <SolutionsSection />

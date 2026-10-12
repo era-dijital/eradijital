@@ -56,6 +56,29 @@ export default function ProcessSection() {
           </p>
         </motion.div>
 
+        {/* Visual Roadmap Illustration Banner (Bölüm 4 - Dijital Dönüşüm Süreci) */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-14 sm:mb-16 rounded-3xl overflow-hidden border border-[#E2E8F0] dark:border-white/10 bg-[#0F172A] shadow-xl relative group"
+        >
+          <img 
+            src="/resimler/kurumsal/dijital-donusum-sureci.jpg" 
+            alt="4 Aşamalı Dijital Dönüşüm Süreci - Analiz, Planlama, Uygulama, Geliştirme"
+            className="w-full aspect-[21/9] sm:aspect-[16/7] object-cover group-hover:scale-[1.01] transition-transform duration-700"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/85 via-transparent to-transparent pointer-events-none" />
+          <div className="absolute bottom-4 sm:bottom-6 left-5 sm:left-8 right-5 sm:right-8 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-white/90 font-mono">
+            <span className="flex items-center gap-2 font-semibold">
+              <span className="w-2 h-2 rounded-full bg-[#FFD23F] animate-pulse" />
+              Süreç Mimarisi: 01 Analiz → 02 Planlama → 03 Uygulama → 04 Sürekli Gelişim
+            </span>
+            <span className="text-slate-400 text-[11px]">Şeffaf ve Kontrollü Yol Haritası</span>
+          </div>
+        </motion.div>
+
         {/* 4-Step Process Grid with Connecting Track */}
         <div className="relative">
           {/* Subtle Horizontal Track for Desktop */}
