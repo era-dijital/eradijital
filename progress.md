@@ -25,9 +25,8 @@ Kaynak Kod Dalı: `main`
 - [x] **Kullanıcının Yüklediği Orijinal Logo Entegrasyonu:**
   - Kullanıcının yüklediği orijinal marka logosu saydamlaştırıldı (subpixel anti-aliased) ve hem Light (`era-logo.png`) hem de Dark (`era-logo-dark.png`) modlar için yüksek çözünürlüklü olarak üretildi.
   - Logo, çerçeveli navigasyon barının dışına, sol tarafa bağımsız olarak yerleştirildi ve boyutu ilave %25 büyütüldü (`h-[50px] sm:h-[68px]`).
-- [x] **Navigasyon Barının Sola Genişletilmesi & Boşluklar:**
-  - Çerçeveli navigasyon barı sola doğru genişletildi (`flex-1 max-w-4xl`).
-  - Menü linkleri/kelimeleri arasındaki boşluklar ferahlatıldı (`gap-2.5 lg:gap-4`).
+- [x] **Hero Başlığı Güncellemesi:**
+  - *"İşinizin Bir Sonraki Adımında"* başlığı yerine *"İşinizi Yarının Kurallarına Göre Dönüştürün"* metni yerleştirildi ve görsel vurgusu düzenlendi.
 - [x] **İşaretli Alanların Kaldırılması:**
   - Header'daki eski logo alanı ve `#dijitalgelişim` rozeti kaldırıldı.
   - Hero bölümünde başlığın hemen üstündeki "Dijital Gelişim ve Dönüşüm Ajansı" kicker rozeti kaldırıldı.
@@ -93,5 +92,5 @@ try {
 
 ## 4. Aktif Durum
 - Canlı Site Durumu: **ÇALIŞIYOR (HTTP 200)**
-- Aktif JS Bundle: `dist/assets/index-BbF0fb2f.js`
+- Aktif JS Bundle: `dist/assets/index-DGDPho-1.js`
 - Aktif CSS Bundle: `dist/assets/index-D1QWOZSD.css`
