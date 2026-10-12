@@ -9,7 +9,7 @@ export default function DeliverablesSection() {
   const deliverables = [
     {
       category: "DİJİTAL PLATFORM & WEB ÇALIŞMASI",
-      title: "Hızlı, Güven Veren ve Teklife Yönlendiren Kurumsal Web Altyapısı",
+      title: "Hızlı ve Teklife Yönlendiren Kurumsal Web Altyapısı",
       need: "Ziyaretçiyi kaçıran hantal vitrin siteleri yerine, doğrudan teklif ve randevuya yönlendiren modern bir altyapı.",
       work: "Mobil uyumlu, yüksek hızda açılan, 30 saniyelik etkileşimli teklif hesaplayıcısı entegre edilmiş kurumsal web sitesi.",
       output: "Ziyaretçiyi Müşteriye Dönüştüren Hızlı Web Platformu & Net Teklif Akışı",
@@ -20,7 +20,7 @@ export default function DeliverablesSection() {
     },
     {
       category: "PRODÜKSİYON & GÖRSEL İLETİŞİM",
-      title: "Ürün ve Hizmet Yetkinliğini Somutlaştıran Dijital İçerik Seti",
+      title: "Ürün ve Hizmetleri Görünür Kılan İçerikler",
       need: "Uzmanlığı ve ürün kalitesini potansiyel müşteriye güven verici bir netlikle aktarmak.",
       work: "Saha/ürün çekimleri, sadeleştirilmiş 3D demonstrasyonlar ve tutarlı kurumsal anlatım dili oluşturulması.",
       output: "Çok Kanallı Dijital Görsel Kiti & Satış Sunumu Kataloğu",
@@ -95,15 +95,6 @@ export default function DeliverablesSection() {
                       </h3>
                     </div>
                   </div>
-
-                  <div className="flex items-center gap-3 shrink-0">
-                    <div className="px-3.5 py-1 rounded-full bg-white/[0.06] border border-white/15 text-xs font-mono font-medium text-slate-300">
-                      {item.badge}
-                    </div>
-                    <div className="px-3.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-xs font-mono font-bold text-emerald-300">
-                      {item.metricVal}
-                    </div>
-                  </div>
                 </div>
 
                 {/* 3 Step Formula */}
@@ -145,8 +136,7 @@ export default function DeliverablesSection() {
                 </div>
 
                 {/* Bottom Card Action */}
-                <div className="mt-6 pt-4 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-slate-400">
-                  <span className="font-mono">Gerçek üretim ve şeffaf teslim standardı</span>
+                <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-end text-xs text-slate-400">
                   <button
                     onClick={() => openWizard()}
                     className="btn-yellow text-xs py-2 px-4 cursor-pointer group/btn"

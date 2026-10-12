@@ -45,6 +45,11 @@ Kaynak Kod Dalı: `main`
   - **Uygulama Örnekleri / Projeler Başlığı:** *"Yaklaşımın Uygulamadaki Karşılığı"* başlığı *"İşletmenize Değer Katan Gerçek Projeler"* olarak değiştirildi.
   - **Proje Açıklama Cümlesi:** *"İkna gücünü abartılı iddialardan değil, somut işten alıyoruz. Her çalışma aynı net düzeni izler:"* yerine *"İşletmenizin gerçek potansiyelini ortaya çıkaran ve pazar payınızı büyüten çözümler üretiyoruz."* metni eklendi.
   - **Kaldırılan Rozetler:** *"Uygulama Örnekleri"* üst rozeti ve *"İhtiyaç → Yapılan Çalışma → Gösterilebilir Çıktı"* akış hapı kaldırıldı.
+- [x] **PDF Revizyonları (Part 2 - Proje Kartları ve Çalışma Standartları):**
+  - **Proje Kartı 1 Başlığı:** *"Hızlı, Güven Veren ve Teklife Yönlendiren Kurumsal Web Altyapısı"* başlığı *"Hızlı ve Teklife Yönlendiren Kurumsal Web Altyapısı"* olarak güncellendi.
+  - **Proje Kartı 2 Başlığı:** *"Ürün ve Hizmet Yetkinliğini Somutlaştıran Dijital İçerik Seti"* başlığı *"Ürün ve Hizmetleri Görünür Kılan İçerikler"* olarak güncellendi.
+  - **Proje Kartları Rozetleri ve Alt Metin:** 3 proje kartındaki sağ üst rozetler (`KONSEPT ÇALIŞMA`, `İÇERİK & GÖRSELLEŞTİRME`, `OTOMASYON DEMOSU`, durum etiketleri) ve sol alt köşedeki *"Gerçek üretim ve şeffaf teslim standardı"* metinleri kaldırıldı.
+  - **Biz Kimiz Kartları:** 3 ilke kartının altındaki *"Çalışma Standardı 01"*, *"Çalışma Standardı 02"* ve *"Çalışma Standardı 03"* ibareleri kaldırıldı.
 
 ### Altyapı, Git ve Canlı Dağıtım
 - [x] **Hostinger Git Dağıtım Mimarisi Kuruldu:**
@@ -107,6 +112,6 @@ try {
 
 ## 4. Aktif Durum
 - Canlı Site Durumu: **ÇALIŞIYOR (HTTP 200)**
-- Sürüm: `v1.1.3`
-- Aktif JS Bundle: `dist/assets/index-EEMVWKSp.js`
-- Aktif CSS Bundle: `dist/assets/index-CCHSTKiw.css`
+- Sürüm: `v1.1.4`
+- Aktif JS Bundle: `dist/assets/index-Cmy2-NDa.js`
+- Aktif CSS Bundle: `dist/assets/index-B6vd_9W7.css`

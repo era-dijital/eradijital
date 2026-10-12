@@ -82,11 +82,6 @@ export default function AboutSection() {
                     {p.desc}
                   </p>
                 </div>
-
-                <div className="pt-6 mt-6 border-t border-[#E2E8F0] dark:border-white/5 flex items-center gap-2 text-xs font-mono text-slate-400">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                  <span>Çalışma Standardı 0{idx + 1}</span>
-                </div>
               </motion.div>
             );
           })}
