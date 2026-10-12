@@ -38,7 +38,7 @@ export default function NeedsSection() {
   ];
 
   return (
-    <section id="ihtiyaclar" className="py-24 sm:py-32 bg-[#F8F9FA] dark:bg-[#090D14] border-t border-[#E2E8F0] dark:border-white/10 relative overflow-hidden transition-colors duration-300">
+    <section id="ihtiyaclar" className="py-24 sm:py-32 bg-[#F8F9FA] dark:bg-[#090D14] relative overflow-hidden transition-colors duration-300">
       
       {/* Subtle Ambient Glow */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-slate-200/40 dark:bg-white/[0.02] blur-[130px] pointer-events-none" />

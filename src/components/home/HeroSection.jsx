@@ -56,7 +56,7 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="relative pt-32 sm:pt-40 pb-16 overflow-hidden bg-[#F8F9FA] dark:bg-[#090D14] text-[#0F172A] dark:text-white transition-colors duration-300">
+    <section className="relative pt-32 sm:pt-40 pb-0 overflow-hidden bg-[#F8F9FA] dark:bg-[#090D14] text-[#0F172A] dark:text-white transition-colors duration-300">
       
       {/* Subtle Warm Amber Mesh Glow */}
       <div className="absolute top-10 left-1/2 -translate-x-1/2 w-full max-w-4xl h-80 bg-gradient-to-b from-[#FFD23F]/12 via-[#FFD23F]/4 to-transparent blur-[130px] pointer-events-none z-0" />
@@ -252,10 +252,10 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Continuous Marquee Ticker */}
-      <div className="relative z-10 mt-14 pt-6 border-t border-[#E2E8F0] dark:border-white/10 w-full overflow-hidden">
+      {/* Continuous Marquee Ticker - Symmetrical Top & Bottom Borders */}
+      <div className="relative z-10 mt-12 sm:mt-14 py-4 sm:py-5 border-y border-[#E2E8F0] dark:border-white/10 w-full overflow-hidden">
         <div className="carousel-container max-w-6xl mx-auto">
-          <div className="carousel-track flex items-center gap-8 py-2">
+          <div className="carousel-track flex items-center gap-8 py-0">
             {[...capabilities, ...capabilities].map((cap, idx) => (
               <div
                 key={idx}
