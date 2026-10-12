@@ -24,9 +24,9 @@ Kaynak Kod Dalı: `main`
   - `ProcessSection.jsx` içerisindeki başlık üstü "Çalışma Süreci" rozeti kaldırıldı.
 - [x] **Kullanıcının Yüklediği Orijinal Logo Entegrasyonu:**
   - Kullanıcının yüklediği orijinal marka logosu saydamlaştırıldı (subpixel anti-aliased) ve hem Light (`era-logo.png`) hem de Dark (`era-logo-dark.png`) modlar için yüksek çözünürlüklü olarak üretildi.
-  - Header ve Footer'a kusursuz ölçekte yerleştirildi.
+  - Logo, çerçeveli navigasyon barının dışına, sol tarafa bağımsız olarak yerleştirildi ve boyutu %50 büyütüldü (`h-11 sm:h-[54px]`).
 - [x] **İşaretli Alanların Kaldırılması:**
-  - Header'daki eski logo alanı ve `#dijitalgelişim` rozeti kaldırıldı, yerine resmi logo yerleştirildi.
+  - Header'daki eski logo alanı ve `#dijitalgelişim` rozeti kaldırıldı.
   - Hero bölümünde başlığın hemen üstündeki "Dijital Gelişim ve Dönüşüm Ajansı" kicker rozeti kaldırıldı.
 
 ### Altyapı, Git ve Canlı Dağıtım
@@ -90,5 +90,5 @@ try {
 
 ## 4. Aktif Durum
 - Canlı Site Durumu: **ÇALIŞIYOR (HTTP 200)**
-- Aktif JS Bundle: `dist/assets/index-BW0sbjjr.js`
-- Aktif CSS Bundle: `dist/assets/index-fNGSc1JI.css`
+- Aktif JS Bundle: `dist/assets/index-Bd1Arqgk.js`
+- Aktif CSS Bundle: `dist/assets/index-B2ihAwcq.css`

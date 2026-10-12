@@ -30,21 +30,26 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 px-3 sm:px-6 md:px-10 flex justify-center py-3 sm:py-4 pointer-events-none transition-all duration-200">
-      
-      {/* Floating Pill Container - Refined & Crisp */}
-      <div 
-        className={`pointer-events-auto flex items-center justify-between gap-3 sm:gap-6 py-2 px-3.5 sm:px-5 rounded-full border transition-all duration-200 ${
-          scrolled
-            ? 'bg-white/95 dark:bg-[#0F172A]/95 border-[#E2E8F0] dark:border-white/15 backdrop-blur-md shadow-lg'
-            : 'bg-white/85 dark:bg-[#0F172A]/85 border-[#E2E8F0] dark:border-white/10 backdrop-blur-md shadow-xs'
-        }`}
-      >
+    <header className="fixed top-0 left-0 w-full z-50 px-4 sm:px-6 lg:px-8 py-3 sm:py-4 pointer-events-none transition-all duration-200">
+      <div className="max-w-6xl mx-auto w-full flex items-center justify-between gap-4">
         
-        {/* Brand Logo */}
-        <Link to="/" className="shrink-0 flex items-center">
-          <EraLogo size="md" />
+        {/* Brand Logo - Standalone outside the framed bar, 50% larger */}
+        <Link 
+          to="/" 
+          className="pointer-events-auto shrink-0 flex items-center group py-1"
+          aria-label="ERA Dijital Ana Sayfa"
+        >
+          <EraLogo size="header" />
         </Link>
+
+        {/* Floating Pill Container - Navigation & Action Buttons */}
+        <div 
+          className={`pointer-events-auto flex items-center gap-3 sm:gap-6 py-2 px-3.5 sm:px-5 rounded-full border transition-all duration-200 ${
+            scrolled
+              ? 'bg-white/95 dark:bg-[#0F172A]/95 border-[#E2E8F0] dark:border-white/15 backdrop-blur-md shadow-lg'
+              : 'bg-white/85 dark:bg-[#0F172A]/85 border-[#E2E8F0] dark:border-white/10 backdrop-blur-md shadow-xs'
+          }`}
+        >
 
         {/* Center Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-1 text-xs">
@@ -87,8 +92,8 @@ export default function Header() {
           >
             {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
           </button>
+          </div>
         </div>
-
       </div>
 
       {/* Mobile Drawer Menu */}

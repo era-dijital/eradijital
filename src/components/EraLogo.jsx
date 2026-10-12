@@ -15,6 +15,7 @@ export default function EraLogo({
   const heightClasses = {
     sm: 'h-7 sm:h-8',
     md: 'h-8 sm:h-9',
+    header: 'h-11 sm:h-[54px]', // Exactly 50% larger than md (36px * 1.5 = 54px)
     lg: 'h-10 sm:h-12',
     xl: 'h-14 sm:h-16'
   };
