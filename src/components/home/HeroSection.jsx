@@ -70,16 +70,7 @@ export default function HeroSection() {
           {/* Left Column: Strategic Positioning (PDF Bölüm 1) */}
           <div className="lg:col-span-7 space-y-6">
             
-            {/* Elegant Kicker Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 text-xs font-semibold shadow-xs"
-            >
-              <span className="w-2 h-2 rounded-full bg-[#FFD23F] radar-beacon" />
-              <span className="font-mono text-[#0F172A] dark:text-slate-200">Dijital Gelişim ve Dönüşüm Ajansı</span>
-            </motion.div>
+
 
             {/* Main Headline */}
             <motion.h1 

@@ -27,7 +27,7 @@ export default function Footer() {
           {/* Company Intro */}
           <div className="space-y-4 md:col-span-2">
             <Link to="/" className="flex items-center gap-2.5 group">
-              <EraLogo size="lg" showBadge={false} />
+              <EraLogo size="lg" />
             </Link>
             <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-md font-light">
               İşletmenizin dijital gelişim önceliklerini birlikte belirliyoruz; görünürlük, müşteri kazanımı ve iş süreçleri için gerekli çözümleri hayata geçiriyoruz.

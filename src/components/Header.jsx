@@ -43,7 +43,7 @@ export default function Header() {
         
         {/* Brand Logo */}
         <Link to="/" className="shrink-0 flex items-center">
-          <EraLogo size="md" showBadge={true} />
+          <EraLogo size="md" />
         </Link>
 
         {/* Center Desktop Navigation */}

@@ -22,10 +22,12 @@ Kaynak Kod Dalı: `main`
   - `NeedsSection.jsx` (İhtiyaç Analizi) kartlarının sağ üst köşesindeki etiket rozetleri (`Kurumsal Vitrin & Temsil`, `Hedefli Arama & Reklam`, `Satış & Talep Takibi`, `Süreç & Düzen`) kaldırıldı.
 - [x] **Çalışma Süreci Rozeti:**
   - `ProcessSection.jsx` içerisindeki başlık üstü "Çalışma Süreci" rozeti kaldırıldı.
-- [x] **Kurumsal Vektör Logo Tasarımı & Entegrasyonu:**
-  - Yeni `EraLogo.jsx` vektörel SVG logo bileşeni oluşturuldu (geometrik 'E' monogramı, marka altın sarısı büyüme vurgusu, tipografi ve dark/light tema uyumu).
-  - Header ve Footer alanlarına modern marka logosu olarak entegre edildi.
-  - `public/favicon.svg` yeni logo kimliğine uygun olarak güncellendi.
+- [x] **Kullanıcının Yüklediği Orijinal Logo Entegrasyonu:**
+  - Kullanıcının yüklediği orijinal marka logosu saydamlaştırıldı (subpixel anti-aliased) ve hem Light (`era-logo.png`) hem de Dark (`era-logo-dark.png`) modlar için yüksek çözünürlüklü olarak üretildi.
+  - Header ve Footer'a kusursuz ölçekte yerleştirildi.
+- [x] **İşaretli Alanların Kaldırılması:**
+  - Header'daki eski logo alanı ve `#dijitalgelişim` rozeti kaldırıldı, yerine resmi logo yerleştirildi.
+  - Hero bölümünde başlığın hemen üstündeki "Dijital Gelişim ve Dönüşüm Ajansı" kicker rozeti kaldırıldı.
 
 ### Altyapı, Git ve Canlı Dağıtım
 - [x] **Hostinger Git Dağıtım Mimarisi Kuruldu:**
@@ -45,7 +47,7 @@ Kaynak Kod Dalı: `main`
   - Hostinger CDN (`hcdn`) bu bozuk dosyayı 7 gün (`max-age=604800`) önbelleğe aldı.
 - **Nasıl Çözüldü?**
   - `src/App.jsx` içine sürüm belirteci eklenerek sıfırdan derleme (`npm run build`) alındı.
-  - Yepyeni bir dosya adı (`index-O8ga6_Dj.js`) üretilerek CDN önbelleği baypas edildi.
+  - Yepyeni bir dosya adı (`index-O8ga6_Dj.js`, ardından `index-BW0sbjjr.js`) üretilerek CDN önbelleği baypas edildi.
   - `node --check` ile derleme dosyası test edildi.
 - **Kalıcı Kural:**
   - `dist/` dosyaları asla git metin birleştirmesine tabi tutulamaz. `production` dalına aktarım sadece `git merge main --ff-only` veya `git checkout main -- dist/ src/` ile yapılmalıdır.
@@ -62,10 +64,10 @@ Remove-Item -Recurse -Force dist
 npm run build
 
 # 2. Syntax Kontrolü Yap
-node --check dist/assets/*.js
+Get-ChildItem dist/assets/*.js | ForEach-Object { node --check $_.FullName }
 
 # 3. main Dalına Commit & Push
-git add src/ dist/
+git add src/ public/ dist/ progress.md
 git commit -m "feat/fix: <açıklama>"
 
 # 4. production Dalına Aktar (Fast-forward)
@@ -88,5 +90,5 @@ try {
 
 ## 4. Aktif Durum
 - Canlı Site Durumu: **ÇALIŞIYOR (HTTP 200)**
-- Aktif JS Bundle: `dist/assets/index-O8ga6_Dj.js`
-- Aktif CSS Bundle: `dist/assets/index-G6rWnMl3.css`
+- Aktif JS Bundle: `dist/assets/index-BW0sbjjr.js`
+- Aktif CSS Bundle: `dist/assets/index-fNGSc1JI.css`
