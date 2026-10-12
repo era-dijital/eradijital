@@ -239,7 +239,7 @@
 .carousel-track {
   display: flex;
   width: max-content;
-  animation: ahMarquee 28s linear infinite;
+  animation: ahMarquee 42s linear infinite;
 }
 
 .carousel-track:hover {

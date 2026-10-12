@@ -46,13 +46,24 @@ export default function HeroSection() {
   const { openWizard } = useQuoteWizard();
 
   const capabilities = [
-    "Kurumsal Web & Dijital Varlık",
-    "Hedefli Arama & Reklam Görünürlüğü",
-    "Müşteri Talebi & Teklif Süreçleri",
-    "İş Süreçleri & Otomasyon",
-    "1 İş Gününde Yazılı Ön İnceleme",
-    "Ölçülebilir & Şeffaf Yol Haritası",
-    "İstanbul Operasyon & Uzaktan İş Birliği"
+    "Dönüşüm Odaklı Web ve Dijital Ticaret Altyapıları",
+    "Dijital Satış ve Müşteri İletişim Sistemleri",
+    "Otomasyon, Yazılım ve Sistem Entegrasyonları",
+    "Dijital Performans ve Süreç İyileştirme",
+    "Kurumsal Web Mimarisi ve Altyapı Modernizasyonu",
+    "E-Ticaret ve Dijital Ticaret Altyapıları",
+    "Kurumsal Sosyal Medya Yönetimi ve Marka İletişimi",
+    "Kurumsal Tanıtım ve Reklam Filmleri",
+    "Performans Odaklı Reklam Yönetimi",
+    "Kitle Analizi ve Medya Planlama",
+    "Arama Motoru Optimizasyonu (SEO)",
+    "Yapay Zekâ Görünürlüğü (GEO)",
+    "CRM Kurulumu ve Entegrasyonu",
+    "Yönetim Panelleri ve Otomatik Raporlama Sistemleri",
+    "Çok Kanallı İletişim Altyapısı ve WhatsApp Entegrasyonları",
+    "İşletmeye Özel Yazılım Geliştirme ve Yönetim Ekranları",
+    "Dijital Katalog, Ürün ve Fiyatlandırma Yönetim Sistemleri",
+    "SEO ve GEO Uyumlu Dijital İçerik"
   ];
 
   return (
@@ -252,20 +263,32 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Continuous Marquee Ticker - Symmetrical Top & Bottom Borders */}
-      <div className="relative z-10 mt-12 sm:mt-14 py-4 sm:py-5 border-y border-[#E2E8F0] dark:border-white/10 w-full overflow-hidden">
-        <div className="carousel-container max-w-6xl mx-auto">
-          <div className="carousel-track flex items-center gap-8 py-0">
-            {[...capabilities, ...capabilities].map((cap, idx) => (
-              <div
-                key={idx}
-                className="flex items-center gap-3 text-xs font-mono text-slate-600 dark:text-slate-400 shrink-0 hover:text-[#0F172A] dark:hover:text-white transition-colors"
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-[#FFD23F] shrink-0" />
-                <span>{cap}</span>
-              </div>
-            ))}
+      {/* Continuous Marquee Ticker - Symmetrical Top & Bottom Borders with Pinned "Neler Yapıyoruz :" */}
+      <div className="relative z-10 mt-12 sm:mt-14 py-4 sm:py-5 border-y border-[#E2E8F0] dark:border-white/10 w-full overflow-hidden bg-[#F8F9FA] dark:bg-[#090D14]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-4 sm:gap-6">
+          
+          {/* Sabit Başlık: Neler Yapıyoruz : (%50 daha büyük ve kalın puntolu) */}
+          <div className="shrink-0 flex items-center gap-2 pr-4 sm:pr-6 border-r border-[#E2E8F0] dark:border-white/10 z-20">
+            <span className="text-sm sm:text-lg font-bold font-display tracking-tight text-[#0F172A] dark:text-white whitespace-nowrap">
+              Neler Yapıyoruz <span className="text-[#FFD23F]">:</span>
+            </span>
           </div>
+
+          {/* Soldan Sağa Akan Alan */}
+          <div className="flex-1 overflow-hidden carousel-container min-w-0">
+            <div className="carousel-track flex items-center gap-8 py-0">
+              {[...capabilities, ...capabilities].map((cap, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-center gap-3 text-xs font-mono text-slate-600 dark:text-slate-400 shrink-0 hover:text-[#0F172A] dark:hover:text-white transition-colors"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#FFD23F] shrink-0" />
+                  <span>{cap}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </div>
 
