@@ -35,6 +35,8 @@ Kaynak Kod Dalı: `main`
   - *"Kısa bir ön talep formu ile başlıyoruz; 1 iş günü içinde varlıklarınızı inceleyip yazılı özet iletiyoruz."* yazısı yerine *"24 Saatte Ücretsiz Büyüme Analizinizi Alın →"* metni yerleştirildi ve analiz sihirbazını (QuoteWizard) tetikleyen tıklanabilir bir eylem eklendi.
 - [x] **Hero Güven Rozetlerinin Kaldırılması:**
   - Hero bölümündeki *"1 İş Gününde Ön İnceleme • Yazılı Özet & Görüşme • Şeffaf Yol Haritası"* etiket satırı kaldırıldı.
+- [x] **İhtiyaç Analizi Başlığı Font ve Satır Düzenlemesi:**
+  - *"İşletmenizin Bugün Neye İhtiyacı Var?"* başlığı fontu bir miktar küçültüldü (`text-2xl sm:text-3xl lg:text-4xl`) ve masaüstü/tablet ekranlarda bölünmeden tek satır olarak kalması sağlandı.
 
 ### Altyapı, Git ve Canlı Dağıtım
 - [x] **Hostinger Git Dağıtım Mimarisi Kuruldu:**
@@ -97,6 +99,6 @@ try {
 
 ## 4. Aktif Durum
 - Canlı Site Durumu: **ÇALIŞIYOR (HTTP 200)**
-- Sürüm: `v1.1.1`
-- Aktif JS Bundle: `dist/assets/index-BgOMCMd9.js`
-- Aktif CSS Bundle: `dist/assets/index-scFPU6bk.css`
+- Sürüm: `v1.1.2`
+- Aktif JS Bundle: `dist/assets/index-DCYAVwl5.js`
+- Aktif CSS Bundle: `dist/assets/index-BoYHhCUD.css`

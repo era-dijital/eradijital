@@ -51,18 +51,18 @@ export default function NeedsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-3xl mb-14 sm:mb-20"
+          className="max-w-4xl mb-14 sm:mb-20"
         >
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 text-slate-700 dark:text-slate-300 font-mono text-[11px] font-semibold tracking-wider uppercase mb-4 shadow-xs">
             <span className="w-1.5 h-1.5 rounded-full bg-[#FFD23F]" />
             <span>İhtiyaç Analizi</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.15]">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.2] md:whitespace-nowrap">
             İşletmenizin Bugün <span className="hl-yellow">Neye İhtiyacı Var?</span>
           </h2>
 
-          <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+          <p className="mt-4 max-w-2xl text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-light">
             Dijital gelişim her işletmede aynı noktadan başlamaz. Önceliği mevcut dijital durumunuza ve hedeflerinize göre birlikte belirliyoruz.
           </p>
         </motion.div>
