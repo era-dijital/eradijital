@@ -16,6 +16,14 @@
     --color-yellow: #FFD23F;
     --color-yellow-deep: #F59E0B;
     --color-yellow-light: rgba(255, 210, 63, 0.12);
+
+    /* İkili Yapı — Koyu Lacivert Yüzey Değişkenleri */
+    --surface-navy: #0B1528;
+    --surface-navy-card: #132238;
+    --border-navy: rgba(255, 255, 255, 0.12);
+    --text-on-navy: #F8FAFC;
+    --text-muted-on-navy: #94A3B8;
+
     --font-display: "Outfit", "Space Grotesk", sans-serif;
     --font-body: "Inter", "DM Sans", sans-serif;
     --font-mono: "JetBrains Mono", monospace;
@@ -34,6 +42,12 @@
     --color-yellow: #FFD23F;
     --color-yellow-deep: #F59E0B;
     --color-yellow-light: rgba(255, 210, 63, 0.15);
+
+    --surface-navy: #0B1528;
+    --surface-navy-card: #132238;
+    --border-navy: rgba(255, 255, 255, 0.14);
+    --text-on-navy: #F8FAFC;
+    --text-muted-on-navy: #94A3B8;
   }
 
   html, body {
@@ -45,6 +59,7 @@
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
@@ -67,7 +82,7 @@
 .hairline-l { border-left: 1px solid var(--color-rule); }
 .hairline-all { border: 1px solid var(--color-rule); }
 
-/* Zarif Sarı Vurgu (Aşırı Sarı Olmayan İnce İşaretleyici) */
+/* Zarif Sarı Vurgu */
 .hl-yellow {
   background: linear-gradient(transparent 68%, rgba(255, 210, 63, 0.5) 68%);
   display: inline;
@@ -179,6 +194,80 @@
   border-color: #FFD23F;
   color: #FFD23F !important;
   transform: translateY(-2px);
+}
+
+/* =========================================================
+   İKİLİ YAPI (DİJİTAL GELİŞİM & DÖNÜŞÜM) HELPER SINIFLARI
+   ========================================================= */
+
+.section-gelisim {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+}
+
+.section-transition-threshold {
+  border-top: 1px solid var(--color-rule);
+  border-bottom: 1px solid var(--color-rule);
+  background-color: var(--color-surface-elevated);
+  position: relative;
+}
+
+.section-donusum-navy {
+  background: linear-gradient(180deg, #0B1528 0%, #0F1E36 100%);
+  color: #F8FAFC;
+}
+
+.card-navy {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-navy:hover {
+  border-color: rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.07);
+  transform: translateY(-4px);
+}
+
+.audience-callout {
+  border-left: 4px solid #0F172A;
+  background: #FFFFFF;
+  border-top: 1px solid var(--color-rule);
+  border-right: 1px solid var(--color-rule);
+  border-bottom: 1px solid var(--color-rule);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  transition: all 0.25s ease;
+}
+.dark .audience-callout {
+  border-left-color: #FFD23F;
+  background: #0F172A;
+}
+
+.audience-callout--navy {
+  border-left: 4px solid #FFD23F;
+  background: rgba(255, 255, 255, 0.04);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  transition: all 0.25s ease;
+}
+
+@keyframes highlightPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 210, 63, 0.6);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 8px rgba(255, 210, 63, 0);
+  }
+}
+
+.highlight-pulse {
+  animation: highlightPulse 1.2s cubic-bezier(0.16, 1, 0.3, 1) 2;
 }
 
 /* =========================================================

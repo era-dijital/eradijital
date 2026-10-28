@@ -3,15 +3,20 @@ import SEO from '../components/SEO';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-// PDF Yol Haritası Bölümleri (Bölüm 1 - 7 + 4b Biz Kimiz)
+// İkili Yapı (Dijital Gelişim & Dijital Dönüşüm) Bölümleri
 import HeroSection from '../components/home/HeroSection';
-import NeedsSection from '../components/home/NeedsSection';
-import IdealForSection from '../components/home/IdealForSection';
-import SolutionsSection from '../components/home/SolutionsSection';
-import DeliverablesSection from '../components/home/DeliverablesSection';
+import DigitalGrowthSection from '../components/home/DigitalGrowthSection';
+import TransitionThresholdSection from '../components/home/TransitionThresholdSection';
+import DigitalTransformationSection from '../components/home/DigitalTransformationSection';
+import SectoralSolutionsSection from '../components/home/SectoralSolutionsSection';
+import RealProjectsSection from '../components/home/RealProjectsSection';
+
+// Kurumsal Güven Katmanı
 import AboutSection from '../components/home/AboutSection';
 import ProcessSection from '../components/home/ProcessSection';
 import FaqSection from '../components/home/FaqSection';
+
+// 7. Bölüm: Ücretsiz Durum Tespiti
 import ContactSection from '../components/home/ContactSection';
 
 export default function HomePage() {
@@ -19,38 +24,42 @@ export default function HomePage() {
     <div className="min-h-screen flex flex-col bg-[#F8F9FA] dark:bg-[#090D14] text-[#0F172A] dark:text-slate-100 selection:bg-[#FFD23F] selection:text-[#0F172A] transition-colors duration-300">
       <SEO 
         title="ERA Dijital | Dijital Gelişim ve Dönüşüm Ajansı"
-        description="ERA Dijital, işletmelerin dijital gelişimini planlıyor; web, içerik, pazarlama ve yazılım çözümlerini ihtiyaçlara göre hayata geçiriyor."
+        description="ERA Dijital, üretim ve ticaret gücünüzü dijitale taşıyor; Dijital Gelişim (dış görünüm & satış) ve Dijital Dönüşüm (iç operasyon & sistem) çözümleriyle işletmenizi büyütüyor."
       />
 
       {/* Floating Pill Nav Bar */}
       <Header />
 
       <main className="flex-1">
-        {/* Bölüm 1 — İlk ekran */}
+        {/* 1. BÖLÜM: HERO (Giriş Ekranı) + Kayan Hizmet Şeridi (Marquee) */}
         <HeroSection />
 
-        {/* Bölüm 2 — Ziyaretçinin kendi ihtiyacını tanıması */}
-        <NeedsSection />
+        {/* 2. BÖLÜM: 1. HİZMET ALANI — DİJİTAL GELİŞİM (Dış Görünüm & Satış) */}
+        <DigitalGrowthSection />
 
-        {/* Kimler İçin İdeal? — Farklı ölçeklerde işletmeler */}
-        <IdealForSection />
+        {/* 3. BÖLÜM: GEÇİŞ EŞİĞİ (Bağımsız İkinci Alana Giriş) */}
+        <TransitionThresholdSection />
 
-        {/* Bölüm 3 — Çözüm yaklaşımı */}
-        <SolutionsSection />
+        {/* 4. BÖLÜM: 2. HİZMET ALANI — DİJİTAL DÖNÜŞÜM (İç Operasyon & Sistem) */}
+        <DigitalTransformationSection />
 
-        {/* Bölüm 4 — Yetkinliğin görünür olması (Örnek İşler) */}
-        <DeliverablesSection />
+        {/* 5. BÖLÜM: SEKTÖREL ÇÖZÜMLER (Müşteriye Ayna Tutma) */}
+        <SectoralSolutionsSection />
 
-        {/* Bölüm 4b — Biz Kimiz (Yeni) */}
+        {/* 6. BÖLÜM: SAHADA ÇALIŞAN GERÇEK PROJELER */}
+        <RealProjectsSection />
+
+        {/* KURUMSAL GÜVEN KATMANI */}
+        {/* Biz Kimiz */}
         <AboutSection />
 
-        {/* Bölüm 5 — Çalışma deneyimi (Süreç) */}
+        {/* 4 Aşamalı Çalışma Süreci */}
         <ProcessSection />
 
-        {/* Bölüm 6 — Karar öncesi sorular (SSS) */}
+        {/* Sıkça Sorulan Sorular (SSS) */}
         <FaqSection />
 
-        {/* Bölüm 7 — Sonuç ve iletişim */}
+        {/* 7. BÖLÜM: ÜCRETSİZ DURUM TESPİTİ (Risksiz İlk Adım) */}
         <ContactSection />
       </main>
 

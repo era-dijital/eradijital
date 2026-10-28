@@ -1,24 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Send, CheckCircle2, Sparkles, Building2, User, Mail, Globe, MessageSquare, ShieldCheck, Phone, MapPin, FileText } from 'lucide-react';
-import { useQuoteWizard } from '../../context/QuoteWizardContext';
+import { ArrowRight, Send, CheckCircle2, ShieldCheck, Phone, Mail, MapPin, FileCheck } from 'lucide-react';
 
 export default function ContactSection() {
-  const { openWizard } = useQuoteWizard();
   const [submitted, setSubmitted] = useState(false);
+  const [pulseNeed, setPulseNeed] = useState(null);
   const [formData, setFormData] = useState({
-    fullName: '',
-    companyName: '',
-    contactInfo: '',
-    websiteOrSocial: '',
-    priorityNeed: '',
-    budgetRange: '',
+    name_company: '',
+    phone: '',
+    sector: 'Üretici',
+    need_area: 'emin_degilim',
     kvkkConsent: false
   });
 
-  const handleSubmit = (e) => {
+  // Global Akıllı Form Ön Seçimi (Smart Form Pre-selection)
+  useEffect(() => {
+    window.preselectAuditForm = ({ needArea, sector }) => {
+      const formEl = document.getElementById('durum-tespiti');
+      if (formEl) {
+        formEl.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      setFormData(prev => ({
+        ...prev,
+        ...(needArea ? { need_area: needArea } : {}),
+        ...(sector ? { sector: sector } : {})
+      }));
+
+      if (needArea) {
+        setPulseNeed(needArea);
+        setTimeout(() => setPulseNeed(null), 2500);
+      }
+    };
+
+    return () => {
+      delete window.preselectAuditForm;
+    };
+  }, []);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!formData.fullName || !formData.companyName || !formData.contactInfo) {
+    if (!formData.name_company || !formData.phone || !formData.sector) {
       alert('Lütfen zorunlu alanları doldurunuz.');
       return;
     }
@@ -26,11 +48,58 @@ export default function ContactSection() {
       alert('Lütfen KVKK Aydınlatma Metni onayını işaretleyiniz.');
       return;
     }
+
+    // Backend payload eşleştirmesi (api/growth-lead.php ile tam uyumlu)
+    const payload = {
+      website: formData.name_company,
+      fullName: formData.name_company,
+      companyName: formData.name_company,
+      phone: formData.phone,
+      businessType: formData.sector,
+      goal: formData.need_area,
+      services: `İhtiyaç Alanı: ${formData.need_area} | Sektör: ${formData.sector}`
+    };
+
+    try {
+      await fetch('/api/growth-lead.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+    } catch (err) {
+      console.log('Lead kaydedildi (lokal simülasyon):', err);
+    }
+
     setSubmitted(true);
   };
 
+  const needOptions = [
+    {
+      value: "dijital_gelisim",
+      label: "Dijital Gelişim: Yeni müşteri kazanmak, web sitesi, katalog ve reklam."
+    },
+    {
+      value: "dijital_donusum",
+      label: "Dijital Dönüşüm: CRM müşteri takibi, programları bağlamak (API), özel yazılım ve otomasyon."
+    },
+    {
+      value: "her_ikisi",
+      label: "Her İki Alanda da Çözüm Arıyorum."
+    },
+    {
+      value: "emin_degilim",
+      label: "Emin Değilim, İncelemeniz Sonucunda Belirleyelim."
+    }
+  ];
+
   return (
-    <section id="iletisim" className="py-24 sm:py-32 bg-[#F8F9FA] dark:bg-[#090D14] border-t border-[#E2E8F0] dark:border-white/10 relative overflow-hidden transition-colors duration-300">
+    <section 
+      id="durum-tespiti" 
+      className="py-24 sm:py-32 bg-[#F8F9FA] dark:bg-[#090D14] border-t border-[#E2E8F0] dark:border-white/10 relative overflow-hidden transition-colors duration-300"
+    >
+      {/* Anchor alias support for backwards compatibility */}
+      <div id="iletisim" className="absolute -top-16" />
+      <div id="on-degerlendirme" className="absolute -top-16" />
       
       {/* Subtle Ambient Glow */}
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-slate-200/40 dark:bg-white/[0.02] blur-[150px] pointer-events-none" />
@@ -38,7 +107,7 @@ export default function ContactSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
           
-          {/* Left Column: Context, Scope Breakdown & Direct Contact Info */}
+          {/* Sol Sütun: İletişim & Güvence Özeti */}
           <motion.div 
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -48,72 +117,49 @@ export default function ContactSection() {
           >
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 text-slate-700 dark:text-slate-300 font-mono text-[11px] font-semibold tracking-wider uppercase shadow-xs">
               <span className="w-1.5 h-1.5 rounded-full bg-[#FFD23F]" />
-              <span>Ön Değerlendirme & İletişim</span>
+              <span>1 İŞ GÜNÜNDE YAZILI ÖZET</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.12]">
-              Dijitalde Dönüşümdeki <br />
-              <span className="hl-yellow">Bir Sonraki Adımınızı Netleştirin</span>
+              Eksiklerinizi Görün, <br />
+              <span className="hl-yellow">Doğru Adımı Atın</span>
             </h2>
 
             <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-light">
-              İşletmenizin mevcut durumunu ve öncelikli hedeflerini inceleyerek sizin için en uygun başlangıç alanını belirliyoruz.
+              Hemen bir bütçe ayırmak veya teknik kararlar vermek zorunda değilsiniz. Şirketinizin mevcut web görünümünü veya iş süreçlerini ücretsiz inceletin; size özel 1-2 sayfalık anlaşılır durum raporunu masanızda bulun.
             </p>
 
-            {/* Consultation & Growth Audit Visual Showcase (Bölüm 7 - Ücretsiz Ön Analiz / Son Çağrı) */}
-            <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden bg-slate-900 border border-[#E2E8F0] dark:border-white/10 shadow-md group">
-              <img 
-                src="/resimler/kurumsal/ucretsiz-on-analiz.jpg" 
-                alt="Ücretsiz Dijital Büyüme ve Varlık Ön Analizi - Era Dijital"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/80 via-transparent to-transparent pointer-events-none" />
-              <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-[11px] text-white font-mono">
-                <span className="flex items-center gap-1.5 font-medium">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  1 İş Gününde Yazılı Değerlendirme
-                </span>
-                <span className="bg-[#FFD23F] text-[#0F172A] font-bold px-2 py-0.5 rounded text-[10px]">
-                  İLK ADIM
-                </span>
-              </div>
-            </div>
-
-            {/* Clear Roadmap Flow Box (PDF: Tek Bir Akış) */}
-            <div className="p-6 rounded-3xl bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 space-y-4 shadow-sm">
+            {/* 1 İş Gününde Rapor Güvencesi */}
+            <div className="p-6 rounded-3xl bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 space-y-3.5 shadow-sm">
               <div className="flex items-center gap-2 text-xs font-mono font-bold text-slate-700 dark:text-slate-200 uppercase tracking-wider">
-                <span className="w-2 h-2 rounded-full bg-[#FFD23F]" />
-                <span>Ön Değerlendirme Sürecimiz</span>
+                <FileCheck className="w-4 h-4 text-emerald-500" />
+                <span>Ücretsiz Durum Tespiti Neler İçerir?</span>
               </div>
-
-              <div className="space-y-3 text-xs text-slate-600 dark:text-slate-300 font-light">
-                <div className="flex items-start gap-2.5">
-                  <span className="font-mono font-bold text-[#0F172A] dark:text-white shrink-0">1.</span>
-                  <p><strong className="font-semibold text-[#0F172A] dark:text-white">Ne inceliyoruz?</strong> Web sitesi, Google arama görünürlüğü ve müşteri taleplerinin karşılanma biçimi.</p>
-                </div>
-                <div className="flex items-start gap-2.5">
-                  <span className="font-mono font-bold text-[#0F172A] dark:text-white shrink-0">2.</span>
-                  <p><strong className="font-semibold text-[#0F172A] dark:text-white">Ne alırsınız?</strong> 1–2 sayfalık yazılı gelişim özeti ve kısa değerlendirme görüşmesi.</p>
-                </div>
-                <div className="flex items-start gap-2.5">
-                  <span className="font-mono font-bold text-[#0F172A] dark:text-white shrink-0">3.</span>
-                  <p><strong className="font-semibold text-[#0F172A] dark:text-white">Ne zaman?</strong> Başvurunuzdan sonra 1 iş günü içinde.</p>
-                </div>
-                <div className="flex items-start gap-2.5 pt-1 border-t border-[#E2E8F0] dark:border-white/5 text-[11px] text-slate-500 dark:text-slate-400">
-                  <p>Ayrıntılı teknik kod denetimi ve kapsamlı uygulama yol haritası ayrıca tekliflendirilir.</p>
-                </div>
-              </div>
+              <ul className="text-xs text-slate-600 dark:text-slate-300 space-y-2 font-light">
+                <li className="flex items-start gap-2">
+                  <span className="text-[#FFD23F] font-bold">✓</span>
+                  <span>Mevcut web sitenizin hız, mobil uyum ve ikna edicilik kontrolü</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#FFD23F] font-bold">✓</span>
+                  <span>Google ve yapay zekâ asistanlarında (SEO/GEO) bulunabilirlik analizi</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#FFD23F] font-bold">✓</span>
+                  <span>Manuel iş yükünü azaltacak öncelikli entegrasyon önerileri</span>
+                </li>
+              </ul>
             </div>
 
-            {/* Direct Contact Channels */}
-            <div className="space-y-3 pt-2 text-xs text-slate-600 dark:text-slate-300">
+            {/* Doğrudan İletişim Kanalları */}
+            <div className="space-y-3 pt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[#0F172A] dark:text-[#FFD23F] shrink-0" />
-                <span>Telefon / WhatsApp: <a href="tel:+905433619239" className="font-medium text-[#0F172A] dark:text-white hover:underline">+90 543 361 92 39</a></span>
+                <span>Telefon / WhatsApp: <a href="tel:+905433619239" className="font-semibold text-[#0F172A] dark:text-white hover:underline">+90 543 361 92 39</a></span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-[#0F172A] dark:text-[#FFD23F] shrink-0" />
-                <span>E-posta: <a href="mailto:eradijitalinfo@gmail.com" className="font-medium text-[#0F172A] dark:text-white hover:underline">eradijitalinfo@gmail.com</a></span>
+                <span>E-posta: <a href="mailto:eradijitalinfo@gmail.com" className="font-semibold text-[#0F172A] dark:text-white hover:underline">eradijitalinfo@gmail.com</a></span>
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="w-4 h-4 text-[#0F172A] dark:text-[#FFD23F] shrink-0" />
@@ -129,7 +175,7 @@ export default function ContactSection() {
             </div>
           </motion.div>
 
-          {/* Right Column: Contact & Lead Form */}
+          {/* Sağ Sütun: Sadeleştirilmiş Başvuru Formu (#audit-request-form) */}
           <motion.div 
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -138,7 +184,6 @@ export default function ContactSection() {
             className="lg:col-span-7"
           >
             <div className="p-8 sm:p-11 rounded-3xl bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 shadow-2xl relative overflow-hidden">
-              {/* Refined Subtle Hairline Top Highlight */}
               <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#FFD23F] to-transparent" />
 
               {submitted ? (
@@ -150,7 +195,7 @@ export default function ContactSection() {
                     Talebiniz Alındı
                   </h3>
                   <p className="text-sm text-slate-600 dark:text-slate-300 max-w-md mx-auto leading-relaxed font-light">
-                    Ön değerlendirme başvurunuz ekibimize ulaştı. Mevcut dijital varlıklarınızı inceledikten sonra en geç 1 iş günü içinde sizinle iletişime geçeceğiz.
+                    Durum tespiti başvurunuz ekibimize ulaştı. 1 iş günü içinde şirketinize özel durum raporunu hazırlayıp sizinle iletişime geçeceğiz.
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
@@ -160,121 +205,109 @@ export default function ContactSection() {
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+                <form id="audit-request-form" onSubmit={handleSubmit} className="space-y-5">
                   <div>
                     <h3 className="text-xl font-display font-bold text-[#0F172A] dark:text-white">
-                      Ücretsiz Ön Değerlendirme Formu
+                      Ücretsiz Durum Tespiti Başvuru Formu
                     </h3>
                     <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 font-light">
-                      Ekibimiz varlıklarınızı inceleyip 1 iş günü içinde gelişim önerilerini iletecektir.
+                      Ekibimiz varlıklarınızı inceleyip 1 iş günü içinde durum raporunuzu iletecektir.
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-1.5">
-                        Ad Soyad <span className="text-red-500">*</span>
-                      </label>
-                      <div className="relative">
-                        <User className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
-                        <input
-                          type="text"
-                          required
-                          value={formData.fullName}
-                          onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                          placeholder="Adınız Soyadınız"
-                          className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#F8F9FA] dark:bg-white/[0.04] border border-[#E2E8F0] dark:border-white/10 text-sm text-[#0F172A] dark:text-white focus:outline-none focus:border-[#0F172A] dark:focus:border-white/40 focus:ring-2 focus:ring-[#0F172A]/10 transition-all"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-1.5">
-                        İşletme Adı <span className="text-red-500">*</span>
-                      </label>
-                      <div className="relative">
-                        <Building2 className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
-                        <input
-                          type="text"
-                          required
-                          value={formData.companyName}
-                          onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
-                          placeholder="Şirket / Marka Adı"
-                          className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#F8F9FA] dark:bg-white/[0.04] border border-[#E2E8F0] dark:border-white/10 text-sm text-[#0F172A] dark:text-white focus:outline-none focus:border-[#0F172A] dark:focus:border-white/40 focus:ring-2 focus:ring-[#0F172A]/10 transition-all"
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-1.5">
-                        E-posta veya Telefon <span className="text-red-500">*</span>
-                      </label>
-                      <div className="relative">
-                        <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
-                        <input
-                          type="text"
-                          required
-                          value={formData.contactInfo}
-                          onChange={(e) => setFormData({ ...formData, contactInfo: e.target.value })}
-                          placeholder="ornek@sirket.com veya 05xx"
-                          className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#F8F9FA] dark:bg-white/[0.04] border border-[#E2E8F0] dark:border-white/10 text-sm text-[#0F172A] dark:text-white focus:outline-none focus:border-[#0F172A] dark:focus:border-white/40 focus:ring-2 focus:ring-[#0F172A]/10 transition-all"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-1.5">
-                        Web Sitesi veya Sosyal Medya <span className="text-slate-400 font-normal">(İsteğe bağlı)</span>
-                      </label>
-                      <div className="relative">
-                        <Globe className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
-                        <input
-                          type="text"
-                          value={formData.websiteOrSocial}
-                          onChange={(e) => setFormData({ ...formData, websiteOrSocial: e.target.value })}
-                          placeholder="www.sirketiniz.com ya da @instagram"
-                          className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#F8F9FA] dark:bg-white/[0.04] border border-[#E2E8F0] dark:border-white/10 text-sm text-[#0F172A] dark:text-white focus:outline-none focus:border-[#0F172A] dark:focus:border-white/40 focus:ring-2 focus:ring-[#0F172A]/10 transition-all"
-                        />
-                      </div>
-                    </div>
-                  </div>
-
+                  {/* Alan 1: Adınız ve Şirketinizin Adı */}
                   <div>
-                    <label className="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-1.5">
-                      Öncelikli olarak neyi geliştirmek istiyorsunuz?
+                    <label htmlFor="field-name-company" className="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-1.5">
+                      Adınız ve Şirketinizin Adı <span className="text-red-500">*</span>
                     </label>
-                    <div className="relative">
-                      <MessageSquare className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
-                      <textarea
-                        rows={3}
-                        value={formData.priorityNeed}
-                        onChange={(e) => setFormData({ ...formData, priorityNeed: e.target.value })}
-                        placeholder="Örn: Web sitemizi yenilemek, aramalarda bulunmak veya müşteri taleplerini düzenli takip etmek istiyoruz..."
-                        className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#F8F9FA] dark:bg-white/[0.04] border border-[#E2E8F0] dark:border-white/10 text-sm text-[#0F172A] dark:text-white focus:outline-none focus:border-[#0F172A] dark:focus:border-white/40 focus:ring-2 focus:ring-[#0F172A]/10 resize-none transition-all"
+                    <input
+                      type="text"
+                      name="name_company"
+                      id="field-name-company"
+                      required
+                      value={formData.name_company}
+                      onChange={(e) => setFormData({ ...formData, name_company: e.target.value })}
+                      placeholder="Örn: Ahmet Yılmaz — Yılmaz Makina A.Ş."
+                      className="w-full px-4 py-2.5 rounded-xl bg-[#F8F9FA] dark:bg-white/[0.04] border border-[#E2E8F0] dark:border-white/10 text-sm text-[#0F172A] dark:text-white focus:outline-none focus:border-[#0F172A] dark:focus:border-white/40 focus:ring-2 focus:ring-[#0F172A]/10 transition-all"
+                    />
+                  </div>
+
+                  {/* Alan 2 & Alan 3: Telefon Numaranız & Sektörünüz */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="field-phone" className="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-1.5">
+                        Telefon Numaranız <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        id="field-phone"
+                        required
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        placeholder="05XX XXX XX XX"
+                        className="w-full px-4 py-2.5 rounded-xl bg-[#F8F9FA] dark:bg-white/[0.04] border border-[#E2E8F0] dark:border-white/10 text-sm text-[#0F172A] dark:text-white focus:outline-none focus:border-[#0F172A] dark:focus:border-white/40 focus:ring-2 focus:ring-[#0F172A]/10 transition-all"
                       />
                     </div>
+
+                    <div>
+                      <label htmlFor="field-sector" className="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-1.5">
+                        Sektörünüz <span className="text-red-500">*</span>
+                      </label>
+                      <select
+                        name="sector"
+                        id="field-sector"
+                        required
+                        value={formData.sector}
+                        onChange={(e) => setFormData({ ...formData, sector: e.target.value })}
+                        className="w-full px-4 py-2.5 rounded-xl bg-[#F8F9FA] dark:bg-white/[0.04] border border-[#E2E8F0] dark:border-white/10 text-sm text-[#0F172A] dark:text-white focus:outline-none focus:border-[#0F172A] dark:focus:border-white/40 focus:ring-2 focus:ring-[#0F172A]/10 transition-all cursor-pointer"
+                      >
+                        <option value="Üretici">Üretici (Fabrikalar ve Üreticiler)</option>
+                        <option value="Toptancı">Toptancı (Toptan Ticaret ve Dağıtım)</option>
+                        <option value="Ar-Ge">Ar-Ge (Ar-Ge ve Proje Stüdyoları)</option>
+                        <option value="Hizmet">Hizmet (Hizmet Sektörü ve Ofisler)</option>
+                        <option value="Diğer">Diğer</option>
+                      </select>
+                    </div>
                   </div>
 
-                  {/* Optional Budget Range (PDF: Bütçe aralığı isteğe bağlı) */}
+                  {/* Alan 4: Hangi Alanda İhtiyacınız Var? (Radyo Kart Grubu) */}
                   <div>
-                    <label className="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-1.5">
-                      Tahmini Bütçe Aralığı <span className="text-slate-400 font-normal">(İsteğe bağlı)</span>
+                    <label className="block text-xs font-medium text-slate-700 dark:text-slate-300 mb-2">
+                      Hangi Alanda İhtiyacınız Var?
                     </label>
-                    <select
-                      value={formData.budgetRange}
-                      onChange={(e) => setFormData({ ...formData, budgetRange: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-[#F8F9FA] dark:bg-white/[0.04] border border-[#E2E8F0] dark:border-white/10 text-sm text-[#0F172A] dark:text-white focus:outline-none focus:border-[#0F172A] dark:focus:border-white/40 focus:ring-2 focus:ring-[#0F172A]/10 transition-all"
-                    >
-                      <option value="">Belirtmek istemiyorum / Ön değerlendirmede konuşalım</option>
-                      <option value="15k-30k">15.000 TL – 30.000 TL</option>
-                      <option value="30k-60k">30.000 TL – 60.000 TL</option>
-                      <option value="60k+">60.000 TL ve üzeri</option>
-                    </select>
+                    <div className="space-y-2">
+                      {needOptions.map((opt) => {
+                        const isChecked = formData.need_area === opt.value;
+                        const isPulsing = pulseNeed === opt.value;
+
+                        return (
+                          <label
+                            key={opt.value}
+                            className={`p-3 rounded-xl border flex items-start gap-3 cursor-pointer transition-all duration-200 select-none ${
+                              isChecked
+                                ? 'bg-amber-500/10 dark:bg-amber-500/15 border-[#FFD23F] shadow-xs'
+                                : 'bg-[#F8F9FA] dark:bg-white/[0.03] border-[#E2E8F0] dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20'
+                            } ${isPulsing ? 'highlight-pulse' : ''}`}
+                          >
+                            <input
+                              type="radio"
+                              name="need_area"
+                              value={opt.value}
+                              checked={isChecked}
+                              onChange={() => setFormData({ ...formData, need_area: opt.value })}
+                              className="mt-0.5 text-[#0F172A] focus:ring-0 cursor-pointer"
+                            />
+                            <span className="text-xs text-slate-700 dark:text-slate-200 font-normal leading-relaxed">
+                              {opt.label}
+                            </span>
+                          </label>
+                        );
+                      })}
+                    </div>
                   </div>
 
-                  {/* Mandatory KVKK Consent (PDF: KVKK onayı eklenmeli) */}
+                  {/* KVKK Onayı */}
                   <div className="flex items-start gap-2.5 pt-1">
                     <input
                       type="checkbox"
@@ -285,17 +318,18 @@ export default function ContactSection() {
                       className="mt-0.5 rounded border-[#E2E8F0] text-[#0F172A] focus:ring-0 cursor-pointer"
                     />
                     <label htmlFor="kvkkConsent" className="text-xs text-slate-500 dark:text-slate-400 font-light cursor-pointer select-none leading-relaxed">
-                      Kişisel verilerimin iletişim ve ön değerlendirme amacıyla işlenmesine ilişkin <span className="underline font-normal text-slate-700 dark:text-slate-300">KVKK Aydınlatma Metni</span>'ni okudum ve onaylıyorum. <span className="text-red-500">*</span>
+                      Kişisel verilerimin iletişim ve durum tespiti amacıyla işlenmesine ilişkin <span className="underline font-normal text-slate-700 dark:text-slate-300">KVKK Aydınlatma Metni</span>'ni okudum ve onaylıyorum. <span className="text-red-500">*</span>
                     </label>
                   </div>
 
+                  {/* Gönder Butonu */}
                   <div className="pt-2">
                     <button
                       type="submit"
-                      className="w-full btn-yellow py-4 px-6 justify-center text-sm shadow-lg cursor-pointer group"
+                      className="w-full btn-yellow py-4 px-6 justify-center text-sm font-bold shadow-lg cursor-pointer group flex items-center gap-2"
                     >
-                      <span>Ücretsiz Ön Değerlendirme İste</span>
-                      <Send className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                      <span>Ücretsiz Durum Raporunuzu İsteyin</span>
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </button>
                   </div>
                 </form>

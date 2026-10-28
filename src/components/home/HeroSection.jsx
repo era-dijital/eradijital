@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, Layers, Activity, ShieldCheck, Check, Zap, Globe, Cpu, Users } from 'lucide-react';
+import { ArrowDown, Sparkles, Globe, Cpu, ArrowRight } from 'lucide-react';
 import { useQuoteWizard } from '../../context/QuoteWizardContext';
 
 // Dynamic Ambient Particle Field
@@ -46,241 +46,158 @@ export default function HeroSection() {
   const { openWizard } = useQuoteWizard();
 
   const capabilities = [
-    "Dönüşüm Odaklı Web ve Dijital Ticaret Altyapıları",
-    "Dijital Satış ve Müşteri İletişim Sistemleri",
-    "Otomasyon, Yazılım ve Sistem Entegrasyonları",
-    "Dijital Performans ve Süreç İyileştirme",
-    "Kurumsal Web Mimarisi ve Altyapı Modernizasyonu",
-    "E-Ticaret ve Dijital Ticaret Altyapıları",
-    "Kurumsal Sosyal Medya Yönetimi ve Marka İletişimi",
-    "Kurumsal Tanıtım ve Reklam Filmleri",
-    "Performans Odaklı Reklam Yönetimi",
-    "Kitle Analizi ve Medya Planlama",
-    "Arama Motoru Optimizasyonu (SEO)",
-    "Yapay Zekâ Görünürlüğü (GEO)",
-    "CRM Kurulumu ve Entegrasyonu",
-    "Yönetim Panelleri ve Otomatik Raporlama Sistemleri",
-    "Çok Kanallı İletişim Altyapısı ve WhatsApp Entegrasyonları",
-    "İşletmeye Özel Yazılım Geliştirme ve Yönetim Ekranları",
-    "Dijital Katalog, Ürün ve Fiyatlandırma Yönetim Sistemleri",
-    "SEO ve GEO Uyumlu Dijital İçerik"
+    "Kurumsal Web & Dijital Varlık",
+    "Hedefli Arama & Reklam Görünürlüğü",
+    "Müşteri Talebi & Teklif Süreçleri",
+    "İş Süreçleri & Otomasyon",
+    "1 İş Gününde Yazılı Ön İnceleme",
+    "Ölçülebilir & Şeffaf Yol Haritası",
+    "İstanbul Operasyon & Uzaktan İş Birliği"
   ];
 
   return (
-    <section className="relative pt-32 sm:pt-40 pb-0 overflow-hidden bg-[#F8F9FA] dark:bg-[#090D14] text-[#0F172A] dark:text-white transition-colors duration-300">
+    <section id="hero" className="relative pt-32 sm:pt-40 pb-12 overflow-hidden bg-[#F8F9FA] dark:bg-[#090D14] text-[#0F172A] dark:text-white transition-colors duration-300">
       
       {/* Subtle Warm Amber Mesh Glow */}
-      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-full max-w-4xl h-80 bg-gradient-to-b from-[#FFD23F]/12 via-[#FFD23F]/4 to-transparent blur-[130px] pointer-events-none z-0" />
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-full max-w-5xl h-80 bg-gradient-to-b from-[#FFD23F]/12 via-[#FFD23F]/4 to-transparent blur-[130px] pointer-events-none z-0" />
       
       {/* Ambient Particle Field */}
       <ParticleField count={25} />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+        
+        {/* Hero Header: Badge, Title & Lead */}
+        <div className="text-center max-w-3xl mx-auto space-y-5 mb-12 sm:mb-16">
           
-          {/* Left Column: Strategic Positioning (PDF Bölüm 1) */}
-          <div className="lg:col-span-7 space-y-6">
-            
-
-
-            {/* Main Headline */}
-            <motion.h1 
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="text-4xl sm:text-6xl lg:text-[62px] font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.12]"
-            >
-              İşinizi Yarının Kurallarına Göre <span className="hl-yellow">Dönüştürün</span>
-            </motion.h1>
-
-            {/* Spot Text - biz-siz dili */}
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-              className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-xl leading-relaxed font-light"
-            >
-              İşletmenizin dijital gelişim önceliklerini birlikte belirliyoruz; görünürlük, müşteri kazanımı ve iş süreçleri için gerekli çözümleri hayata geçiriyoruz.
-            </motion.p>
-
-            {/* Action Buttons */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-              className="space-y-3 pt-2"
-            >
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                
-                {/* Yellow Primary Button */}
-                <button
-                  onClick={() => openWizard()}
-                  className="btn-yellow text-sm py-3.5 px-6 shadow-md cursor-pointer group"
-                >
-                  <Sparkles className="w-4 h-4 text-[#0F172A] transition-transform group-hover:rotate-12" />
-                  <span>Ücretsiz ön değerlendirme iste</span>
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </button>
-
-                {/* Secondary Button - Ghost Outline */}
-                <a
-                  href="#gelisim-alanlari"
-                  className="btn-ghost text-sm py-3.5 px-6 cursor-pointer group"
-                >
-                  <span>Gelişim alanlarını incele</span>
-                  <span className="ml-1 text-xs opacity-75 transition-transform group-hover:translate-y-0.5">↓</span>
-                </a>
-              </div>
-
-              {/* Sub-button Note - Net Akış Vaadi */}
-              <p 
-                onClick={() => openWizard()}
-                className="text-xs text-slate-500 dark:text-slate-400 pl-1 font-sans cursor-pointer hover:text-[#0F172A] dark:hover:text-white transition-colors inline-flex items-center gap-1 font-medium"
-              >
-                24 Saatte Ücretsiz Büyüme Analizinizi Alın →
-              </p>
-            </motion.div>
-          </div>
-
-          {/* Right Column: Interconnected 4-Module Animated System + Executive Visual */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-5"
+          {/* Üst Etiket (Badge) */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 text-xs font-semibold shadow-xs"
           >
-            <div className="relative rounded-3xl bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 p-5 sm:p-6 shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-300 animate-smooth-float">
-              
-              {/* Subtle Ambient Radial Lighting */}
-              <div className="absolute top-0 right-0 w-44 h-44 bg-[#FFD23F]/10 rounded-full blur-[70px] pointer-events-none" />
+            <span className="w-2 h-2 rounded-full bg-[#FFD23F] radar-beacon" />
+            <span className="font-mono text-slate-700 dark:text-slate-200 uppercase tracking-wider text-[11px]">
+              DİJİTAL GELİŞİM VE DÖNÜŞÜM AJANSI
+            </span>
+          </motion.div>
 
-              {/* Executive Image Showcase (Bölüm 1 - Hero Görseli) */}
-              <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden mb-5 bg-slate-900 border border-[#E2E8F0] dark:border-white/10 shadow-sm">
-                <img 
-                  src="/resimler/kurumsal/hero-executive.jpg" 
-                  alt="Dijital Gelişim ve Yönetici Vizyonu - Era Dijital"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/85 via-[#0F172A]/20 to-transparent pointer-events-none" />
-                
-                {/* Floating Live Badge */}
-                <div className="absolute top-3 left-3 px-3 py-1.5 rounded-full bg-white/90 dark:bg-[#0F172A]/90 backdrop-blur-md border border-white/20 text-[11px] font-mono font-bold text-[#0F172A] dark:text-white flex items-center gap-1.5 shadow-md">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                  <span>Entegre Gelişim Mimarisi</span>
+          {/* Slogan Başlık (h1) */}
+          <motion.h1 
+            initial={{ opacity: 0, y: 22 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
+            className="text-4xl sm:text-6xl lg:text-[64px] font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.12]"
+          >
+            Sahadaki Gücünüzü <span className="hl-yellow">Dijitale Taşıyın</span>
+          </motion.h1>
+
+          {/* Spot Açıklama (hero-lead) */}
+          <motion.p 
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
+            className="hero-lead text-base sm:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed font-light"
+          >
+            Üretim gücünüzü, ticaret hacminizi veya sektörel uzmanlığınızı dijitalde tam karşılığıyla büyütün. İhtiyacınıza göre iki ana uzmanlık alanından biriyle hemen başlayın.
+          </motion.p>
+        </div>
+
+        {/* Giriş Ekranındaki İki Net Tercih Kartı (.hero-dual-cards) */}
+        <div className="hero-dual-cards grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto mb-16">
+          
+          {/* 1. KART: DİJİTAL GELİŞİM (Sol Kart - Açık/Vitrin Vurgulu) */}
+          <motion.div
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            whileHover={{ y: -6, transition: { duration: 0.25 } }}
+            className="hero-choice-card--gelisim group relative p-8 sm:p-9 rounded-3xl bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 hover:border-slate-400/50 dark:hover:border-white/30 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
+          >
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <div className="w-13 h-13 rounded-2xl bg-[#0F172A] dark:bg-white/10 text-white flex items-center justify-center group-hover:bg-[#FFD23F] group-hover:text-[#0F172A] transition-all duration-300 shadow-sm">
+                  <Globe className="w-6 h-6" />
                 </div>
-
-                <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] text-white">
-                  <span className="bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-lg border border-white/10 font-mono text-[11px]">
-                    Dijital Veri & Süreç Kontrolü
-                  </span>
-                  <span className="bg-[#FFD23F] text-[#0F172A] font-bold px-2 py-0.5 rounded-md font-mono text-[10px]">
-                    CANLI SİSTEM
-                  </span>
-                </div>
-              </div>
-
-              {/* Panel Header */}
-              <div className="flex items-center justify-between pb-3 mb-4 border-b border-[#E2E8F0] dark:border-white/10">
-                <div className="flex items-center gap-2">
-                  <span className="font-mono text-xs uppercase tracking-wider text-slate-700 dark:text-slate-300 font-bold whitespace-nowrap">
-                    4 Temel Gelişim Modülü
-                  </span>
-                </div>
-                <span className="text-[11px] font-mono text-emerald-600 dark:text-emerald-400 font-semibold">Aktif Omurga</span>
-              </div>
-
-              {/* 4 Connected Modules with Clear Business Value Language */}
-              <div className="space-y-3 relative">
-                
-                {/* Module 1 */}
-                <div className="p-3.5 rounded-2xl bg-[#F8F9FA] dark:bg-white/[0.03] border border-[#E2E8F0] dark:border-white/5 flex items-center justify-between group/card hover:border-[#FFD23F] hover:bg-white dark:hover:bg-white/[0.06] transition-all duration-200">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-xl bg-[#0F172A] text-white dark:bg-white/10 flex items-center justify-center font-mono font-bold text-xs shadow-xs group-hover/card:bg-[#FFD23F] group-hover/card:text-[#0F172A] transition-colors">
-                      01
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-[#0F172A] dark:text-white">Dijital Varlık & Kurumsal Vitrin</div>
-                      <div className="text-[11px] text-slate-500 dark:text-slate-400">Güven veren web siteleri & ürün anlatımı</div>
-                    </div>
-                  </div>
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 group-hover/card:scale-125 transition-transform" />
-                </div>
-
-                {/* Module 2 */}
-                <div className="p-3.5 rounded-2xl bg-[#F8F9FA] dark:bg-white/[0.03] border border-[#E2E8F0] dark:border-white/5 flex items-center justify-between group/card hover:border-[#FFD23F] hover:bg-white dark:hover:bg-white/[0.06] transition-all duration-200">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-xl bg-[#0F172A] text-white dark:bg-white/10 flex items-center justify-center font-mono font-bold text-xs shadow-xs group-hover/card:bg-[#FFD23F] group-hover/card:text-[#0F172A] transition-colors">
-                      02
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-[#0F172A] dark:text-white">Görünürlük & Müşteri Kazanımı</div>
-                      <div className="text-[11px] text-slate-500 dark:text-slate-400">Arama görünürlüğü & hedefli müşteri reklamları</div>
-                    </div>
-                  </div>
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 group-hover/card:scale-125 transition-transform" />
-                </div>
-
-                {/* Module 3 */}
-                <div className="p-3.5 rounded-2xl bg-[#F8F9FA] dark:bg-white/[0.03] border border-[#E2E8F0] dark:border-white/5 flex items-center justify-between group/card hover:border-[#FFD23F] hover:bg-white dark:hover:bg-white/[0.06] transition-all duration-200">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-xl bg-[#0F172A] text-white dark:bg-white/10 flex items-center justify-center font-mono font-bold text-xs shadow-xs group-hover/card:bg-[#FFD23F] group-hover/card:text-[#0F172A] transition-colors">
-                      03
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-[#0F172A] dark:text-white">Satış & Talep Takibi</div>
-                      <div className="text-[11px] text-slate-500 dark:text-slate-400">Teklif formları, WhatsApp & düzenli kayıt</div>
-                    </div>
-                  </div>
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 group-hover/card:scale-125 transition-transform" />
-                </div>
-
-                {/* Module 4 */}
-                <div className="p-3.5 rounded-2xl bg-[#F8F9FA] dark:bg-white/[0.03] border border-[#E2E8F0] dark:border-white/5 flex items-center justify-between group/card hover:border-[#FFD23F] hover:bg-white dark:hover:bg-white/[0.06] transition-all duration-200">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-xl bg-[#0F172A] text-white dark:bg-white/10 flex items-center justify-center font-mono font-bold text-xs shadow-xs group-hover/card:bg-[#FFD23F] group-hover/card:text-[#0F172A] transition-colors">
-                      04
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold text-[#0F172A] dark:text-white">İş Süreçleri & Otomasyon</div>
-                      <div className="text-[11px] text-slate-500 dark:text-slate-400">Manuel işlemleri azaltan pratik akışlar</div>
-                    </div>
-                  </div>
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 group-hover/card:scale-125 transition-transform" />
-                </div>
-              </div>
-
-              {/* Bottom Assurance */}
-              <div className="mt-4 pt-3.5 border-t border-[#E2E8F0] dark:border-white/10 flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400">
-                <span>Tek bir dijital omurga etrafında entegre</span>
-                <span className="text-[#0F172A] dark:text-white font-semibold font-mono flex items-center gap-1.5">
-                  <Activity className="w-3.5 h-3.5 text-emerald-500" />
-                  Sürekli Destek
+                <span className="font-mono text-[11px] font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider px-3 py-1 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10">
+                  DİJİTAL GELİŞİM (Dış Görünüm & Satış)
                 </span>
               </div>
+
+              <h3 className="text-2xl sm:text-3xl font-display font-bold text-[#0F172A] dark:text-white mb-3">
+                Güven Verin, Yeni Müşteriler Kazanın.
+              </h3>
+
+              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-light mb-8">
+                Kurumsal web sitesi, dijital katalog, Google/Yapay Zekâ görünürlüğü ve doğru alıcıyı hedefleyen reklamlarla pazar payınızı artırın.
+              </p>
+            </div>
+
+            <div className="pt-6 border-t border-[#E2E8F0] dark:border-white/5">
+              <a
+                href="#dijital-gelisim"
+                className="btn-yellow w-full py-3.5 px-6 justify-center text-sm font-bold shadow-md cursor-pointer group/btn"
+              >
+                <span>Dijital Gelişim'i İnceleyin</span>
+                <ArrowDown className="w-4 h-4 transition-transform group-hover/btn:translate-y-1" />
+              </a>
+            </div>
+          </motion.div>
+
+          {/* 2. KART: DİJİTAL DÖNÜŞÜM (Sağ Kart - Koyu Lacivert/Operasyon Vurgulu) */}
+          <motion.div
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.38, ease: [0.16, 1, 0.3, 1] }}
+            whileHover={{ y: -6, transition: { duration: 0.25 } }}
+            className="hero-choice-card--donusum group relative p-8 sm:p-9 rounded-3xl bg-[#0B1528] text-white border border-[rgba(255,255,255,0.14)] hover:border-[rgba(255,255,255,0.3)] shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
+          >
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <div className="w-13 h-13 rounded-2xl bg-white/10 text-white flex items-center justify-center group-hover:bg-[#FFD23F] group-hover:text-[#0F172A] transition-all duration-300 shadow-sm">
+                  <Cpu className="w-6 h-6" />
+                </div>
+                <span className="font-mono text-[11px] font-bold text-slate-200 uppercase tracking-wider px-3 py-1 rounded-full bg-white/10 border border-white/15">
+                  DİJİTAL DÖNÜŞÜM (İç Operasyon & Sistem)
+                </span>
+              </div>
+
+              <h3 className="text-2xl sm:text-3xl font-display font-bold text-white mb-3">
+                Dağınıklığı Bitirin, İşinizi Kolaylaştırın.
+              </h3>
+
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-light mb-8">
+                Müşteri takip sistemi (CRM), birbiriyle konuşan programlar (API), şirketinize özel yazılımlar ve otomasyonla iş yükünüzü hafifletin.
+              </p>
+            </div>
+
+            <div className="pt-6 border-t border-white/10">
+              <a
+                href="#dijital-donusum"
+                className="w-full py-3.5 px-6 justify-center text-sm font-bold rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-all duration-300 inline-flex items-center gap-2 cursor-pointer group/btn"
+              >
+                <span>Dijital Dönüşüm'ü İnceleyin</span>
+                <ArrowDown className="w-4 h-4 transition-transform group-hover/btn:translate-y-1" />
+              </a>
             </div>
           </motion.div>
 
         </div>
+
       </div>
 
-      {/* Continuous Marquee Ticker - Symmetrical Top & Bottom Borders with Pinned "Neler Yapıyoruz :" */}
-      <div className="relative z-10 mt-12 sm:mt-14 py-4 sm:py-5 border-y border-[#E2E8F0] dark:border-white/10 w-full overflow-hidden bg-[#F8F9FA] dark:bg-[#090D14]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-4 sm:gap-6">
-          
-          {/* Sabit Başlık: Neler Yapıyoruz : (%50 daha büyük ve kalın puntolu) */}
-          <div className="shrink-0 flex items-center gap-2 pr-4 sm:pr-6 border-r border-[#E2E8F0] dark:border-white/10 z-20">
-            <span className="text-sm sm:text-lg font-bold font-display tracking-tight text-[#0F172A] dark:text-white whitespace-nowrap">
-              Neler Yapıyoruz <span className="text-[#FFD23F]">:</span>
-            </span>
-          </div>
-
-          {/* Soldan Sağa Akan Alan */}
-          <div className="flex-1 overflow-hidden carousel-container min-w-0">
-            <div className="carousel-track flex items-center gap-8 py-0">
+      {/* Ara Şerit: Kayan Hizmet Şeridi (Marquee - Neler Yapıyoruz :) Korunuyor */}
+      <div className="relative z-10 border-t border-[#E2E8F0] dark:border-white/10 w-full overflow-hidden bg-white/60 dark:bg-black/20 backdrop-blur-xs py-2">
+        <div className="max-w-6xl mx-auto flex items-center px-4 sm:px-6 lg:px-8">
+          <span className="shrink-0 font-display font-bold text-xs sm:text-sm text-[#0F172A] dark:text-white mr-4 border-r border-[#E2E8F0] dark:border-white/10 pr-4">
+            Neler Yapıyoruz :
+          </span>
+          <div className="carousel-container flex-1">
+            <div className="carousel-track flex items-center gap-8">
               {[...capabilities, ...capabilities].map((cap, idx) => (
                 <div
                   key={idx}
-                  className="flex items-center gap-3 text-[15px] font-sans font-medium text-slate-700 dark:text-slate-200 shrink-0 hover:text-[#0F172A] dark:hover:text-[#FFD23F] transition-colors"
+                  className="flex items-center gap-3 text-xs sm:text-sm font-sans text-slate-600 dark:text-slate-300 shrink-0 hover:text-[#0F172A] dark:hover:text-white transition-colors"
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-[#FFD23F] shrink-0" />
                   <span>{cap}</span>
@@ -288,7 +205,6 @@ export default function HeroSection() {
               ))}
             </div>
           </div>
-
         </div>
       </div>
 

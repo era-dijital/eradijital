@@ -35,7 +35,8 @@ export default function FaqSection() {
   ];
 
   return (
-    <section id="sorular" className="py-24 sm:py-32 bg-[#F8F9FA] dark:bg-[#090D14] border-t border-[#E2E8F0] dark:border-white/10 relative overflow-hidden transition-colors duration-300">
+    <section id="sss" className="py-24 sm:py-32 bg-[#F8F9FA] dark:bg-[#090D14] border-t border-[#E2E8F0] dark:border-white/10 relative overflow-hidden transition-colors duration-300">
+      <div id="sorular" className="absolute -top-16" />
       
       {/* Subtle Ambient Glow */}
       <div className="absolute top-1/2 right-1/4 w-80 h-80 bg-slate-200/40 dark:bg-white/[0.02] blur-[130px] pointer-events-none" />
@@ -56,7 +57,7 @@ export default function FaqSection() {
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.15]">
-            Başlamadan <span className="hl-yellow">Önce</span>
+            Başlamadan <span className="hl-yellow">önce.</span>
           </h2>
 
           <p className="mt-3.5 text-base sm:text-lg text-slate-600 dark:text-slate-400 font-light">
