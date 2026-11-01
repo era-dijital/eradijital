@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Layout, Search, Target, Film, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Layout, Search, Target, Film, ArrowRight } from 'lucide-react';
 
 export default function DigitalGrowthSection() {
   const handlePreselect = (e) => {
@@ -52,11 +52,6 @@ export default function DigitalGrowthSection() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-3xl mb-14 sm:mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 text-slate-700 dark:text-slate-300 font-mono text-[11px] font-semibold tracking-wider uppercase mb-4 shadow-xs">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#FFD23F]" />
-            <span>1. HİZMET ALANI</span>
-          </div>
-
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.15]">
             Prestij Kazanın, <span className="hl-yellow">Doğru Alıcıya Ulaşın</span>
           </h2>
@@ -92,11 +87,6 @@ export default function DigitalGrowthSection() {
                   <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed font-light">
                     {card.desc}
                   </p>
-                </div>
-
-                <div className="pt-6 mt-6 border-t border-[#E2E8F0] dark:border-white/5 flex items-center gap-2 text-xs font-mono text-slate-400">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
-                  <span>Dış Görünüm & Satış Çözümü 0{idx + 1}</span>
                 </div>
               </motion.div>
             );
