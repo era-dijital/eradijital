@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, Link2, MonitorCheck, Zap, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export default function DigitalTransformationSection() {
   const handlePreselect = (e) => {
@@ -15,24 +15,28 @@ export default function DigitalTransformationSection() {
 
   const cards = [
     {
-      icon: Users,
       title: "Müşteri ve Teklif Takip Sistemi (CRM)",
-      desc: "Telefon, web sitesi veya WhatsApp'tan gelen hiçbir talebi kaçırmayın. Hangi müşteriye ne teklif verildiğini, numune ve satış aşamalarını tek bir panelden kontrol edin."
+      desc: "Telefon, web sitesi veya WhatsApp'tan gelen hiçbir talebi kaçırmayın. Hangi müşteriye ne teklif verildiğini, numune ve satış aşamalarını tek bir panelden kontrol edin.",
+      img: "/resimler/cozumler/card-crm-takip.jpg",
+      imgAlt: "Müşteri ve Teklif Takip Sistemi (CRM)"
     },
     {
-      icon: Link2,
       title: "Birbiriyle Konuşan Programlar (API Bağlantıları)",
-      desc: "Web siteniz, e-ticaret altyapınız, muhasebe ve depo programlarınız birbirine bağlansın. Aynı faturayı veya müşteri bilgisini farklı programlara elle tekrar tekrar yazma derdinden kurtulun."
+      desc: "Web siteniz, e-ticaret altyapınız, muhasebe ve depo programlarınız birbirine bağlansın. Aynı faturayı veya müşteri bilgisini farklı programlara elle tekrar tekrar yazma derdinden kurtulun.",
+      img: "/resimler/cozumler/card-api-entegrasyon.jpg",
+      imgAlt: "Birbiriyle Konuşan Programlar (API Bağlantıları)"
     },
     {
-      icon: MonitorCheck,
       title: "Şirketinize Özel Yazılım ve Bayi Panelleri",
-      desc: "Kalıp paket programlara mecbur kalmayın. Toptan müşterileriniz ve bayileriniz için özel sipariş ekranları, otomatik fiyat hesaplama araçları ve anlık şirket özet raporları kullanın."
+      desc: "Kalıp paket programlara mecbur kalmayın. Toptan müşterileriniz ve bayileriniz için özel sipariş ekranları, otomatik fiyat hesaplama araçları ve anlık şirket özet raporları kullanın.",
+      img: "/resimler/cozumler/card-ozel-yazilim.jpg",
+      imgAlt: "Şirketinize Özel Yazılım ve Bayi Panelleri"
     },
     {
-      icon: Zap,
       title: "Zaman Kazandıran İş Otomasyonları",
-      desc: "Mesai saatleri dışında gelen müşteri mesajlarını 7/24 anında karşılayın. Yeni bir ürünü seri üretime sokmadan önce pazar talebini dijital olarak test edip sermaye riskinizi sıfırlayın."
+      desc: "Mesai saatleri dışında gelen müşteri mesajlarını 7/24 anında karşılayın. Yeni bir ürünü seri üretime sokmadan önce pazar talebini dijital olarak test edip sermaye riskinizi sıfırlayın.",
+      img: "/resimler/cozumler/card-is-otomasyonu.jpg",
+      imgAlt: "Zaman Kazandıran İş Otomasyonları"
     }
   ];
 
@@ -44,14 +48,13 @@ export default function DigitalTransformationSection() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-        {/* Section Header (Yan Yana / Split Grid) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-14 sm:mb-18">
+        {/* Section Header */}
+        <div className="max-w-3xl mb-14 sm:mb-18">
           <motion.div 
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7"
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-white leading-[1.15]">
               İşinizi Tek Ekrandan, <span className="text-[#FFD23F]">Hatasız Yönetin</span>
@@ -61,29 +64,11 @@ export default function DigitalTransformationSection() {
               Dağınık Excel tabloları, kaybolan notlar ve WhatsApp mesajları arasında vakit kaybetmeyin. Müşteri takibini, şirket içi yazılımlarınızı ve günlük tekrarlayan işlerinizi tıkır tıkır çalışan sistemlere bağlayın.
             </p>
           </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-5"
-          >
-            <div className="rounded-2xl overflow-hidden border border-white/15 shadow-xl aspect-[16/10] max-h-52 w-full bg-[#080E1A]">
-              <img
-                src="/resimler/ikili-yapi/digital-transformation-single-screen.jpg"
-                alt="Tek ekrandan operasyon ve süreç yönetimi"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
-          </motion.div>
         </div>
 
         {/* 4 Temel Çözüm Kartı (2x2 Grid — .solutions-grid-2x2 / .card-navy) */}
         <div className="solutions-grid-2x2 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12">
           {cards.map((card, idx) => {
-            const Icon = card.icon;
             return (
               <motion.div
                 key={idx}
@@ -92,11 +77,17 @@ export default function DigitalTransformationSection() {
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.55, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 whileHover={{ y: -6, transition: { duration: 0.25 } }}
-                className="card-navy group p-8 rounded-3xl flex flex-col justify-between"
+                className="card-navy group p-6 sm:p-8 rounded-3xl flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-13 h-13 rounded-2xl bg-white/10 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#FFD23F] group-hover:text-[#0F172A] transition-all duration-300 shadow-sm mb-6">
-                    <Icon className="w-6 h-6" />
+                  {/* Başlığa uygun küçük imaj */}
+                  <div className="rounded-2xl overflow-hidden aspect-[16/10] max-h-40 sm:max-h-44 w-full mb-6 border border-white/10 bg-white/5 shadow-inner">
+                    <img
+                      src={card.img}
+                      alt={card.imgAlt}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
                   </div>
 
                   <h3 className="text-xl sm:text-2xl font-display font-bold text-white mb-3">
@@ -111,6 +102,7 @@ export default function DigitalTransformationSection() {
             );
           })}
         </div>
+
 
         {/* Alt Teşhis / Empati Kutusu (.audience-callout--navy) */}
         <motion.div

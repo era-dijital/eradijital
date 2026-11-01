@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Layout, Search, Target, Film, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export default function DigitalGrowthSection() {
   const handlePreselect = (e) => {
@@ -15,24 +15,28 @@ export default function DigitalGrowthSection() {
 
   const cards = [
     {
-      icon: Layout,
       title: "Güven Veren Web Mimarisi",
-      desc: "Üretim kapasitenizi, ürün çeşitliliğinizi ve hizmetlerinizi modern bir vitrinle sunun. Ziyaretçilerinizi saniyeler içinde teklif istemeye ve siparişe yönlendirin."
+      desc: "Üretim kapasitenizi, ürün çeşitliliğinizi ve hizmetlerinizi modern bir vitrinle sunun. Ziyaretçilerinizi saniyeler içinde teklif istemeye ve siparişe yönlendirin.",
+      img: "/resimler/cozumler/card-web-mimarisi.jpg",
+      imgAlt: "Güven Veren Web Mimarisi"
     },
     {
-      icon: Search,
       title: "Aramalarda ve Yapay Zekâda Liderlik (SEO & GEO)",
-      desc: "Müşterileriniz artık yanıtları sadece Google'dan değil, yapay zekâ asistanlarından da alıyor. Sektörünüzde arama yapıldığında ilk önerilen ve güvenilen marka olun."
+      desc: "Müşterileriniz artık yanıtları sadece Google'dan değil, yapay zekâ asistanlarından da alıyor. Sektörünüzde arama yapıldığında ilk önerilen ve güvenilen marka olun.",
+      img: "/resimler/cozumler/card-seo-geo.jpg",
+      imgAlt: "Aramalarda ve Yapay Zekâda Liderlik (SEO & GEO)"
     },
     {
-      icon: Target,
       title: "Doğru Alıcıya Odaklanan Reklamlar",
-      desc: "Tanıtım bütçenizi boşa harcamayın. Doğrudan toptan alıcıları, ihracat kanallarını veya profesyonel hizmetinizi arayan karar vericileri hedefleyin."
+      desc: "Tanıtım bütçenizi boşa harcamayın. Doğrudan toptan alıcıları, ihracat kanallarını veya profesyonel hizmetinizi arayan karar vericileri hedefleyin.",
+      img: "/resimler/cozumler/card-dogru-reklam.jpg",
+      imgAlt: "Doğru Alıcıya Odaklanan Reklamlar"
     },
     {
-      icon: Film,
       title: "Tanıtım Filmleri ve Dijital Katalog",
-      desc: "Tesisinizi, üretim kalitenizi ve projelerinizi profesyonel video çekimleri ve müşterilerinizin kolayca inceleyebileceği dijital kataloglarla sergileyin."
+      desc: "Tesisinizi, üretim kalitenizi ve projelerinizi profesyonel video çekimleri ve müşterilerinizin kolayca inceleyebileceği dijital kataloglarla sergileyin.",
+      img: "/resimler/cozumler/card-tanitim-filmi.jpg",
+      imgAlt: "Tanıtım Filmleri ve Dijital Katalog"
     }
   ];
 
@@ -44,14 +48,13 @@ export default function DigitalGrowthSection() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-        {/* Section Header (Yan Yana / Split Grid) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-14 sm:mb-18">
+        {/* Section Header */}
+        <div className="max-w-3xl mb-14 sm:mb-18">
           <motion.div 
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7"
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.15]">
               Prestij Kazanın, <span className="hl-yellow">Doğru Alıcıya Ulaşın</span>
@@ -61,29 +64,11 @@ export default function DigitalGrowthSection() {
               Şirketinizin sahadaki kalitesini ekranlara eksiksiz yansıtın. Mevcut düzeninizi bozmadan dijital vitrininizi yenileyin, rakiplerinizin önüne geçin ve doğrudan ürün veya hizmetinizi arayan alıcılarla buluşun.
             </p>
           </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-5"
-          >
-            <div className="rounded-2xl overflow-hidden border border-[#E2E8F0] dark:border-white/10 shadow-sm aspect-[16/10] max-h-52 w-full bg-slate-100 dark:bg-white/5">
-              <img
-                src="/resimler/ikili-yapi/digital-growth-prestige.jpg"
-                alt="Modern kurumsal B2B web mimarisi ve dijital vitrin"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
-          </motion.div>
         </div>
 
         {/* 4 Temel Çözüm Kartı (2x2 Grid — .solutions-grid-2x2) */}
         <div className="solutions-grid-2x2 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12">
           {cards.map((card, idx) => {
-            const Icon = card.icon;
             return (
               <motion.div
                 key={idx}
@@ -92,18 +77,24 @@ export default function DigitalGrowthSection() {
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.55, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 whileHover={{ y: -6, transition: { duration: 0.25 } }}
-                className="group p-8 rounded-3xl bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 hover:border-slate-400/50 dark:hover:border-white/25 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
+                className="group p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 hover:border-slate-400/50 dark:hover:border-white/25 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-13 h-13 rounded-2xl bg-[#0F172A] dark:bg-white/10 text-white flex items-center justify-center group-hover:scale-110 group-hover:bg-[#FFD23F] group-hover:text-[#0F172A] transition-all duration-300 shadow-xs mb-6">
-                    <Icon className="w-6 h-6" />
+                  {/* Başlığa uygun küçük imaj */}
+                  <div className="rounded-2xl overflow-hidden aspect-[16/10] max-h-40 sm:max-h-44 w-full mb-6 border border-slate-200/80 dark:border-white/10 bg-slate-100 dark:bg-white/5 shadow-xs">
+                    <img
+                      src={card.img}
+                      alt={card.imgAlt}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
                   </div>
 
                   <h3 className="text-xl sm:text-2xl font-display font-bold text-[#0F172A] dark:text-white mb-3">
                     {card.title}
                   </h3>
 
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed font-light">
+                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-light">
                     {card.desc}
                   </p>
                 </div>
@@ -111,6 +102,7 @@ export default function DigitalGrowthSection() {
             );
           })}
         </div>
+
 
         {/* Alt Teşhis / Empati Kutusu (.audience-callout) */}
         <motion.div
