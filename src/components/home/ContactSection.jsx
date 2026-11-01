@@ -93,22 +93,22 @@ export default function ContactSection() {
   ];
 
   return (
-    <section 
-      id="durum-tespiti" 
+    <section
+      id="durum-tespiti"
       className="py-24 sm:py-32 bg-[#F8F9FA] dark:bg-[#090D14] border-t border-[#E2E8F0] dark:border-white/10 relative overflow-hidden transition-colors duration-300"
     >
       {/* Anchor alias support for backwards compatibility */}
       <div id="iletisim" className="absolute -top-16" />
       <div id="on-degerlendirme" className="absolute -top-16" />
-      
+
       {/* Subtle Ambient Glow */}
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-slate-200/40 dark:bg-white/[0.02] blur-[150px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
-          
+
           {/* Sol Sütun: İletişim & Güvence Özeti */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -176,7 +176,7 @@ export default function ContactSection() {
           </motion.div>
 
           {/* Sağ Sütun: Sadeleştirilmiş Başvuru Formu (#audit-request-form) */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -284,11 +284,10 @@ export default function ContactSection() {
                         return (
                           <label
                             key={opt.value}
-                            className={`p-3 rounded-xl border flex items-start gap-3 cursor-pointer transition-all duration-200 select-none ${
-                              isChecked
+                            className={`p-3 rounded-xl border flex items-start gap-3 cursor-pointer transition-all duration-200 select-none ${isChecked
                                 ? 'bg-amber-500/10 dark:bg-amber-500/15 border-[#FFD23F] shadow-xs'
                                 : 'bg-[#F8F9FA] dark:bg-white/[0.03] border-[#E2E8F0] dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20'
-                            } ${isPulsing ? 'highlight-pulse' : ''}`}
+                              } ${isPulsing ? 'highlight-pulse' : ''}`}
                           >
                             <input
                               type="radio"

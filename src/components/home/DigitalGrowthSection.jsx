@@ -38,14 +38,14 @@ export default function DigitalGrowthSection() {
 
   return (
     <section id="dijital-gelisim" className="section-gelisim py-24 sm:py-32 border-t border-[#E2E8F0] dark:border-white/10 relative overflow-hidden transition-colors duration-300">
-      
+
       {/* Subtle Ambient Glow */}
       <div className="absolute top-1/3 left-0 w-96 h-96 bg-[#FFD23F]/8 blur-[140px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}

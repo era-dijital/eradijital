@@ -57,19 +57,19 @@ export default function HeroSection() {
 
   return (
     <section id="hero" className="relative pt-32 sm:pt-40 pb-12 overflow-hidden bg-[#F8F9FA] dark:bg-[#090D14] text-[#0F172A] dark:text-white transition-colors duration-300">
-      
+
       {/* Subtle Warm Amber Mesh Glow */}
       <div className="absolute top-10 left-1/2 -translate-x-1/2 w-full max-w-5xl h-80 bg-gradient-to-b from-[#FFD23F]/12 via-[#FFD23F]/4 to-transparent blur-[130px] pointer-events-none z-0" />
-      
+
       {/* Ambient Particle Field */}
       <ParticleField count={25} />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        
+
         {/* Hero Header: Badge, Title & Lead */}
         <div className="text-center max-w-3xl mx-auto space-y-5 mb-12 sm:mb-16">
           {/* Slogan Başlık (h1) */}
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
@@ -79,7 +79,7 @@ export default function HeroSection() {
           </motion.h1>
 
           {/* Spot Açıklama (hero-lead) */}
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.22, ease: [0.16, 1, 0.3, 1] }}
@@ -91,7 +91,7 @@ export default function HeroSection() {
 
         {/* Giriş Ekranındaki İki Net Tercih Kartı (.hero-dual-cards) */}
         <div className="hero-dual-cards grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto mb-16">
-          
+
           {/* 1. KART: DİJİTAL GELİŞİM (Sol Kart - Açık/Vitrin Vurgulu) */}
           <motion.div
             initial={{ opacity: 0, y: 28 }}
