@@ -38,14 +38,14 @@ export default function DigitalTransformationSection() {
 
   return (
     <section id="dijital-donusum" className="section-donusum-navy py-24 sm:py-32 relative overflow-hidden transition-colors duration-300">
-      
+
       {/* Subtle Ambient Radial Glow */}
       <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-blue-500/10 blur-[160px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}

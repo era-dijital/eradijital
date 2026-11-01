@@ -5,12 +5,12 @@ import { ArrowDown, Layers, Split } from 'lucide-react';
 export default function TransitionThresholdSection() {
   return (
     <section id="gecis-esigi" className="section-transition-threshold py-16 sm:py-20 relative overflow-hidden transition-colors duration-300">
-      
+
       {/* Background Accent Gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#FFD23F]/5 to-transparent pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        
+
         {/* Merkezde Bağımsız 2. Uzmanlık Alanına Geçiş Rozeti */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -24,7 +24,7 @@ export default function TransitionThresholdSection() {
         </motion.div>
 
         {/* Slogan Başlık (h2) */}
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -36,7 +36,7 @@ export default function TransitionThresholdSection() {
         </motion.h2>
 
         {/* Açıklama (p) */}
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -47,7 +47,7 @@ export default function TransitionThresholdSection() {
         </motion.p>
 
         {/* Downward bouncing animated arrow indicator */}
-        <motion.div 
+        <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 text-slate-700 dark:text-slate-200 shadow-xs"

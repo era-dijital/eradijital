@@ -37,14 +37,14 @@ export default function FaqSection() {
   return (
     <section id="sss" className="py-24 sm:py-32 bg-[#F8F9FA] dark:bg-[#090D14] border-t border-[#E2E8F0] dark:border-white/10 relative overflow-hidden transition-colors duration-300">
       <div id="sorular" className="absolute -top-16" />
-      
+
       {/* Subtle Ambient Glow */}
       <div className="absolute top-1/2 right-1/4 w-80 h-80 bg-slate-200/40 dark:bg-white/[0.02] blur-[130px] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header with Staggered Scroll Reveal */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
@@ -77,27 +77,24 @@ export default function FaqSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
                 whileHover={{ y: -2, transition: { duration: 0.2 } }}
-                className={`rounded-3xl bg-white dark:bg-[#0F172A] border transition-all duration-300 overflow-hidden shadow-xs ${
-                  isOpen 
-                    ? 'border-slate-800 dark:border-white/30 shadow-md ring-1 ring-slate-800/10 dark:ring-white/10' 
+                className={`rounded-3xl bg-white dark:bg-[#0F172A] border transition-all duration-300 overflow-hidden shadow-xs ${isOpen
+                    ? 'border-slate-800 dark:border-white/30 shadow-md ring-1 ring-slate-800/10 dark:ring-white/10'
                     : 'border-[#E2E8F0] dark:border-white/10 hover:border-slate-400/50 dark:hover:border-white/20'
-                }`}
+                  }`}
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? -1 : idx)}
                   className="w-full px-7 py-5 sm:py-6 text-left flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50/50 dark:hover:bg-white/[0.02] transition-colors"
                 >
-                  <span className={`font-display font-semibold text-base sm:text-lg transition-colors ${
-                    isOpen ? 'text-[#0F172A] dark:text-white' : 'text-[#0F172A] dark:text-slate-200'
-                  }`}>
+                  <span className={`font-display font-semibold text-base sm:text-lg transition-colors ${isOpen ? 'text-[#0F172A] dark:text-white' : 'text-[#0F172A] dark:text-slate-200'
+                    }`}>
                     {faq.q}
                   </span>
-                  
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${
-                    isOpen 
-                      ? 'bg-[#0F172A] text-[#FFD23F] dark:bg-white dark:text-[#0F172A] rotate-180 shadow-xs' 
+
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${isOpen
+                      ? 'bg-[#0F172A] text-[#FFD23F] dark:bg-white dark:text-[#0F172A] rotate-180 shadow-xs'
                       : 'bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300'
-                  }`}>
+                    }`}>
                     {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                   </div>
                 </button>

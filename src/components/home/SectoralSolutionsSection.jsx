@@ -49,14 +49,14 @@ export default function SectoralSolutionsSection() {
 
   return (
     <section id="sektorel-cozumler" className="py-24 sm:py-32 bg-[#F8F9FA] dark:bg-[#090D14] border-t border-[#E2E8F0] dark:border-white/10 relative overflow-hidden transition-colors duration-300">
-      
+
       {/* Subtle Ambient Glow */}
       <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-slate-200/40 dark:bg-white/[0.02] blur-[150px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
@@ -73,8 +73,8 @@ export default function SectoralSolutionsSection() {
         </motion.div>
 
         {/* 4 Interactive Sector Tabs */}
-        <div 
-          role="tablist" 
+        <div
+          role="tablist"
           aria-label="Sektör Sekmeleri"
           className="flex flex-wrap items-center gap-2.5 sm:gap-3 mb-10 pb-2 border-b border-[#E2E8F0] dark:border-white/10"
         >
@@ -88,11 +88,10 @@ export default function SectoralSolutionsSection() {
                 aria-selected={isActive}
                 data-sector-tab={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`relative px-4 sm:px-5 py-3 rounded-2xl text-xs sm:text-sm font-semibold transition-all duration-200 flex items-center gap-2 cursor-pointer ${
-                  isActive
+                className={`relative px-4 sm:px-5 py-3 rounded-2xl text-xs sm:text-sm font-semibold transition-all duration-200 flex items-center gap-2 cursor-pointer ${isActive
                     ? 'bg-[#0F172A] dark:bg-white text-white dark:text-[#0F172A] shadow-md'
                     : 'bg-white dark:bg-white/5 border border-[#E2E8F0] dark:border-white/10 text-slate-600 dark:text-slate-300 hover:text-[#0F172A] dark:hover:text-white hover:border-slate-300 dark:hover:border-white/20'
-                }`}
+                  }`}
               >
                 <Icon className={`w-4 h-4 ${isActive ? 'text-[#FFD23F] dark:text-[#0F172A]' : 'text-slate-400'}`} />
                 <span>{tab.label}</span>
@@ -112,7 +111,7 @@ export default function SectoralSolutionsSection() {
             className="space-y-8"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-              
+
               {/* 1. Sütun / Kart: Dijital Gelişim İle Ne Kazanırsınız? */}
               <div className="p-8 sm:p-9 rounded-3xl bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
                 <div>

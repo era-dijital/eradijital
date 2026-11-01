@@ -27,14 +27,14 @@ export default function AboutSection() {
   return (
     <section id="biz-kimiz" className="py-24 sm:py-32 bg-[#F8F9FA] dark:bg-[#090D14] border-t border-[#E2E8F0] dark:border-white/10 relative overflow-hidden transition-colors duration-300">
       <div id="hakkimizda" className="absolute -top-16" />
-      
+
       {/* Subtle Ambient Glow */}
       <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-96 h-96 bg-slate-200/40 dark:bg-white/[0.02] blur-[140px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
@@ -89,7 +89,7 @@ export default function AboutSection() {
         </div>
 
         {/* Team & Trust Note Box */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
