@@ -68,20 +68,6 @@ export default function HeroSection() {
         
         {/* Hero Header: Badge, Title & Lead */}
         <div className="text-center max-w-3xl mx-auto space-y-5 mb-12 sm:mb-16">
-          
-          {/* Üst Etiket (Badge) */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 text-xs font-semibold shadow-xs"
-          >
-            <span className="w-2 h-2 rounded-full bg-[#FFD23F] radar-beacon" />
-            <span className="font-mono text-slate-700 dark:text-slate-200 uppercase tracking-wider text-[11px]">
-              DİJİTAL GELİŞİM VE DÖNÜŞÜM AJANSI
-            </span>
-          </motion.div>
-
           {/* Slogan Başlık (h1) */}
           <motion.h1 
             initial={{ opacity: 0, y: 22 }}
