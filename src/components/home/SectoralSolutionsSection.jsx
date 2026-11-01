@@ -55,22 +55,41 @@ export default function SectoralSolutionsSection() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-3xl mb-12 sm:mb-16"
-        >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.15]">
-            Sektörünüzün Gerçeklerine <span className="hl-yellow">Tam Uyum</span>
-          </h2>
+        {/* Section Header (Yan Yana / Split Grid) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-12 sm:mb-16">
+          <motion.div 
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7"
+          >
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.15]">
+              Sektörünüzün Gerçeklerine <span className="hl-yellow">Tam Uyum</span>
+            </h2>
 
-          <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-light">
-            Üretimden perakendeye her sektörün işleyişi farklıdır; çözümlerinizi iş modelinize göre kurgulayın.
-          </p>
-        </motion.div>
+            <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+              Üretimden perakendeye her sektörün işleyişi farklıdır; çözümlerinizi iş modelinize göre kurgulayın.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-5"
+          >
+            <div className="rounded-2xl overflow-hidden border border-[#E2E8F0] dark:border-white/10 shadow-sm aspect-[16/10] max-h-52 w-full bg-slate-100 dark:bg-white/5">
+              <img
+                src="/resimler/ikili-yapi/sectoral-solutions-real.jpg"
+                alt="Sektörel saha ve endüstriyel operasyonel uyum"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </motion.div>
+        </div>
 
         {/* 4 Interactive Sector Tabs */}
         <div

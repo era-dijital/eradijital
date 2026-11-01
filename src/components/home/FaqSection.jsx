@@ -41,29 +41,48 @@ export default function FaqSection() {
       {/* Subtle Ambient Glow */}
       <div className="absolute top-1/2 right-1/4 w-80 h-80 bg-slate-200/40 dark:bg-white/[0.02] blur-[130px] pointer-events-none" />
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-        {/* Section Header with Staggered Scroll Reveal */}
-        <motion.div
-          initial={{ opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center max-w-2xl mx-auto mb-14 sm:mb-18"
-        >
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 text-slate-700 dark:text-slate-300 font-mono text-[11px] font-semibold tracking-wider uppercase mb-4 shadow-xs">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#FFD23F]" />
-            <span>Sıkça Sorulan Sorular</span>
-          </div>
+        {/* Section Header (Yan Yana / Split Grid) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-14 sm:mb-18">
+          <motion.div 
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7"
+          >
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 text-slate-700 dark:text-slate-300 font-mono text-[11px] font-semibold tracking-wider uppercase mb-4 shadow-xs">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FFD23F]" />
+              <span>Sıkça Sorulan Sorular</span>
+            </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.15]">
-            Başlamadan <span className="hl-yellow">önce.</span>
-          </h2>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.15]">
+              Başlamadan <span className="hl-yellow">önce.</span>
+            </h2>
 
-          <p className="mt-3.5 text-base sm:text-lg text-slate-600 dark:text-slate-400 font-light">
-            Süreç, kapsam ve iş birliği modelimiz hakkında en çok merak edilen noktalar.
-          </p>
-        </motion.div>
+            <p className="mt-3.5 text-base sm:text-lg text-slate-600 dark:text-slate-400 font-light">
+              Süreç, kapsam ve iş birliği modelimiz hakkında en çok merak edilen noktalar.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-5"
+          >
+            <div className="rounded-2xl overflow-hidden border border-[#E2E8F0] dark:border-white/10 shadow-sm aspect-[16/10] max-h-52 w-full bg-slate-100 dark:bg-white/5">
+              <img
+                src="/resimler/ikili-yapi/faq-transparent-consultation.jpg"
+                alt="Şeffaf ve dürüst dijital danışmanlık görüşmesi"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </motion.div>
+        </div>
 
         {/* Accordion List with Refined Motion & Contrast */}
         <div className="space-y-4">

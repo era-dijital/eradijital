@@ -44,22 +44,41 @@ export default function DigitalTransformationSection() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-3xl mb-14 sm:mb-20"
-        >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-white leading-[1.15]">
-            İşinizi Tek Ekrandan, <span className="text-[#FFD23F]">Hatasız Yönetin</span>
-          </h2>
+        {/* Section Header (Yan Yana / Split Grid) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-14 sm:mb-18">
+          <motion.div 
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7"
+          >
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-white leading-[1.15]">
+              İşinizi Tek Ekrandan, <span className="text-[#FFD23F]">Hatasız Yönetin</span>
+            </h2>
 
-          <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed font-light">
-            Dağınık Excel tabloları, kaybolan notlar ve WhatsApp mesajları arasında vakit kaybetmeyin. Müşteri takibini, şirket içi yazılımlarınızı ve günlük tekrarlayan işlerinizi tıkır tıkır çalışan sistemlere bağlayın.
-          </p>
-        </motion.div>
+            <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed font-light">
+              Dağınık Excel tabloları, kaybolan notlar ve WhatsApp mesajları arasında vakit kaybetmeyin. Müşteri takibini, şirket içi yazılımlarınızı ve günlük tekrarlayan işlerinizi tıkır tıkır çalışan sistemlere bağlayın.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-5"
+          >
+            <div className="rounded-2xl overflow-hidden border border-white/15 shadow-xl aspect-[16/10] max-h-52 w-full bg-[#080E1A]">
+              <img
+                src="/resimler/ikili-yapi/digital-transformation-single-screen.jpg"
+                alt="Tek ekrandan operasyon ve süreç yönetimi"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </motion.div>
+        </div>
 
         {/* 4 Temel Çözüm Kartı (2x2 Grid — .solutions-grid-2x2 / .card-navy) */}
         <div className="solutions-grid-2x2 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12">
