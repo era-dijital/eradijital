@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, Link2, MonitorCheck, Zap, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Users, Link2, MonitorCheck, Zap, ArrowRight } from 'lucide-react';
 
 export default function DigitalTransformationSection() {
   const handlePreselect = (e) => {
@@ -52,11 +52,6 @@ export default function DigitalTransformationSection() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-3xl mb-14 sm:mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-slate-200 font-mono text-[11px] font-semibold tracking-wider uppercase mb-4 backdrop-blur-md">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#FFD23F]" />
-            <span>2. HİZMET ALANI</span>
-          </div>
-
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-white leading-[1.15]">
             İşinizi Tek Ekrandan, <span className="text-[#FFD23F]">Hatasız Yönetin</span>
           </h2>
@@ -92,11 +87,6 @@ export default function DigitalTransformationSection() {
                   <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-light">
                     {card.desc}
                   </p>
-                </div>
-
-                <div className="pt-6 mt-6 border-t border-white/10 flex items-center gap-2 text-xs font-mono text-slate-400">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>İç Operasyon & Sistem Çözümü 0{idx + 1}</span>
                 </div>
               </motion.div>
             );
