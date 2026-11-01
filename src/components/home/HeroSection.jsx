@@ -114,9 +114,18 @@ export default function HeroSection() {
                 Güven Verin, Yeni Müşteriler Kazanın.
               </h3>
 
-              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-light mb-8">
+              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-light mb-6">
                 Kurumsal web sitesi, dijital katalog, Google/Yapay Zekâ görünürlüğü ve doğru alıcıyı hedefleyen reklamlarla pazar payınızı artırın.
               </p>
+
+              <div className="rounded-2xl overflow-hidden aspect-[16/9] max-h-36 w-full mb-6 border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-white/5">
+                <img
+                  src="/resimler/ikili-yapi/digital-growth-prestige.jpg"
+                  alt="Dijital Gelişim - Kurumsal vitrin ve B2B müşteri kazanımı"
+                  className="w-full h-full object-cover"
+                  loading="eager"
+                />
+              </div>
             </div>
 
             <div className="pt-6 border-t border-[#E2E8F0] dark:border-white/5">
@@ -152,9 +161,18 @@ export default function HeroSection() {
                 Dağınıklığı Bitirin, İşinizi Kolaylaştırın.
               </h3>
 
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-light mb-8">
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-light mb-6">
                 Müşteri takip sistemi (CRM), birbiriyle konuşan programlar (API), şirketinize özel yazılımlar ve otomasyonla iş yükünüzü hafifletin.
               </p>
+
+              <div className="rounded-2xl overflow-hidden aspect-[16/9] max-h-36 w-full mb-6 border border-white/15 bg-white/5">
+                <img
+                  src="/resimler/ikili-yapi/digital-transformation-single-screen.jpg"
+                  alt="Dijital Dönüşüm - Operasyon, CRM ve süreç otomasyonu"
+                  className="w-full h-full object-cover"
+                  loading="eager"
+                />
+              </div>
             </div>
 
             <div className="pt-6 border-t border-white/10">

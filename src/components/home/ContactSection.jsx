@@ -130,7 +130,16 @@ export default function ContactSection() {
             </p>
 
             {/* 1 İş Gününde Rapor Güvencesi */}
-            <div className="p-6 rounded-3xl bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 space-y-3.5 shadow-sm">
+            <div className="p-6 rounded-3xl bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 space-y-4 shadow-sm">
+              <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 aspect-[16/9] max-h-36 w-full bg-slate-100 dark:bg-white/5">
+                <img
+                  src="/resimler/ikili-yapi/audit-diagnostic-report.jpg"
+                  alt="1 iş gününde teslim edilen yazılı durum raporu dokümanı"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+
               <div className="flex items-center gap-2 text-xs font-mono font-bold text-slate-700 dark:text-slate-200 uppercase tracking-wider">
                 <FileCheck className="w-4 h-4 text-emerald-500" />
                 <span>Ücretsiz Durum Tespiti Neler İçerir?</span>
