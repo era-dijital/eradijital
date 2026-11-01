@@ -63,11 +63,6 @@ export default function SectoralSolutionsSection() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-3xl mb-12 sm:mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 text-slate-700 dark:text-slate-300 font-mono text-[11px] font-semibold tracking-wider uppercase mb-4 shadow-xs">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#FFD23F]" />
-            <span>Sektörel Çözümler</span>
-          </div>
-
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.15]">
             Sektörünüzün Gerçeklerine <span className="hl-yellow">Tam Uyum</span>
           </h2>
@@ -121,12 +116,11 @@ export default function SectoralSolutionsSection() {
               {/* 1. Sütun / Kart: Dijital Gelişim İle Ne Kazanırsınız? */}
               <div className="p-8 sm:p-9 rounded-3xl bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <span className="font-mono text-xs font-bold text-[#0F172A] dark:text-[#FFD23F] uppercase tracking-wider px-3 py-1 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center gap-1.5">
+                  <div className="mb-6">
+                    <span className="font-mono text-xs font-bold text-[#0F172A] dark:text-[#FFD23F] uppercase tracking-wider px-3 py-1 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 inline-flex items-center gap-1.5">
                       <TrendingUp className="w-3.5 h-3.5 text-[#0F172A] dark:text-[#FFD23F]" />
                       DİJİTAL GELİŞİM
                     </span>
-                    <span className="text-xs font-mono text-slate-400">Dış Görünüm & Satış</span>
                   </div>
 
                   <h3 className="text-xl sm:text-2xl font-display font-bold text-[#0F172A] dark:text-white mb-4">
@@ -147,12 +141,11 @@ export default function SectoralSolutionsSection() {
               {/* 2. Sütun / Kart: Dijital Dönüşüm İle Ne Kazanırsınız? */}
               <div className="p-8 sm:p-9 rounded-3xl bg-[#0B1528] text-white border border-[rgba(255,255,255,0.12)] shadow-xl flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <span className="font-mono text-xs font-bold text-white uppercase tracking-wider px-3 py-1 rounded-full bg-white/10 border border-white/15 flex items-center gap-1.5">
+                  <div className="mb-6">
+                    <span className="font-mono text-xs font-bold text-white uppercase tracking-wider px-3 py-1 rounded-full bg-white/10 border border-white/15 inline-flex items-center gap-1.5">
                       <Cpu className="w-3.5 h-3.5 text-[#FFD23F]" />
                       DİJİTAL DÖNÜŞÜM
                     </span>
-                    <span className="text-xs font-mono text-slate-300">İç Operasyon & Sistem</span>
                   </div>
 
                   <h3 className="text-xl sm:text-2xl font-display font-bold text-white mb-4">
