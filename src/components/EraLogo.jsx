@@ -23,12 +23,17 @@ export default function EraLogo({
   const currentHeight = heightClasses[size] || heightClasses.md;
 
   return (
-    <div className={`flex items-center shrink-0 select-none group transition-transform duration-200 hover:scale-[1.02] ${className}`}>
+    <div className={`flex items-center shrink-0 select-none ${className}`}>
       {/* Light Theme Logo */}
       <img
         src="/resimler/era-logo.png"
         alt={alt}
-        className={`dark:hidden ${currentHeight} w-auto object-contain drop-shadow-xs`}
+        className={`dark:hidden ${currentHeight} w-auto object-contain`}
+        style={{
+          filter: 'none',
+          WebkitFilter: 'none',
+          imageRendering: '-webkit-optimize-contrast'
+        }}
         loading="eager"
         fetchPriority="high"
       />
@@ -37,7 +42,12 @@ export default function EraLogo({
       <img
         src="/resimler/era-logo-dark.png"
         alt={alt}
-        className={`hidden dark:block ${currentHeight} w-auto object-contain drop-shadow-xs`}
+        className={`hidden dark:block ${currentHeight} w-auto object-contain`}
+        style={{
+          filter: 'none',
+          WebkitFilter: 'none',
+          imageRendering: '-webkit-optimize-contrast'
+        }}
         loading="eager"
         fetchPriority="high"
       />
