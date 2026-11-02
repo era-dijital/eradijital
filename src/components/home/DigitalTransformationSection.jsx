@@ -21,7 +21,12 @@ export default function DigitalTransformationSection() {
       imgAlt: "Müşteri ve Teklif Takip Sistemi (CRM)"
     },
     {
-      title: "Birbiriyle Konuşan Programlar (API Bağlantıları)",
+      title: (
+        <>
+          Birbiriyle Konuşan Programlar <br />
+          (API Bağlantıları)
+        </>
+      ),
       desc: "Web siteniz, e-ticaret altyapınız, muhasebe ve depo programlarınız birbirine bağlansın. Aynı faturayı veya müşteri bilgisini farklı programlara elle tekrar tekrar yazma derdinden kurtulun.",
       img: "/resimler/cozumler/card-api-entegrasyon.jpg",
       imgAlt: "Birbiriyle Konuşan Programlar (API Bağlantıları)"
