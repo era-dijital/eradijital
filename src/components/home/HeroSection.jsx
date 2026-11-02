@@ -46,13 +46,27 @@ export default function HeroSection() {
   const { openWizard } = useQuoteWizard();
 
   const capabilities = [
-    "Kurumsal Web & Dijital Varlık",
-    "Hedefli Arama & Reklam Görünürlüğü",
-    "Müşteri Talebi & Teklif Süreçleri",
-    "İş Süreçleri & Otomasyon",
-    "1 İş Gününde Yazılı Ön İnceleme",
-    "Ölçülebilir & Şeffaf Yol Haritası",
-    "İstanbul Operasyon & Uzaktan İş Birliği"
+    "Dönüşüm Odaklı Web Altyapıları",
+    "Dijital Satış ve Müşteri İletişim Sistemleri",
+    "Otomasyon, Yazılım ve Sistem Entegrasyonları",
+    "Kurumsal Web Mimarisi ve Modernizasyonu",
+    "E-Ticaret ve Dijital Ticaret Altyapıları",
+    "Kurumsal Sosyal Medya Yönetimi",
+    "Marka İletişimi",
+    "Kurumsal Tanıtım ve Reklam Filmleri",
+    "Performans Odaklı Reklam Yönetimi",
+    "Kitle Analizi ve Medya Planlama",
+    "Arama Motoru Optimizasyonu (SEO)",
+    "Yapay Zekâ Görünürlüğü (GEO)",
+    "CRM Kurulumu ve Entegrasyonu",
+    "Yönetim Panelleri ve Otomatik Raporlama Sistemleri",
+    "Çok Kanallı İletişim Altyapısı",
+    "WhatsApp Entegrasyonları",
+    "İşletmeye Özel Yazılım Geliştirme ve Yönetim Ekranları",
+    "Dijital Katalog",
+    "Ürün ve Fiyatlandırma Yönetim Sistemleri",
+    "SEO ve GEO Uyumlu Dijital İçerik",
+    "Dijital Satış Sistemleri"
   ];
 
   return (
