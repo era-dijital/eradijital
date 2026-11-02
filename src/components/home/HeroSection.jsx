@@ -156,7 +156,8 @@ export default function HeroSection() {
           >
             <div>
               <h3 className="text-2xl sm:text-3xl font-display font-bold text-white mb-3">
-                Dağınıklığı Bitirin, İşinizi Kolaylaştırın.
+                Dağınıklığı Bitirin, <br />
+                İşinizi Kolaylaştırın.
               </h3>
 
               <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-light mb-6">
