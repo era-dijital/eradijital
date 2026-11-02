@@ -89,7 +89,8 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
             className="text-4xl sm:text-6xl lg:text-[64px] font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.12]"
           >
-            Sahadaki Gücünüzü <span className="hl-yellow">Dijitale Taşıyın</span>
+            Dijital Dünyada Kurallar Değişti <br className="hidden sm:inline" />
+            Şimdi <span className="hl-yellow">Dönüşüm ve Gelişim</span> Zamanı
           </motion.h1>
 
           {/* Spot Açıklama (hero-lead) */}
