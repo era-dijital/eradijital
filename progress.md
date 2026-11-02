@@ -12,7 +12,7 @@ Kaynak Kod Dalı: `main`
 
 ### İçerik ve İletişim Bilgileri
 - [x] **İletişim Bilgileri Güncellendi:**
-  - E-posta: `eradijitalinfo@gmail.com`
+  - E-posta: `info@eradijital.com`
   - Telefon: `+90 543 361 92 39`
   - Tıklanabilir `tel:` ve `mailto:` bağlantıları Header, Footer, İletişim sayfası ve İletişim bölümüne entegre edildi.
 - [x] **Başlık Formatı (Title Case):**

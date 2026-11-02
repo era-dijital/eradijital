@@ -168,7 +168,7 @@ export default function ContactSection() {
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-[#0F172A] dark:text-[#FFD23F] shrink-0" />
-                <span>E-posta: <a href="mailto:eradijitalinfo@gmail.com" className="font-semibold text-[#0F172A] dark:text-white hover:underline">eradijitalinfo@gmail.com</a></span>
+                <span>E-posta: <a href="mailto:info@eradijital.com" className="font-semibold text-[#0F172A] dark:text-white hover:underline">info@eradijital.com</a></span>
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="w-4 h-4 text-[#0F172A] dark:text-[#FFD23F] shrink-0" />

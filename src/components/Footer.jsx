@@ -91,7 +91,7 @@ export default function Footer() {
               </p>
               <p className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-slate-400" />
-                <span>iletisim@eradijital.com</span>
+                <a href="mailto:info@eradijital.com" className="hover:text-[#0F172A] dark:hover:text-white transition-colors">info@eradijital.com</a>
               </p>
               <p className="flex items-center gap-2">
                 <MapPin className="w-3.5 h-3.5 text-slate-400" />
