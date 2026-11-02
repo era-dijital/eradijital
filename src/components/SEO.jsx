@@ -50,7 +50,7 @@ const SEO = ({ title, description }) => {
             "name": "Dijital Gelişim (Dış Görünüm & Satış)",
             "itemListElement": [
               { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Güven Veren Web Mimarisi" } },
-              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Aramalarda ve Yapay Zekâda Liderlik (SEO & GEO)" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO, AEO & GEO (Yeni Nesil Arama)" } },
               { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Doğru Alıcıya Odaklanan Reklamlar" } },
               { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tanıtım Filmleri ve Dijital Katalog" } }
             ]
