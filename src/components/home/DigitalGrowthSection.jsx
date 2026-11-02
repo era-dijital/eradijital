@@ -21,10 +21,10 @@ export default function DigitalGrowthSection() {
       imgAlt: "Güven Veren Web Mimarisi"
     },
     {
-      title: "Aramalarda ve Yapay Zekâda Liderlik (SEO & GEO)",
-      desc: "Müşterileriniz artık yanıtları sadece Google'dan değil, yapay zekâ asistanlarından da alıyor. Sektörünüzde arama yapıldığında ilk önerilen ve güvenilen marka olun.",
+      title: "SEO, AEO & GEO (Yeni Nesil Arama)",
+      desc: "Müşterileriniz sizi ararken artık sadece Google linklerine tıklamıyor; doğrudan sorularına yanıt arıyor ve yapay zekâ asistanlarından firma tavsiyesi istiyor. Klasik aramalarda görünürlüğünüzü güçlendirirken, alıcıların sektörel sorularına en net cevabı veren kaynak olun.",
       img: "/resimler/cozumler/card-seo-geo.jpg",
-      imgAlt: "Aramalarda ve Yapay Zekâda Liderlik (SEO & GEO)"
+      imgAlt: "SEO, AEO & GEO (Yeni Nesil Arama)"
     },
     {
       title: "Doğru Alıcıya Odaklanan Reklamlar",
