@@ -42,8 +42,9 @@ export default function RealProjectsSection() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-7"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.15]">
-              Sözde Değil, <span className="hl-yellow">Sahada Çalışan Sonuçlar</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.2]">
+              Sözde Değil, <br />
+              <span className="hl-yellow">Sahada Çalışan Sonuçlar</span>
             </h2>
 
             <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-light">
