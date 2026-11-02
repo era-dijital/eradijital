@@ -79,9 +79,20 @@ export default function DigitalGrowthSection() {
                 whileHover={{ y: -6, transition: { duration: 0.25 } }}
                 className="group p-6 sm:p-8 rounded-3xl bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 hover:border-slate-400/50 dark:hover:border-white/25 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
               >
-                <div>
-                  {/* Başlığa uygun küçük imaj */}
-                  <div className="rounded-2xl overflow-hidden aspect-[16/10] max-h-40 sm:max-h-44 w-full mb-6 border border-slate-200/80 dark:border-white/10 bg-slate-100 dark:bg-white/5 shadow-xs">
+                <div className="flex flex-col sm:flex-row items-start gap-6 h-full">
+                  {/* Sol Kolon: Başlık ve Yazılar */}
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-xl sm:text-2xl font-display font-bold text-[#0F172A] dark:text-white mb-3 leading-snug">
+                      {card.title}
+                    </h3>
+
+                    <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+                      {card.desc}
+                    </p>
+                  </div>
+
+                  {/* Sağ Kolon: Başlığa Uygun Küçük İmaj */}
+                  <div className="w-full sm:w-44 lg:w-48 shrink-0 rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-[4/3] border border-slate-200/80 dark:border-white/10 bg-slate-100 dark:bg-white/5 shadow-xs">
                     <img
                       src={card.img}
                       alt={card.imgAlt}
@@ -89,14 +100,6 @@ export default function DigitalGrowthSection() {
                       loading="lazy"
                     />
                   </div>
-
-                  <h3 className="text-xl sm:text-2xl font-display font-bold text-[#0F172A] dark:text-white mb-3">
-                    {card.title}
-                  </h3>
-
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-light">
-                    {card.desc}
-                  </p>
                 </div>
               </motion.div>
             );
