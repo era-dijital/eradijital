@@ -79,9 +79,20 @@ export default function DigitalTransformationSection() {
                 whileHover={{ y: -6, transition: { duration: 0.25 } }}
                 className="card-navy group p-6 sm:p-8 rounded-3xl flex flex-col justify-between"
               >
-                <div>
-                  {/* Başlığa uygun küçük imaj */}
-                  <div className="rounded-2xl overflow-hidden aspect-[16/10] max-h-40 sm:max-h-44 w-full mb-6 border border-white/10 bg-white/5 shadow-inner">
+                <div className="flex flex-col sm:flex-row items-start gap-6 h-full">
+                  {/* Sol Kolon: Başlık ve Yazılar */}
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-xl sm:text-2xl font-display font-bold text-white mb-3 leading-snug">
+                      {card.title}
+                    </h3>
+
+                    <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-light">
+                      {card.desc}
+                    </p>
+                  </div>
+
+                  {/* Sağ Kolon: Başlığa Uygun Küçük İmaj */}
+                  <div className="w-full sm:w-44 lg:w-48 shrink-0 rounded-2xl overflow-hidden aspect-[16/10] sm:aspect-[4/3] border border-white/10 bg-white/5 shadow-inner">
                     <img
                       src={card.img}
                       alt={card.imgAlt}
@@ -89,14 +100,6 @@ export default function DigitalTransformationSection() {
                       loading="lazy"
                     />
                   </div>
-
-                  <h3 className="text-xl sm:text-2xl font-display font-bold text-white mb-3">
-                    {card.title}
-                  </h3>
-
-                  <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-light">
-                    {card.desc}
-                  </p>
                 </div>
               </motion.div>
             );
