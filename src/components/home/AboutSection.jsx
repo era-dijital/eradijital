@@ -47,9 +47,9 @@ export default function AboutSection() {
               <span>Biz Kimiz</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.15]">
-              İhtiyacı anlayan, sadeleştiren ve <br className="hidden sm:inline" />
-              <span className="hl-yellow">uygulayan bir ekip.</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.2]">
+              İhtiyacı anlayan, sadeleştiren <br />
+              ve <span className="hl-yellow">uygulayan bir ekip.</span>
             </h2>
 
             <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-light">
