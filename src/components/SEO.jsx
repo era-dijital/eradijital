@@ -34,7 +34,7 @@ const SEO = ({ title, description }) => {
       "url": "https://eradijital.com",
       "logo": "https://eradijital.com/resimler/era-logo.png",
       "telephone": "+905433619239",
-      "email": "eradijitalinfo@gmail.com",
+      "email": "info@eradijital.com",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Maslak, İstanbul",

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Era Dijital — Growth Lead & Dijital Röntgen API
  */
@@ -77,7 +77,7 @@ array_unshift($existingLeads, $lead);
 @file_put_contents($dataFile, json_encode($existingLeads, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 
 // 2. E-posta Bildirimi Gönder
-$to = 'eradijitalinfo@gmail.com';
+$to = 'info@eradijital.com';
 $subject = "[DİJİTAL RÖNTGEN TALEBİ] " . ($companyName ?: $website) . " (" . ($budgetRange ?: 'Bütçe Belirtilmedi') . ")";
 
 $body = "YENİ BÜYÜME VE DİJİTAL RÖNTGEN ANALİZİ TALEBİ\n";

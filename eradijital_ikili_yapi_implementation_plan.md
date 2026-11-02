@@ -10,7 +10,7 @@ Bu doküman, https://eradijital.com/ web sitesinin mevcut tasarım sistemini, CS
    - Mevcut CSS değişkenlerini silme.
    - Yalnızca 4. Bölüm (2. Hizmet Alanı — Dijital Dönüşüm) ve Hero 2. Tercih Kartı için görsel ayrışmayı sağlayan koyu lacivert yüzey değişkenlerini (`--surface-navy: #0B1528`, `--surface-navy-card: #132238`, `--border-navy: rgba(255, 255, 255, 0.12)`, `--text-on-navy: #F8FAFC`, `--text-muted-on-navy: #94A3B8`) ekle.
 2. **Mevcut Yardımcı Bölümleri ve Akışı Koru:**
-   - Header / Navbar ve Footer (iletişim bilgileri: `+90 543 361 92 39`, `eradijitalinfo@gmail.com`, Maslak / İstanbul, KVKK Aydınlatma Metni modal/link yapısı ve Blog linki) korunacaktır.
+   - Header / Navbar ve Footer (iletişim bilgileri: `+90 543 361 92 39`, `info@eradijital.com`, Maslak / İstanbul, KVKK Aydınlatma Metni modal/link yapısı ve Blog linki) korunacaktır.
    - Hero altındaki Kayan Hizmet Şeridi (Marquee — Neler Yapıyoruz :) korunacaktır.
    - Biz Kimiz (`#biz-kimiz`), 4 Aşamalı Çalışma Süreci (`#surec`) ve Sıkça Sorulan Sorular (`#sss`) bölümleri 6. Bölüm ile 7. Bölüm arasında kurumsal güven katmanı olarak yer almaya devam edecektir.
 3. **Backend / Form Gönderim Uyumluluğunu Koru:**
