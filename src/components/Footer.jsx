@@ -2,22 +2,32 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, ArrowRight, ShieldCheck } from 'lucide-react';
 import { useQuoteWizard } from '../context/QuoteWizardContext';
+import { capabilities } from '../data/capabilities';
 
 export default function Footer() {
   const { openWizard } = useQuoteWizard();
 
   return (
     <footer className="border-t border-[#E2E8F0] dark:border-white/10 bg-[#F8F9FA] dark:bg-[#070B10] text-[#0F172A] dark:text-slate-300 transition-colors duration-300">
-      {/* Top Status Strip */}
-      <div className="border-b border-[#E2E8F0] dark:border-white/5 py-3.5 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-slate-600 dark:text-slate-400">
-        <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-[#FFD23F] animate-pulse"></span>
-          <span className="font-semibold text-[#0F172A] dark:text-white">ERA DİJİTAL // DİJİTAL GELİŞİM VE DÖNÜŞÜM AJANSI</span>
-        </div>
-        <div className="flex items-center gap-4 text-[11px]">
-          <span>Ön İnceleme: 1 İş Günü</span>
-          <span>•</span>
-          <span>İstanbul Operasyon & Uzaktan İş Birliği</span>
+      {/* Kayan Hizmet Şeridi (Marquee - Neler Yapıyoruz :) */}
+      <div className="border-b border-[#E2E8F0] dark:border-white/10 w-full overflow-hidden py-2.5">
+        <div className="max-w-6xl mx-auto flex items-center px-4 sm:px-6 lg:px-8">
+          <span className="shrink-0 font-display font-bold text-xs sm:text-sm text-[#0F172A] dark:text-white mr-4 border-r border-[#E2E8F0] dark:border-white/10 pr-4">
+            Neler Yapıyoruz :
+          </span>
+          <div className="carousel-container flex-1">
+            <div className="carousel-track flex items-center gap-8">
+              {[...capabilities, ...capabilities].map((cap, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-center gap-3 text-xs sm:text-sm font-sans text-slate-600 dark:text-slate-300 shrink-0 hover:text-[#0F172A] dark:hover:text-white transition-colors"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#FFD23F] shrink-0" />
+                  <span>{cap}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 

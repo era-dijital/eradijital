@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown, Sparkles, ArrowRight } from 'lucide-react';
 import { useQuoteWizard } from '../../context/QuoteWizardContext';
+import { capabilities } from '../../data/capabilities';
 
 // Dynamic Ambient Particle Field
 function ParticleField({ count = 25 }) {
@@ -44,30 +45,6 @@ function ParticleField({ count = 25 }) {
 
 export default function HeroSection() {
   const { openWizard } = useQuoteWizard();
-
-  const capabilities = [
-    "Dönüşüm Odaklı Web Altyapıları",
-    "Dijital Satış ve Müşteri İletişim Sistemleri",
-    "Otomasyon, Yazılım ve Sistem Entegrasyonları",
-    "Kurumsal Web Mimarisi ve Modernizasyonu",
-    "E-Ticaret ve Dijital Ticaret Altyapıları",
-    "Kurumsal Sosyal Medya Yönetimi",
-    "Marka İletişimi",
-    "Kurumsal Tanıtım ve Reklam Filmleri",
-    "Performans Odaklı Reklam Yönetimi",
-    "Kitle Analizi ve Medya Planlama",
-    "Arama Motoru Optimizasyonu (SEO)",
-    "Yapay Zekâ Görünürlüğü (GEO)",
-    "CRM Kurulumu ve Entegrasyonu",
-    "Yönetim Panelleri ve Otomatik Raporlama Sistemleri",
-    "Çok Kanallı İletişim Altyapısı",
-    "WhatsApp Entegrasyonları",
-    "İşletmeye Özel Yazılım Geliştirme ve Yönetim Ekranları",
-    "Dijital Katalog",
-    "Ürün ve Fiyatlandırma Yönetim Sistemleri",
-    "SEO ve GEO Uyumlu Dijital İçerik",
-    "Dijital Satış Sistemleri"
-  ];
 
   return (
     <section id="hero" className="relative pt-32 sm:pt-40 pb-12 overflow-hidden bg-[#F8F9FA] dark:bg-[#090D14] text-[#0F172A] dark:text-white transition-colors duration-300">
