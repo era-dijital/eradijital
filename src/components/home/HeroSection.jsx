@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, Sparkles, Globe, Cpu, ArrowRight } from 'lucide-react';
+import { ArrowDown, Sparkles, ArrowRight } from 'lucide-react';
 import { useQuoteWizard } from '../../context/QuoteWizardContext';
 
 // Dynamic Ambient Particle Field
@@ -101,15 +101,6 @@ export default function HeroSection() {
             className="hero-choice-card--gelisim group relative p-8 sm:p-9 rounded-3xl bg-white dark:bg-[#0F172A] border border-[#E2E8F0] dark:border-white/10 hover:border-slate-400/50 dark:hover:border-white/30 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
           >
             <div>
-              <div className="flex items-center justify-between mb-6">
-                <div className="w-13 h-13 rounded-2xl bg-[#0F172A] dark:bg-white/10 text-white flex items-center justify-center group-hover:bg-[#FFD23F] group-hover:text-[#0F172A] transition-all duration-300 shadow-sm">
-                  <Globe className="w-6 h-6" />
-                </div>
-                <span className="font-mono text-[11px] font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider px-3 py-1 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10">
-                  DİJİTAL GELİŞİM (Dış Görünüm & Satış)
-                </span>
-              </div>
-
               <h3 className="text-2xl sm:text-3xl font-display font-bold text-[#0F172A] dark:text-white mb-3">
                 Güven Verin, Yeni Müşteriler Kazanın.
               </h3>
@@ -148,15 +139,6 @@ export default function HeroSection() {
             className="hero-choice-card--donusum group relative p-8 sm:p-9 rounded-3xl bg-[#0B1528] text-white border border-[rgba(255,255,255,0.14)] hover:border-[rgba(255,255,255,0.3)] shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
           >
             <div>
-              <div className="flex items-center justify-between mb-6">
-                <div className="w-13 h-13 rounded-2xl bg-white/10 text-white flex items-center justify-center group-hover:bg-[#FFD23F] group-hover:text-[#0F172A] transition-all duration-300 shadow-sm">
-                  <Cpu className="w-6 h-6" />
-                </div>
-                <span className="font-mono text-[11px] font-bold text-slate-200 uppercase tracking-wider px-3 py-1 rounded-full bg-white/10 border border-white/15">
-                  DİJİTAL DÖNÜŞÜM (İç Operasyon & Sistem)
-                </span>
-              </div>
-
               <h3 className="text-2xl sm:text-3xl font-display font-bold text-white mb-3">
                 Dağınıklığı Bitirin, İşinizi Kolaylaştırın.
               </h3>
