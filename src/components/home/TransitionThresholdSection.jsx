@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, Layers, Split } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 
 export default function TransitionThresholdSection() {
   return (
@@ -14,16 +14,6 @@ export default function TransitionThresholdSection() {
           
           {/* Sol Kolon: Başlık ve Açıklama */}
           <div className="md:col-span-7 space-y-4">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-white/10 text-[#0F172A] dark:text-white font-mono text-[11px] font-bold tracking-wider uppercase shadow-xs"
-            >
-              <Split className="w-3.5 h-3.5 text-[#FFD23F]" />
-              <span>BAĞIMSIZ 2. UZMANLIK ALANINA GEÇİŞ</span>
-            </motion.div>
 
             <motion.h2
               initial={{ opacity: 0, y: 16 }}
