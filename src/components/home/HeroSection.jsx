@@ -87,10 +87,10 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
-            className="text-4xl sm:text-6xl lg:text-[64px] font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.12]"
+            className="text-4xl sm:text-6xl lg:text-[64px] font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.15]"
           >
-            Dijital Dünyada Kurallar Değişti <br className="hidden sm:inline" />
-            Şimdi <span className="hl-yellow">Dönüşüm ve Gelişim</span> Zamanı
+            Uzmanlığınızı <br className="hidden sm:inline" />
+            <span className="hl-yellow">Ticari Talebe Dönüştürün</span>
           </motion.h1>
 
           {/* Spot Açıklama (hero-lead) */}
