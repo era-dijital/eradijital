@@ -87,10 +87,10 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
-            className="text-4xl sm:text-6xl lg:text-[64px] font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.15]"
+            className="text-4xl sm:text-6xl lg:text-[64px] font-display font-bold tracking-tight text-[#0F172A] dark:text-white leading-[1.22]"
           >
-            Uzmanlığınızı <br className="hidden sm:inline" />
-            <span className="hl-yellow">Ticari Talebe Dönüştürün</span>
+            <span className="block mb-2 sm:mb-3.5">Uzmanlığınızı</span>
+            <span className="hl-yellow inline-block">Ticari Talebe Dönüştürün</span>
           </motion.h1>
 
           {/* Spot Açıklama (hero-lead) */}
